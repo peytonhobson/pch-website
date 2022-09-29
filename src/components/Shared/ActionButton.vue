@@ -41,7 +41,7 @@ button {
 }
 
 .primary {
-  @apply rounded-full text-white bg-brand-green-gray px-12 py-4 font-questrial text-2xl font-bold;
+  @apply rounded-full text-white bg-brand-green-gray px-12 py-4 font-questrial text-2xl font-medium;
 }
 
 /* .secondary {

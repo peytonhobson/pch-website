@@ -374,7 +374,7 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      questrial: ["Questrial"],
+      questrial: ["Questrial", "sans-serif"],
       serif: [
         "ui-serif",
         "Georgia",
