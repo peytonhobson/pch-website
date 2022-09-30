@@ -32,13 +32,20 @@
       />
     </div>
   </div>
-  <div class="flex w-full p-5 justify-evenly"></div>
+  <div class="flex flex-auto justify-evenly pt-10 pb-44">
+    <display-card-facilties class="w-" />
+    <display-card header="Facilities" class="w-2/7" />
+    <display-card header="Facilities" class="w-2/7" />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 import HeroSlogan from "@/components/Home/HeroSlogan.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
+import DisplayCard from "@/components/Shared/DisplayCard.vue";
+import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
 
 interface DescriptionBoxContent {
   icon: string[];
@@ -52,6 +59,8 @@ export default defineComponent({
   components: {
     HeroSlogan,
     DescriptionBox,
+    DisplayCard,
+    DisplayCardFacilties,
   },
   setup() {
     const descriptionBoxContents: DescriptionBoxContent[] = [
