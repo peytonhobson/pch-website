@@ -34,7 +34,7 @@
   </div>
   <div class="flex flex-auto justify-evenly pt-10 pb-44">
     <display-card-facilties class="w-2/7" />
-    <display-card header="Facilities" class="w-2/7" />
+    <display-card-locations class="w-2/7" />
     <display-card header="Facilities" class="w-2/7" />
   </div>
 </template>
@@ -46,6 +46,7 @@ import HeroSlogan from "@/components/Home/HeroSlogan.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
+import DisplayCardLocations from "@/components/Home/Cards/DisplayCardLocations.vue";
 
 interface DescriptionBoxContent {
   icon: string[];
@@ -61,6 +62,7 @@ export default defineComponent({
     DescriptionBox,
     DisplayCard,
     DisplayCardFacilties,
+    DisplayCardLocations,
   },
   setup() {
     const descriptionBoxContents: DescriptionBoxContent[] = [

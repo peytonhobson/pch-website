@@ -1,17 +1,17 @@
 <template>
-  <display-card header="Facilities">
+  <display-card header="Locations">
     <section class="w-full h-1/3 flex">
-      <img src="@/assets/hallet-house.png" class="flex w-full" />
+      <img src="@/assets/locations-teaser.png" class="flex w-full" />
     </section>
     <section class="p-7">
-      <div class="text-lg font-bold text-left mb-3">Hallet House</div>
+      <div class="text-lg font-bold text-left mb-3">Locations</div>
       <div class="text-lg text-left">
-        Located in a charming South Salem neighborhood near Sprague High School,
-        this home is relaxed and peaceful.
+        See where our homes are located throughout Salem, Oregon. Contact us for
+        a personal tour or more information.
       </div>
     </section>
     <section class="w-full self-bottom mt-auto h-16">
-      <action-button text="Learn More" type="card" class="w-full flex" />
+      <action-button text="View Map" type="card" class="w-full flex" />
     </section>
   </display-card>
 </template>
