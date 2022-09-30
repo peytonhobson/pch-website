@@ -375,6 +375,7 @@ module.exports = {
         '"Noto Color Emoji"',
       ],
       questrial: ["Questrial", "sans-serif"],
+      playfair: ["Playfair Display", "serif"],
       serif: [
         "ui-serif",
         "Georgia",
@@ -410,6 +411,7 @@ module.exports = {
       "7xl": ["4.5rem", { lineHeight: "1" }],
       "8xl": ["6rem", { lineHeight: "1" }],
       "9xl": ["8rem", { lineHeight: "1" }],
+      "5xl-em": ["5em", { lineHeight: "1" }],
     },
     fontWeight: {
       thin: "100",

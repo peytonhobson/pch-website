@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="w-160">
-      <div class="text-7xl justify-center flex text-black font-main">
+      <div class="text-7xl justify-center flex text-white font-main">
         {{ mainText }}
       </div>
     </div>
