@@ -1,24 +1,18 @@
 <template>
-  <main
-    class="h-128 w-full bg-hero-image bg-hero-opacity bg-no-repeat bg-cover"
-  ></main>
-  <div>
-    <hero-slogan
-      mainText="WHEN ONLY THE BEST WILL DO"
-      class="absolute top-56 left-3"
-    />
-  </div>
+  <main class="w-full bg-hero-image bg-hero-opacity h-96 bg-no-repeat bg-cover">
+    <hero-slogan mainText="WHEN ONLY THE BEST WILL DO" class="" />
+  </main>
   <div
-    class="h-32 w-full flex items-center py-5 px-20 border-b-4 border-brand-green-gray"
+    class="w-full flex-auto items-center py-5 px-20 border-b-4 border-brand-green-gray"
   >
-    <span class="font-playfair text-black justify-center text-3xl"
+    <span class="font-playfair text-black justify-center text-3xl flex-auto"
       >We know it’s a difficult decision when you or your loved one can no
       longer live independently at home. It is our goal to provide a
       comfortable, home-like environment as an alternative to impersonal
       institutional living.</span
     >
   </div>
-  <div class="flex flex-auto w-full h-80">
+  <div class="flex w-full">
     <div
       :key="descriptionBoxContent.title"
       v-for="descriptionBoxContent in descriptionBoxContents"
