@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="flex flex-auto justify-evenly pt-10 pb-44">
-    <display-card-facilties class="w-" />
+    <display-card-facilties class="w-2/7" />
     <display-card header="Facilities" class="w-2/7" />
     <display-card header="Facilities" class="w-2/7" />
   </div>

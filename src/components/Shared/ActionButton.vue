@@ -44,6 +44,10 @@ button {
   @apply rounded-full text-white bg-brand-green-gray py-3 font-questrial text-xl font-medium;
 }
 
+.card {
+  @apply w-full flex text-white bg-brand-green-gray font-questrial font-medium text-3xl items-center justify-center h-full rounded-b-2xl;
+}
+
 /* .secondary {
   @apply text-brand-blue-1 bg-transparent hover:bg-brand-blue-2 hover:text-white;
 } */
