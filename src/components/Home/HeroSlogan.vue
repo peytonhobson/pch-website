@@ -1,13 +1,18 @@
 <template>
-  <div class="flex flex-auto">
-    <div class="w-160">
-      <div class="text-7xl justify-center flex text-white font-main">
-        {{ mainText }}
+  <div class="flex flex-auto items-center justify-content-center">
+    <div class="grid grid-rows-8">
+      <div class="row-span-3 row-start-1">
+        <div class="text-6xl justify-center flex text-white font-main">
+          {{ mainTextRow1 }}
+        </div>
+        <div class="text-6xl justify-center flex text-white font-main">
+          {{ mainTextRow2 }}
+        </div>
       </div>
-    </div>
-    <div class="mt-8 flex justify-evenly">
-      <action-button text="Get Started" type="primary" />
-      <action-button text="Contact Us" type="primary" />
+      <div class="row-span-2 row-start-8 mt-8 flex justify-evenly">
+        <action-button text="Get Started" type="primary" />
+        <action-button text="Contact Us" type="primary" />
+      </div>
     </div>
   </div>
 </template>
@@ -22,7 +27,11 @@ export default defineComponent({
     ActionButton,
   },
   props: {
-    mainText: {
+    mainTextRow1: {
+      type: String,
+      required: true,
+    },
+    mainTextRow2: {
       type: String,
       required: true,
     },

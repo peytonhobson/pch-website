@@ -37,11 +37,11 @@ export default {
 
 <style scoped>
 button {
-  @apply px-5 py-3 font-medium;
+  @apply px-5 font-medium;
 }
 
 .primary {
-  @apply rounded-full text-white bg-brand-green-gray px-12 py-4 font-questrial text-2xl font-medium;
+  @apply rounded-full text-white bg-brand-green-gray py-3 font-questrial text-xl font-medium;
 }
 
 /* .secondary {

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-full border-2 border-brand-green-gray grid grid-col-1 grid-rows-2"
+    class="w-full h-full border-x-2 border-b-4 border-brand-green-gray grid grid-col-1 grid-rows-2"
   >
     <div class="row-start-1 row-span-1 mx-auto flex items-end pb-5 w-3/4">
       <font-awesome-icon :icon="icon" :class="iconColor" size="3x" />

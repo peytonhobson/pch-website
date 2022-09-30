@@ -1,6 +1,12 @@
 <template>
-  <main class="w-full bg-hero-image bg-hero-opacity h-96 bg-no-repeat bg-cover">
-    <hero-slogan mainText="WHEN ONLY THE BEST WILL DO" class="" />
+  <main
+    class="w-full bg-hero-image bg-hero-opacity h-128 bg-no-repeat bg-cover flex align-middle"
+  >
+    <hero-slogan
+      mainTextRow1="WHEN ONLY THE"
+      mainTextRow2="BEST WILL DO"
+      class="items-center justify-center"
+    />
   </main>
   <div
     class="w-full flex-auto items-center py-5 px-20 border-b-4 border-brand-green-gray"
@@ -16,7 +22,7 @@
     <div
       :key="descriptionBoxContent.title"
       v-for="descriptionBoxContent in descriptionBoxContents"
-      class="w-1/3 flex-auto"
+      class="w-1/3 flex-auto h-80"
     >
       <description-box
         :icon="descriptionBoxContent.icon"
