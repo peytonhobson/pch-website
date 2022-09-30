@@ -32,6 +32,7 @@
       />
     </div>
   </div>
+  <div class="flex w-full p-5 justify-evenly"></div>
 </template>
 
 <script lang="ts">
