@@ -17,6 +17,7 @@
             :to="listItem.to"
             class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
             aria-current="page"
+            @click="handleDropdown"
             >{{ listItem.text }}</router-link
           >
         </li>
@@ -25,7 +26,7 @@
         <font-awesome-icon
           :icon="['fas', 'bars']"
           size="2x"
-          @click="openDropdown"
+          @click="handleDropdown"
         />
       </div>
     </div>
@@ -64,7 +65,7 @@ export default defineComponent({
 
     const isOpen = ref(false);
 
-    const openDropdown = () => {
+    const handleDropdown = () => {
       isOpen.value = !isOpen.value;
     };
 
@@ -73,7 +74,7 @@ export default defineComponent({
         navigator.userAgent
       );
 
-    return { listItems, isMobile, openDropdown, isOpen };
+    return { listItems, isMobile, handleDropdown, isOpen };
   },
 });
 </script>
