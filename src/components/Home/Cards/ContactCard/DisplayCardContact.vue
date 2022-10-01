@@ -12,7 +12,7 @@
         v-for="contact in contacts"
         image="@/assets/Headshot.jpg"
         :contactInfo="contact"
-        :number="contact.id"
+        :number="contact.number"
       />
     </section>
   </display-card>
