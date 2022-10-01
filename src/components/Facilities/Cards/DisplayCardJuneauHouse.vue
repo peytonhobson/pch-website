@@ -1,5 +1,5 @@
 <template>
-  <display-card header="Juneau House">
+  <display-card header="Juneau">
     <section class="w-full row-start-2 row-span-2">
       <img src="@/assets/juneau-house.jpg" class="w-full h-full" />
     </section>

@@ -13,12 +13,12 @@
       <display-card-trapper-house class="w-5/6 md:w-2/7 show-on-scroll" />
     </div>
   </section>
-  <section v-else class="flex flex-wrap">
-    <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll" />
-    <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll" />
-    <display-card-juneau-house class="w-5/6 md:w-2/7 show-on-scroll" />
-    <display-card-madrona-house class="w-5/6 md:w-2/7 show-on-scroll" />
-    <display-card-trapper-house class="w-5/6 md:w-2/7 show-on-scroll" />
+  <section v-else class="flex flex-wrap justify-evenly">
+    <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
+    <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
+    <display-card-juneau-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
+    <display-card-madrona-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
+    <display-card-trapper-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
   </section>
 </template>
 

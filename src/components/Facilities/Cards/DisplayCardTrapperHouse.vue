@@ -1,5 +1,5 @@
 <template>
-  <display-card header="Trapper House">
+  <display-card header="Trapper">
     <section class="w-full row-start-2 row-span-2">
       <img src="@/assets/trapper-house.jpg" class="w-full h-full" />
     </section>
