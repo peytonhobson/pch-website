@@ -19,7 +19,7 @@ export default {
       required: false,
       default: "primary",
       validator(value) {
-        return ["primary", "secondary"].includes(value);
+        return ["primary", "card"].includes(value);
       },
     },
   },

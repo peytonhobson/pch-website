@@ -1,7 +1,7 @@
 <template>
   <display-card header="Locations">
-    <section class="w-full h-1/3 flex">
-      <img src="@/assets/locations-teaser.png" class="flex w-full" />
+    <section class="w-full">
+      <img src="@/assets/locations-teaser.png" class="w-full" />
     </section>
     <section class="p-7">
       <div class="text-lg font-bold text-left mb-3">Locations</div>
@@ -10,8 +10,8 @@
         a personal tour or more information.
       </div>
     </section>
-    <section class="w-full self-bottom mt-auto h-16">
-      <action-button text="View Map" type="card" class="w-full flex" />
+    <section class="w-full h-16 mt-5">
+      <action-button text="View Map" type="card" class="w-full" />
     </section>
   </display-card>
 </template>

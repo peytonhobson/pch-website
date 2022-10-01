@@ -33,20 +33,23 @@
     </div>
   </div>
   <div class="flex flex-auto justify-evenly pt-10 pb-44">
-    <display-card-facilties class="w-2/7" />
-    <display-card-locations class="w-2/7" />
-    <display-card header="Facilities" class="w-2/7" />
+    <display-card-facilties class="w-2/7 show-on-scroll" />
+    <display-card-locations class="w-2/7 show-on-scroll" />
+    <display-card-contact class="w-2/7 show-on-scroll" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 
 import HeroSlogan from "@/components/Home/HeroSlogan.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
 import DisplayCardLocations from "@/components/Home/Cards/DisplayCardLocations.vue";
+import DisplayCardContact from "@/components/Home/Cards/DisplayCardContact.vue";
+import SetScrollObserver from "@/helpers/setScrollObserver";
+import setScrollObserver from "@/helpers/setScrollObserver";
 
 interface DescriptionBoxContent {
   icon: string[];
@@ -63,6 +66,7 @@ export default defineComponent({
     DisplayCard,
     DisplayCardFacilties,
     DisplayCardLocations,
+    DisplayCardContact,
   },
   setup() {
     const descriptionBoxContents: DescriptionBoxContent[] = [
@@ -85,6 +89,8 @@ export default defineComponent({
         iconClass: "tertiary-icon",
       },
     ];
+
+    onMounted(setScrollObserver);
 
     return { descriptionBoxContents };
   },
