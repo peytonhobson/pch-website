@@ -4,22 +4,27 @@
   </section>
   <section class="grid grid-rows-2 mt-10">
     <div class="row-start-1 row-span-1 flex justify-evenly">
-      <display-card-baxter-house class="w-5/6 md:w-2/7" />
-      <display-card-baxter-house class="w-5/6 md:w-2/7" />
-      <display-card-baxter-house class="w-5/6 md:w-2/7" />
+      <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll" />
+      <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll" />
+      <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll" />
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onMounted } from "vue";
 import DisplayCardBaxterHouse from "@/components/Facilities/Cards/DisplayCardBaxterHouse.vue";
+import DisplayCardHalletHouse from "@/components/Facilities/Cards/DisplayCardHalletHouse.vue";
+import setScrollObserver from "@/helpers/setScrollObserver";
 
 export default defineComponent({
   name: "FacilitiesView",
   components: {
     DisplayCardBaxterHouse,
+    DisplayCardHalletHouse,
   },
-  setup() {},
+  setup() {
+    onMounted(setScrollObserver);
+  },
 });
 </script>
