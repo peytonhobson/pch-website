@@ -1,14 +1,14 @@
 <template>
   <div
-    class="w-full h-full border-x-2 border-b-4 border-brand-green-gray grid grid-col-1 grid-rows-2"
+    class="w-full h-full border-x-2 border-b-4 border-brand-green-gray grid grid-rows-6"
   >
-    <div class="row-start-1 row-span-1 mx-auto flex items-end pb-5 w-3/4">
+    <div class="row-start-1 row-span-2 mx-auto flex items-end pb-5 w-3/4">
       <font-awesome-icon :icon="icon" :class="iconColor" size="3x" />
-      <span class="md:text-4xl sm:text-3xl sm:text-red">
+      <span class="md:text-4xl text-3xl sm:text-red">
         {{ title }}
       </span>
     </div>
-    <div class="row-start-2 row-span-2 w-3/4 mx-auto pt-5">
+    <div class="row-start-3 row-span-2 w-3/4 mx-auto pt-5">
       <div class="text-xl text-left">{{ body }}</div>
     </div>
   </div>
