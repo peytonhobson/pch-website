@@ -47,8 +47,7 @@ import DescriptionBox from "@/components/Home/DescriptionBox.vue";
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
 import DisplayCardLocations from "@/components/Home/Cards/DisplayCardLocations.vue";
-import DisplayCardContact from "@/components/Home/Cards/DisplayCardContact.vue";
-import SetScrollObserver from "@/helpers/setScrollObserver";
+import DisplayCardContact from "@/components/Home/Cards/ContactCard/DisplayCardContact.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
 
 interface DescriptionBoxContent {
