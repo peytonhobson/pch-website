@@ -5,6 +5,7 @@ import {
   faBriefcaseMedical,
   faPeopleCarry,
   faPeopleGroup,
+  faBars
 } from "@fortawesome/free-solid-svg-icons";
 
 import App from "./App.vue";
@@ -14,6 +15,7 @@ import "@/assets/tailwind.css";
 library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
 library.add(faPeopleGroup);
+library.add(faBars);
 
 createApp(App)
   .use(router)

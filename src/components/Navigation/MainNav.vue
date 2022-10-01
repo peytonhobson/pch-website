@@ -1,6 +1,6 @@
 <template>
   <nav class="w-full bg-white p-2 md:p-6">
-    <div class="flex flex-nowrap items-center w-full">
+    <div class="flex flex-nowrap justify-between items-center w-full">
       <router-link to="/" class="flex items-center">
         <img
           src="@/assets/PCH.png"
@@ -21,13 +21,28 @@
           >
         </li>
       </ul>
-      <ul v-else></ul>
+      <div v-else class="mr-2 border border-black px-2 py-1">
+        <font-awesome-icon :icon="['fas', 'bars']" size="2x" @click="openDropdown"/>
+      </div>
     </div>
   </nav>
+  <ul
+        v-if="isOpen"
+        class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white"
+      >
+        <li :key="listItem.text" v-for="listItem in listItems">
+          <router-link
+            :to="listItem.to"
+            class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
+            aria-current="page"
+            >{{ listItem.text }}</router-link
+          >
+        </li>
+  </ul>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
   name: "MainNav",
@@ -43,11 +58,17 @@ export default defineComponent({
       { text: "Careers", to: "/careers" },
     ];
 
+    const isOpen = ref(false);
+
+    const openDropdown = () => {
+      isOpen.value = !isOpen.value
+    }
+
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
 
     console.log(isMobile)
 
-    return { listItems, isMobile };
+    return { listItems, isMobile, openDropdown, isOpen };
   },
 });
 </script>

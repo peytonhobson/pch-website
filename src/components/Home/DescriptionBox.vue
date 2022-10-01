@@ -16,13 +16,9 @@
 
 <script lang="ts">
 import { defineComponent, toRefs, computed } from "vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default defineComponent({
   name: "DescriptionBox",
-  components: {
-    FontAwesomeIcon,
-  },
   props: {
     icon: {
       type: Object,
