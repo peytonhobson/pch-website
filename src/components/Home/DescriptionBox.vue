@@ -18,11 +18,6 @@
 import { defineComponent, toRefs, computed } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-interface IconProp {
-  type: string[];
-  required: boolean;
-}
-
 export default defineComponent({
   name: "DescriptionBox",
   components: {
