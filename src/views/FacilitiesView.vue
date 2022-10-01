@@ -8,6 +8,10 @@
       <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll" />
       <display-card-juneau-house class="w-5/6 md:w-2/7 show-on-scroll" />
     </div>
+    <div class="row-start-2 row-span-1 flex justify-evenly mt-10">
+      <display-card-madrona-house class="w-5/6 md:w-2/7 show-on-scroll" />
+      <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll" />
+    </div>
   </section>
   <section v-else class="flex flex-wrap">
     <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll" />
@@ -22,6 +26,7 @@ import { defineComponent, onMounted } from "vue";
 import DisplayCardBaxterHouse from "@/components/Facilities/Cards/DisplayCardBaxterHouse.vue";
 import DisplayCardHalletHouse from "@/components/Facilities/Cards/DisplayCardHalletHouse.vue";
 import DisplayCardJuneauHouse from "@/components/Facilities/Cards/DisplayCardJuneauHouse.vue";
+import DisplayCardMadronaHouse from "@/components/Facilities/Cards/DisplayCardMadronaHouse.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
 
 export default defineComponent({
@@ -30,6 +35,7 @@ export default defineComponent({
     DisplayCardBaxterHouse,
     DisplayCardHalletHouse,
     DisplayCardJuneauHouse,
+    DisplayCardMadronaHouse,
   },
   setup() {
     onMounted(setScrollObserver);
