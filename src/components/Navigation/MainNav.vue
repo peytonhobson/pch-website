@@ -12,7 +12,11 @@
         v-if="!isMobile"
         class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white"
       >
-        <li :key="listItem.text" v-for="listItem in listItems">
+        <li
+          :key="listItem.text"
+          v-for="listItem in listItems"
+          @click="handleDropdown"
+        >
           <router-link
             :to="listItem.to"
             class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
