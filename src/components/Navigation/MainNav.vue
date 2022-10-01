@@ -22,22 +22,26 @@
         </li>
       </ul>
       <div v-else class="mr-2 border border-black px-2 py-1">
-        <font-awesome-icon :icon="['fas', 'bars']" size="2x" @click="openDropdown"/>
+        <font-awesome-icon
+          :icon="['fas', 'bars']"
+          size="2x"
+          @click="openDropdown"
+        />
       </div>
     </div>
   </nav>
   <ul
-        v-if="isOpen"
-        class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white"
+    v-if="isOpen"
+    class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white"
+  >
+    <li :key="listItem.text" v-for="listItem in listItems">
+      <router-link
+        :to="listItem.to"
+        class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
+        aria-current="page"
+        >{{ listItem.text }}</router-link
       >
-        <li :key="listItem.text" v-for="listItem in listItems">
-          <router-link
-            :to="listItem.to"
-            class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
-            aria-current="page"
-            >{{ listItem.text }}</router-link
-          >
-        </li>
+    </li>
   </ul>
 </template>
 
@@ -61,12 +65,13 @@ export default defineComponent({
     const isOpen = ref(false);
 
     const openDropdown = () => {
-      isOpen.value = !isOpen.value
-    }
+      isOpen.value = !isOpen.value;
+    };
 
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-
-    console.log(isMobile)
+    const isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
 
     return { listItems, isMobile, openDropdown, isOpen };
   },

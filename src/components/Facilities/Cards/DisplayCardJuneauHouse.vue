@@ -1,13 +1,13 @@
 <template>
   <display-card header="Juneau House">
     <section class="w-full row-start-2 row-span-2">
-      <img src="@/assets/hallet-house.png" class="w-full h-full" />
+      <img src="@/assets/juneau-house.jpg" class="w-full h-full" />
     </section>
     <section class="row-start-4 row-span-3 grid grid-rows-4">
       <section class="p-7 row-start-1 row-span-3 m-auto">
         <div class="text-lg text-left">
-          This one-level home provides a small intimate setting with a private
-          bedroom afforded to each of the five residents.
+          Located in a charming South Salem neighborhood near Sprague High
+          School, this home is relaxed and peaceful.
         </div>
       </section>
       <section class="w-full row-start-4 row-span-1">
