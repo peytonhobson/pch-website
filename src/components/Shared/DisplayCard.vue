@@ -38,8 +38,6 @@ export default defineComponent({
       return { [borderClass]: true, ["header"]: true };
     });
 
-    console.log(headerClass.value);
-
     return { headerClass };
   },
 });

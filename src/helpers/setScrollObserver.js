@@ -2,8 +2,6 @@ const setScrollObserver = () => {
   // Get all the elements you want to show on scroll
   const targets = document.querySelectorAll(".show-on-scroll");
 
-  console.log(targets);
-
   // Callback for IntersectionObserver
   const callback = function (entries) {
     entries.forEach((entry) => {

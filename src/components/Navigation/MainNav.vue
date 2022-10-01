@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full bg-white p-6">
+  <nav class="w-full bg-white p-2 md:p-6">
     <div class="flex flex-nowrap items-center w-full">
       <router-link to="/" class="flex items-center">
         <img
@@ -9,6 +9,7 @@
         />
       </router-link>
       <ul
+        v-if="!isMobile"
         class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white"
       >
         <li :key="listItem.text" v-for="listItem in listItems">
@@ -20,12 +21,13 @@
           >
         </li>
       </ul>
+      <ul v-else></ul>
     </div>
   </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 
 export default defineComponent({
   name: "MainNav",
@@ -41,7 +43,11 @@ export default defineComponent({
       { text: "Careers", to: "/careers" },
     ];
 
-    return { listItems };
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+
+    console.log(isMobile)
+
+    return { listItems, isMobile };
   },
 });
 </script>
