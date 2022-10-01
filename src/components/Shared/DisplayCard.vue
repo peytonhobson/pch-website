@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-2xl bg-gray-300 h-144">
+  <div class="rounded-2xl bg-gray-300 h-144 grid grid-cols-1 grid-rows-6 ">
     <section :class="headerClass">
       <div class="self-center">
         {{ header }}
@@ -47,7 +47,7 @@ export default defineComponent({
 
 <style scoped>
 .header {
-  @apply w-full text-6xl h-1/5 row-span-1 rounded-t-2xl flex items-center justify-center;
+  @apply w-full text-6xl row-span-1 row-start-1 rounded-t-2xl flex items-center justify-center;
 }
 
 .bottom-border {

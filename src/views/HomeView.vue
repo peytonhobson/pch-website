@@ -9,20 +9,20 @@
     />
   </main>
   <div
-    class="w-full flex-auto items-center py-5 px-20 border-b-4 border-brand-green-gray"
+    class="w-full flex-auto items-center py-5 px-10 md:px-20 border-b-4 border-brand-green-gray"
   >
-    <span class="font-playfair text-black justify-center text-3xl flex-auto"
+    <span class="font-playfair text-black justify-center text-xl md:text-3xl flex-auto"
       >We know it’s a difficult decision when you or your loved one can no
       longer live independently at home. It is our goal to provide a
       comfortable, home-like environment as an alternative to impersonal
       institutional living.</span
     >
   </div>
-  <div class="flex w-full">
+  <div class="flex flex-wrap w-full">
     <div
       :key="descriptionBoxContent.title"
       v-for="descriptionBoxContent in descriptionBoxContents"
-      class="w-1/3 flex-auto h-80"
+      class="w-full md:w-1/3 flex-auto h-80"
     >
       <description-box
         :icon="descriptionBoxContent.icon"
@@ -32,10 +32,10 @@
       />
     </div>
   </div>
-  <div class="flex flex-auto justify-evenly pt-10 pb-44">
-    <display-card-facilties class="w-2/7 show-on-scroll" />
-    <display-card-locations class="w-2/7 show-on-scroll" />
-    <display-card-contact class="w-2/7 show-on-scroll" />
+  <div class="flex flex-wrap justify-evenly pt-10 py-0 pb-44">
+    <display-card-facilties class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
+    <display-card-locations class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
+    <display-card-contact class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
   </div>
 </template>
 
