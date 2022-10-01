@@ -8,9 +8,9 @@
       <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll" />
       <display-card-juneau-house class="w-5/6 md:w-2/7 show-on-scroll" />
     </div>
-    <div class="row-start-2 row-span-1 flex justify-evenly mt-10">
-      <display-card-madrona-house class="w-5/6 md:w-2/7 show-on-scroll" />
-      <display-card-trapper-house class="w-5/6 md:w-2/7 show-on-scroll" />
+    <div class="row-start-2 row-span-1 flex justify-center mt-10">
+      <display-card-madrona-house class="w-5/6 md:w-2/7 show-on-scroll mx-10" />
+      <display-card-trapper-house class="w-5/6 md:w-2/7 show-on-scroll mx-10" />
     </div>
   </section>
   <section v-else class="flex flex-wrap justify-evenly my-10">
