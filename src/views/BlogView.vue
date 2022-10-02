@@ -4,7 +4,7 @@
   </section>
   <div class="container mx-auto px-4">
     <main class="py-6">
-      <div class="mb-12 flex items-start justify-start flex-wrap">
+      <div class="mb-12 flex items-center justify-center flex-wrap">
         <blog-post
           :key="blogContent.date"
           v-for="blogContent in blogContents"
