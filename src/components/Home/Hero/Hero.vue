@@ -13,7 +13,7 @@
       />
       <div class="carousel-item absolute opacity-0" style="height: 50vh">
         <div
-          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image bg-cover bg-right"
+          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-don bg-cover bg-right"
         >
           <div class="container mx-auto my-auto">
             <div
@@ -53,10 +53,7 @@
         style="height: 50vh"
       >
         <div
-          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-          style="
-            background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80');
-          "
+          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-trapper bg-cover bg-right"
         >
           <div class="container mx-auto my-auto">
             <div
@@ -93,10 +90,7 @@
       />
       <div class="carousel-item absolute opacity-0" style="height: 50vh">
         <div
-          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom"
-          style="
-            background-image: url('https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');
-          "
+          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-madrona bg-cover bg-bottom"
         >
           <div class="container mx-auto my-auto">
             <div
