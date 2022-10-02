@@ -58,7 +58,7 @@
             background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjM0MTM2fQ&auto=format&fit=crop&w=1600&q=80');
           "
         >
-          <div class="container mx-auto">
+          <div class="container mx-auto my-auto">
             <div
               class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
             >
@@ -98,7 +98,7 @@
             background-image: url('https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1600&q=80');
           "
         >
-          <div class="container mx-auto">
+          <div class="container mx-auto my-auto">
             <div
               class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
             >
