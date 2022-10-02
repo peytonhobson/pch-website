@@ -1,17 +1,10 @@
 <template>
-  <main
-    class="w-full bg-hero-image bg-hero-opacity h-128 bg-no-repeat bg-cover flex align-middle"
-  >
-    <hero-slogan
-      mainTextRow1="WHEN ONLY THE"
-      mainTextRow2="BEST WILL DO"
-      class="items-center justify-center"
-    />
-  </main>
+  <hero />
   <div
     class="w-full flex-auto items-center py-5 px-10 md:px-20 border-b-4 border-brand-green-gray"
   >
-    <span class="font-playfair text-black justify-center text-xl md:text-3xl flex-auto"
+    <span
+      class="font-playfair text-black justify-center text-xl md:text-3xl flex-auto"
       >We know it’s a difficult decision when you or your loved one can no
       longer live independently at home. It is our goal to provide a
       comfortable, home-like environment as an alternative to impersonal
@@ -33,8 +26,12 @@
     </div>
   </div>
   <div class="flex flex-wrap justify-evenly pt-10 py-0 pb-44">
-    <display-card-facilties class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
-    <display-card-locations class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
+    <display-card-facilties
+      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll"
+    />
+    <display-card-locations
+      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll"
+    />
     <display-card-contact class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
   </div>
 </template>
@@ -42,7 +39,7 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 
-import HeroSlogan from "@/components/Home/HeroSlogan.vue";
+import Hero from "@/components/Home/Hero/Hero.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
@@ -60,7 +57,7 @@ interface DescriptionBoxContent {
 export default defineComponent({
   name: "HomeView",
   components: {
-    HeroSlogan,
+    Hero,
     DescriptionBox,
     DisplayCard,
     DisplayCardFacilties,

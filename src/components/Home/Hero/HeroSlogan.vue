@@ -2,10 +2,14 @@
   <div class="flex flex-auto items-center justify-content-center">
     <div class="grid grid-rows-8">
       <div class="row-span-3 row-start-1">
-        <div class="text-6xl justify-center flex text-white font-main">
+        <div
+          class="text-4xl md:text-6xl justify-center flex text-white font-main"
+        >
           {{ mainTextRow1 }}
         </div>
-        <div class="text-6xl justify-center flex text-white font-main">
+        <div
+          class="text-4xl md:text-6xl justify-center flex text-white font-main"
+        >
           {{ mainTextRow2 }}
         </div>
       </div>
@@ -19,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import ActionButton from "../Shared/ActionButton.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "HeroSlogan",
