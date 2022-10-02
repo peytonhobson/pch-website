@@ -2,7 +2,7 @@
   <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
     Blog
   </section>
-  <div class="container mx-auto md:px-4">
+  <div class="container mx-auto px-4">
     <main class="py-6">
       <div class="mb-12 flex items-start justify-start flex-wrap">
         <blog-post

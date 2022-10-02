@@ -30,7 +30,7 @@
 
       <a
         href="/blog/2018-12-29-writing-with-markdown/"
-        class="hover:text-brand-green-gray"
+        class="hover:text-green-200"
       >
         <h2 class="text-2xl text-left font-semibold mb-1">
           {{ blogContent.title }}
