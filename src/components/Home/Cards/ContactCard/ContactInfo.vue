@@ -5,17 +5,17 @@
     </div>
     <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
       <span class="text-sm w-full text-left font-bold row-start-1 row-span-1">
-        Janelle Lefore
+        {{ contactInfo.name }}
       </span>
-      <span class="text-sm w-full text-left row-start-2 row-span-1"
-        >Co-Owner/Physical Therapist</span
-      >
-      <span class="text-sm w-full text-left row-start-3 row-span-1"
-        >503-798-5610</span
-      >
-      <span class="text-sm w-full text-left row-start-4 row-span-1"
-        >janelle@premiercarehomes.net</span
-      >
+      <span class="text-sm w-full text-left row-start-2 row-span-1">{{
+        contactInfo.title
+      }}</span>
+      <span class="text-sm w-full text-left row-start-3 row-span-1">{{
+        contactInfo.phoneNumber
+      }}</span>
+      <span class="text-sm w-full text-left row-start-4 row-span-1">{{
+        contactInfo.email
+      }}</span>
     </div>
   </div>
 </template>
@@ -51,7 +51,7 @@ export default defineComponent({
   setup(props) {
     const { number } = toRefs(props);
 
-    const rowString = "row-1";
+    const rowString = "row-";
 
     const outerClass = computed(() => {
       return { [rowString.concat(number.value)]: true, ["outer-div"]: true };
