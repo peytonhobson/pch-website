@@ -219,6 +219,5 @@ export default defineComponent({
   li:nth-child(3)
   .carousel-bullet {
   color: #000;
-  /*Set to match the Tailwind colour you want the active one to be */
 }
 </style>

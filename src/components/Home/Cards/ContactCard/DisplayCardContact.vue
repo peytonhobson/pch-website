@@ -8,7 +8,7 @@
     </section>
     <section class="row-start-3 row-span-4 grid grid-rows-6 place-items-center">
       <contact-info
-        :key="contact.name"
+        :key="contact.number"
         v-for="contact in contacts"
         image="@/assets/Headshot.jpg"
         :contactInfo="contact"

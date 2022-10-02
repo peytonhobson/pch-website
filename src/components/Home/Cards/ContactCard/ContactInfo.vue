@@ -71,11 +71,11 @@ export default defineComponent({
   @apply row-start-1;
 }
 
-.row-3 {
+.row-2 {
   @apply row-start-3;
 }
 
-.row-5 {
+.row-3 {
   @apply row-start-5;
 }
 </style>
