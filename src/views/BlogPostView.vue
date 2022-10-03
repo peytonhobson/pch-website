@@ -102,7 +102,6 @@ import { useRoute } from "vue-router";
 
 import { key } from "@/store";
 import { useFilteredPosts, useFetchPostsDispatch } from "@/store/composables";
-// import { Post } from "@/api/types";
 
 export default defineComponent({
   name: "BlogPostView",
