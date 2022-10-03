@@ -28,14 +28,11 @@
         </div>
       </div>
 
-      <a
-        href="/blog/2018-12-29-writing-with-markdown/"
-        class="hover:text-green-200"
-      >
+      <router-link :to="blogPostLink" class="hover:text-green-200">
         <h2 class="text-2xl text-left font-semibold mb-1">
           {{ blogContent.title }}
         </h2>
-      </a>
+      </router-link>
 
       <p class="text-base text-left font-light text-gray-600 mb-4">
         {{ blogContent.description }}
@@ -55,7 +52,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 
 import { Post } from "@/api/types";
 
@@ -67,6 +64,12 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {},
+  setup(props) {
+    const blogPostLink = computed(
+      () => `/blog/posts/${props.blogContent.title.replaceAll(" ", "_")}`
+    );
+
+    return { blogPostLink };
+  },
 });
 </script>

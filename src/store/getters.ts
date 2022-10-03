@@ -1,15 +1,18 @@
 import {
   UNIQUE_CATEGORIES,
   INCLUDE_POST_BY_CATEGORY,
+  MATCH_POST_BY_TITLE,
   FILTERED_POSTS,
 } from "@/store/constants";
 
 import { GlobalState } from "@/store/types";
 import { Post } from "@/api/types";
 
-interface IncludePostGetters {
+interface PostGetters {
   // eslint-disable-next-line
   INCLUDE_POST_BY_CATEGORY: (post: Post) => boolean;
+  // eslint-disable-next-line
+  MATCH_POST_BY_TITLE: (post: Post) => boolean;
 }
 
 const getters = {
@@ -24,10 +27,16 @@ const getters = {
     if (state.selectedCategory === "") return true;
     return post.categories.includes(state.selectedCategory);
   },
-  [FILTERED_POSTS](state: GlobalState, getters: IncludePostGetters) {
+  [MATCH_POST_BY_TITLE]: (state: GlobalState) => (post: Post) => {
+    if (state.selectedJobPostTitle === "") return true;
+    return post.title.match(state.selectedJobPostTitle);
+  },
+  [FILTERED_POSTS](state: GlobalState, getters: PostGetters) {
     if (state.posts.length === 0) return [];
     const posts = Object.entries(state.posts)[0][1] as unknown as Post[];
-    return posts.filter((post: Post) => getters.INCLUDE_POST_BY_CATEGORY(post));
+    return posts
+      .filter((post: Post) => getters.INCLUDE_POST_BY_CATEGORY(post))
+      .filter((post: Post) => getters.MATCH_POST_BY_TITLE(post));
   },
 };
 
