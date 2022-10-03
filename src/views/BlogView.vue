@@ -71,7 +71,6 @@ export default defineComponent({
       const pageNumber = currentPage.value;
       const firstJobIndex = (pageNumber - 1) * 5;
       const lastJobIndex = pageNumber * 5;
-      console.log(firstJobIndex, lastJobIndex);
       return filteredPosts.value.slice(firstJobIndex, lastJobIndex);
     });
 
