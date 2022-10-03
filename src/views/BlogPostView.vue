@@ -1,5 +1,8 @@
 <template>
-  <div class="py-6 md:py-12 lg:w-10/12 md:text-center mx-auto">
+  <div
+    v-if="filteredPost"
+    class="py-6 md:py-12 lg:w-10/12 md:text-center mx-auto"
+  >
     <div class="font-medium text-gray-700">29 December 2018</div>
 
     <h1
@@ -289,12 +292,13 @@
 
 <script lang="ts">
 import { UPDATE_SELECTED_JOB_POST_TITLE } from "@/store/constants";
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onBeforeMount, computed } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 
 import { key } from "@/store";
 import { useFilteredPosts, useFetchPostsDispatch } from "@/store/composables";
+// import { Post } from "@/api/types";
 
 export default defineComponent({
   name: "BlogPostView",
@@ -306,10 +310,10 @@ export default defineComponent({
       const store = useStore(key);
       store.commit(UPDATE_SELECTED_JOB_POST_TITLE, title);
     };
-    onMounted(parseJobPostTitle);
-    onMounted(useFetchPostsDispatch);
+    onBeforeMount(useFetchPostsDispatch);
+    onBeforeMount(parseJobPostTitle);
 
-    const filteredPost = useFilteredPosts().value[0];
+    const filteredPost = computed(() => useFilteredPosts().value[0]);
 
     return { filteredPost };
   },

@@ -24,7 +24,7 @@ const routes = [
     component: BlogView,
   },
   {
-    path: "/blog/posts/:id",
+    path: "/blog/posts/:title",
     name: "BlogPost",
     component: BlogPostView,
   },

@@ -11,7 +11,7 @@ interface Context {
 const actions = {
   [FETCH_POSTS]: async (context: Context) => {
     const posts = await getPosts();
-    // console.log(posts);
+    console.log("fetch");
     context.commit(RECEIVE_POSTS, posts);
   },
 };

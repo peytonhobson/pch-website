@@ -13,8 +13,8 @@ import { key } from "@/store";
 
 /* GETTERS */
 export const useFilteredPosts = () => {
-  const store = useStore(key);
-  return computed<Post[]>(() => store.getters[FILTERED_POSTS]);
+  const store = computed(() => useStore(key));
+  return computed<Post[]>(() => store.value.getters[FILTERED_POSTS]);
 };
 
 export const useUniqueCategories = () => {
