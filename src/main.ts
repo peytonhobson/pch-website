@@ -11,13 +11,14 @@ import {
 import App from "./App.vue";
 import router from "./router";
 import "@/assets/tailwind.css";
+import store from './store'
 
 library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
 library.add(faPeopleGroup);
 library.add(faBars);
 
-createApp(App)
+createApp(App).use(store).use(store)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");

@@ -43,9 +43,9 @@
 
       <div class="mb-2 flex items-start justify-start">
         <router-link
-          to="/"
-          :key="category"
           v-for="category in blogContent.categories"
+          :key="category"
+          to="/"
           class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-green-200 text-green-800 hover:bg-blue-200 hover:text-blue-800 transition duration-300 ease-in-out"
           >{{ category }}</router-link
         >
@@ -74,6 +74,6 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {},
+  setup() {},
 });
 </script>

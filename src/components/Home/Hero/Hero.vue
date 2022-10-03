@@ -3,9 +3,9 @@
     <div class="carousel-inner relative overflow-hidden w-full">
       <!--Slide 1-->
       <input
+        id="carousel-1"
         class="carousel-open"
         type="radio"
-        id="carousel-1"
         name="carousel"
         aria-hidden="true"
         hidden
@@ -20,8 +20,8 @@
               class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
             >
               <hero-slogan
-                mainTextRow1="WHEN ONLY THE"
-                mainTextRow2="BEST WILL DO"
+                main-text-row1="WHEN ONLY THE"
+                main-text-row2="BEST WILL DO"
                 class="items-center justify-center"
               />
             </div>
@@ -41,9 +41,9 @@
 
       <!--Slide 2-->
       <input
+        id="carousel-2"
         class="carousel-open"
         type="radio"
-        id="carousel-2"
         name="carousel"
         aria-hidden="true"
         hidden
@@ -60,8 +60,8 @@
               class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
             >
               <hero-slogan
-                mainTextRow1="WHEN ONLY THE"
-                mainTextRow2="BEST WILL DO"
+                main-text-row1="WHEN ONLY THE"
+                main-text-row2="BEST WILL DO"
                 class="items-center justify-center"
               />
             </div>
@@ -81,9 +81,9 @@
 
       <!--Slide 3-->
       <input
+        id="carousel-3"
         class="carousel-open"
         type="radio"
-        id="carousel-3"
         name="carousel"
         aria-hidden="true"
         hidden
@@ -97,8 +97,8 @@
               class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
             >
               <hero-slogan
-                mainTextRow1="WHEN ONLY THE"
-                mainTextRow2="BEST WILL DO"
+                main-text-row1="WHEN ONLY THE"
+                main-text-row2="BEST WILL DO"
                 class="items-center justify-center"
               />
             </div>

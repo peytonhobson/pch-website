@@ -6,9 +6,9 @@
     <main class="py-6">
       <div class="mb-12 flex items-center justify-center flex-wrap">
         <blog-post
-          :key="blogContent.date"
           v-for="blogContent in blogContents"
-          :blogContent="blogContent"
+          :key="blogContent.date"
+          :blog-content="blogContent"
           class="py-5 border-b-2"
         />
       </div>

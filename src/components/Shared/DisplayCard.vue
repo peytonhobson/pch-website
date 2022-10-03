@@ -13,13 +13,10 @@
 
 <script lang="ts">
 import { computed, defineComponent, toRefs } from "vue";
-import ActionButton from "./ActionButton.vue";
 
 export default defineComponent({
   name: "DisplayCard",
-  components: {
-    ActionButton,
-  },
+  components: {},
   props: {
     header: {
       type: String,

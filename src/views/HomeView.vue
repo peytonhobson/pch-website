@@ -13,15 +13,15 @@
   </div>
   <div class="flex flex-wrap w-full">
     <div
-      :key="descriptionBoxContent.title"
       v-for="descriptionBoxContent in descriptionBoxContents"
+      :key="descriptionBoxContent.title"
       class="w-full md:w-1/3 flex-auto h-80"
     >
       <description-box
         :icon="descriptionBoxContent.icon"
         :title="descriptionBoxContent.title"
         :body="descriptionBoxContent.body"
-        :iconClass="descriptionBoxContent.iconClass"
+        :icon-class="descriptionBoxContent.iconClass"
       />
     </div>
   </div>
@@ -41,7 +41,6 @@ import { defineComponent, onMounted } from "vue";
 
 import Hero from "@/components/Home/Hero/Hero.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
-import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
 import DisplayCardLocations from "@/components/Home/Cards/DisplayCardLocations.vue";
 import DisplayCardContact from "@/components/Home/Cards/ContactCard/DisplayCardContact.vue";
@@ -59,7 +58,6 @@ export default defineComponent({
   components: {
     Hero,
     DescriptionBox,
-    DisplayCard,
     DisplayCardFacilties,
     DisplayCardLocations,
     DisplayCardContact,
