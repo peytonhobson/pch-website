@@ -1,103 +1,102 @@
 <template>
-  <div
-    v-if="filteredPost"
-    class="py-6 md:py-12 lg:w-10/12 md:text-center mx-auto"
-  >
-    <div class="font-medium text-gray-700">{{ filteredPost.date }}</div>
+  <div v-if="filteredPost">
+    <div class="py-6 md:py-12 lg:w-10/12 md:text-center mx-auto">
+      <div class="font-medium text-gray-700">{{ filteredPost.date }}</div>
 
-    <h1
-      class="heading text-4xl md:text-6xl font-bold font-sans md:leading-tight"
-    >
-      {{ filteredPost.title }}
-    </h1>
-  </div>
-
-  <div class="flex flex-col pb-3 md:hidden">
-    <div class="flex items-center mb-3 last:mb-0">
-      <img
-        class="rounded-full border-white border-2"
-        src="/assets/images/author/sage-kirk.jpg"
-        alt="Sage Kirk"
-        width="48"
-        height="48"
-      />
-
-      <div>
-        <span class="font-medium text-sm ml-1 block">Sage Kirk</span>
-        <a
-          class="text-sm ml-1 block text-green-400"
-          href="https://www.twitter.com/@zerostaticio"
-          >@zerostaticio</a
-        >
-      </div>
+      <h1
+        class="heading text-4xl md:text-6xl font-bold font-sans md:leading-tight"
+      >
+        {{ filteredPost.title }}
+      </h1>
     </div>
 
-    <div class="flex items-center mb-3 last:mb-0">
-      <img
-        class="rounded-full border-white border-2"
-        src="/assets/images/author/mike-vance.jpg"
-        alt="Mike Vance"
-        width="48"
-        height="48"
-      />
+    <div class="flex flex-col pb-3 md:hidden">
+      <div class="flex items-center mb-3 last:mb-0">
+        <img
+          class="rounded-full border-white border-2"
+          src="/assets/images/author/sage-kirk.jpg"
+          alt="Sage Kirk"
+          width="48"
+          height="48"
+        />
 
-      <div>
-        <span class="font-medium text-sm ml-1 block">Mike Vance</span>
-        <a
-          class="text-sm ml-1 block text-green-400"
-          href="https://www.twitter.com/@zerostaticio"
-          >@zerostaticio</a
-        >
-      </div>
-    </div>
-  </div>
-
-  <img
-    src="https://source.unsplash.com/CTivHyiTbFw/1600x900"
-    width="1600"
-    height="900"
-  />
-
-  <div class="flex flex-col md:flex-row py-6 md:py-12">
-    <div class="w-full md:w-3/12 pr-3">
-      <div class="flex flex-col hidden md:flex mb-3 md:mb-6">
-        <div class="flex items-center mb-3 last:mb-0">
-          <img
-            class="rounded-full border-white border-2"
-            src="@/assets/Headshot.jpg"
-            :alt="filteredPost.author"
-            width="48"
-            height="48"
-          />
-
-          <div>
-            <span class="font-medium text-sm ml-1 block">{{
-              filteredPost.author
-            }}</span>
-          </div>
+        <div>
+          <span class="font-medium text-sm ml-1 block">Sage Kirk</span>
+          <a
+            class="text-sm ml-1 block text-green-400"
+            href="https://www.twitter.com/@zerostaticio"
+            >@zerostaticio</a
+          >
         </div>
       </div>
 
-      <div class="hidden md:block">
-        <router-link
-          v-for="category in filteredPost.categories"
-          :key="category"
-          to="/"
-          class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-green-200 text-green-800 hover:bg-blue-200 hover:text-blue-800 transition duration-300 ease-in-out"
-          >{{ category }}</router-link
-        >
+      <div class="flex items-center mb-3 last:mb-0">
+        <img
+          class="rounded-full border-white border-2"
+          src="/assets/images/author/mike-vance.jpg"
+          alt="Mike Vance"
+          width="48"
+          height="48"
+        />
+
+        <div>
+          <span class="font-medium text-sm ml-1 block">Mike Vance</span>
+          <a
+            class="text-sm ml-1 block text-green-400"
+            href="https://www.twitter.com/@zerostaticio"
+            >@zerostaticio</a
+          >
+        </div>
       </div>
     </div>
 
-    <div class="w-full md:w-9/12">
-      {{ filteredPost.body }}
+    <img
+      src="https://source.unsplash.com/CTivHyiTbFw/1600x900"
+      width="1600"
+      height="900"
+    />
+
+    <div class="flex flex-col md:flex-row py-6 md:py-12">
+      <div class="w-full md:w-3/12 pr-3">
+        <div class="flex flex-col hidden md:flex mb-3 md:mb-6">
+          <div class="flex items-center mb-3 last:mb-0">
+            <img
+              class="rounded-full border-white border-2"
+              src="@/assets/Headshot.jpg"
+              :alt="filteredPost.author"
+              width="48"
+              height="48"
+            />
+
+            <div>
+              <span class="font-medium text-sm ml-1 block">{{
+                filteredPost.author
+              }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:block">
+          <router-link
+            v-for="category in filteredPost.categories"
+            :key="category"
+            to="/"
+            class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-green-200 text-green-800 hover:bg-blue-200 hover:text-blue-800 transition duration-300 ease-in-out"
+            >{{ category }}</router-link
+          >
+        </div>
+      </div>
+
+      <div class="w-full md:w-9/12">
+        {{ filteredPost.body }}
+      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { UPDATE_SELECTED_JOB_POST_TITLE } from "@/store/constants";
-import { defineComponent, onBeforeMount, computed } from "vue";
+import { defineComponent, onMounted, computed, onUnmounted } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 
@@ -111,12 +110,18 @@ export default defineComponent({
   setup() {
     const parseJobPostTitle = () => {
       const route = useRoute();
-      const title = route.params.title[0].replace(" ", "_") || "";
+      const title = (route.params.title as String) || "";
+      const parsedTitle = title.replaceAll("_", " ");
       const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, title);
+      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, parsedTitle);
     };
-    onBeforeMount(useFetchPostsDispatch);
-    onBeforeMount(parseJobPostTitle);
+    const removeJobPostTitle = () => {
+      const store = useStore(key);
+      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, "");
+    };
+    onMounted(useFetchPostsDispatch);
+    onMounted(parseJobPostTitle);
+    onUnmounted(removeJobPostTitle);
 
     const filteredPost = computed(() => useFilteredPosts().value[0]);
 

@@ -29,7 +29,7 @@ const getters = {
   },
   [MATCH_POST_BY_TITLE]: (state: GlobalState) => (post: Post) => {
     if (state.selectedJobPostTitle === "") return true;
-    return post.title.match(state.selectedJobPostTitle);
+    return post.title === state.selectedJobPostTitle;
   },
   [FILTERED_POSTS](state: GlobalState, getters: PostGetters) {
     if (state.posts.length === 0) return [];
