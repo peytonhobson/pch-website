@@ -10,7 +10,7 @@
   </div>
 
   <div class="flex flex-col pb-3 md:hidden">
-    <div class="flex items-center mb-3 last:mb-0">
+    <div class="flex items-center mb-3 last:mb-0 ml-2">
       <img
         class="rounded-full border-white border-2"
         src="@/assets/Headshot.jpg"
@@ -18,6 +18,7 @@
         width="48"
         height="48"
       />
+      <span class="ml-4 text-gray-700">{{ filteredPost.author }}</span>
     </div>
   </div>
 
