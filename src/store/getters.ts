@@ -25,7 +25,9 @@ const getters = {
     return post.categories.includes(state.selectedCategory);
   },
   [FILTERED_POSTS](state: GlobalState, getters: IncludePostGetters) {
-    return state.posts.filter((post) => getters.INCLUDE_POST_BY_CATEGORY(post));
+    if (state.posts.length === 0) return [];
+    const posts = Object.entries(state.posts)[0][1] as unknown as Post[];
+    return posts.filter((post: Post) => getters.INCLUDE_POST_BY_CATEGORY(post));
   },
 };
 
