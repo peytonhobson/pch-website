@@ -60,7 +60,7 @@ import { defineComponent } from "vue";
 import { Post } from "@/api/types";
 
 export default defineComponent({
-  name: "BlogPost",
+  name: "BlogPostSummary",
   props: {
     blogContent: {
       type: Object as () => Post,
