@@ -20,6 +20,11 @@ const routes = [
     name: "blog",
     component: BlogView,
   },
+  {
+    path: "/blog/:title",
+    name: "JobListing",
+    component: BlogPostView,
+  },
 ];
 
 const router = createRouter({
