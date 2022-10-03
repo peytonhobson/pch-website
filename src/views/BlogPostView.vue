@@ -1,6 +1,6 @@
 <template>
   <div v-if="filteredPost">
-    <div class="py-6 md:py-12 lg:w-10/12 md:text-center mx-auto">
+    <div class="py-6 md:py-12 lg:w-10/12 md:text-center mx-auto prose">
       <div class="font-medium text-gray-700">{{ filteredPost.date }}</div>
 
       <h1
@@ -87,9 +87,7 @@
         </div>
       </div>
 
-      <div class="w-full md:w-9/12">
-        {{ filteredPost.body }}
-      </div>
+      <div class="w-full md:w-9/12 text-left" v-html="filteredPost.body"></div>
     </div>
   </div>
 </template>

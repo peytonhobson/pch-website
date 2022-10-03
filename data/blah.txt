@@ -1,0 +1,10 @@
+<div class = 'justify-center items-center flex flex-wrap px-4'>
+  <div class='w-full flex flex-nowrap'>
+    <img class='' src='http://www.premiercarehomes.net/wp-content/uploads/2014/06/image-bob-and-baby-charlie-460x460.png' alt=''>
+    <img class='' src='http://www.premiercarehomes.net/wp-content/uploads/2014/06/image-dorothy-and-baby-madison-460x460.png' alt=''>
+  </div>
+  <div class='w-full flex flex-nowrap'>
+    <img class='' src='http://www.premiercarehomes.net/wp-content/uploads/2014/06/image-edith-and-baby-charlie-2-460x460.png' alt=''>
+    <img class='' src='http://www.premiercarehomes.net/wp-content/uploads/2014/06/image-gladis-and-baby-madison-460x460.png' alt=''>
+  </div>
+</div>
