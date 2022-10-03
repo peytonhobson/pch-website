@@ -13,39 +13,11 @@
     <div class="flex items-center mb-3 last:mb-0">
       <img
         class="rounded-full border-white border-2"
-        src="/assets/images/author/sage-kirk.jpg"
-        alt="Sage Kirk"
+        src="@/assets/Headshot.jpg"
+        alt="PeytonHobson"
         width="48"
         height="48"
       />
-
-      <div>
-        <span class="font-medium text-sm ml-1 block">Sage Kirk</span>
-        <a
-          class="text-sm ml-1 block text-green-400"
-          href="https://www.twitter.com/@zerostaticio"
-          >@zerostaticio</a
-        >
-      </div>
-    </div>
-
-    <div class="flex items-center mb-3 last:mb-0">
-      <img
-        class="rounded-full border-white border-2"
-        src="/assets/images/author/mike-vance.jpg"
-        alt="Mike Vance"
-        width="48"
-        height="48"
-      />
-
-      <div>
-        <span class="font-medium text-sm ml-1 block">Mike Vance</span>
-        <a
-          class="text-sm ml-1 block text-green-400"
-          href="https://www.twitter.com/@zerostaticio"
-          >@zerostaticio</a
-        >
-      </div>
     </div>
   </div>
 
