@@ -3,7 +3,7 @@ const setScrollObserver = () => {
   const targets = document.querySelectorAll(".show-on-scroll");
 
   // Callback for IntersectionObserver
-  const callback = function (entries) {
+  const callback = function (entries: any[]) {
     entries.forEach((entry) => {
       // Is the element in the viewport?
       if (entry.isIntersecting) {

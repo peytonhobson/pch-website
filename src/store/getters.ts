@@ -8,6 +8,7 @@ import { GlobalState } from "@/store/types";
 import { Post } from "@/api/types";
 
 interface IncludePostGetters {
+  // eslint-disable-next-line
   INCLUDE_POST_BY_CATEGORY: (post: Post) => boolean;
 }
 
@@ -20,7 +21,7 @@ const getters = {
     return uniqueOrganizations;
   },
   [INCLUDE_POST_BY_CATEGORY]: (state: GlobalState) => (post: Post) => {
-    if (state.selectedCategory.length === 0) return true;
+    if (state.selectedCategory === "") return true;
     return post.categories.includes(state.selectedCategory);
   },
   [FILTERED_POSTS](state: GlobalState, getters: IncludePostGetters) {

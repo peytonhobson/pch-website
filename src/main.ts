@@ -5,20 +5,21 @@ import {
   faBriefcaseMedical,
   faPeopleCarry,
   faPeopleGroup,
-  faBars
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 import App from "./App.vue";
 import router from "./router";
 import "@/assets/tailwind.css";
-import store from './store'
+import store, { key } from "./store";
 
 library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
 library.add(faPeopleGroup);
 library.add(faBars);
 
-createApp(App).use(store).use(store)
+createApp(App)
+  .use(store, key)
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");

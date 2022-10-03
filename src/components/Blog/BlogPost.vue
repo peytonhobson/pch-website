@@ -57,20 +57,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-interface BlogContent {
-  mainImage: string;
-  authorImage: string;
-  date: string;
-  title: string;
-  description: string;
-  categories: string[];
-}
+import { Post } from "@/api/types";
 
 export default defineComponent({
   name: "BlogPost",
   props: {
     blogContent: {
-      type: Object as () => BlogContent,
+      type: Object as () => Post,
       required: true,
     },
   },
