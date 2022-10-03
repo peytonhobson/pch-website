@@ -9,7 +9,7 @@
           :key="blogContent.date"
           v-for="blogContent in blogContents"
           :blogContent="blogContent"
-          class="py-5 border-y"
+          class="py-5 border-b-2"
         />
       </div>
     </main>
