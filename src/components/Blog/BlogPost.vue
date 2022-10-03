@@ -30,7 +30,7 @@
 
   <div class="flex flex-col md:flex-row py-6 md:py-12">
     <div class="w-full md:w-3/12 pr-3">
-      <div class="flex flex-col hidden md:flex mb-3 md:mb-6">
+      <div class="flex-col hidden md:flex mb-3 md:mb-6">
         <div class="flex items-center mb-3 last:mb-0">
           <img
             class="rounded-full border-white border-2"
