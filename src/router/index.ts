@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const HomeView = () => import("@/views/HomeView.vue");
 const FacilitiesView = () => import("@/views/FacilitiesView.vue");
 const BlogView = () => import("@/views/BlogView.vue");
+const BlogPostView = () => import("@/views/BlogPostView.vue");
 
 const routes = [
   {
