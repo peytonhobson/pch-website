@@ -55,26 +55,5 @@ export default defineComponent({
     BlogPost,
   },
   setup() {
-    onMounted(useFetchPostsDispatch);
-
-    const filteredPosts = useFilteredPosts();
-
-    const currentPage = useCurrentPage();
-
-    const maxPage = computed(() => Math.ceil(filteredPosts.value.length / 5));
-    const { previousPage, nextPage } = usePreviousAndNextPages(
-      currentPage,
-      maxPage
-    );
-
-    const displayedPosts = computed(() => {
-      const pageNumber = currentPage.value;
-      const firstJobIndex = (pageNumber - 1) * 5;
-      const lastJobIndex = pageNumber * 5;
-      return filteredPosts.value.slice(firstJobIndex, lastJobIndex);
-    });
-
-    return { displayedPosts, previousPage, currentPage, nextPage };
-  },
 });
 </script>
