@@ -33,8 +33,8 @@ const getters = {
   },
   [FILTERED_POSTS](state: GlobalState, getters: PostGetters) {
     if (state.posts.length === 0) return [];
-    const posts = Object.entries(state.posts)[0][1] as unknown as Post[];
-    // const posts = state.posts;
+    // const posts = Object.entries(state.posts)[0][1] as unknown as Post[];
+    const posts = state.posts;
     return posts
       .filter((post: Post) => getters.INCLUDE_POST_BY_CATEGORY(post))
       .filter((post: Post) => getters.MATCH_POST_BY_TITLE(post));
