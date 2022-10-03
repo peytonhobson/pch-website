@@ -6,6 +6,7 @@ const BlogView = () =>
   import(/* webpackChunkName: "jobs" */ "@/views/BlogView.vue");
 const BlogPostView = () =>
   import(/* webpackChunkName: "jobs" */ "@/views/BlogPostView.vue");
+const TestimonialsView = () => import("@/views/TestimonialsView.vue");
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     path: "/blog/posts/:title",
     name: "BlogPost",
     component: BlogPostView,
+  },
+  {
+    path: "/testimonials",
+    name: "Testimonials",
+    component: TestimonialsView,
   },
 ];
 
