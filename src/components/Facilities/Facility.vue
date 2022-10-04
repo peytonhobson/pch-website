@@ -1,5 +1,8 @@
 <template>
-  <div v-if="facility" class="grid-rows-2 place-items-center mt-10 h-128 px-20">
+  <div
+    v-if="facility"
+    class="grid-rows-2 place-items-center mt-10 h-128 px-20 motion-safe:animate-fadeIn"
+  >
     <div
       class="col-span-12 grid md:grid-cols-12 grid-cols-1 h-full justify-evenly"
     >
