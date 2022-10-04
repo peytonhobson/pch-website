@@ -41,7 +41,11 @@
           </div>
 
           <div class="mt-4">
-            <action-button text="Get Directions" type="primary" />
+            <action-button
+              text="Get Directions"
+              type="primary"
+              @click="routeUser"
+            />
           </div>
         </div>
       </div>
@@ -50,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, toRefs } from "vue";
 
 import { Facility } from "@/api/types";
 import ActionButton from "../Shared/ActionButton.vue";
@@ -67,7 +71,13 @@ export default defineComponent({
     },
   },
   setup(props) {
-    console.log(props.facility.location);
+    const { facility } = toRefs(props);
+
+    const routeUser = () => {
+      window.open(facility.value.location.replace("&output=embed", ""));
+    };
+
+    return { routeUser };
   },
 });
 </script>
