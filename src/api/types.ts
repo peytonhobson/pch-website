@@ -21,4 +21,5 @@ export interface Facility {
   summary: string;
   description: string;
   images: string[];
+  location: string;
 }

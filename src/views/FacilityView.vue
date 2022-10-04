@@ -1,5 +1,5 @@
 <template>
-  <facility :facility="filteredFacility"></facility>
+  <facility v-if="filteredFacility" :facility="filteredFacility"></facility>
 </template>
 
 <script lang="ts">

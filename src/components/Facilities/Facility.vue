@@ -30,7 +30,7 @@
             <div class="gmap_canvas flex w-full h-full">
               <iframe
                 id="gmap_canvas"
-                :src="https://maps.google.com/maps?q=1548%20Hallet%20Ct.%20NW&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                :src="facility.location"
                 frameborder="0"
                 scrolling="no"
                 marginheight="0"
@@ -66,7 +66,9 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {},
+  setup(props) {
+    console.log(props.facility.location);
+  },
 });
 </script>
 
