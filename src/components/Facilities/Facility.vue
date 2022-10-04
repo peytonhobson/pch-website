@@ -1,65 +1,65 @@
 <template>
-  <div
-    v-if="facility"
-    class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]"
-  >
-    <div class="md:col-span-5">
-      <div class="relative">
-        <img :src="facility.images[0]" class="rounded-xl shadow-md" alt="" />
-        <div
-          class="absolute bottom-2/4 translate-y-2/4 right-0 left-0 text-center"
-        >
-          <a
-            href="#!"
-            data-type="youtube"
-            data-id="yba7hPeTSjk"
-            class="lightbox h-20 w-20 rounded-full shadow-md dark:shadow-gyay-700 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-green-600"
+  <div v-if="facility" class="grid-rows-2 place-items-center mt-10 h-128 px-20">
+    <div
+      class="col-span-12 grid md:grid-cols-12 grid-cols-1 h-full justify-evenly"
+    >
+      <div class="md:col-span-5 h-full">
+        <div class="relative h-full flex items-center justify-center">
+          <!-- Fix later for production link -->
+          <img
+            src="@/assets/hallet-house.png"
+            class="rounded-xl shadow-md h-full w-full"
+            alt=""
+          />
+        </div>
+      </div>
+      <!--end col-->
+
+      <div class="md:col-span-7 flex items-spread justify-end">
+        <div class="lg:ml-4">
+          <h4
+            class="mb-6 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
           >
-            <i
-              class="mdi mdi-play inline-flex items-center justify-center text-2xl"
-            ></i>
-          </a>
+            {{ facility.name }}
+          </h4>
+          <p class="text-slate-400 max-w-xl text-left">
+            {{ facility.description }}
+          </p>
+
+          <div class="mapouter flex w-full h-1/2 mt-10">
+            <div class="gmap_canvas flex w-full h-full">
+              <iframe
+                id="gmap_canvas"
+                :src="https://maps.google.com/maps?q=1548%20Hallet%20Ct.%20NW&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+                class="w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <action-button text="Get Directions" type="primary" />
+          </div>
         </div>
       </div>
     </div>
-    <!--end col-->
-
-    <div class="md:col-span-7">
-      <div class="lg:ml-4">
-        <h4
-          class="mb-6 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold"
-        >
-          Efficiency. Transparency. <br />
-          Control.
-        </h4>
-        <p class="text-slate-400 max-w-xl">
-          Hously developed a platform for the Real Estate marketplace that
-          allows buyers and sellers to easily execute a transaction on their
-          own. The platform drives efficiency, cost transparency and control
-          into the hands of the consumers. Hously is Real Estate Redefined.
-        </p>
-
-        <div class="mt-4">
-          <a
-            href=""
-            class="btn bg-green-600 hover:bg-green-700 text-white rounded-md mt-3"
-            >Learn More
-          </a>
-        </div>
-      </div>
-    </div>
-    <!--end col-->
   </div>
-  <!--end grid-->
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 import { Facility } from "@/api/types";
+import ActionButton from "../Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "Facility",
+  components: {
+    ActionButton,
+  },
   props: {
     facility: {
       type: Object as () => Facility,
@@ -69,3 +69,16 @@ export default defineComponent({
   setup() {},
 });
 </script>
+
+<style>
+.mapouter {
+  position: relative;
+  text-align: right;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+}
+</style>
+>
