@@ -4,14 +4,10 @@
       class="col-span-12 grid md:grid-cols-12 grid-cols-1 h-full justify-evenly"
     >
       <div class="md:col-span-5 h-full">
-        <div class="relative h-full flex items-center justify-center">
-          <!-- Fix later for production link -->
-          <img
-            src="@/assets/hallet-house.png"
-            class="rounded-xl shadow-md h-full w-full"
-            alt=""
-          />
-        </div>
+        <!-- Fix later for dynamic image and production link -->
+        <div
+          class="relative h-full flex items-center justify-center rounded-xl shadow-md bg-hero-image-trapper bg-cover"
+        ></div>
       </div>
       <!--end col-->
 
