@@ -4,25 +4,29 @@
       "id": 1,
       "name": "Baxter",
       "summary": "",
-      "description": ""
+      "description": "",
+      "images": []
     },
     {
       "id": 2,
       "name": "Hallet",
       "summary": "",
-      "description": ""
+      "description": "",
+      "images": []
     },
     {
       "id": 3,
       "name": "Madrona",
       "summary": "",
-      "description": ""
+      "description": "",
+      "images": []
     },
     {
       "id": 4,
       "name": "Trapper",
       "summary": "",
-      "description": ""
+      "description": "",
+      "images": []
     }
   ]
 }

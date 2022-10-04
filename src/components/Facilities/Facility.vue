@@ -1,12 +1,11 @@
 <template>
-  <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
+  <div
+    v-if="facility"
+    class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]"
+  >
     <div class="md:col-span-5">
       <div class="relative">
-        <img
-          src="assets/images/about.jpg"
-          class="rounded-xl shadow-md"
-          alt=""
-        />
+        <img :src="facility.images[0]" class="rounded-xl shadow-md" alt="" />
         <div
           class="absolute bottom-2/4 translate-y-2/4 right-0 left-0 text-center"
         >
@@ -57,8 +56,16 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+import { Facility } from "@/api/types";
+
 export default defineComponent({
   name: "Facility",
+  props: {
+    facility: {
+      type: Object as () => Facility,
+      required: true,
+    },
+  },
   setup() {},
 });
 </script>

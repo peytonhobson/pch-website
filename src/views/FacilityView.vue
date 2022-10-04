@@ -1,5 +1,5 @@
 <template>
-  <facility></facility>
+  <facility :facility="filteredFacility"></facility>
 </template>
 
 <script lang="ts">

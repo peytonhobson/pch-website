@@ -5,6 +5,7 @@ import {
   FILTERED_POSTS,
   TESTIMONIALS,
   MATCH_FACILITY_BY_NAME,
+  FILTERED_FACILITIES,
 } from "@/store/constants";
 
 import { GlobalState } from "@/store/types";
@@ -56,9 +57,11 @@ const getters = {
   },
   [MATCH_FACILITY_BY_NAME]: (state: GlobalState) => (facility: Facility) => {
     if (state.selectedFacilityName === "") return true;
-    return facility.name === state.selectedFacilityName;
+    return (
+      facility.name.toLowerCase() === state.selectedFacilityName.toLowerCase()
+    );
   },
-  [FILTERED_POSTS](state: GlobalState, getters: FacilityGetters) {
+  [FILTERED_FACILITIES](state: GlobalState, getters: FacilityGetters) {
     if (state.facilities.length === 0) return [];
     // const facilities = Object.entries(
     //   state.facilities
