@@ -27,12 +27,14 @@
   </div>
   <div class="flex flex-wrap justify-evenly pt-10 py-0 pb-44">
     <display-card-facilties
-      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll"
+      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
     />
     <display-card-locations
-      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll"
+      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
     />
-    <display-card-contact class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll" />
+    <display-card-contact
+      class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
+    />
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <div
-    class="rounded-2xl bg-gray-300 h-144 grid grid-cols-1 grid-rows-6 shadow-2xl"
+    class="rounded-2xl bg-gray-300 h-full grid grid-cols-1 grid-rows-6 shadow-2xl"
   >
-    <section :class="headerClass">
+    <section v-if="header" :class="headerClass">
       <div class="self-center">
         {{ header }}
       </div>
@@ -20,7 +20,8 @@ export default defineComponent({
   props: {
     header: {
       type: String,
-      required: true,
+      required: false,
+      default: undefined,
     },
     bottomBorder: {
       type: Boolean,

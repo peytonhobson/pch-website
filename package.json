@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve --host 0.0.0.0",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "backend": "json-server --watch data/Blog.json"
+    "backend": "json-server --watch"
   },
   "dependencies": {
     "autoprefixer": "^10",

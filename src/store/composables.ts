@@ -6,9 +6,10 @@ import {
   UNIQUE_CATEGORIES,
   FETCH_POSTS,
   FETCH_TESTIMONIALS,
+  TESTIMONIALS,
 } from "@/store/constants";
 
-import { Post } from "@/api/types";
+import { Post, Testimonial } from "@/api/types";
 
 import { key } from "@/store";
 
@@ -21,6 +22,11 @@ export const useFilteredPosts = () => {
 export const useUniqueCategories = () => {
   const store = useStore(key);
   return computed<Set<string>>(() => store.getters[UNIQUE_CATEGORIES]);
+};
+
+export const useTestimonials = () => {
+  const store = computed(() => useStore(key));
+  return computed<Testimonial[]>(() => store.value.getters[TESTIMONIALS]);
 };
 
 /* ACTIONS */

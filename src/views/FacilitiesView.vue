@@ -3,16 +3,22 @@
     Facilities
   </section>
   <section v-if="!isMobile" class="flex flex-wrap justify-evenly my-10">
-    <display-card-baxter-house class="w-5/6 md:w-1/5 show-on-scroll" />
-    <display-card-hallet-house class="w-5/6 md:w-1/5 show-on-scroll" />
-    <display-card-madrona-house class="w-5/6 md:w-1/5 show-on-scroll" />
-    <display-card-trapper-house class="w-5/6 md:w-1/5 show-on-scroll" />
+    <display-card-baxter-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
+    <display-card-hallet-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
+    <display-card-madrona-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
+    <display-card-trapper-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
   </section>
   <section v-else class="flex flex-wrap justify-evenly my-10">
-    <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll" />
-    <display-card-hallet-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
-    <display-card-madrona-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
-    <display-card-trapper-house class="w-5/6 md:w-2/7 show-on-scroll mt-5" />
+    <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll h-144" />
+    <display-card-hallet-house
+      class="w-5/6 md:w-2/7 show-on-scroll mt-5 h-144"
+    />
+    <display-card-madrona-house
+      class="w-5/6 md:w-2/7 show-on-scroll mt-5 h-144"
+    />
+    <display-card-trapper-house
+      class="w-5/6 md:w-2/7 show-on-scroll mt-5 h-144"
+    />
   </section>
 </template>
 

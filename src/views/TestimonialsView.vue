@@ -1,23 +1,23 @@
 <template>
-  <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
-    Blog
+  <section class="py-5 only:flex flex-wrap items-center justify-center">
+    <testimonial-card
+      v-for="testimonial in testimonials"
+      :key="testimonial.id"
+      :testimonial="testimonial"
+      class="my-5 md:w-5/6"
+    />
   </section>
-  <testimonial-card
-    v-for="testimonial in testimonials"
-    :key="testimonial.id"
-    :testimonial="testimonial"
-  />
 </template>
 
 <script lang="ts">
-import { UPDATE_SELECTED_JOB_POST_TITLE } from "@/store/constants";
-import { defineComponent, onMounted, computed, onUnmounted } from "vue";
-import { useStore } from "vuex";
-import { useRoute } from "vue-router";
+import { defineComponent, onMounted, ComputedRef } from "vue";
 
-import { key } from "@/store";
-import { useFilteredPosts, useFetchPostsDispatch } from "@/store/composables";
-import TestimonialCard from "@/components/Blog/BlogPost.vue";
+import {
+  useFetchTestimonialsDispatch,
+  useTestimonials,
+} from "@/store/composables";
+import TestimonialCard from "@/components/Testimonials/TestimonialCard.vue";
+import { Testimonial } from "@/api/types";
 
 export default defineComponent({
   name: "BlogPostView",
@@ -25,24 +25,11 @@ export default defineComponent({
     TestimonialCard,
   },
   setup() {
-    const parseJobPostTitle = () => {
-      const route = useRoute();
-      const title = (route.params.title as String) || "";
-      const parsedTitle = title.replaceAll("_", " ");
-      const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, parsedTitle);
-    };
-    const removeJobPostTitle = () => {
-      const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, "");
-    };
-    onMounted(useFetchPostsDispatch);
-    onMounted(parseJobPostTitle);
-    onUnmounted(removeJobPostTitle);
+    onMounted(useFetchTestimonialsDispatch);
 
-    const filteredPost = computed(() => useFilteredPosts().value[0]);
+    const testimonials: ComputedRef<Testimonial[]> = useTestimonials();
 
-    return { filteredPost };
+    return { testimonials };
   },
 });
 </script>
