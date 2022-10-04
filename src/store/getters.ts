@@ -41,7 +41,11 @@ const getters = {
       .filter((post: Post) => getters.MATCH_POST_BY_TITLE(post));
   },
   [TESTIMONIALS](state: GlobalState) {
-    return Object.entries(state.testimonials)[0][1] as unknown as Testimonial[]; // Production
+    if (state.testimonials.length === 0) return [];
+    const testimonials = Object.entries(
+      state.testimonials
+    )[0][1] as unknown as Testimonial[]; // Production
+    return testimonials;
     // return state.testimonials; // Development only
   },
 };
