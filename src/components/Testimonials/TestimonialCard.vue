@@ -1,8 +1,8 @@
 <template>
   <div
-    class="rounded-2xl bg-gray-300 flex flex-wrap content-center shadow-2xl p-5"
+    class="rounded-2xl bg-white flex flex-wrap content-center shadow-2xl p-10 prose"
   >
-    <div class="flex flex-row">
+    <div class="flex flex-row mt-2">
       <div class="text-left italic">"{{ testimonial.quote }}"</div>
     </div>
     <div class="flex flex-row mt-5">

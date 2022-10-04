@@ -3,15 +3,15 @@
     Testimonials
   </section>
   <section v-if="testimonials.length > 0" class="py-5 grid grid-cols-3">
-    <div class="flex flex-wrap col-span-1 col-start-1">
+    <div class="flex flex-wrap col-span-1 col-start-1 justify-center">
       <testimonial-card :testimonial="testimonials[0]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[1]" class="my-5 md:w-5/6" />
     </div>
-    <div class="flex flex-wrap col-span-1 col-start-2">
+    <div class="flex flex-wrap col-span-1 col-start-2 justify-center">
       <testimonial-card :testimonial="testimonials[2]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[5]" class="my-5 md:w-5/6" />
     </div>
-    <div class="flex flex-wrap col-span-1 col-start-3">
+    <div class="flex flex-wrap col-span-1 col-start-3 justify-center">
       <testimonial-card :testimonial="testimonials[4]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[3]" class="my-5 md:w-5/6" />
     </div>
