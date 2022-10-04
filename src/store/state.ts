@@ -4,8 +4,10 @@ const state = (): GlobalState => {
   return {
     posts: [],
     selectedCategory: "",
-    selectedJobPostTitle: "",
+    selectedPostTitle: "",
     testimonials: [],
+    facilities: [],
+    selectedFacilityName: "",
   };
 };
 

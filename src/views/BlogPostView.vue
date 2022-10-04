@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { UPDATE_SELECTED_JOB_POST_TITLE } from "@/store/constants";
+import { UPDATE_SELECTED_POST_TITLE } from "@/store/constants";
 import { defineComponent, onMounted, computed, onUnmounted } from "vue";
 import { useStore } from "vuex";
 import { useRoute } from "vue-router";
@@ -20,20 +20,20 @@ export default defineComponent({
     BlogPost,
   },
   setup() {
-    const parseJobPostTitle = () => {
+    const parsePostTitle = () => {
       const route = useRoute();
       const title = (route.params.title as String) || "";
       const parsedTitle = title.replaceAll("_", " ");
       const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, parsedTitle);
+      store.commit(UPDATE_SELECTED_POST_TITLE, parsedTitle);
     };
-    const removeJobPostTitle = () => {
+    const removePostTitle = () => {
       const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, "");
+      store.commit(UPDATE_SELECTED_POST_TITLE, "");
     };
     onMounted(useFetchPostsDispatch);
-    onMounted(parseJobPostTitle);
-    onUnmounted(removeJobPostTitle);
+    onMounted(parsePostTitle);
+    onUnmounted(removePostTitle);
 
     const filteredPost = computed(() => useFilteredPosts().value[0]);
 

@@ -1,11 +1,14 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
 const HomeView = () => import("@/views/HomeView.vue");
-const FacilitiesView = () => import("@/views/FacilitiesView.vue");
+const FacilitiesView = () =>
+  import(/* webpackChunkName: "facilities" */ "@/views/FacilitiesView.vue");
+const FacilityView = () =>
+  import(/* webpackChunkName: "facilities" */ "@/views/FacilityView.vue");
 const BlogView = () =>
-  import(/* webpackChunkName: "jobs" */ "@/views/BlogView.vue");
+  import(/* webpackChunkName: "posts" */ "@/views/BlogView.vue");
 const BlogPostView = () =>
-  import(/* webpackChunkName: "jobs" */ "@/views/BlogPostView.vue");
+  import(/* webpackChunkName: "posts" */ "@/views/BlogPostView.vue");
 const TestimonialsView = () => import("@/views/TestimonialsView.vue");
 
 const routes = [
@@ -18,6 +21,11 @@ const routes = [
     path: "/facilities",
     name: "facilities",
     component: FacilitiesView,
+  },
+  {
+    path: "/facilities/:name",
+    name: "Facility",
+    component: FacilityView,
   },
   {
     path: "/blog",

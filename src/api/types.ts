@@ -14,3 +14,10 @@ export interface Testimonial {
   quote: string;
   author: string;
 }
+
+export interface Facility {
+  id: number;
+  name: string;
+  summary: string;
+  description: string;
+}

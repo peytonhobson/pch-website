@@ -7,9 +7,11 @@ import {
   FETCH_POSTS,
   FETCH_TESTIMONIALS,
   TESTIMONIALS,
+  FETCH_FACILITIES,
+  FILTERED_FACILITIES, //
 } from "@/store/constants";
 
-import { Post, Testimonial } from "@/api/types";
+import { Post, Testimonial, Facility } from "@/api/types";
 
 import { key } from "@/store";
 
@@ -29,6 +31,12 @@ export const useTestimonials = () => {
   return computed<Testimonial[]>(() => store.value.getters[TESTIMONIALS]);
 };
 
+export const useFilteredFacilities = () => {
+  const store = computed(() => useStore(key));
+  console.log(store.value.getters[FILTERED_FACILITIES]);
+  return computed<Facility[]>(() => store.value.getters[FILTERED_FACILITIES]);
+};
+
 /* ACTIONS */
 export const useFetchPostsDispatch = () => {
   const store = useStore(key);
@@ -38,4 +46,9 @@ export const useFetchPostsDispatch = () => {
 export const useFetchTestimonialsDispatch = () => {
   const store = useStore(key);
   store.dispatch(FETCH_TESTIMONIALS);
+};
+
+export const useFetchFacilitiesDispatch = () => {
+  const store = useStore(key);
+  store.dispatch(FETCH_FACILITIES);
 };

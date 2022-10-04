@@ -1,0 +1,28 @@
+{
+  "facilities": [
+    {
+      "id": 1,
+      "name": "Baxter",
+      "summary": "",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "name": "Hallet",
+      "summary": "",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "name": "Madrona",
+      "summary": "",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "name": "Trapper",
+      "summary": "",
+      "description": ""
+    }
+  ]
+}

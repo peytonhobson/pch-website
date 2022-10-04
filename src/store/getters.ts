@@ -4,16 +4,22 @@ import {
   MATCH_POST_BY_TITLE,
   FILTERED_POSTS,
   TESTIMONIALS,
+  MATCH_FACILITY_BY_NAME,
 } from "@/store/constants";
 
 import { GlobalState } from "@/store/types";
-import { Post, Testimonial } from "@/api/types";
+import { Post, Testimonial, Facility } from "@/api/types";
 
 interface PostGetters {
   // eslint-disable-next-line
   INCLUDE_POST_BY_CATEGORY: (post: Post) => boolean;
   // eslint-disable-next-line
   MATCH_POST_BY_TITLE: (post: Post) => boolean;
+}
+
+interface FacilityGetters {
+  // eslint-disable-next-line
+  MATCH_FACILITY_BY_NAME: (facility: Facility) => boolean;
 }
 
 const getters = {
@@ -29,8 +35,8 @@ const getters = {
     return post.categories.includes(state.selectedCategory);
   },
   [MATCH_POST_BY_TITLE]: (state: GlobalState) => (post: Post) => {
-    if (state.selectedJobPostTitle === "") return true;
-    return post.title === state.selectedJobPostTitle;
+    if (state.selectedPostTitle === "") return true;
+    return post.title === state.selectedPostTitle;
   },
   [FILTERED_POSTS](state: GlobalState, getters: PostGetters) {
     if (state.posts.length === 0) return [];
@@ -47,6 +53,20 @@ const getters = {
     )[0][1] as unknown as Testimonial[]; // Production
     return testimonials;
     // return state.testimonials; // Development only
+  },
+  [MATCH_FACILITY_BY_NAME]: (state: GlobalState) => (facility: Facility) => {
+    if (state.selectedFacilityName === "") return true;
+    return facility.name === state.selectedFacilityName;
+  },
+  [FILTERED_POSTS](state: GlobalState, getters: FacilityGetters) {
+    if (state.facilities.length === 0) return [];
+    // const facilities = Object.entries(
+    //   state.facilities
+    //  )[0][1] as unknown as Facility[]; // Production
+    const facilities = state.facilities; //Development only
+    return facilities.filter((facility: Facility) =>
+      getters.MATCH_FACILITY_BY_NAME(facility)
+    );
   },
 };
 

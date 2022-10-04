@@ -3,9 +3,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, computed, onUnmounted } from "vue";
 
 import Facility from "@/components/Facilities/Facility.vue";
+
+import { UPDATE_SELECTED_FACILITY_NAME } from "@/store/constants";
+import { useStore } from "vuex";
+import { useRoute } from "vue-router";
+
+import { key } from "@/store";
+import {
+  useFilteredFacilities,
+  useFetchFacilitiesDispatch,
+} from "@/store/composables";
 
 export default defineComponent({
   name: "FacilityView",
@@ -13,24 +23,23 @@ export default defineComponent({
     Facility,
   },
   setup() {
-    const parseJobPostTitle = () => {
+    const parseFacilityName = () => {
       const route = useRoute();
-      const title = (route.params.title as String) || "";
-      const parsedTitle = title.replaceAll("_", " ");
+      const name = (route.params.name as String) || "";
       const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, parsedTitle);
+      store.commit(UPDATE_SELECTED_FACILITY_NAME, name);
     };
-    const removeJobPostTitle = () => {
+    const removeFacilityName = () => {
       const store = useStore(key);
-      store.commit(UPDATE_SELECTED_JOB_POST_TITLE, "");
+      store.commit(UPDATE_SELECTED_FACILITY_NAME, "");
     };
-    onMounted(useFetchPostsDispatch);
-    onMounted(parseJobPostTitle);
-    onUnmounted(removeJobPostTitle);
+    onMounted(useFetchFacilitiesDispatch);
+    onMounted(parseFacilityName);
+    onUnmounted(removeFacilityName);
 
-    const filteredPost = computed(() => useFilteredPosts().value[0]);
+    const filteredFacility = computed(() => useFilteredFacilities().value[0]);
 
-    return { filteredPost };
+    return { filteredFacility };
   },
 });
 </script>
