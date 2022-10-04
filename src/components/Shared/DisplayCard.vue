@@ -1,5 +1,7 @@
 <template>
-  <div class="rounded-2xl bg-gray-200 grid grid-cols-1 grid-rows-6 shadow-2xl">
+  <div
+    class="rounded-2xl bg-gray-200 grid grid-cols-1 grid-rows-6 shadow-2xl ease-out duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+  >
     <section v-if="header" :class="headerClass">
       <div class="self-center">
         {{ header }}

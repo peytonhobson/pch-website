@@ -3,7 +3,9 @@
     Facilities
   </section>
   <section v-if="!isMobile" class="flex flex-wrap justify-evenly my-10">
-    <display-card-baxter-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
+    <display-card-baxter-house
+      class="w-5/6 md:w-1/5 show-on-scroll duration-100 h-144"
+    />
     <display-card-hallet-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
     <display-card-madrona-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
     <display-card-trapper-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
