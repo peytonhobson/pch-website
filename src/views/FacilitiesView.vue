@@ -3,23 +3,19 @@
     Facilities
   </section>
   <section v-if="!isMobile" class="flex flex-wrap justify-evenly my-10">
-    <display-card-baxter-house
-      class="w-5/6 md:w-1/5 show-on-scroll duration-100 h-144"
+    <facility-card
+      v-for="facility in filteredFacilities"
+      :key="facility.id"
+      class="w-5/6 md:w-1/5 show-on-scroll h-128"
+      :facility="facility"
     />
-    <display-card-hallet-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
-    <display-card-madrona-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
-    <display-card-trapper-house class="w-5/6 md:w-1/5 show-on-scroll h-144" />
   </section>
   <section v-else class="flex flex-wrap justify-evenly my-10">
-    <display-card-baxter-house class="w-5/6 md:w-2/7 show-on-scroll h-144" />
-    <display-card-hallet-house
-      class="w-5/6 md:w-2/7 show-on-scroll mt-5 h-144"
-    />
-    <display-card-madrona-house
-      class="w-5/6 md:w-2/7 show-on-scroll mt-5 h-144"
-    />
-    <display-card-trapper-house
-      class="w-5/6 md:w-2/7 show-on-scroll mt-5 h-144"
+    <facility-card
+      v-for="facility in filteredFacilities"
+      :key="facility.id"
+      class="w-5/6 md:w-2/7 show-on-scroll h-144"
+      :facility="facility"
     />
   </section>
 </template>
@@ -27,29 +23,30 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 
-import DisplayCardBaxterHouse from "@/components/Facilities/Cards/DisplayCardBaxterHouse.vue";
-import DisplayCardHalletHouse from "@/components/Facilities/Cards/DisplayCardHalletHouse.vue";
-import DisplayCardMadronaHouse from "@/components/Facilities/Cards/DisplayCardMadronaHouse.vue";
-import DisplayCardTrapperHouse from "@/components/Facilities/Cards/DisplayCardTrapperHouse.vue";
+import FacilityCard from "@/components/Facilities/FacilityCard.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
+import {
+  useFilteredFacilities,
+  useFetchFacilitiesDispatch,
+} from "@/store/composables";
 
 export default defineComponent({
   name: "FacilitiesView",
   components: {
-    DisplayCardBaxterHouse,
-    DisplayCardHalletHouse,
-    DisplayCardMadronaHouse,
-    DisplayCardTrapperHouse,
+    FacilityCard,
   },
   setup() {
     onMounted(setScrollObserver);
+    onMounted(useFetchFacilitiesDispatch);
+
+    const filteredFacilities = useFilteredFacilities();
 
     const isMobile =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       );
 
-    return { isMobile };
+    return { isMobile, filteredFacilities };
   },
 });
 </script>
