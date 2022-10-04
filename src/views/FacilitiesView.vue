@@ -8,6 +8,7 @@
       :key="facility.id"
       class="w-5/6 md:w-1/5 show-on-scroll h-128"
       :facility="facility"
+      @click="routerUser"
     />
   </section>
   <section v-else class="flex flex-wrap justify-evenly my-10">

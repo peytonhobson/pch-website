@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <!-- eslint-disable-next-line vue/no-v-html -->
+    <!-- eslint-disable vue/no-v-html -->
     <div
       class="w-full md:w-9/12 text-left px-4 md:px-10"
       v-html="filteredPost.body"
