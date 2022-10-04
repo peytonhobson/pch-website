@@ -5,6 +5,7 @@ import {
   FILTERED_POSTS,
   UNIQUE_CATEGORIES,
   FETCH_POSTS,
+  FETCH_TESTIMONIALS,
 } from "@/store/constants";
 
 import { Post } from "@/api/types";
@@ -26,4 +27,9 @@ export const useUniqueCategories = () => {
 export const useFetchPostsDispatch = () => {
   const store = useStore(key);
   store.dispatch(FETCH_POSTS);
+};
+
+export const useFetchTestimonialsDispatch = () => {
+  const store = useStore(key);
+  store.dispatch(FETCH_TESTIMONIALS);
 };

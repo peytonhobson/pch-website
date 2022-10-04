@@ -5,6 +5,7 @@ const state = (): GlobalState => {
     posts: [],
     selectedCategory: "",
     selectedJobPostTitle: "",
+    testimonials: [],
   };
 };
 

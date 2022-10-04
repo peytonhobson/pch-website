@@ -1,10 +1,11 @@
 import {
   RECEIVE_POSTS,
   UPDATE_SELECTED_JOB_POST_TITLE,
+  RECEIVE_TESTIMONIALS,
 } from "@/store/constants";
 
 import { GlobalState } from "@/store/types";
-import { Post } from "@/api/types";
+import { Post, Testimonial } from "@/api/types";
 
 const mutations = {
   [RECEIVE_POSTS](state: GlobalState, posts: Post[]) {
@@ -15,6 +16,9 @@ const mutations = {
     selectedJobPostTitle: string
   ) {
     state.selectedJobPostTitle = selectedJobPostTitle;
+  },
+  [RECEIVE_TESTIMONIALS](state: GlobalState, testimonials: Testimonial[]) {
+    state.testimonials = testimonials;
   },
 };
 

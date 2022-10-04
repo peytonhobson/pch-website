@@ -8,3 +8,8 @@ export interface Post {
   body: string;
   categories: string[];
 }
+
+export interface Testimonial {
+  quote: string;
+  author: string;
+}
