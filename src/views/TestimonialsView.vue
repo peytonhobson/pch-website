@@ -22,7 +22,7 @@ import TestimonialCard from "@/components/Blog/BlogPost.vue";
 export default defineComponent({
   name: "BlogPostView",
   components: {
-    BlogPost,
+    TestimonialCard,
   },
   setup() {
     const parseJobPostTitle = () => {
