@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full bg-white p-2 md:p-6">
+  <nav class="w-full bg-white p-2 md:p-6 h-[15vh] items-center flex">
     <div class="flex flex-nowrap justify-between items-center w-full">
       <router-link to="/" class="flex items-center">
         <img
