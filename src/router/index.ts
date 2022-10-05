@@ -12,6 +12,7 @@ const BlogPostView = () =>
 const TestimonialsView = () => import("@/views/TestimonialsView.vue");
 const ResourcesView = () => import("@/views/ResourcesView.vue");
 const ServicesView = () => import("@/views/ServicesView.vue");
+const AboutUsView = () => import("@/views/AboutUsView.vue");
 
 const routes = [
   {
@@ -53,6 +54,11 @@ const routes = [
     path: "/services",
     name: "Services",
     component: ServicesView,
+  },
+  {
+    path: "/about_us",
+    name: "AboutUs",
+    component: AboutUsView,
   },
 ];
 
