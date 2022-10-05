@@ -1,7 +1,7 @@
 <template>
   <div :class="containerClass">
     <section v-if="header" :class="headerClass">
-      <div class="self-center">
+      <div class="self-center font-sen">
         {{ header }}
       </div>
     </section>

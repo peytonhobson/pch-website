@@ -3,12 +3,12 @@
     <div class="grid grid-rows-8">
       <div class="row-span-3 row-start-1">
         <div
-          class="text-4xl md:text-6xl justify-center flex text-white font-main"
+          class="text-4xl md:text-6xl justify-center flex text-white font-sen"
         >
           {{ mainTextRow1 }}
         </div>
         <div
-          class="text-4xl md:text-6xl justify-center flex text-white font-main"
+          class="text-4xl md:text-6xl justify-center flex text-white font-sen"
         >
           {{ mainTextRow2 }}
         </div>

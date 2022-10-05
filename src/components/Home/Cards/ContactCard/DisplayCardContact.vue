@@ -1,7 +1,7 @@
 <template>
   <display-card header="Contact Us" :bottom-border="true">
     <section class="row-start-2 row-span-1 flex items-center">
-      <div class="text-md md:text-lg text-left p-5 md:py-5 md:px-7">
+      <div class="text-md md:text-lg text-left p-5 md:py-5 md:px-7 font-sans">
         We would like to hear from you, talk to you, and/or give you a tour of
         one of our wonderful homes.
       </div>

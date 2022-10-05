@@ -2,12 +2,12 @@
   <div :class="containerClass">
     <div class="row-start-1 row-span-2 mx-auto flex items-end pb-5 w-3/4">
       <font-awesome-icon :icon="icon" :class="iconColor" size="3x" />
-      <span class="md:text-4xl text-3xl sm:text-red">
+      <span class="md:text-4xl text-3xl sm:text-red font-sen">
         {{ title }}
       </span>
     </div>
     <div class="row-start-3 row-span-2 w-3/4 mx-auto pt-5">
-      <div class="text-xl text-left">{{ body }}</div>
+      <div class="text-xl text-left font-sans">{{ body }}</div>
     </div>
   </div>
 </template>

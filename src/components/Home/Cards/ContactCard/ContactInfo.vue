@@ -4,16 +4,18 @@
       <img src="@/assets/Headshot.jpg" class="max-h-28" />
     </div>
     <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
-      <span class="text-sm w-full text-left font-bold row-start-1 row-span-1">
+      <span
+        class="text-sm w-full text-left font-bold row-start-1 row-span-1 font-sans"
+      >
         {{ contactInfo.name }}
       </span>
-      <span class="text-sm w-full text-left row-start-2 row-span-1">{{
+      <span class="text-sm w-full text-left row-start-2 row-span-1 font-sans">{{
         contactInfo.title
       }}</span>
-      <span class="text-sm w-full text-left row-start-3 row-span-1">{{
+      <span class="text-sm w-full text-left row-start-3 row-span-1 font-sans">{{
         contactInfo.phoneNumber
       }}</span>
-      <span class="text-sm w-full text-left row-start-4 row-span-1">{{
+      <span class="text-sm w-full text-left row-start-4 row-span-1 font-sans">{{
         contactInfo.email
       }}</span>
     </div>

@@ -5,10 +5,12 @@
     </section>
     <section class="row-start-4 row-span-3 grid grid-rows-4">
       <section class="p-7 row-start-1 row-span-3 m-auto">
-        <div class="text-lg font-bold text-left mb-3">Hallet House</div>
-        <div class="text-lg text-left">
-          Located in a charming South Salem neighborhood near Sprague High School,
-          this home is relaxed and peaceful.
+        <div class="text-lg font-bold text-left mb-3 font-sen">
+          Hallet House
+        </div>
+        <div class="text-lg text-left font-sans">
+          Located in a charming South Salem neighborhood near Sprague High
+          School, this home is relaxed and peaceful.
         </div>
       </section>
       <section class="w-full row-start-4 row-span-1">
