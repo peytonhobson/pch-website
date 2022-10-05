@@ -1,6 +1,6 @@
 <template>
-  <div class="carousel relative container mx-auto" style="max-width: 1600px">
-    <div class="carousel-inner relative overflow-hidden w-full">
+  <div class="carousel relative h-[65vh] w-screen">
+    <div class="carousel-inner relative overflow-hidden w-full h-full">
       <!--Slide 1-->
       <input
         id="carousel-1"
@@ -11,7 +11,7 @@
         hidden
         checked
       />
-      <div class="carousel-item absolute opacity-0" style="height: 50vh">
+      <div class="carousel-item absolute opacity-0 h-full w-full">
         <div
           class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-don bg-cover bg-right"
         >
@@ -48,10 +48,7 @@
         aria-hidden="true"
         hidden
       />
-      <div
-        class="carousel-item absolute opacity-0 bg-cover bg-right"
-        style="height: 50vh"
-      >
+      <div class="carousel-item absolute opacity-0 bg-cover bg-right h-full">
         <div
           class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-trapper bg-cover bg-right"
         >
@@ -88,7 +85,7 @@
         aria-hidden="true"
         hidden
       />
-      <div class="carousel-item absolute opacity-0" style="height: 50vh">
+      <div class="carousel-item absolute opacity-0 h-full">
         <div
           class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-madrona bg-cover bg-bottom"
         >

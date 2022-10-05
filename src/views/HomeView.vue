@@ -1,7 +1,7 @@
 <template>
   <hero />
   <div
-    class="w-full flex-auto items-center py-5 px-10 md:px-20 border-b-4 border-brand-green-gray"
+    class="w-full h-[20vh] flex items-center py-5 px-10 md:px-20 border-b-4 border-brand-green-gray"
   >
     <span
       class="font-playfair text-black justify-center text-xl md:text-3xl flex-auto"
