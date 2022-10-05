@@ -6,6 +6,7 @@ import {
   faPeopleCarry,
   faPeopleGroup,
   faBars,
+  faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
 import App from "./App.vue";
@@ -17,6 +18,7 @@ library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
 library.add(faPeopleGroup);
 library.add(faBars);
+library.add(faCheck);
 
 createApp(App)
   .use(store, key)

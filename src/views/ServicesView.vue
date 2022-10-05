@@ -52,43 +52,18 @@
     <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full">
       <div class="md:col-span-5 flex items-center justify-end w-full py-10">
         <display-card class="w-5/6 py-5 px-10" rows="1">
-          <ul class="list-disc font-sans">
-            <li class="text-left my-2">
-              A homelike setting with 24 hour direct care staff, 5:1 resident to
-              caregiver ratio
+          <ul class="font-sans">
+            <li
+              v-for="item in serviceItems"
+              :key="item"
+              class="text-left my-2 flex"
+            >
+              <font-awesome-icon
+                class="fill-current text-green-500 flex-col pt-1"
+                :icon="['fas', 'check']"
+              />
+              <div class="flex-col ml-2">{{ item }}</div>
             </li>
-            <li class="text-left my-2">
-              Home cooked meals and snacks, diabetic meals offered
-            </li>
-            <li class="text-left my-2">
-              Medication management, including insulin.
-            </li>
-            <li class="text-left my-2">
-              Personalized services to meet each individual’s care needs,
-              including: dressing, bathing, feeding assistance, grooming,
-              toileting and assist with mobility.
-            </li>
-            <li class="text-left my-2">Laundry (washables only)</li>
-            <li class="text-left my-2">
-              Scheduling of appointments and transportation
-            </li>
-            <li class="text-left my-2">Scheduled activities and outings</li>
-            <li class="text-left my-2">
-              RN&nbsp;for staff teaching and delegation
-            </li>
-            <li class="text-left my-2">
-              Bath aide to complete personalized care
-            </li>
-            <li class="text-left my-2">Memory care</li>
-            <li class="text-left my-2">
-              Modified diets (diabetic diet, lactose free, gluten free)
-            </li>
-            <li class="text-left my-2">
-              Dysphagia diet — pureed/soft foods and thickened liquids
-            </li>
-            <li class="text-left my-2">On-site dental hygienist services</li>
-            <li class="text-left my-2">On-site professional beauty services</li>
-            <li class="text-left my-2">Hospice care</li>
           </ul>
         </display-card>
       </div>
@@ -129,6 +104,24 @@ export default defineComponent({
   components: {
     DisplayCard,
   },
-  setup() {},
+  setup() {
+    const serviceItems = [
+      "A homelike setting with 24 hour direct care staff, 5:1 resident to caregiver ratio",
+      "Home cooked meals and snacks, diabetic meals offered",
+      "Medication management, including insulin.",
+      "Personalized services to meet each individual’s care needs, including: dressing, bathing, feeding assistance, grooming, toileting and assist with mobility.",
+      "Laundry (washables only)",
+      "Scheduling of appointments and transportation",
+      "RN for staff teaching and delegation",
+      "Bath aide to complete personalized care",
+      "Modified diets (diabetic diet, lactose free, gluten free)",
+      "Dysphagia diet — pureed/soft foods and thickened liquids",
+      "On-site dental hygienist services",
+      "On-site professional beauty services",
+      "Hospice care",
+    ];
+
+    return { serviceItems };
+  },
 });
 </script>
