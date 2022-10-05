@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="w-full h-full border-x-2 border-b-4 border-brand-green-gray grid grid-rows-6"
-  >
+  <div :class="containerClass">
     <div class="row-start-1 row-span-2 mx-auto flex items-end pb-5 w-3/4">
       <font-awesome-icon :icon="icon" :class="iconColor" size="3x" />
       <span class="md:text-4xl text-3xl sm:text-red">
@@ -44,14 +42,18 @@ export default defineComponent({
     },
   },
   setup(props: any) {
-    const { iconClass } = toRefs(props);
+    const { iconClass, title } = toRefs(props);
     const iconColor = computed(() => {
       return { [iconClass.value]: true };
     });
 
-    console.log(iconClass.value);
+    const sideBorders = title.value === "Burden Free" ? true : false;
 
-    return { iconColor };
+    const containerClass = computed(() => {
+      return { ["container-class"]: true, ["md:border-x-4"]: sideBorders };
+    });
+
+    return { iconColor, containerClass };
   },
 });
 </script>
@@ -67,5 +69,9 @@ export default defineComponent({
 
 .tertiary-icon {
   @apply fill-current text-brand-green-gray mr-3;
+}
+
+.container-class {
+  @apply w-full h-full border-b-4 border-brand-green-gray grid grid-rows-6;
 }
 </style>
