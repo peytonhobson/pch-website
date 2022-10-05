@@ -12,7 +12,7 @@
     >
       <ul class="flex flex-wrap justify-start row-span-6 py-5 px-10 list-disc">
         <li
-          v-for="webLink in webLinks"
+          v-for="webLink in resources.webLinks"
           :key="webLink.id"
           class="hover:underline text-left"
         >
@@ -29,7 +29,7 @@
     >
       <ul class="flex flex-wrap row-span-6 py-5 px-10 list-disc h-1/2">
         <li
-          v-for="pdfDownload in pdfDownloads"
+          v-for="pdfDownload in resources.pdfDownloads"
           :key="pdfDownload.id"
           class="hover:underline text-left"
         >
@@ -47,12 +47,7 @@ a
 import { defineComponent, onMounted, ComputedRef } from "vue";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
-import {
-  useFetchWebLinksDispatch,
-  useFetchPDFDownloadsDispatch,
-  usePDFDownloads,
-  useWebLinks,
-} from "@/store/composables";
+import { useFetchResourcesDispatch, useResources } from "@/store/composables";
 import { Resource } from "@/api/types";
 
 export default defineComponent({
@@ -61,20 +56,16 @@ export default defineComponent({
     DisplayCard,
   },
   setup() {
-    onMounted(useFetchWebLinksDispatch);
-    onMounted(useFetchPDFDownloadsDispatch);
+    onMounted(useFetchResourcesDispatch);
 
     const isMobile =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       );
 
-    const webLinks: ComputedRef<Resource[]> = useWebLinks();
-    const pdfDownloads: ComputedRef<Resource[]> = usePDFDownloads();
+    const resources: ComputedRef<Resource> = useResources();
 
-    console.log(webLinks);
-
-    return { webLinks, pdfDownloads, isMobile };
+    return { resources, isMobile };
   },
 });
 </script>

@@ -9,10 +9,8 @@ import {
   TESTIMONIALS,
   FETCH_FACILITIES,
   FILTERED_FACILITIES,
-  WEB_LINKS,
-  PDF_DOWNLOADS,
-  FETCH_WEB_LINKS,
-  FETCH_PDF_DOWNLOADS,
+  RESOURCES,
+  FETCH_RESOURCES,
 } from "@/store/constants";
 
 import { Post, Testimonial, Facility, Resource } from "@/api/types";
@@ -41,14 +39,9 @@ export const useFilteredFacilities = () => {
   return computed<Facility[]>(() => store.value.getters[FILTERED_FACILITIES]);
 };
 
-export const useWebLinks = () => {
+export const useResources = () => {
   const store = computed(() => useStore(key));
-  return computed<Resource[]>(() => store.value.getters[WEB_LINKS]);
-};
-
-export const usePDFDownloads = () => {
-  const store = computed(() => useStore(key));
-  return computed<Resource[]>(() => store.value.getters[PDF_DOWNLOADS]);
+  return computed<Resource>(() => store.value.getters[RESOURCES]);
 };
 
 /* ACTIONS */
@@ -67,12 +60,7 @@ export const useFetchFacilitiesDispatch = () => {
   store.dispatch(FETCH_FACILITIES);
 };
 
-export const useFetchWebLinksDispatch = () => {
+export const useFetchResourcesDispatch = () => {
   const store = useStore(key);
-  store.dispatch(FETCH_WEB_LINKS);
-};
-
-export const useFetchPDFDownloadsDispatch = () => {
-  const store = useStore(key);
-  store.dispatch(FETCH_PDF_DOWNLOADS);
+  store.dispatch(FETCH_RESOURCES);
 };

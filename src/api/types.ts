@@ -24,8 +24,13 @@ export interface Facility {
   location: string;
 }
 
-export interface Resource {
+interface ResourceType {
   id: number;
   text: string;
   link: string;
+}
+
+export interface Resource {
+  webLinks: ResourceType[];
+  pdfDownloads: ResourceType[];
 }

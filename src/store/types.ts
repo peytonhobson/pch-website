@@ -7,6 +7,5 @@ export interface GlobalState {
   testimonials: Testimonial[];
   facilities: Facility[];
   selectedFacilityName: string;
-  webLinks: Resource[];
-  pdfDownloads: Resource[];
+  resources: Resource;
 }

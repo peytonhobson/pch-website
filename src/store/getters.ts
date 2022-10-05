@@ -6,8 +6,7 @@ import {
   TESTIMONIALS,
   MATCH_FACILITY_BY_NAME,
   FILTERED_FACILITIES,
-  WEB_LINKS,
-  PDF_DOWNLOADS,
+  RESOURCES,
 } from "@/store/constants";
 
 import { GlobalState } from "@/store/types";
@@ -73,21 +72,10 @@ const getters = {
       getters.MATCH_FACILITY_BY_NAME(facility)
     );
   },
-  [WEB_LINKS](state: GlobalState) {
-    if (state.webLinks.length === 0) return [];
-    const webLinks = Object.entries(
-      state.webLinks
-    )[0][1] as unknown as Resource[]; // Production
-    return webLinks;
-    // return state.webLinks as Resource[]; // Development only
-  },
-  [PDF_DOWNLOADS](state: GlobalState) {
-    if (state.pdfDownloads.length === 0) return [];
-    const pdfDownloads = Object.entries(
-      state.pdfDownloads
-    )[0][1] as unknown as Resource[]; // Production
-    return pdfDownloads;
-    // return state.pdfDownloads as Resource[]; // Development only
+  [RESOURCES](state: GlobalState) {
+    if (!state.resources) return [];
+    const resources = state.resources as unknown as Resource;
+    return resources;
   },
 };
 

@@ -4,8 +4,7 @@ import {
   RECEIVE_TESTIMONIALS,
   RECEIVE_FACILITIES,
   UPDATE_SELECTED_FACILITY_NAME,
-  RECEIVE_PDF_DOWNLOADS,
-  RECEIVE_WEB_LINKS,
+  RECEIVE_RESOURCES,
 } from "@/store/constants";
 
 import { GlobalState } from "@/store/types";
@@ -30,11 +29,8 @@ const mutations = {
   ) {
     state.selectedFacilityName = selectedFacilityName;
   },
-  [RECEIVE_WEB_LINKS](state: GlobalState, webLinks: Resource[]) {
-    state.webLinks = webLinks;
-  },
-  [RECEIVE_PDF_DOWNLOADS](state: GlobalState, pdfDownloads: Resource[]) {
-    state.pdfDownloads = pdfDownloads;
+  [RECEIVE_RESOURCES](state: GlobalState, resources: Resource) {
+    state.resources = resources;
   },
 };
 
