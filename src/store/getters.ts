@@ -50,11 +50,11 @@ const getters = {
   },
   [TESTIMONIALS](state: GlobalState) {
     if (state.testimonials.length === 0) return [];
-    // const testimonials = Object.entries(
-    //   state.testimonials
-    // )[0][1] as unknown as Testimonial[]; // Production
-    // return testimonials;
-    return state.testimonials as Testimonial[]; // Development only
+    const testimonials = Object.entries(
+      state.testimonials
+    )[0][1] as unknown as Testimonial[]; // Production
+    return testimonials;
+    // return state.testimonials as Testimonial[]; // Development only
   },
   [MATCH_FACILITY_BY_NAME]: (state: GlobalState) => (facility: Facility) => {
     if (state.selectedFacilityName === "") return true;
@@ -64,10 +64,10 @@ const getters = {
   },
   [FILTERED_FACILITIES](state: GlobalState, getters: FacilityGetters) {
     if (state.facilities.length === 0) return [];
-    // const facilities = Object.entries(
-    //   state.facilities
-    // )[0][1] as unknown as Facility[]; // Production
-    const facilities = state.facilities; //Development only
+    const facilities = Object.entries(
+      state.facilities
+    )[0][1] as unknown as Facility[]; // Production
+    // const facilities = state.facilities; //Development only
     return facilities.filter((facility: Facility) =>
       getters.MATCH_FACILITY_BY_NAME(facility)
     );
