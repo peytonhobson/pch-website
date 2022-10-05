@@ -88,7 +88,6 @@
     </display-card>
   </section>
 </template>
-a
 
 <script lang="ts">
 import { defineComponent, onMounted, ComputedRef } from "vue";

@@ -399,6 +399,7 @@ module.exports = {
         "monospace",
       ],
       main: ["mrs-eaves", "Georgia", "Times", "Times New Roman", "serif"],
+      sen: ["Sen", "sans-serif"],
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
