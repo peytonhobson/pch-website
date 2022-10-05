@@ -1,14 +1,12 @@
 <template>
   <div :class="containerClass">
-    <div
-      class="row-start-2 md:row-start-1 row-span-2 mx-auto flex items-end pb-5 w-3/4"
-    >
+    <div class="mx-auto h-1/3 flex items-end justify-start w-3/4">
       <font-awesome-icon :icon="icon" :class="iconColor" size="3x" />
       <span class="md:text-4xl text-3xl sm:text-red font-sen">
         {{ title }}
       </span>
     </div>
-    <div class="row-start-4 md:row-start-3 row-span-2 w-3/4 mx-auto pt-5">
+    <div class="w-3/4 h-1/2 mx-auto flex items-start">
       <div class="text-xl text-left font-sans">{{ body }}</div>
     </div>
   </div>
@@ -74,6 +72,6 @@ export default defineComponent({
 }
 
 .container-class {
-  @apply w-full h-full border-b-4 border-brand-green-gray grid grid-rows-6;
+  @apply w-full h-full border-b-4 border-brand-green-gray flex flex-wrap items-start;
 }
 </style>
