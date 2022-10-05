@@ -6,7 +6,7 @@
     <section class="row-start-4 row-span-3 grid grid-rows-4">
       <section class="p-7 row-start-1 row-span-3 m-auto">
         <div class="text-lg font-bold text-left mb-3 font-sen">Locations</div>
-        <div class="text-lg text-left font-sans">
+        <div class="text-base md:text-lg text-left font-sans">
           See where our homes are located throughout Salem, Oregon. Contact us
           for a personal tour or more information.
         </div>

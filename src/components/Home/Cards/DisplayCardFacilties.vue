@@ -8,7 +8,7 @@
         <div class="text-lg font-bold text-left mb-3 font-sen">
           Hallet House
         </div>
-        <div class="text-lg text-left font-sans">
+        <div class="text-base md:text-lg text-left font-sans">
           Located in a charming South Salem neighborhood near Sprague High
           School, this home is relaxed and peaceful.
         </div>

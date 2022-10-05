@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel relative h-[65vh] w-screen">
+  <div class="carousel relative">
     <div class="carousel-inner relative overflow-hidden w-full h-full">
       <!--Slide 1-->
       <input
@@ -15,7 +15,7 @@
         <div
           class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-don bg-cover bg-right"
         >
-          <div class="container mx-auto my-auto">
+          <div class="container mx-auto my-10 md:my-auto">
             <div
               class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
             >

@@ -5,19 +5,22 @@
     </div>
     <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
       <span
-        class="text-sm w-full text-left font-bold row-start-1 row-span-1 font-sans"
+        class="text-xs md:text-sm w-full text-left font-bold row-start-1 row-span-1 font-sans"
       >
         {{ contactInfo.name }}
       </span>
-      <span class="text-sm w-full text-left row-start-2 row-span-1 font-sans">{{
-        contactInfo.title
-      }}</span>
-      <span class="text-sm w-full text-left row-start-3 row-span-1 font-sans">{{
-        contactInfo.phoneNumber
-      }}</span>
-      <span class="text-sm w-full text-left row-start-4 row-span-1 font-sans">{{
-        contactInfo.email
-      }}</span>
+      <span
+        class="text-xs md:text-sm w-full text-left row-start-2 row-span-1 font-sans"
+        >{{ contactInfo.title }}</span
+      >
+      <span
+        class="text-xs md:text-sm w-full text-left row-start-3 row-span-1 font-sans"
+        >{{ contactInfo.phoneNumber }}</span
+      >
+      <span
+        class="text-xs md:text-sm w-full text-left row-start-4 row-span-1 font-sans"
+        >{{ contactInfo.email }}</span
+      >
     </div>
   </div>
 </template>
