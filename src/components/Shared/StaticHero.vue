@@ -50,6 +50,6 @@ export default defineComponent({
 
 <style scoped>
 .container-class {
-  @apply bg-cover h-[85vh] mb-10 flex items-center justify-center;
+  @apply bg-cover mb-10 h-[85vh] flex items-center justify-center;
 }
 </style>
