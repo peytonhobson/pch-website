@@ -1,20 +1,20 @@
 <template>
   <div
     v-if="facility"
-    class="grid-rows-2 place-items-center mt-10 h-128 px-20 motion-safe:animate-fadeIn"
+    class="mt-5 md:mt-10 h-128 md:px-20 motion-safe:animate-fadeIn"
   >
-    <div
-      class="col-span-12 grid md:grid-cols-12 grid-cols-1 h-full justify-evenly"
-    >
-      <div class="md:col-span-5 h-full">
+    <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly">
+      <div class="md:col-span-5 h-40 md:h-full">
         <!-- Fix later for dynamic image and production link -->
         <div
-          class="relative h-full flex items-center justify-center rounded-xl shadow-md bg-hero-image-trapper bg-cover"
+          class="md:relative h-full flex items-center justify-center md:rounded-xl shadow-md bg-hero-image-trapper bg-cover"
         ></div>
       </div>
       <!--end col-->
 
-      <div class="md:col-span-7 flex items-spread justify-end">
+      <div
+        class="md:col-span-7 flex md:items-spread md:justify-end my-7 md:my-0 px-10 md:px-0"
+      >
         <div class="lg:ml-4">
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
@@ -27,7 +27,7 @@
             v-html="facility.description"
           ></p>
 
-          <div class="mapouter flex-1 w-full mt-7">
+          <div class="mapouter flex-1 w-full mt-10 md:mt-7">
             <div class="gmap_canvas flex w-full h-full">
               <iframe
                 id="gmap_canvas"
@@ -41,7 +41,7 @@
             </div>
           </div>
 
-          <div class="mt-4">
+          <div class="my-4">
             <action-button
               text="Get Directions"
               type="primary"
