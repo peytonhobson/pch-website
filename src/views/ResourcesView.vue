@@ -3,7 +3,7 @@
     Resources
   </section>
   <section
-    class="w-screen flex flex-wrap md:flex-nowrap items-center justify-evenly h-128"
+    class="w-screen flex flex-wrap md:flex-nowrap items-center justify-evenly md:h-128"
   >
     <display-card
       header="Web Links"
@@ -14,7 +14,7 @@
         <li
           v-for="webLink in resources.webLinks"
           :key="webLink.id"
-          class="hover:underline text-left"
+          class="hover:underline text-left mb-4 md:mb-0"
         >
           <a :href="webLink.link" target="_blank" title="">{{
             webLink.text
@@ -24,7 +24,7 @@
     </display-card>
     <display-card
       header="PDF Downloads"
-      class="w-5/6 md:w-2/5 h-full mt-20"
+      class="w-5/6 md:w-2/5 h-full mt-20 pt-5"
       :bottom-border="true"
     >
       <ul class="flex flex-wrap row-span-6 py-5 px-10 list-disc h-1/2">
