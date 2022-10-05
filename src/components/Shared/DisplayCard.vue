@@ -1,5 +1,5 @@
 <template>
-  <div :class="containerClass">
+  <div :class="containerClass" @click="routeUser">
     <section v-if="header" :class="headerClass">
       <div class="self-center font-sen">
         {{ header }}
@@ -11,6 +11,8 @@
 
 <script lang="ts">
 import { computed, defineComponent, toRefs } from "vue";
+
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "DisplayCard",
@@ -31,9 +33,14 @@ export default defineComponent({
       required: false,
       default: "6",
     },
+    route: {
+      type: String,
+      required: false,
+      default: "",
+    },
   },
   setup(props) {
-    const { bottomBorder, rows } = toRefs(props);
+    const { bottomBorder, rows, route } = toRefs(props);
 
     const borderClass: string = bottomBorder.value ? "bottom-border" : "";
 
@@ -45,7 +52,14 @@ export default defineComponent({
       return { ["container-class"]: true, ["grid-rows-" + rows.value]: true };
     });
 
-    return { headerClass, containerClass };
+    const router = useRouter();
+
+    const routeUser = () => {
+      //Will need to remove # in prod
+      router.push(route.value);
+    };
+
+    return { headerClass, containerClass, routeUser };
   },
 });
 </script>

@@ -7,7 +7,7 @@
       </span>
     </div>
     <div class="w-3/4 h-1/2 mx-auto flex items-start">
-      <div class="text-xl text-left font-sans">{{ body }}</div>
+      <div class="text-xl text-left font-sans text-slate-400">{{ body }}</div>
     </div>
   </div>
 </template>

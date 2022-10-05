@@ -19,7 +19,7 @@
       <div class="md:col-span-5 flex items-center justify-end w-full">
         <!-- Fix later for dynamic image and production link -->
         <div
-          class="md:relative h-2/3 w-5/6 md:rounded-xl shadow-md bg-hero-image-trapper bg-cover"
+          class="md:relative h-2/3 w-5/6 md:rounded-xl shadow-md bg-hero-image-trapper bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
         ></div>
       </div>
       <!--end col-->

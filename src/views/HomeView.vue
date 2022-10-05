@@ -4,7 +4,7 @@
     class="w-full md:h-[20vh] flex items-center py-5 px-10 md:px-20 border-b-4 border-brand-green-gray"
   >
     <span
-      class="font-sans font-light text-black justify-center text-xl md:text-3xl flex-auto"
+      class="font-sans font-light text-slate-400 justify-center text-xl md:text-3xl flex-auto"
       >We know it’s a difficult decision when you or your loved one can no
       longer live independently at home. It is our goal to provide a
       comfortable, home-like environment as an alternative to impersonal
@@ -28,9 +28,11 @@
   <div class="flex flex-wrap justify-evenly pt-10 py-0 pb-10">
     <display-card-facilties
       class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
+      route="facilities"
     />
     <display-card-locations
       class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
+      route="locations"
     />
     <display-card-contact
       class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"

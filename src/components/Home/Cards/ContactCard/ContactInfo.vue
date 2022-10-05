@@ -1,7 +1,7 @@
 <template>
   <div :class="outerClass">
     <div class="col-start-1 col-span-1 p-2 flex items-center justify-center">
-      <img src="@/assets/Headshot.jpg" class="max-h-28" />
+      <img src="@/assets/Headshot.jpg" class="max-h-28 rounded-full" />
     </div>
     <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
       <span

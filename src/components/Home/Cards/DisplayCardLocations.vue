@@ -1,5 +1,5 @@
 <template>
-  <display-card header="Locations">
+  <display-card header="Locations" :route="route">
     <section class="w-full row-start-2 row-span-2">
       <img src="@/assets/locations-teaser.png" class="w-full h-full" />
     </section>
@@ -28,6 +28,12 @@ export default defineComponent({
   components: {
     DisplayCard,
     ActionButton,
+  },
+  props: {
+    route: {
+      type: String,
+      required: true,
+    },
   },
   setup() {},
 });

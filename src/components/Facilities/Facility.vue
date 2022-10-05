@@ -27,7 +27,7 @@
             v-html="facility.description"
           ></p>
 
-          <div class="mapouter flex-1 w-full mt-10 md:mt-7">
+          <div class="mapouter flex-1 w-full mt-10 md:mt-10">
             <div class="gmap_canvas flex w-full h-full">
               <iframe
                 id="gmap_canvas"

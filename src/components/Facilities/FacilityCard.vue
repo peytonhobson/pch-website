@@ -1,5 +1,5 @@
 <template>
-  <display-card :header="facility.name" @click="routeUser">
+  <display-card :header="facility.name" :route="route">
     <div class="w-full row-start-2 row-span-2">
       <!-- Fix for dynamic images -->
       <img src="@/assets/baxter-house.jpg" class="w-full h-full" />
@@ -15,11 +15,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs } from "vue";
+import { defineComponent } from "vue";
 
 import { Facility } from "@/api/types";
 import DisplayCard from "../Shared/DisplayCard.vue";
-import { useRouter } from "vue-router";
 
 export default defineComponent({
   name: "FacilityCard",
@@ -31,17 +30,13 @@ export default defineComponent({
       type: Object as () => Facility,
       required: true,
     },
+    route: {
+      type: String,
+      required: true,
+    },
   },
   setup(props) {
-    const { facility } = toRefs(props);
-
-    const router = useRouter();
-
-    const routeUser = () => {
-      router.push(`facilities/${facility.value.name.toLowerCase()}`);
-    };
-
-    return { routeUser };
+    console.log(props.route);
   },
 });
 </script>
