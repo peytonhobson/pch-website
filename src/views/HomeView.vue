@@ -32,7 +32,7 @@
     />
     <display-card-locations
       class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
-      route="locations"
+      route="facilities"
     />
     <display-card-contact
       class="md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"

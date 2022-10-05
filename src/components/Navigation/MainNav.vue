@@ -30,20 +30,22 @@
       </div>
     </div>
   </nav>
-  <ul
-    v-if="isOpen"
-    class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white"
-  >
-    <li v-for="listItem in listItems" :key="listItem.text">
-      <router-link
-        :to="listItem.to"
-        class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
-        aria-current="page"
-        @click="handleDropdown"
-        >{{ listItem.text }}</router-link
-      >
-    </li>
-  </ul>
+  <div class="">
+    <ul
+      v-if="isOpen"
+      class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white animate-dropDown"
+    >
+      <li v-for="listItem in listItems" :key="listItem.text">
+        <router-link
+          :to="listItem.to"
+          class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
+          aria-current="page"
+          @click="handleDropdown"
+          >{{ listItem.text }}</router-link
+        >
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script lang="ts">

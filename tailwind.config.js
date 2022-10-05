@@ -117,6 +117,7 @@ module.exports = {
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
       fadeIn: "fadeIn 1.3s ease-in forwards",
+      dropDown: "fadeIn 1s ease-in forwards",
     },
     aspectRatio: {
       auto: "auto",
@@ -606,6 +607,20 @@ module.exports = {
           animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
         },
       },
+      dropDown: {
+        "0%": {
+          width: "100",
+          height: "0",
+        },
+        "50%": {
+          width: "100",
+          height: "50",
+        },
+        "100%": {
+          width: "100",
+          height: "100",
+        },
+      },
       lift: {
         "0%, 100%": {
           transform: "translateY(-25%)",
@@ -994,7 +1009,7 @@ module.exports = {
     "disabled",
   ],
   variants: {
-    animation: ["motion-safe"],
+    animation: ["motion-safe", "tailwindcss-animate"],
   },
   plugins: [require("@tailwindcss/typography")],
 };
