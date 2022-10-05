@@ -17,7 +17,7 @@
       <div class="md:col-span-7 flex items-spread justify-end">
         <div class="lg:ml-4">
           <h4
-            class="mb-6 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
+            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
           >
             {{ facility.name }}
           </h4>
@@ -27,7 +27,7 @@
             v-html="facility.description"
           ></p>
 
-          <div class="mapouter flex w-full h-1/2 mt-10">
+          <div class="mapouter flex-1 w-full mt-7">
             <div class="gmap_canvas flex w-full h-full">
               <iframe
                 id="gmap_canvas"
