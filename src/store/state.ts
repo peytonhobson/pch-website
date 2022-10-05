@@ -8,6 +8,8 @@ const state = (): GlobalState => {
     testimonials: [],
     facilities: [],
     selectedFacilityName: "",
+    webLinks: [],
+    pdfDownloads: [],
   };
 };
 

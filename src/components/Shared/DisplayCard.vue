@@ -49,6 +49,6 @@ export default defineComponent({
 }
 
 .bottom-border {
-  @apply border border-b-black;
+  @apply border-2 border-b-black;
 }
 </style>

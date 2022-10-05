@@ -1,4 +1,4 @@
-import { Post, Testimonial, Facility } from "@/api/types";
+import { Post, Testimonial, Facility, Resource } from "@/api/types";
 
 export interface GlobalState {
   posts: Post[];
@@ -7,4 +7,6 @@ export interface GlobalState {
   testimonials: Testimonial[];
   facilities: Facility[];
   selectedFacilityName: string;
+  webLinks: Resource[];
+  pdfDownloads: Resource[];
 }

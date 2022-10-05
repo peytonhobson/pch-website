@@ -8,10 +8,14 @@ import {
   FETCH_TESTIMONIALS,
   TESTIMONIALS,
   FETCH_FACILITIES,
-  FILTERED_FACILITIES, //
+  FILTERED_FACILITIES,
+  WEB_LINKS,
+  PDF_DOWNLOADS,
+  FETCH_WEB_LINKS,
+  FETCH_PDF_DOWNLOADS,
 } from "@/store/constants";
 
-import { Post, Testimonial, Facility } from "@/api/types";
+import { Post, Testimonial, Facility, Resource } from "@/api/types";
 
 import { key } from "@/store";
 
@@ -37,6 +41,16 @@ export const useFilteredFacilities = () => {
   return computed<Facility[]>(() => store.value.getters[FILTERED_FACILITIES]);
 };
 
+export const useWebLinks = () => {
+  const store = computed(() => useStore(key));
+  return computed<Resource[]>(() => store.value.getters[WEB_LINKS]);
+};
+
+export const usePDFDownloads = () => {
+  const store = computed(() => useStore(key));
+  return computed<Resource[]>(() => store.value.getters[PDF_DOWNLOADS]);
+};
+
 /* ACTIONS */
 export const useFetchPostsDispatch = () => {
   const store = useStore(key);
@@ -51,4 +65,14 @@ export const useFetchTestimonialsDispatch = () => {
 export const useFetchFacilitiesDispatch = () => {
   const store = useStore(key);
   store.dispatch(FETCH_FACILITIES);
+};
+
+export const useFetchWebLinksDispatch = () => {
+  const store = useStore(key);
+  store.dispatch(FETCH_WEB_LINKS);
+};
+
+export const useFetchPDFDownloadsDispatch = () => {
+  const store = useStore(key);
+  store.dispatch(FETCH_PDF_DOWNLOADS);
 };

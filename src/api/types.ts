@@ -23,3 +23,9 @@ export interface Facility {
   images: string[];
   location: string;
 }
+
+export interface Resource {
+  id: number;
+  text: string;
+  link: string;
+}
