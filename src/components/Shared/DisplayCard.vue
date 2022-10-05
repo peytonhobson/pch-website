@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="rounded-2xl bg-gray-200 grid grid-cols-1 grid-rows-6 shadow-2xl ease-out duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
-  >
+  <div :class="containerClass">
     <section v-if="header" :class="headerClass">
       <div class="self-center">
         {{ header }}
@@ -28,9 +26,14 @@ export default defineComponent({
       required: false,
       default: false,
     },
+    rows: {
+      type: String,
+      required: false,
+      default: "6",
+    },
   },
   setup(props) {
-    const { bottomBorder } = toRefs(props);
+    const { bottomBorder, rows } = toRefs(props);
 
     const borderClass: string = bottomBorder.value ? "bottom-border" : "";
 
@@ -38,17 +41,25 @@ export default defineComponent({
       return { [borderClass]: true, ["header"]: true };
     });
 
-    return { headerClass };
+    const containerClass = computed(() => {
+      return { ["container-class"]: true, ["grid-rows-" + rows.value]: true };
+    });
+
+    return { headerClass, containerClass };
   },
 });
 </script>
 
 <style scoped>
 .header {
-  @apply w-full text-6xl row-span-1 row-start-1 rounded-t-2xl flex items-center justify-center;
+  @apply w-full text-5xl md:text-6xl row-span-1 row-start-1 rounded-t-2xl flex items-center justify-center py-3 md:py-0;
 }
 
 .bottom-border {
   @apply border-2 border-b-black;
+}
+
+.container-class {
+  @apply rounded-2xl bg-gray-200 grid grid-cols-1 shadow-2xl ease-out duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer;
 }
 </style>
