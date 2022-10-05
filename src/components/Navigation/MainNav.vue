@@ -57,12 +57,12 @@ export default defineComponent({
     const listItems = [
       { text: "Home", to: "/" },
       { text: "Services", to: "/services" },
-      { text: "Staff", to: "/staff" },
       { text: "Facilities", to: "/facilities" },
       { text: "Blog", to: "/blog" },
       { text: "Testimonials", to: "/testimonials" },
       { text: "Resources", to: "/resources" },
       { text: "Careers", to: "/careers" },
+      { text: "About Us", to: "/about_us" },
     ];
 
     const isOpen = ref(false);
