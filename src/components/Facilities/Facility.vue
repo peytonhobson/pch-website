@@ -21,9 +21,11 @@
           >
             {{ facility.name }}
           </h4>
-          <p class="text-slate-400 max-w-xl text-left">
-            {{ facility.description }}
-          </p>
+          <!-- eslint-disable vue/no-v-html -->
+          <p
+            class="text-slate-400 max-w-xl text-left"
+            v-html="facility.description"
+          ></p>
 
           <div class="mapouter flex w-full h-1/2 mt-10">
             <div class="gmap_canvas flex w-full h-full">
