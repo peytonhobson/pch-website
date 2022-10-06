@@ -1,12 +1,12 @@
 <template>
   <section
-    class="bg-white h-[105vh] md:h-[55vh] flex items-center justify-evenly"
+    class="bg-white h-[105vh] md:h-[80vh] flex items-center justify-evenly"
   >
     <div
-      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 justify-evenly h-full w-full"
+      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 justify-evenly h-full w-full"
     >
       <div
-        class="md:col-span-5 row-start-2 flex items-end justify-center w-full"
+        class="md:col-span-5 row-start-2 md:row-auto flex items-end md:items-center justify-center md:justify-end w-full"
       >
         <!-- Fix later for dynamic image and production link -->
         <div
@@ -16,7 +16,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 row-span-1 row-start-1 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-span-1 row-start-1 flex md:row-auto md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
         <div class="lg:ml-4">
           <h4
