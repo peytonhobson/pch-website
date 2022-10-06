@@ -8,7 +8,7 @@
       </div>
       <div
         v-if="secondRowText"
-        class="text-2xl font-sans text-white mt-5 w-5/6 md:w-1/3"
+        class="text-2xl font-sans text-white mt-5 w-5/6 md:w-2/3"
       >
         {{ secondRowText }}
       </div>
