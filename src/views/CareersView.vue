@@ -5,12 +5,14 @@
     :background-image-class="heroProps.backgroundImageClass"
   />
   <submit-resume-section />
+  <share-with-friend-section />
 </template>
 
 <script>
 import { defineComponent } from "vue";
 
 import SubmitResumeSection from "@/components/Careers/SubmitResumeSection.vue";
+import ShareWithFriendSection from "@/components/Careers/ShareWithFriendSection.vue";
 import StaticHero from "@/components/Shared/StaticHero.vue";
 
 export default defineComponent({
@@ -18,6 +20,7 @@ export default defineComponent({
   components: {
     StaticHero,
     SubmitResumeSection,
+    ShareWithFriendSection,
   },
   setup() {
     const heroProps = {
