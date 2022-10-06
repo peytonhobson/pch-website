@@ -1,12 +1,12 @@
 <template>
   <section
-    class="bg-white h-[170vh] md:h-screen flex items-center justify-evenly mt-10"
+    class="bg-white h-[190vh] md:h-screen flex items-center justify-evenly mt-10 md:py-20"
   >
     <div
-      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 h-full justify-evenly w-full"
+      class="grid md:grid-cols-12 grid-cols-1 grid-rows-8 md:grid-rows-1 h-full justify-evenly w-full"
     >
       <div
-        class="md:col-span-5 row-start-2 md:row-auto flex items-center justify-center md:justify-end w-full py-10"
+        class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-5 md:py-10 pb-20"
       >
         <display-card class="w-5/6 py-5 px-5 md:px-10" rows="1">
           <ul class="font-sans">
@@ -27,7 +27,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 row-start-1 row-span-1 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
         <div class="lg:ml-4">
           <h4
