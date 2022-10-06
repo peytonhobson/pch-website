@@ -1,17 +1,17 @@
 <template>
-  <section class="bg-white h-[80vh] flex items-center justify-evenly">
+  <section class="bg-white h-[80vh] flex items-center justify-evenly mb-10">
     <div
-      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 md:row-auto h-full justify-evenly w-full"
+      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full"
     >
       <div
-        class="md:col-span-5 flex items-center justify-end w-full py-10 h-3/4"
+        class="md:col-span-5 md:col-start-1 flex items-center row-span-1 justify-center md:justify-end w-full md:py-10 h-full md:h-3/4"
       >
-        <display-card class="w-5/6 py-5 px-10 h-full grid" rows="2">
+        <display-card class="w-5/6 py-5 px-10 h-full grid mt-7" rows="2">
           <div
             class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
           >
             <img
-              class="rounded-full h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
+              class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
               src="@/assets/Headshot.jpg"
             />
             <div class="text-3xl font-sen">Janelle Leavell</div>
@@ -20,7 +20,7 @@
             class="w-full h-full row-span-1 row-start-2 flex items-center justify-evenly"
           >
             <img
-              class="rounded-full h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
+              class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
               src="@/assets/Headshot.jpg"
             />
             <div class="text-3xl font-sen">Margie Hibner</div>
@@ -30,7 +30,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0 h-3/4"
+        class="md:col-span-7 md:col-start-6 row-span-1 row-start-1 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0 h-3/4"
       >
         <div class="lg:ml-4">
           <h4
