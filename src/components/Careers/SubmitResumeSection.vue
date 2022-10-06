@@ -8,8 +8,11 @@
       <div
         class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-5 md:py-10 pb-20"
       >
-        <display-card class="w-5/6 py-5 px-5 md:px-10" rows="1">
-          <form class="w-full max-w-sm">
+        <display-card
+          class="w-5/6 py-10 px-5 md:px-10 place-items-start"
+          rows="1"
+        >
+          <Form class="w-full max-w-sm" @submit="onSubmit">
             <div class="md:flex md:items-center mb-10">
               <div class="md:w-1/3">
                 <label
@@ -20,30 +23,32 @@
                 </label>
               </div>
               <div class="md:w-2/3">
-                <input
-                  class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+                <Field
+                  name="name"
                   type="text"
-                  value="Jane Doe"
-                  required
+                  :rules="schema.name"
+                  class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
                 />
+                <ErrorMessage name="name" />
               </div>
             </div>
             <div class="md:flex md:items-center mb-10">
               <div class="md:w-1/3">
                 <label
                   class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
-                  for="inline-password"
+                  for="inline-email"
                 >
                   Email
                 </label>
               </div>
               <div class="md:w-2/3">
-                <input
-                  class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+                <Field
+                  name="email"
                   type="email"
-                  placeholder="******************"
-                  required
+                  :rules="schema.email"
+                  class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
                 />
+                <ErrorMessage name="email" />
               </div>
             </div>
             <div class="md:flex md:items-center mb-10">
@@ -56,11 +61,13 @@
                 </label>
               </div>
               <div class="md:w-2/3">
-                <input
+                <Field
+                  name="phone-number"
+                  type="text"
+                  :rules="schema.phoneNumber"
                   class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
-                  type="phone"
-                  placeholder=""
                 />
+                <ErrorMessage name="phone-number" />
               </div>
             </div>
             <div class="md:flex md:items-center mb-10">
@@ -73,24 +80,17 @@
                 </label>
               </div>
               <div class="md:w-2/3">
-                <input
-                  class="form-control block w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded-lg transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  type="file"
-                />
+                <Field name="file" type="file" :rules="validateFile" />
+                <ErrorMessage name="file" />
               </div>
             </div>
             <div class="md:flex md:items-center">
               <div class="md:w-1/3"></div>
               <div class="md:w-2/3">
-                <button
-                  class="shadow bg-brand-green-gray hover:bg-brand-green-gray focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                  type="button"
-                >
-                  Submit
-                </button>
+                <action-button text="Submit" type="primary" class="w-1/2" />
               </div>
             </div>
-          </form>
+          </Form>
         </display-card>
       </div>
       <!--end col-->
@@ -119,12 +119,46 @@
 import { defineComponent } from "vue";
 
 import DisplayCard from "../Shared/DisplayCard.vue";
+import ActionButton from "../Shared/ActionButton.vue";
+import { Form, Field, ErrorMessage, RuleExpression } from "vee-validate";
+import * as yup from "yup";
 
 export default defineComponent({
   name: "SubmitResumeSection",
   components: {
     DisplayCard,
+    ActionButton,
+    Field,
+    Form,
+    ErrorMessage,
   },
-  setup() {},
+  setup() {
+    const validateFile = (
+      value?: RuleExpression<unknown>
+    ): RuleExpression<unknown> => {
+      let valid = true;
+      if (value) {
+        if (!["application/pdf"].includes((value as unknown as File).type)) {
+          valid = false;
+        }
+      }
+      if (valid) {
+        return valid as unknown as RuleExpression<unknown>;
+      }
+      return "File must be a PDF file";
+    };
+
+    const schema = {
+      name: yup.string().required(),
+      email: yup.string().email().required(),
+      phoneNumber: yup.string(),
+    };
+
+    const onSubmit = (values: any) => {
+      alert(JSON.stringify(values, null, 2));
+    };
+
+    return { schema, onSubmit, validateFile };
+  },
 });
 </script>

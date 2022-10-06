@@ -22,6 +22,7 @@ library.add(faCheck);
 
 createApp(App)
   .use(store, key)
+
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");
