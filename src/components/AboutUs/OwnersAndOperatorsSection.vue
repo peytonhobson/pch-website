@@ -1,6 +1,8 @@
 <template>
   <section class="bg-white h-[80vh] flex items-center justify-evenly">
-    <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full">
+    <div
+      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 md:row-auto h-full justify-evenly w-full"
+    >
       <div
         class="md:col-span-5 flex items-center justify-end w-full py-10 h-3/4"
       >
