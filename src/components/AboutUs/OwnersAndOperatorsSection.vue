@@ -6,7 +6,10 @@
       <div
         class="md:col-span-5 md:col-start-1 flex items-center row-span-1 justify-center md:justify-end w-full md:py-10 h-full md:h-3/4"
       >
-        <display-card class="w-5/6 py-5 px-10 h-full grid mt-7" rows="2">
+        <display-card
+          class="w-5/6 py-5 px-10 h-full grid mt-4 md:mt-0"
+          rows="2"
+        >
           <div
             class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
           >
