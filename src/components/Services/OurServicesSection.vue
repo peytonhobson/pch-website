@@ -1,8 +1,14 @@
 <template>
-  <section class="bg-white h-screen flex items-center justify-evenly">
-    <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full">
-      <div class="md:col-span-5 flex items-center justify-end w-full py-10">
-        <display-card class="w-5/6 py-5 px-10" rows="1">
+  <section
+    class="bg-white h-[170vh] md:h-screen flex items-center justify-evenly mt-10"
+  >
+    <div
+      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 h-full justify-evenly w-full"
+    >
+      <div
+        class="md:col-span-5 row-start-2 md:row-auto flex items-center justify-center md:justify-end w-full py-10"
+      >
+        <display-card class="w-5/6 py-5 px-5 md:px-10" rows="1">
           <ul class="font-sans">
             <li
               v-for="item in serviceItems"
@@ -21,7 +27,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-start-1 row-span-1 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
         <div class="lg:ml-4">
           <h4
