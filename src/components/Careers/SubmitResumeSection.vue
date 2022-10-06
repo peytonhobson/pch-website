@@ -12,14 +12,14 @@
           class="w-5/6 py-10 px-5 md:px-10 place-items-start"
           rows="1"
         >
-          <Form class="w-full max-w-sm" @submit="onSubmit">
+          <Form class="w-full max-w-sm form" @submit="onSubmit">
             <div class="md:flex md:items-center mb-10">
               <div class="md:w-1/3">
                 <label
                   class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-full-name"
                 >
-                  Full Name
+                  Full Name<span class="text-red-500"> *</span>
                 </label>
               </div>
               <div class="md:w-2/3">
@@ -29,7 +29,7 @@
                   :rules="schema.name"
                   class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
                 />
-                <ErrorMessage name="name" />
+                <ErrorMessage name="name" class="text-red-500" as="div" />
               </div>
             </div>
             <div class="md:flex md:items-center mb-10">
@@ -38,7 +38,7 @@
                   class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-email"
                 >
-                  Email
+                  Email<span class="text-red-500"> *</span>
                 </label>
               </div>
               <div class="md:w-2/3">
@@ -48,7 +48,7 @@
                   :rules="schema.email"
                   class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
                 />
-                <ErrorMessage name="email" />
+                <ErrorMessage name="email" class="text-red-500" as="div" />
               </div>
             </div>
             <div class="md:flex md:items-center mb-10">
@@ -67,7 +67,11 @@
                   :rules="schema.phoneNumber"
                   class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
                 />
-                <ErrorMessage name="phone-number" />
+                <ErrorMessage
+                  name="phone-number"
+                  class="text-red-500"
+                  as="div"
+                />
               </div>
             </div>
             <div class="md:flex md:items-center mb-10">
@@ -76,12 +80,12 @@
                   class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
                   for="inline-password"
                 >
-                  Resumé PDF
+                  Resumé PDF<span class="text-red-500"> *</span>
                 </label>
               </div>
               <div class="md:w-2/3">
                 <Field name="file" type="file" :rules="validateFile" />
-                <ErrorMessage name="file" />
+                <ErrorMessage name="file" class="text-red-500" as="div" />
               </div>
             </div>
             <div class="md:flex md:items-center">
@@ -122,6 +126,7 @@ import DisplayCard from "../Shared/DisplayCard.vue";
 import ActionButton from "../Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage, RuleExpression } from "vee-validate";
 import * as yup from "yup";
+import emailjs from "@emailjs/browser";
 
 export default defineComponent({
   name: "SubmitResumeSection",
@@ -141,6 +146,8 @@ export default defineComponent({
         if (!["application/pdf"].includes((value as unknown as File).type)) {
           valid = false;
         }
+      } else {
+        return "Resumé is required";
       }
       if (valid) {
         return valid as unknown as RuleExpression<unknown>;
@@ -149,13 +156,27 @@ export default defineComponent({
     };
 
     const schema = {
-      name: yup.string().required(),
-      email: yup.string().email().required(),
+      name: yup.string().required().label("Full Name"),
+      email: yup.string().email().required().label("Email Address"),
       phoneNumber: yup.string(),
     };
 
-    const onSubmit = (values: any) => {
-      alert(JSON.stringify(values, null, 2));
+    const onSubmit = () => {
+      emailjs
+        .sendForm(
+          "service_nwq90ma",
+          "template_li8xvdz",
+          ".form",
+          "SaV6yXcrzMc0lIWqN"
+        )
+        .then(
+          (result: any) => {
+            console.log(result.text);
+          },
+          (error: any) => {
+            console.log(error.text);
+          }
+        );
     };
 
     return { schema, onSubmit, validateFile };
