@@ -1,16 +1,22 @@
 <template>
-  <section class="bg-white h-[55vh] flex items-center justify-evenly">
-    <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full">
-      <div class="md:col-span-5 flex items-center justify-end w-full">
+  <section
+    class="bg-white h-[105vh] md:h-[55vh] flex items-center justify-evenly"
+  >
+    <div
+      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 justify-evenly h-full w-full"
+    >
+      <div
+        class="md:col-span-5 row-start-2 flex items-end justify-center w-full"
+      >
         <!-- Fix later for dynamic image and production link -->
         <div
-          class="md:relative h-2/3 w-5/6 md:rounded-xl shadow-md bg-hero-image-trapper bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+          class="md:relative h-2/3 w-5/6 rounded-xl shadow-md bg-hero-image-trapper bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
         ></div>
       </div>
       <!--end col-->
 
       <div
-        class="md:col-span-7 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-span-1 row-start-1 flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
         <div class="lg:ml-4">
           <h4
