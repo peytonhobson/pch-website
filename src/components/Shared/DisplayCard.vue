@@ -56,7 +56,9 @@ export default defineComponent({
 
     const routeUser = () => {
       //Will need to remove # in prod
-      router.push(route.value);
+      if (route.value !== "") {
+        router.push(route.value);
+      }
     };
 
     return { headerClass, containerClass, routeUser };
