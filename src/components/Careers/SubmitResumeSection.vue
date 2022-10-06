@@ -15,7 +15,6 @@
           <resume-form />
         </display-card>
       </div>
-      <!--end col-->
 
       <div
         class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
