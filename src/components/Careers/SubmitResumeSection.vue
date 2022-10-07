@@ -1,12 +1,12 @@
 <template>
   <section
-    class="bg-white h-[190vh] md:h-[75vh] flex items-center justify-evenly mt-10 md:py-20"
+    class="bg-white h-[130vh] md:h-[75vh] flex items-center justify-evenly mt-10 md:py-20"
   >
     <div
       class="grid md:grid-cols-12 grid-cols-1 grid-rows-8 md:grid-rows-1 h-full justify-evenly w-full"
     >
       <div
-        class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-5 md:py-10 pb-20"
+        class="md:col-span-5 row-start-3 md:row-auto flex items-center justify-center md:justify-end w-full md:py-10 pb-20"
       >
         <display-card
           class="w-5/6 py-10 px-5 md:px-10 place-items-start"
@@ -17,9 +17,9 @@
       </div>
 
       <div
-        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex flex-wrap md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-start-1 row-span-2 md:row-auto flex flex-wrap md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4 md:w-3/4">
+        <div class="lg:ml-4 md:w-3/4 mb-7">
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
           >
@@ -31,7 +31,7 @@
             or you may send it to employment@premiercarehomes.net.
           </p>
         </div>
-        <div class="lg:ml-4 md:w-3/4">
+        <div class="lg:ml-4 md:w-3/4 mb-7">
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
           >
