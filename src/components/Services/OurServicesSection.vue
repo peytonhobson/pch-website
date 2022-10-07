@@ -1,12 +1,10 @@
 <template>
-  <section
-    class="bg-white h-[190vh] md:h-screen flex items-center justify-evenly mt-10 md:py-20"
-  >
+  <section class="bg-white flex items-center justify-evenly pb-10">
     <div
       class="grid md:grid-cols-12 grid-cols-1 grid-rows-8 md:grid-rows-1 h-full justify-evenly w-full"
     >
       <div
-        class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-5 md:py-10 pb-20"
+        class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-10 pb-20"
       >
         <display-card class="w-5/6 py-5 px-5 md:px-10" rows="1">
           <ul class="font-sans">
@@ -27,7 +25,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center md:my-0 px-10 md:px-0"
       >
         <div class="lg:ml-4">
           <h4
