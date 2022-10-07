@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white flex items-center justify-evenly my-10 md:my-20">
+  <section class="bg-white flex items-center justify-evenly md:my-20">
     <div
       class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full md:place-items-center py-10"
     >

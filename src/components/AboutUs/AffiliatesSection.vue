@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white flex items-center justify-evenly md:mb-20">
     <div
-      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 md:row-auto grid-cols-1 md:h-full justify-evenly w-full md:place-items-center md:py-10"
+      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 md:row-auto grid-cols-1 md:h-full justify-evenly w-full md:place-items-center py-10"
     >
       <div
         class="md:col-span-5 flex items-center justify-center md:justify-end w-full h-full"
