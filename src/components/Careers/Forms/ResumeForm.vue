@@ -1,5 +1,5 @@
 <template>
-  <Form class="w-full max-w-md form" @submit="onSubmit">
+  <Form id="resume-form" class="w-full max-w-md form" @submit="onSubmit">
     <div class="md:flex md:items-center mb-10">
       <div class="md:w-1/3">
         <label
@@ -125,7 +125,7 @@ export default defineComponent({
         .sendForm(
           "service_nwq90ma",
           "template_li8xvdz",
-          ".form",
+          "#resume-form",
           "SaV6yXcrzMc0lIWqN"
         )
         .then(
