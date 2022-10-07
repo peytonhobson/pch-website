@@ -120,7 +120,7 @@ export default defineComponent({
       phoneNumber: yup.string(),
     };
 
-    const onSubmit = () => {
+    const onSubmit = (values: any, actions: any) => {
       emailjs
         .sendForm(
           "service_nwq90ma",
@@ -136,6 +136,8 @@ export default defineComponent({
             console.log(error.text);
           }
         );
+
+      actions.resetForm();
     };
 
     return { schema, onSubmit, validateFile };

@@ -1,5 +1,5 @@
 <template>
-  <Form class="w-full max-w-md" @submit="onSubmit" id="friend-form">
+  <Form id="friend-form" class="w-full max-w-md" @submit="onSubmit">
     <div class="md:flex md:items-center mb-10">
       <div class="md:w-1/3">
         <label
@@ -109,7 +109,7 @@ export default defineComponent({
       friendEmail: yup.string().email().required().label("Friend's Email"),
     };
 
-    const onSubmit = () => {
+    const onSubmit = (values: any, actions: any) => {
       emailjs
         .sendForm(
           "service_nwq90ma",
@@ -125,6 +125,8 @@ export default defineComponent({
             console.log(error.text);
           }
         );
+
+      actions.resetForm();
     };
 
     return { schema, onSubmit };
