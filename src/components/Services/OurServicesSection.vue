@@ -6,7 +6,7 @@
       <div
         class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-10 pb-20"
       >
-        <display-card class="w-5/6 py-5 px-5 md:px-10" rows="1">
+        <display-card class="w-5/6 py-5 px-5 md:px-10 xl:py-10" rows="1">
           <ul class="font-sans">
             <li
               v-for="item in serviceItems"
