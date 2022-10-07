@@ -17,9 +17,9 @@
       </div>
 
       <div
-        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex flex-wrap md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4">
+        <div class="lg:ml-4 md:w-3/4">
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
           >
@@ -30,6 +30,22 @@
             You may use this form to submit your PDF resumé for consideration,
             or you may send it to employment@premiercarehomes.net.
           </p>
+        </div>
+        <div class="lg:ml-4 md:w-3/4">
+          <h4
+            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
+          >
+            Requirements
+          </h4>
+          <ul class="font-sans list-disc">
+            <li
+              v-for="item in requirements"
+              :key="item"
+              class="text-left ml-5 text-slate-400"
+            >
+              {{ item }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -48,6 +64,17 @@ export default defineComponent({
     DisplayCard,
     ResumeForm,
   },
-  setup() {},
+  setup() {
+    const requirements = [
+      "Two years of caregiving experience",
+      "Clean criminal background check",
+      "Able to pass a drug screening",
+      "Detail oriented",
+      "Team player",
+      "Caring, compassionate, and patient",
+    ];
+
+    return { requirements };
+  },
 });
 </script>
