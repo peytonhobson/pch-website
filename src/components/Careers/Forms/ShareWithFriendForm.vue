@@ -1,22 +1,22 @@
 <template>
-  <Form class="w-full max-w-sm form" @submit="onSubmit">
+  <Form class="w-full max-w-md" @submit="onSubmit" id="friend-form">
     <div class="md:flex md:items-center mb-10">
       <div class="md:w-1/3">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-full-name"
         >
-          Full Name<span class="text-red-500"> *</span>
+          Your Name<span class="text-red-500"> *</span>
         </label>
       </div>
       <div class="md:w-2/3">
         <Field
-          name="name"
+          name="submitterName"
           type="text"
-          :rules="schema.name"
+          :rules="schema.submitterName"
           class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
         />
-        <ErrorMessage name="name" class="text-red-500" as="div" />
+        <ErrorMessage name="submitterName" class="text-red-500" as="div" />
       </div>
     </div>
     <div class="md:flex md:items-center mb-10">
@@ -25,17 +25,17 @@
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-email"
         >
-          Email<span class="text-red-500"> *</span>
+          Your Email<span class="text-red-500"> *</span>
         </label>
       </div>
       <div class="md:w-2/3">
         <Field
-          name="email"
+          name="submitterEmail"
           type="email"
-          :rules="schema.email"
+          :rules="schema.submitterEmail"
           class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
         />
-        <ErrorMessage name="email" class="text-red-500" as="div" />
+        <ErrorMessage name="submitterEmail" class="text-red-500" as="div" />
       </div>
     </div>
     <div class="md:flex md:items-center mb-10">
@@ -44,17 +44,17 @@
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Phone
+          Friend's Name<span class="text-red-500"> *</span>
         </label>
       </div>
       <div class="md:w-2/3">
         <Field
-          name="phone-number"
+          name="friendName"
           type="text"
-          :rules="schema.phoneNumber"
+          :rules="schema.friendName"
           class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
         />
-        <ErrorMessage name="phone-number" class="text-red-500" as="div" />
+        <ErrorMessage name="friendName" class="text-red-500" as="div" />
       </div>
     </div>
     <div class="md:flex md:items-center mb-10">
@@ -63,12 +63,17 @@
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Resumé PDF<span class="text-red-500"> *</span>
+          Friend's Email<span class="text-red-500"> *</span>
         </label>
       </div>
       <div class="md:w-2/3">
-        <Field name="file" type="file" :rules="validateFile" />
-        <ErrorMessage name="file" class="text-red-500" as="div" />
+        <Field
+          name="friendEmail"
+          type="email"
+          :rules="schema.friendEmail"
+          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+        />
+        <ErrorMessage name="friendEmail" class="text-red-500" as="div" />
       </div>
     </div>
     <div class="md:flex md:items-center">
@@ -84,7 +89,7 @@
 import { defineComponent } from "vue";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
-import { Form, Field, ErrorMessage, RuleExpression } from "vee-validate";
+import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
 
@@ -97,40 +102,24 @@ export default defineComponent({
     ActionButton,
   },
   setup() {
-    const validateFile = (
-      value?: RuleExpression<unknown>
-    ): RuleExpression<unknown> => {
-      let valid = true;
-      if (value) {
-        if (!["application/pdf"].includes((value as unknown as File).type)) {
-          valid = false;
-        }
-      } else {
-        return "Resumé is required";
-      }
-      if (valid) {
-        return valid as unknown as RuleExpression<unknown>;
-      }
-      return "File must be a PDF file";
-    };
-
     const schema = {
-      name: yup.string().required().label("Full Name"),
-      email: yup.string().email().required().label("Email Address"),
-      phoneNumber: yup.string(),
+      submitterName: yup.string().required().label("Your Name"),
+      submitterEmail: yup.string().email().required().label("Your Email"),
+      friendName: yup.string().required().label("Friend's Name"),
+      friendEmail: yup.string().email().required().label("Friend's Email"),
     };
 
     const onSubmit = () => {
       emailjs
         .sendForm(
           "service_nwq90ma",
-          "template_li8xvdz",
-          ".form",
+          "template_1stcgtb",
+          "#friend-form",
           "SaV6yXcrzMc0lIWqN"
         )
         .then(
           (result: any) => {
-            console.log(result.text);
+            console.log(result);
           },
           (error: any) => {
             console.log(error.text);
@@ -138,7 +127,7 @@ export default defineComponent({
         );
     };
 
-    return { schema, onSubmit, validateFile };
+    return { schema, onSubmit };
   },
 });
 </script>

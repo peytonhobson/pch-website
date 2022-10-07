@@ -1,5 +1,5 @@
 <template>
-  <Form class="w-full max-w-sm form" @submit="onSubmit">
+  <Form class="w-full max-w-md form" @submit="onSubmit">
     <div class="md:flex md:items-center mb-10">
       <div class="md:w-1/3">
         <label
