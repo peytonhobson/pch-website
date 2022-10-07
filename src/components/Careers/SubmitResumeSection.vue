@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="bg-white md:h-[75vh] flex items-center justify-evenly mt-10 md:py-20"
-  >
+  <section class="bg-white flex items-center justify-evenly my-10 md:py-20">
     <div
       class="grid md:grid-cols-12 grid-cols-1 grid-rows-8 md:grid-rows-1 h-full justify-evenly w-full"
     >
@@ -19,7 +17,7 @@
       <div
         class="md:col-span-7 row-start-1 row-span-2 md:row-auto flex flex-wrap md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4 md:w-3/4 mb-7">
+        <div class="lg:ml-4 md:w-3/4 mb-7 md:my-0">
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
           >

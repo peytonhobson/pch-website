@@ -66,8 +66,13 @@
           Resumé PDF<span class="text-red-500"> *</span>
         </label>
       </div>
-      <div class="md:w-2/3">
-        <Field name="file" type="file" :rules="validateFile" />
+      <div class="md:w-2/3 flex flex-wrap justify-center">
+        <Field
+          name="file"
+          type="file"
+          :rules="validateFile"
+          class="w-5/6 md:w-full"
+        />
         <ErrorMessage name="file" class="text-red-500" as="div" />
       </div>
     </div>
