@@ -13,7 +13,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 flex md:items-spread md:justify-end my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-7 flex md:items-spread md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
         <div class="lg:ml-4">
           <h4

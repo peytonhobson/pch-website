@@ -18,7 +18,7 @@
       <div
         class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4">
+        <div class="lg:ml-4 max-w-xl flex flex-wrap w-full justify-start">
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
           >

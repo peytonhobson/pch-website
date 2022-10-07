@@ -18,7 +18,9 @@
       <div
         class="md:col-span-7 row-start-1 row-span-2 md:row-auto flex flex-wrap md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4 md:w-3/4 mb-7 md:my-0">
+        <div
+          class="lg:ml-4 max-w-xl mb-7 md:my-0 flex flex-wrap w-max justify-start"
+        >
           <h4
             class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
           >
@@ -30,17 +32,17 @@
             or you may send it to employment@premiercarehomes.net.
           </p>
         </div>
-        <div class="lg:ml-4 md:w-3/4 mb-7">
+        <div class="lg:ml-4 max-w-xl mb-7 flex flex-wrap w-full justify-start">
           <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
+            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left w-full"
           >
             Requirements
           </h4>
-          <ul class="font-sans list-disc">
+          <ul class="list-disc">
             <li
               v-for="item in requirements"
               :key="item"
-              class="text-left ml-5 text-slate-400"
+              class="text-left ml-5 max-w-xl font-sans text-slate-400"
             >
               {{ item }}
             </li>
