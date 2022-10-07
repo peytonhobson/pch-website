@@ -38,9 +38,14 @@ export default defineComponent({
       required: false,
       default: "",
     },
+    lift: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   setup(props) {
-    const { bottomBorder, rows, route } = toRefs(props);
+    const { bottomBorder, rows, route, lift } = toRefs(props);
 
     const borderClass: string = bottomBorder.value ? "bottom-border" : "";
 
@@ -49,7 +54,11 @@ export default defineComponent({
     });
 
     const containerClass = computed(() => {
-      return { ["container-class"]: true, ["grid-rows-" + rows.value]: true };
+      return {
+        ["container-class"]: true,
+        ["grid-rows-" + rows.value]: true,
+        ["lift"]: lift.value,
+      };
     });
 
     const router = useRouter();
@@ -76,6 +85,10 @@ export default defineComponent({
 }
 
 .container-class {
-  @apply rounded-2xl bg-gray-200 grid grid-cols-1 shadow-2xl ease-out duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer;
+  @apply rounded-2xl bg-gray-200 grid grid-cols-1 shadow-2xl;
+}
+
+.lift {
+  @apply ease-out duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer;
 }
 </style>

@@ -9,6 +9,7 @@
         <display-card
           class="w-5/6 py-10 px-5 md:px-10 place-items-start"
           rows="1"
+          :lift="false"
         >
           <share-with-friend-form />
         </display-card>

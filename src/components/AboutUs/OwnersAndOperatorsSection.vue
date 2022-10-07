@@ -1,10 +1,10 @@
 <template>
-  <section class="bg-white h-[80vh] flex items-center justify-evenly mb-10">
+  <section class="bg-white flex items-center justify-evenly my-10 md:my-20">
     <div
-      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full"
+      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full md:place-items-center py-10"
     >
       <div
-        class="md:col-span-5 md:col-start-1 flex items-center row-span-1 justify-center md:justify-end w-full md:py-10 h-full md:h-3/4"
+        class="md:col-span-5 md:col-start-1 flex items-center row-span-1 justify-center md:justify-end w-full h-full"
       >
         <display-card
           class="w-5/6 py-5 px-10 h-full grid mt-4 md:mt-0"

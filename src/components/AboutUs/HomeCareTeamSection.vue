@@ -1,10 +1,12 @@
 <template>
-  <section class="bg-white h-[55vh] flex items-center justify-evenly">
-    <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full">
-      <div class="md:col-span-5 flex items-center justify-end w-full">
+  <section class="bg-white flex items-center justify-evenly mb-20">
+    <div
+      class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full md:place-items-center md:py-10"
+    >
+      <div class="md:col-span-5 flex items-center justify-end w-full h-full">
         <!-- Fix later for dynamic image and production link -->
         <div
-          class="md:relative h-2/3 w-5/6 md:rounded-xl shadow-md bg-hero-image-trapper bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+          class="md:relative h-full w-5/6 md:rounded-xl shadow-md bg-hero-image-trapper bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
         ></div>
       </div>
       <!--end col-->
