@@ -45,7 +45,7 @@ button {
 }
 
 .card {
-  @apply w-full flex text-white bg-brand-green-gray font-questrial font-medium text-3xl items-center justify-center h-full rounded-b-2xl;
+  @apply w-full flex text-white bg-brand-green-gray font-questrial font-medium text-3xl items-center justify-center h-3/4 rounded-b-2xl;
 }
 
 /* .secondary {

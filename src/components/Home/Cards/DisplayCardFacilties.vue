@@ -1,8 +1,8 @@
 <template>
   <display-card header="Facilities" :route="route">
     <Transition>
-      <div v-if="show && curFacility">
-        <section class="w-full row-start-2 row-span-2">
+      <div v-if="show && curFacility" class="row-start-2 row-span-4">
+        <section class="w-full h-1/2">
           <img :src="curFacility.images[0]" class="w-full h-full" />
         </section>
         <section class="row-start-4 row-span-3 grid grid-rows-4">
@@ -19,8 +19,8 @@
         </section>
       </div>
     </Transition>
-    <section class="w-full row-start-4 row-span-1">
-      <action-button text="Learn More" type="card" class="w-full h-full" />
+    <section class="w-full row-start-6 row-span-1 items-end flex">
+      <action-button text="Learn More" type="card" class="w-full h-1/2" />
     </section>
   </display-card>
 </template>
