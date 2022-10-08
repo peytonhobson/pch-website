@@ -3,12 +3,11 @@
     Testimonials
   </section>
   <section
-    v-if="testimonials.length > 0 && !isMobile"
+    v-if="testimonials.length > 0 && !isMobile && imagesLoaded"
     class="py-5 grid grid-cols-3"
   >
     <div class="flex flex-wrap col-span-1 col-start-1 justify-center">
       <div
-        v-if="imagesLoaded"
         class="h-80 bg-cover my-5 md:w-5/6 rounded-2xl"
         style="
           background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-red-and-patriotic-sweaters.png');
@@ -20,7 +19,6 @@
     <div class="flex flex-wrap col-span-1 col-start-2 justify-center">
       <testimonial-card :testimonial="testimonials[2]" class="my-5 md:w-5/6" />
       <div
-        v-if="imagesLoaded"
         class="h-80 bg-cover my-5 md:w-5/6 rounded-2xl"
         style="
           background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-out-for-a-treat.png');
@@ -32,7 +30,6 @@
       <testimonial-card :testimonial="testimonials[4]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[0]" class="my-5 md:w-5/6" />
       <div
-        v-if="imagesLoaded"
         class="h-80 bg-hero-image-don bg-cover my-5 md:w-5/6 rounded-2xl"
         style="
           background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-christmas-guitar-music.png');
@@ -41,22 +38,33 @@
     </div>
   </section>
   <section
-    v-if="testimonials.length > 0 && isMobile"
+    v-if="testimonials.length > 0 && isMobile && imagesLoaded"
     class="py-5 flex flex-wrap justify-center"
   >
     <testimonial-card :testimonial="testimonials[0]" class="my-5 w-5/6" />
     <div
       class="h-80 bg-hero-image-trapper bg-cover my-5 w-5/6 rounded-2xl"
+      style="
+        background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-red-and-patriotic-sweaters.png');
+      "
     ></div>
     <testimonial-card :testimonial="testimonials[1]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[2]" class="my-5 w-5/6" />
     <div
       class="h-80 bg-hero-image-madrona bg-cover my-5 w-5/6 rounded-2xl"
+      style="
+        background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-out-for-a-treat.png');
+      "
     ></div>
     <testimonial-card :testimonial="testimonials[3]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[4]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[5]" class="my-5 w-5/6" />
-    <div class="h-80 bg-hero-image-don bg-cover my-5 w-5/6 rounded-2xl"></div>
+    <div
+      class="h-80 bg-hero-image-don bg-cover my-5 w-5/6 rounded-2xl"
+      style="
+        background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-red-and-patriotic-sweaters.png');
+      "
+    ></div>
   </section>
 </template>
 
