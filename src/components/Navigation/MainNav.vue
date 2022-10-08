@@ -3,7 +3,7 @@
     <div class="flex flex-nowrap justify-between items-center w-full">
       <router-link to="/" class="flex items-center">
         <img
-          src="@/assets/PCH.png"
+          src="https://pch-development-data.s3.amazonaws.com/pch_photos/other/premier-care-homes-logo1.png"
           class="mr-3 h-16"
           alt="Premier Care Homes Logo"
         />

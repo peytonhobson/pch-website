@@ -2,7 +2,7 @@
   <display-card :header="facility.name" :route="route">
     <div class="w-full row-start-2 row-span-2">
       <!-- Fix for dynamic images -->
-      <img src="@/assets/baxter-house.jpg" class="w-full h-full" />
+      <img :src="facility.images[0]" class="w-full h-full" />
     </div>
     <div class="row-start-4 row-span-2 grid grid-rows-4">
       <div class="px-7 row-start-2 row-span-3 flex items-start justify-center">

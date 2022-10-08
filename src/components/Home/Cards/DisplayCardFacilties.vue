@@ -1,29 +1,46 @@
 <template>
   <display-card header="Facilities" :route="route">
-    <section class="w-full row-start-2 row-span-2">
-      <img src="@/assets/hallet-house.png" class="w-full h-full" />
-    </section>
-    <section class="row-start-4 row-span-3 grid grid-rows-4">
-      <section class="p-7 row-start-1 row-span-3 m-auto">
-        <div class="text-lg font-bold text-left mb-3 font-sen">
-          Hallet House
-        </div>
-        <div class="text-base md:text-lg text-left font-sans">
-          Located in a charming South Salem neighborhood near Sprague High
-          School, this home is relaxed and peaceful.
-        </div>
-      </section>
-      <section class="w-full row-start-4 row-span-1">
-        <action-button text="Learn More" type="card" class="w-full h-full" />
-      </section>
+    <Transition>
+      <div v-if="show && curFacility">
+        <section class="w-full row-start-2 row-span-2">
+          <img :src="curFacility.images[0]" class="w-full h-full" />
+        </section>
+        <section class="row-start-4 row-span-3 grid grid-rows-4">
+          <section
+            class="p-7 row-start-1 row-span-3 m-auto transition-opacity ease-in duration-700 opacity-100"
+          >
+            <div class="text-lg font-bold text-left mb-3 font-sen">
+              {{ curFacility.name }}
+            </div>
+            <div class="text-base md:text-lg text-left font-sans">
+              {{ curFacility.summary }}
+            </div>
+          </section>
+        </section>
+      </div>
+    </Transition>
+    <section class="w-full row-start-4 row-span-1">
+      <action-button text="Learn More" type="card" class="w-full h-full" />
     </section>
   </display-card>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {
+  defineComponent,
+  onMounted,
+  onBeforeUnmount,
+  onBeforeMount,
+  computed,
+  ref,
+} from "vue";
+
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import {
+  useFetchFacilitiesDispatch,
+  useFilteredFacilities,
+} from "@/store/composables";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
@@ -37,6 +54,44 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {},
+  setup() {
+    const filteredFacilities = useFilteredFacilities();
+    const curIndex = ref(0);
+    const curFacility = computed(
+      () => filteredFacilities.value[curIndex.value]
+    );
+
+    const show = ref(true);
+    let interval: any = null;
+    const changeFacility = () => {
+      interval = setInterval(() => {
+        show.value = !show.value;
+        curIndex.value = (curIndex.value + 1) % filteredFacilities.value.length;
+        setTimeout(() => (show.value = !show.value), 1000);
+      }, 6000);
+    };
+
+    const clearFacilityInterval = () => {
+      clearInterval(interval);
+    };
+
+    onMounted(useFetchFacilitiesDispatch);
+    onBeforeMount(changeFacility);
+    onBeforeUnmount(clearFacilityInterval);
+
+    return { curFacility, show };
+  },
 });
 </script>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

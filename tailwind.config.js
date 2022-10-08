@@ -148,9 +148,9 @@ module.exports = {
       "gradient-to-l": "linear-gradient(to left, var(--tw-gradient-stops))",
       "gradient-to-tl":
         "linear-gradient(to top left, var(--tw-gradient-stops))",
-      "hero-image-trapper": "url('@/assets/trapper-house.jpg')",
-      "hero-image-madrona": "url('@/assets/madrona-house.jpg')",
-      "hero-image-don": "url('@/assets/don_malarkey.png')",
+      // "hero-image-trapper": "url('@/assets/trapper-house.jpg')",
+      // "hero-image-madrona": "url('@/assets/madrona-house.jpg')",
+      // "hero-image-don": "url('@/assets/don_malarkey.png')",
     },
     backgroundOpacity: ({ theme }) => theme("opacity"),
     backgroundPosition: {
