@@ -30,7 +30,7 @@
       <testimonial-card :testimonial="testimonials[4]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[0]" class="my-5 md:w-5/6" />
       <div
-        class="h-80 bg-hero-image-don bg-cover my-5 md:w-5/6 rounded-2xl"
+        class="h-80 bg-hero-image-don bg-cover mt-5 md:w-5/6 rounded-2xl"
         style="
           background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-christmas-guitar-music.png');
         "
