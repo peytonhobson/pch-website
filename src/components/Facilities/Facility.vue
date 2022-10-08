@@ -7,7 +7,7 @@
       <div class="md:col-span-5 h-40 md:h-full">
         <!-- Fix later for dynamic image and production link -->
         <div
-          class="md:relative h-full flex items-center justify-center md:rounded-xl shadow-md bg-hero-image-trapper bg-cover"
+          class="md:relative h-full flex items-center justify-center md:rounded-xl shadow-md bg-cover"
         ></div>
       </div>
       <!--end col-->
