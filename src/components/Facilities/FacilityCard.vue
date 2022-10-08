@@ -1,6 +1,6 @@
 <template>
   <display-card :header="facility.name" :route="route">
-    <div class="w-full row-start-2 row-span-2">
+    <div class="w-full row-start-2 row-span-2 h-full">
       <!-- Fix for dynamic images -->
       <img :src="facility.images[0]" class="w-full h-full" />
     </div>

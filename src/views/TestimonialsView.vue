@@ -8,7 +8,10 @@
   >
     <div class="flex flex-wrap col-span-1 col-start-1 justify-center">
       <div
-        class="h-80 bg-hero-image-trapper bg-cover my-5 md:w-5/6 rounded-2xl"
+        class="h-80 bg-cover my-5 md:w-5/6 rounded-2xl"
+        style="
+          background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-red-and-patriotic-sweaters.png');
+        "
       ></div>
       <testimonial-card :testimonial="testimonials[3]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[1]" class="my-5 md:w-5/6" />
@@ -16,7 +19,10 @@
     <div class="flex flex-wrap col-span-1 col-start-2 justify-center">
       <testimonial-card :testimonial="testimonials[2]" class="my-5 md:w-5/6" />
       <div
-        class="h-80 bg-hero-image-madrona bg-cover my-5 md:w-5/6 rounded-2xl"
+        class="h-80 bg-cover my-5 md:w-5/6 rounded-2xl"
+        style="
+          background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-out-for-a-treat.png');
+        "
       ></div>
       <testimonial-card :testimonial="testimonials[5]" class="my-5 md:w-5/6" />
     </div>
@@ -25,6 +31,9 @@
       <testimonial-card :testimonial="testimonials[0]" class="my-5 md:w-5/6" />
       <div
         class="h-80 bg-hero-image-don bg-cover my-5 md:w-5/6 rounded-2xl"
+        style="
+          background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-christmas-guitar-music.png');
+        "
       ></div>
     </div>
   </section>

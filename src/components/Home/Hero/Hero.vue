@@ -13,7 +13,10 @@
       />
       <div class="carousel-item absolute opacity-0 h-full w-full">
         <div
-          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-don bg-cover bg-right"
+          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+          style="
+            background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-edith-and-red-1024x998%402x+2.jpg');
+          "
         >
           <div class="container mx-auto my-10 md:my-auto">
             <div
@@ -50,7 +53,10 @@
       />
       <div class="carousel-item absolute opacity-0 bg-cover bg-right h-full">
         <div
-          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-hero-image-trapper bg-cover bg-right"
+          class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
+          style="
+            background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-blue-tag-dog.jpeg');
+          "
         >
           <div class="container mx-auto my-auto">
             <div

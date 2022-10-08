@@ -2,7 +2,7 @@
   <static-hero
     :first-row-text="heroProps.firstRowText"
     :second-row-text="heroProps.secondRowText"
-    :background-image-class="heroProps.backgroundImageClass"
+    :background-image-style="heroProps.backgroundImageStyle"
   />
   <our-cost-section />
   <our-services-section />
@@ -27,7 +27,8 @@ export default defineComponent({
       firstRowText: "SERVICES & COST",
       secondRowText:
         "Exceptional, professional care for your loved one in a compassionate, home environment.",
-      backgroundImageClass: "bg-hero-image-don",
+      backgroundImageStyle:
+        "background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-blue-tag-dog.jpeg')",
     };
 
     return { heroProps };
