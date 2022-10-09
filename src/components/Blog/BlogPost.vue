@@ -22,11 +22,7 @@
     </div>
   </div>
 
-  <img
-    src="https://source.unsplash.com/CTivHyiTbFw/1600x900"
-    width="1600"
-    height="900"
-  />
+  <img src="https://source.unsplash.com/CTivHyiTbFw/1600x900" class="w-full" />
 
   <div class="flex flex-col md:flex-row py-6 md:py-12">
     <div class="w-full md:w-3/12 pr-3">
