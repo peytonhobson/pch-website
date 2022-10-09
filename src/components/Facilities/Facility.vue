@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="facility && imagesLoaded"
+    v-if="facility"
     class="mt-5 md:mt-10 h-128 md:px-20 motion-safe:animate-fadeIn"
   >
     <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly">
@@ -110,14 +110,9 @@ export default defineComponent({
     onBeforeMount(changeFacility);
     onBeforeUnmount(clearFacilityInterval);
 
-    const imagesLoaded = ref(false);
+    onBeforeMount(() => preloadImages(facility.value.images));
 
-    onBeforeMount(
-      async () =>
-        (imagesLoaded.value = await preloadImages(facility.value.images))
-    );
-
-    return { routeUser, show, currentImage, imagesLoaded };
+    return { routeUser, show, currentImage };
   },
 });
 </script>
