@@ -35,7 +35,6 @@ export const useTestimonials = () => {
 
 export const useFilteredFacilities = () => {
   const store = computed(() => useStore(key));
-  console.log(store.value.getters[FILTERED_FACILITIES]);
   return computed<Facility[]>(() => store.value.getters[FILTERED_FACILITIES]);
 };
 

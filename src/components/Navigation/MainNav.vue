@@ -69,7 +69,6 @@ export default defineComponent({
 
     const handleDropdown = () => {
       isOpen.value = !isOpen.value;
-      console.log(isOpen.value);
     };
 
     const isMobile =

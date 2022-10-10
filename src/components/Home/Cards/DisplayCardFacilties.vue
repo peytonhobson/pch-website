@@ -1,7 +1,10 @@
 <template>
   <display-card header="Facilities" :route="route">
     <Transition>
-      <div v-if="show && curFacility" class="row-start-2 row-span-4">
+      <div
+        v-if="show && curFacility && curImage"
+        class="row-start-2 row-span-4"
+      >
         <section class="w-full h-1/2">
           <img :src="curImage.src" class="w-full h-full" />
         </section>
@@ -33,8 +36,9 @@ import {
   onBeforeMount,
   computed,
   ref,
-  Ref,
+  ComputedRef,
 } from "vue";
+// import { useStore } from "vuex";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
@@ -76,15 +80,14 @@ export default defineComponent({
     };
 
     // Preload images for slideshow to reduce swiping effect
-    const images: Ref<HTMLImageElement[]> = ref([]);
-    const curImage = computed(() => images.value[curIndex.value]);
-    onBeforeMount(async () => {
-      filteredFacilities.value.forEach((link) => {
+    const images: ComputedRef<HTMLImageElement[]> = computed(() => {
+      return filteredFacilities.value.map((link) => {
         let image = new Image();
         image.src = link.images[0];
-        images.value.push(image);
+        return image;
       });
     });
+    const curImage = computed(() => images.value[curIndex.value]);
 
     onMounted(useFetchFacilitiesDispatch);
     onBeforeMount(changeFacility);
