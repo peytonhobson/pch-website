@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="facility"
-    class="h-[85vh] motion-safe:animate-fadeIn flex justify-center items-center"
+    class="motion-safe:animate-fadeIn flex justify-center items-center mt-20"
   >
     <dual-item-display>
       <template #leftColumn>
