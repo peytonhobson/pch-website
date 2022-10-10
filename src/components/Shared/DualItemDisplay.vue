@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white">
+  <section class="bg-white flex items-center justify-center">
     <div
       class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 w-full"
     >
@@ -22,7 +22,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "DualColumnDisplay",
+  name: "DualItemDisplay",
   setup() {},
 });
 </script>

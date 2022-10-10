@@ -4,21 +4,21 @@
     :second-row-text="heroProps.secondRowText"
     :background-image-style="heroProps.backgroundImageStyle"
   />
-  <our-cost-section />
+  <our-cost-segment />
   <our-services-section />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import OurCostSection from "@/components/Services/OurCostSection.vue";
+import OurCostSegment from "@/components/Services/OurCostSegment.vue";
 import OurServicesSection from "@/components/Services/OurServicesSection.vue";
 import StaticHero from "@/components/Shared/StaticHero.vue";
 
 export default defineComponent({
   name: "ServicesView",
   components: {
-    OurCostSection,
+    OurCostSegment,
     OurServicesSection,
     StaticHero,
   },

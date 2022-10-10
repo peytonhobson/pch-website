@@ -1,39 +1,28 @@
 <template>
-  <section class="bg-white flex items-center justify-evenly pb-10">
-    <div
-      class="grid md:grid-cols-12 grid-cols-1 grid-rows-8 md:grid-rows-1 h-full justify-evenly w-full"
-    >
-      <div
-        class="md:col-span-5 row-start-4 md:row-auto flex items-center justify-center md:justify-end w-full py-10 pb-20"
-      >
-        <display-card class="w-5/6 py-5 px-5 md:px-10 xl:py-10" rows="1">
-          <ul class="font-sans">
-            <li
-              v-for="item in serviceItems"
-              :key="item"
-              class="text-left my-2 flex"
-            >
-              <font-awesome-icon
-                class="fill-current text-green-500 flex-col pt-1"
-                :icon="['fas', 'check']"
-              />
-              <div class="flex-col ml-2">{{ item }}</div>
-            </li>
-          </ul>
-        </display-card>
-      </div>
-      <!--end col-->
+  <dual-item-display class="mb-20">
+    <template #leftColumn>
+      <display-card class="w-full py-5 px-5 md:px-10 xl:py-10" rows="1">
+        <ul class="font-sans">
+          <li
+            v-for="item in serviceItems"
+            :key="item"
+            class="text-left my-2 flex"
+          >
+            <font-awesome-icon
+              class="fill-current text-green-500 flex-col pt-1"
+              :icon="['fas', 'check']"
+            />
+            <div class="flex-col ml-2">{{ item }}</div>
+          </li>
+        </ul>
+      </display-card>
+    </template>
+    <!--end col-->
 
-      <div
-        class="md:col-span-5 md:col-start-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center md:my-0 px-10 md:px-0"
-      >
-        <simple-description
-          :header="descriptionHeader"
-          :text="descriptionText"
-        />
-      </div>
-    </div>
-  </section>
+    <template #rightColumn>
+      <simple-description :header="descriptionHeader" :text="descriptionText" />
+    </template>
+  </dual-item-display>
 </template>
 
 <script lang="ts">
@@ -41,12 +30,14 @@ import { defineComponent } from "vue";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
+import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 
 export default defineComponent({
   name: "OurServicesSection",
   components: {
     DisplayCard,
     SimpleDescription,
+    DualItemDisplay,
   },
   setup() {
     const serviceItems = [

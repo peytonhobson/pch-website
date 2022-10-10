@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <h4
-      class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
-    >
+  <div class="prose">
+    <h4 class="mb-5 md:text-3xl text-2xl font-semibold text-left">
       {{ header }}
     </h4>
     <!-- eslint-disable vue/no-v-html -->

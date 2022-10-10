@@ -3,7 +3,7 @@
     v-if="facility"
     class="h-[85vh] motion-safe:animate-fadeIn flex justify-center items-center"
   >
-    <dual-column-display>
+    <dual-item-display>
       <template #leftColumn>
         <Transition>
           <img
@@ -32,7 +32,7 @@
           </div>
         </div>
       </template>
-    </dual-column-display>
+    </dual-item-display>
   </div>
 </template>
 
@@ -51,8 +51,7 @@ import { Facility } from "@/api/types";
 import ActionButton from "../Shared/ActionButton.vue";
 import GoogleMapsEmbed from "@/components/Facilities/GoogleMapsEmbed.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import DualColumnDisplay from "@/components/Shared/DualColumnDisplay.vue";
-// import preloadImages from "@/helpers/preloadImages";
+import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 
 export default defineComponent({
   name: "Facility",
@@ -60,7 +59,7 @@ export default defineComponent({
     ActionButton,
     GoogleMapsEmbed,
     SimpleDescription,
-    DualColumnDisplay,
+    DualItemDisplay,
   },
   props: {
     facility: {
@@ -77,6 +76,7 @@ export default defineComponent({
       window.open(facility.value.location.replace("&output=embed", ""));
     };
 
+    // Put in own function
     const curIndex = ref(0);
     onBeforeMount(async () => {
       facility.value.images.forEach((link) => {
@@ -88,6 +88,7 @@ export default defineComponent({
 
     const currentImage = computed(() => images.value[curIndex.value]);
 
+    // Put in own function
     const show = ref(true);
     let interval: any = null;
     const changeFacility = () => {
@@ -104,16 +105,6 @@ export default defineComponent({
 
     onBeforeMount(changeFacility);
     onBeforeUnmount(clearFacilityInterval);
-
-    onBeforeMount(async () => {
-      facility.value.images.forEach((link) => {
-        let image = new Image();
-        image.src = link;
-        images.value.push(image);
-      });
-
-      console.log("Images Loaded");
-    });
 
     return { routeUser, show, currentImage };
   },
