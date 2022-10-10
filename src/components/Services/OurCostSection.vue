@@ -1,15 +1,20 @@
 <template>
   <section class="bg-white flex items-center justify-evenly mt-16 md:my-20">
     <div
-      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 justify-evenly w-full md:place-items-center md:h-128"
+      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 justify-evenly w-full md:place-items-center"
     >
       <div
         class="md:col-span-5 row-start-2 md:row-auto flex items-start md:items-center mt-7 justify-center md:justify-end w-full h-full"
       >
         <!-- Fix later for dynamic image and production link -->
         <div
-          class="md:relative h-2/3 w-5/6 rounded-xl shadow-md bg-hero-image-trapper bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
-        ></div>
+          class="md:relative h-2/3 w-5/6 md:h-full rounded-xl shadow-md bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+        >
+          <img
+            src="https://pch-development-data.s3.amazonaws.com/pch_photos/madrona/madrona-5.jpg"
+            class="w-full h-full md:rounded-xl shadow-md"
+          />
+        </div>
       </div>
       <!--end col-->
 
