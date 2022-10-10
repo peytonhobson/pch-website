@@ -20,20 +20,13 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 flex md:items-spread md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-6 md:col-start-7 flex flex-wrap md:items-spread md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4">
-          <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
-          >
-            {{ facility.name }}
-          </h4>
-          <!-- eslint-disable vue/no-v-html -->
-          <p
-            class="text-slate-400 max-w-xl text-left"
-            v-html="facility.description"
-          ></p>
-
+        <simple-description
+          :header="facility.name"
+          :text="facility.description"
+        />
+        <div class="w-full">
           <google-maps-embed :location-link="facility.location" />
 
           <div class="my-4">
@@ -63,6 +56,7 @@ import {
 import { Facility } from "@/api/types";
 import ActionButton from "../Shared/ActionButton.vue";
 import GoogleMapsEmbed from "@/components/Facilities/GoogleMapsEmbed.vue";
+import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 // import preloadImages from "@/helpers/preloadImages";
 
 export default defineComponent({
@@ -70,6 +64,7 @@ export default defineComponent({
   components: {
     ActionButton,
     GoogleMapsEmbed,
+    SimpleDescription,
   },
   props: {
     facility: {

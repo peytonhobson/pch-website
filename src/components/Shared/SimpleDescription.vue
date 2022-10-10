@@ -1,0 +1,30 @@
+<template>
+  <div>
+    <h4
+      class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold text-left"
+    >
+      {{ header }}
+    </h4>
+    <!-- eslint-disable vue/no-v-html -->
+    <p class="text-slate-400 text-left" v-html="text"></p>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "SimpleDescription",
+  props: {
+    header: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+    },
+  },
+  setup() {},
+});
+</script>
