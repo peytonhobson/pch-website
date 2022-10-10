@@ -34,19 +34,7 @@
             v-html="facility.description"
           ></p>
 
-          <div class="mapouter flex-1 w-full mt-10 md:mt-10">
-            <div class="gmap_canvas flex w-full h-full">
-              <iframe
-                id="gmap_canvas"
-                :src="facility.location"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-                class="w-full h-full"
-              ></iframe>
-            </div>
-          </div>
+          <google-maps-embed :location-link="facility.location" />
 
           <div class="my-4">
             <action-button
@@ -74,12 +62,14 @@ import {
 
 import { Facility } from "@/api/types";
 import ActionButton from "../Shared/ActionButton.vue";
+import GoogleMapsEmbed from "@/components/Facilities/GoogleMapsEmbed.vue";
 // import preloadImages from "@/helpers/preloadImages";
 
 export default defineComponent({
   name: "Facility",
   components: {
     ActionButton,
+    GoogleMapsEmbed,
   },
   props: {
     facility: {
