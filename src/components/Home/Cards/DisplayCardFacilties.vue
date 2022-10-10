@@ -1,5 +1,5 @@
 <template>
-  <display-card header="Facilities" :route="route">
+  <display-card header="Facilities" :route="route" class="slideshow">
     <Transition>
       <div
         v-if="show && curFacility && curImage"
@@ -32,11 +32,10 @@
 import {
   defineComponent,
   onMounted,
-  onBeforeUnmount,
-  onBeforeMount,
   computed,
   ref,
   ComputedRef,
+  onBeforeUnmount,
 } from "vue";
 // import { useStore } from "vuex";
 
@@ -46,6 +45,7 @@ import {
   useFetchFacilitiesDispatch,
   useFilteredFacilities,
 } from "@/store/composables";
+import setScrollObserverSlideshow from "@/helpers/setScrollObserverSlideshow";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
@@ -73,7 +73,7 @@ export default defineComponent({
         show.value = !show.value;
         curIndex.value = (curIndex.value + 1) % filteredFacilities.value.length;
         setTimeout(() => (show.value = !show.value), 1000);
-      }, 6000);
+      }, 5000);
     };
     const clearFacilityInterval = () => {
       clearInterval(interval);
@@ -90,7 +90,9 @@ export default defineComponent({
     const curImage = computed(() => images.value[curIndex.value]);
 
     onMounted(useFetchFacilitiesDispatch);
-    onBeforeMount(changeFacility);
+    onMounted(() =>
+      setScrollObserverSlideshow(changeFacility, clearFacilityInterval)
+    );
     onBeforeUnmount(clearFacilityInterval);
 
     return { curFacility, show, curImage };

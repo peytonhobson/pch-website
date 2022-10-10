@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel relative">
+  <div v-if="curImg" class="carousel relative">
     <div class="carousel-inner relative overflow-hidden w-full h-full">
       <!--Slide 1-->
       <input
@@ -11,12 +11,14 @@
         hidden
         checked
       />
-      <div class="carousel-item absolute h-full w-full">
+      <div
+        class="animate-fadeIn duration-1000 carousel-item absolute h-full w-full"
+      >
         <Transition>
           <div
             v-if="show && curImg"
             class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right"
-            :style="`background-image: url(${curImg})`"
+            :style="`background-image: url(${curImg.src})`"
           >
             <div class="container mx-auto my-10 md:my-auto">
               <div
@@ -74,7 +76,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from "vue";
+import { defineComponent, ref, computed, ComputedRef } from "vue";
 import HeroSlogan from "./HeroSlogan.vue";
 
 export default defineComponent({
@@ -83,9 +85,9 @@ export default defineComponent({
     HeroSlogan,
   },
   setup() {
-    const curImgIndex = ref(0);
+    const curIndex = ref(0);
 
-    const images = [
+    const imageLinks = [
       "https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-edith-and-red-1024x998%402x+2.jpg",
       "https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-blue-tag-dog.jpeg",
       "https://pch-development-data.s3.amazonaws.com/pch_photos/madrona/madrona-2.jpg",
@@ -95,19 +97,27 @@ export default defineComponent({
 
     const nextImg = () => {
       show.value = !show.value;
-      curImgIndex.value = (curImgIndex.value + 1) % images.length;
+      curIndex.value = (curIndex.value + 1) % imageLinks.length;
       setTimeout(() => (show.value = !show.value), 500);
     };
 
     const prevImg = () => {
       show.value = !show.value;
-      curImgIndex.value =
-        (curImgIndex.value + images.length - 1) % images.length;
-      console.log(curImgIndex.value);
+      curIndex.value =
+        (curIndex.value + imageLinks.length - 1) % imageLinks.length;
+      console.log(curIndex.value);
       setTimeout(() => (show.value = !show.value), 500);
     };
 
-    const curImg = computed(() => images[curImgIndex.value]);
+    const images: ComputedRef<HTMLImageElement[]> = computed(() => {
+      return imageLinks.map((link) => {
+        let image = new Image();
+        image.src = link;
+        return image;
+      });
+    });
+
+    const curImg = computed(() => images.value[curIndex.value]);
 
     return { nextImg, prevImg, curImg, show };
   },
@@ -138,6 +148,6 @@ export default defineComponent({
 }
 
 .carousel-item {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 </style>
