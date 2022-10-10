@@ -6,16 +6,16 @@
     <facility-card
       v-for="facility in filteredFacilities"
       :key="facility.id"
-      class="w-5/6 md:w-1/5 show-on-scroll h-128"
+      class="md:w-1/5 show-on-scroll h-128"
       :facility="facility"
       :route="`/facilities/${facility.name.toLowerCase()}`"
     />
   </section>
-  <section v-else class="flex flex-wrap justify-evenly my-10">
+  <section v-else class="flex flex-wrap justify-evenly py-10">
     <facility-card
       v-for="facility in filteredFacilities"
       :key="facility.id"
-      class="w-5/6 md:w-2/7 show-on-scroll h-128 my-5"
+      class="w-5/6 show-on-scroll h-128 my-10"
       :facility="facility"
       :route="`/facilities/${facility.name.toLowerCase()}`"
     />

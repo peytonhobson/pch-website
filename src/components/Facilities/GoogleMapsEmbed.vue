@@ -8,7 +8,7 @@
         scrolling="no"
         marginheight="0"
         marginwidth="0"
-        class="w-full h-full"
+        class="w-full h-full rounded-xl"
       ></iframe>
     </div>
   </div>

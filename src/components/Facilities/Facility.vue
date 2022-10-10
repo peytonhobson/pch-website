@@ -1,34 +1,36 @@
 <template>
   <div
     v-if="facility"
-    class="motion-safe:animate-fadeIn flex justify-center items-center mt-20"
+    class="motion-safe:animate-fadeIn flex justify-center items-center md:mt-20"
   >
-    <dual-item-display>
+    <dual-item-display :reverse-column="false">
       <template #leftColumn>
         <Transition>
           <img
             v-if="show"
             :src="currentImage.src"
-            class="w-full h-128 md:rounded-xl shadow-md"
+            class="w-full h-92 md:h-128 md:rounded-xl shadow-md"
           />
         </Transition>
       </template>
       <!--end col-->
 
-      <template #rightColumn class="flex flex-wrap">
-        <simple-description
-          :header="facility.name"
-          :text="facility.description"
-        />
-        <div class="w-full prose">
-          <google-maps-embed :location-link="facility.location" />
+      <template #rightColumn>
+        <div class="flex flex-wrap justify-center mt-10 md:my-0">
+          <simple-description
+            :header="facility.name"
+            :text="facility.description"
+          />
+          <div class="w-5/6 md:w-full prose my-10">
+            <google-maps-embed :location-link="facility.location" />
 
-          <div class="my-4">
-            <action-button
-              text="Get Directions"
-              type="primary"
-              @click="routeUser"
-            />
+            <div class="my-4">
+              <action-button
+                text="Get Directions"
+                type="primary"
+                @click="routeUser"
+              />
+            </div>
           </div>
         </div>
       </template>
