@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="my-44">
+  <dual-item-display class="my-32 md:my-44" :reverse-column="true">
     <template #leftColumn>
       <div
-        class="md:relative h-128 w-full md:rounded-2xl duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="w-5/6 h-60 mt-10 md:h-128 md:w-full md:rounded-2xl duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
           src="https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-red-and-patriotic-sweaters.png"

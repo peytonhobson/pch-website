@@ -1,7 +1,10 @@
 <template>
-  <dual-item-display class="mt-44">
+  <dual-item-display class="mt-20 md:mt-44" :reverse-column="true">
     <template #leftColumn>
-      <display-card class="w-full py-5 px-10 h-full grid mt-4 md:mt-0" rows="2">
+      <display-card
+        class="w-5/6 md:w-full py-5 px-10 h-60 md:h-full grid mt-10 md:mt-0"
+        rows="2"
+      >
         <div
           class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
         >
