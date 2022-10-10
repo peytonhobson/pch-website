@@ -1,17 +1,20 @@
 <template>
   <div
     v-if="facility"
-    class="mt-5 md:mt-10 h-128 md:px-20 motion-safe:animate-fadeIn"
+    class="mt-5 md:mt-10 h-full md:px-20 motion-safe:animate-fadeIn"
   >
     <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly">
-      <div class="md:col-span-5 h-40 md:h-full">
+      <!-- Potential Component -->
+      <div
+        class="md:col-span-5 h-40 md:h-full flex items-center justify-center"
+      >
         <!-- Fix later for dynamic image and production link -->
         <Transition>
-          <div
+          <img
             v-if="show"
-            class="md:relative h-full flex items-center justify-center md:rounded-xl shadow-md bg-cover"
-            :style="`background-image: url(${currentImage})`"
-          ></div>
+            :src="currentImage.src"
+            class="w-full h-128 md:rounded-xl shadow-md"
+          />
         </Transition>
       </div>
       <!--end col-->
@@ -66,11 +69,12 @@ import {
   ref,
   onBeforeMount,
   onBeforeUnmount,
+  Ref,
 } from "vue";
 
 import { Facility } from "@/api/types";
 import ActionButton from "../Shared/ActionButton.vue";
-import preloadImages from "@/helpers/preloadImages";
+// import preloadImages from "@/helpers/preloadImages";
 
 export default defineComponent({
   name: "Facility",
@@ -84,6 +88,8 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const images: Ref<HTMLImageElement[]> = ref([]);
+
     const { facility } = toRefs(props);
 
     const routeUser = () => {
@@ -91,16 +97,24 @@ export default defineComponent({
     };
 
     const curIndex = ref(0);
-    const currentImage = computed(() => facility.value.images[curIndex.value]);
+    onBeforeMount(async () => {
+      facility.value.images.forEach((link) => {
+        let image = new Image();
+        image.src = link;
+        images.value.push(image);
+      });
+    });
+
+    const currentImage = computed(() => images.value[curIndex.value]);
 
     const show = ref(true);
     let interval: any = null;
     const changeFacility = () => {
       interval = setInterval(() => {
         show.value = !show.value;
-        curIndex.value = (curIndex.value + 1) % facility.value.images.length;
+        curIndex.value = (curIndex.value + 1) % images.value.length;
         setTimeout(() => (show.value = !show.value), 1000);
-      }, 6000);
+      }, 5000);
     };
 
     const clearFacilityInterval = () => {
@@ -110,7 +124,15 @@ export default defineComponent({
     onBeforeMount(changeFacility);
     onBeforeUnmount(clearFacilityInterval);
 
-    onBeforeMount(() => preloadImages(facility.value.images));
+    onBeforeMount(async () => {
+      facility.value.images.forEach((link) => {
+        let image = new Image();
+        image.src = link;
+        images.value.push(image);
+      });
+
+      console.log("Images Loaded");
+    });
 
     return { routeUser, show, currentImage };
   },
