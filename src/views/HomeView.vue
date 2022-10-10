@@ -1,8 +1,6 @@
 <template>
   <hero class="h-[85vh] md:h-[85vh] w-screen" />
-  <div
-    class="w-full md:h-[20vh] flex items-center py-5 px-10 md:px-20 border-b-4 border-brand-green-gray"
-  >
+  <div class="w-full md:h-[20vh] flex items-center py-5 px-10 md:px-20">
     <span
       class="font-sans font-light text-slate-400 justify-center text-xl md:text-3xl flex-auto"
       >We know it’s a difficult decision when you or your loved one can no

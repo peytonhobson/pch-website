@@ -50,7 +50,7 @@ export default defineComponent({
     const sideBorders = title.value === "Burden Free" ? true : false;
 
     const containerClass = computed(() => {
-      return { ["container-class"]: true, ["md:border-x-4"]: sideBorders };
+      return { ["container-class"]: true, ["md:border-x-2"]: sideBorders };
     });
 
     return { iconColor, containerClass };
@@ -72,6 +72,6 @@ export default defineComponent({
 }
 
 .container-class {
-  @apply w-full h-full border-b-4 border-brand-green-gray flex flex-wrap items-start;
+  @apply w-full h-full border-y-2 border-brand-green-gray flex flex-wrap items-start;
 }
 </style>
