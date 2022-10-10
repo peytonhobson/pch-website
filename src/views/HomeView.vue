@@ -1,5 +1,5 @@
 <template>
-  <hero class="h-[85vh] md:h-[85vh] w-screen" />
+  <hero class="h-[85vh] md:h-[85vh] w-full" />
   <div class="w-full md:h-[20vh] flex items-center py-5 px-10 md:px-20">
     <span
       class="font-sans font-light text-slate-400 justify-center text-xl md:text-3xl flex-auto"
