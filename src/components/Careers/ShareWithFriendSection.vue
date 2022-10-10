@@ -1,11 +1,7 @@
 <template>
-  <dual-item-display class="mb-20">
+  <dual-item-display class="md:my-44">
     <template #leftColumn>
-      <display-card
-        class="w-full py-10 px-7 place-items-start"
-        rows="1"
-        :lift="false"
-      >
+      <display-card class="w-full py-10 px-7" rows="1" :lift="false">
         <share-with-friend-form />
       </display-card>
     </template>

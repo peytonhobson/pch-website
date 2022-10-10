@@ -1,56 +1,39 @@
 <template>
-  <section class="bg-white flex items-center justify-evenly mt-10 md:py-20">
-    <div
-      class="grid md:grid-cols-12 grid-cols-1 grid-rows-8 md:grid-rows-1 h-full justify-evenly w-full"
-    >
-      <div
-        class="md:col-span-5 row-start-3 md:row-auto flex items-center justify-center md:justify-end w-full md:py-10 pb-20"
+  <dual-item-display class="md:my-44">
+    <template #leftColumn>
+      <display-card
+        class="w-full py-10 px-7 place-items-start"
+        rows="1"
+        :lift="false"
       >
-        <display-card
-          class="w-5/6 py-10 px-5 md:px-10 place-items-start"
-          rows="1"
-          :lift="false"
-        >
-          <resume-form />
-        </display-card>
-      </div>
+        <resume-form />
+      </display-card>
+    </template>
 
-      <div
-        class="md:col-span-7 row-start-1 row-span-2 md:row-auto flex flex-wrap md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0"
-      >
-        <div
-          class="lg:ml-4 max-w-xl mb-7 md:my-0 flex flex-wrap w-max justify-start"
+    <template #rightColumn>
+      <simple-description
+        :header="firstDescriptionHeader"
+        :text="firstDescriptionText"
+        class="mb-5"
+      />
+      <div class="prose flex grow flex-wrap justify-start">
+        <h4
+          class="w-full mb-3 md:text-3xl text-2xl font-semibold text-left font-sen"
         >
-          <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
+          Requirements
+        </h4>
+        <ul class="list-disc w-full">
+          <li
+            v-for="item in requirements"
+            :key="item"
+            class="text-left font-sans text-slate-400"
           >
-            Submit Your Resumé
-          </h4>
-          <!-- eslint-disable vue/no-v-html -->
-          <p class="text-slate-400 max-w-xl text-left font-sans">
-            You may use this form to submit your PDF resumé for consideration,
-            or you may send it to employment@premiercarehomes.net.
-          </p>
-        </div>
-        <div class="lg:ml-4 max-w-xl mb-7 flex flex-wrap w-full justify-start">
-          <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left w-full"
-          >
-            Requirements
-          </h4>
-          <ul class="list-disc">
-            <li
-              v-for="item in requirements"
-              :key="item"
-              class="text-left ml-5 max-w-xl font-sans text-slate-400"
-            >
-              {{ item }}
-            </li>
-          </ul>
-        </div>
+            {{ item }}
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </template>
+  </dual-item-display>
 </template>
 
 <script lang="ts">
@@ -58,12 +41,16 @@ import { defineComponent } from "vue";
 
 import DisplayCard from "../Shared/DisplayCard.vue";
 import ResumeForm from "./Forms/ResumeForm.vue";
+import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
+import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 
 export default defineComponent({
   name: "SubmitResumeSection",
   components: {
     DisplayCard,
     ResumeForm,
+    DualItemDisplay,
+    SimpleDescription,
   },
   setup() {
     const requirements = [
@@ -75,7 +62,15 @@ export default defineComponent({
       "Caring, compassionate, and patient",
     ];
 
-    return { requirements };
+    const firstDescriptionHeader = "Submit Your Resumé";
+    const firstDescriptionText =
+      "You may use this form to submit your PDF resumé for consideration, or you may send it to employment@premiercarehomes.net.";
+
+    return {
+      requirements,
+      firstDescriptionHeader,
+      firstDescriptionText,
+    };
   },
 });
 </script>
