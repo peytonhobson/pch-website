@@ -1,5 +1,5 @@
 <template>
-  <div class="prose">
+  <div class="prose w-5/6 md:w-full">
     <h4 class="mb-5 md:text-3xl text-2xl font-semibold text-left font-sen">
       {{ header }}
     </h4>

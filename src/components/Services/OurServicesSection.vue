@@ -1,7 +1,10 @@
 <template>
-  <dual-item-display class="my-44">
+  <dual-item-display class="my-36 md:my-44">
     <template #leftColumn>
-      <display-card class="w-full py-5 px-5 md:px-10 xl:py-10" rows="1">
+      <display-card
+        class="w-5/6 md:w-full mt-10 py-5 px-5 md:px-10 xl:py-10"
+        rows="1"
+      >
         <ul class="font-sans prose">
           <li
             v-for="item in serviceItems"

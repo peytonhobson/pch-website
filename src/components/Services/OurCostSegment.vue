@@ -1,12 +1,12 @@
 <template>
-  <dual-item-display class="h-144 my-44 flex items-stretch">
+  <dual-item-display class="h-144 mt-28 md:my-44 flex flex-col items-stretch">
     <template #leftColumn>
       <div
-        class="md:relative h-2/3 md:h-full rounded-xl shadow-md bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="md:relative h-2/3 w-5/6 md:w-full md:h-full mt-10 rounded-xl shadow-md bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
           src="https://pch-development-data.s3.amazonaws.com/pch_photos/madrona/madrona-5.jpg"
-          class="w-full h-full md:rounded-xl shadow-md"
+          class="w-full h-full rounded-xl shadow-md"
         />
       </div>
     </template>
