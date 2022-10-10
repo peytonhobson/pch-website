@@ -56,8 +56,7 @@ export default defineComponent({
       "Hospice care",
     ];
 
-    const descriptionText =
-      "Services are provided by our Premier Care Homes adult foster home resident care team, which has been carefully selected and is committed to meet individual care needs in a dignified, respectful environment. Each resident care manager has completed and passed the /“Ensure Quality Care/” course through Northwest Senior Service. In addition, all caregivers require a clean criminal history. Each home has a RN who provides delegation/teaching for our staff.";
+    const descriptionText = `Services are provided by our Premier Care Homes adult foster home resident care team, which has been carefully selected and is committed to meet individual care needs in a dignified, respectful environment. Each resident care manager has completed and passed the “Ensure Quality Care” course through Northwest Senior Service. In addition, all caregivers require a clean criminal history. Each home has a RN who provides delegation/teaching for our staff.`;
 
     const descriptionHeader = "Our Services";
 

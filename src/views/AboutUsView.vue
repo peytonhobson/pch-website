@@ -2,7 +2,7 @@
   <main class="mb-20">
     <static-hero
       first-row-text="About Us"
-      background-image-class="bg-hero-image-madrona"
+      :background-image-style="backgroundImageStyle"
     />
     <owners-and-operators-section />
     <affiliates-section />
@@ -26,6 +26,11 @@ export default defineComponent({
     AffiliatesSection,
     HomeCareTeamSection,
   },
-  setup() {},
+  setup() {
+    const backgroundImageStyle =
+      "background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-blue-tag-dog.jpeg')";
+
+    return { backgroundImageStyle };
+  },
 });
 </script>
