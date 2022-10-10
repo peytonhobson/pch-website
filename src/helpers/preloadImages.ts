@@ -1,23 +1,16 @@
-const preloadImages = async (imagesToPreload: string[]) => {
-  const images = imagesToPreload.map((imageSrc: string) => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.src = imageSrc;
-      img.onload = resolve;
-      img.onerror = reject;
-    });
+const preloadImages = async (imageToPreload: string) => {
+  const imagePromise = new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = function () {
+      resolve(img);
+    };
+    img.onerror = img.onabort = function () {
+      reject(imageToPreload);
+    };
+    img.src = imageToPreload;
   });
 
-  const returnVal = await Promise.all(images)
-    .then(() => {
-      console.log("Images loaded!");
-      return true;
-    })
-    .catch(() => {
-      return false;
-    });
-
-  return returnVal;
+  return await Promise.all([imagePromise]);
 };
 
 export default preloadImages;

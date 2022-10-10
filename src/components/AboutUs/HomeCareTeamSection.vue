@@ -37,7 +37,7 @@
             therapists, a nurse, and a paramedic. Each home has a RN who
             provides delegations/staff education and teaching. Our staff works
             as a team to provide individualized care to each resident in our
-            homes. top-image-out-for-a-treat
+            homes.
           </p>
         </div>
       </div>

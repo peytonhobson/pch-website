@@ -54,6 +54,7 @@
       header="Web Links"
       class="w-5/6 md:w-2/5 md:h-full mt-10"
       :bottom-border="true"
+      :lift="false"
     >
       <ul class="flex flex-wrap justify-start row-span-6 py-5 px-10 list-disc">
         <li
@@ -71,6 +72,7 @@
       header="PDF Downloads"
       class="w-5/6 md:w-2/5 h-full my-10"
       :bottom-border="true"
+      :lift="false"
     >
       <ul
         class="flex flex-wrap justify-start row-span-6 py-5 px-10 list-disc h-1/2"
