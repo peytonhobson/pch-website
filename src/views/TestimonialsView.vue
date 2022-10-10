@@ -13,9 +13,14 @@
         <img :src="images[0]" class="w-full h-full rounded-2xl" />
       </div>
       <testimonial-card :testimonial="testimonials[3]" class="my-5 md:w-5/6" />
-      <testimonial-card :testimonial="testimonials[1]" class="my-5 md:w-5/6" />
+      <testimonial-card
+        :testimonial="testimonials[1]"
+        class="my-5 md:w-5/6 align-bottom"
+      />
     </div>
-    <div class="flex flex-wrap col-span-1 col-start-2 justify-center">
+    <div
+      class="flex flex-wrap col-span-1 col-start-2 items-stretch justify-center"
+    >
       <testimonial-card :testimonial="testimonials[2]" class="my-5 md:w-5/6" />
       <div
         class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
@@ -24,11 +29,13 @@
       </div>
       <testimonial-card :testimonial="testimonials[5]" class="my-5 md:w-5/6" />
     </div>
-    <div class="flex flex-wrap col-span-1 col-start-3 justify-center">
+    <div
+      class="flex flex-wrap col-span-1 col-start-3 items-stretch justify-center"
+    >
       <testimonial-card :testimonial="testimonials[4]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[0]" class="my-5 md:w-5/6" />
       <div
-        class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
+        class="h-90 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
       >
         <img :src="images[2]" class="w-full h-full rounded-2xl" />
       </div>
