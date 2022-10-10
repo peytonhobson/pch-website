@@ -25,25 +25,12 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center md:my-0 px-10 md:px-0"
+        class="md:col-span-5 md:col-start-7 row-start-1 row-span-3 md:row-auto flex md:items-center md:justify-center md:my-0 px-10 md:px-0"
       >
-        <div class="lg:ml-4">
-          <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
-          >
-            Our Services
-          </h4>
-          <!-- eslint-disable vue/no-v-html -->
-          <p class="text-slate-400 max-w-xl text-left font-sans">
-            Services are provided by our Premier Care Homes adult foster home
-            resident care team, which has been carefully selected and is
-            committed to meet individual care needs in a dignified, respectful
-            environment. Each resident care manager has completed and passed the
-            “Ensure Quality Care” course through Northwest Senior Service. In
-            addition, all caregivers require a clean criminal history. Each home
-            has a RN who provides delegation/teaching for our staff.
-          </p>
-        </div>
+        <simple-description
+          :header="descriptionHeader"
+          :text="descriptionText"
+        />
       </div>
     </div>
   </section>
@@ -53,11 +40,13 @@
 import { defineComponent } from "vue";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
+import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 
 export default defineComponent({
   name: "OurServicesSection",
   components: {
     DisplayCard,
+    SimpleDescription,
   },
   setup() {
     const serviceItems = [
@@ -76,7 +65,12 @@ export default defineComponent({
       "Hospice care",
     ];
 
-    return { serviceItems };
+    const descriptionText =
+      "Services are provided by our Premier Care Homes adult foster home resident care team, which has been carefully selected and is committed to meet individual care needs in a dignified, respectful environment. Each resident care manager has completed and passed the /“Ensure Quality Care/” course through Northwest Senior Service. In addition, all caregivers require a clean criminal history. Each home has a RN who provides delegation/teaching for our staff.";
+
+    const descriptionHeader = "Our Services";
+
+    return { serviceItems, descriptionHeader, descriptionText };
   },
 });
 </script>

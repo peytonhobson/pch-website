@@ -19,26 +19,12 @@
       <!--end col-->
 
       <div
-        class="md:col-span-7 row-span-1 row-start-1 flex md:row-auto md:items-center md:justify-center md:my-7 px-10 md:px-0"
+        class="md:col-span-5 md:col-start-7 row-span-1 row-start-1 flex md:row-auto md:items-center md:justify-center md:my-7 px-10 md:px-0"
       >
-        <div class="lg:ml-4">
-          <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-semibold font-sen text-left"
-          >
-            Our Cost
-          </h4>
-          <!-- eslint-disable vue/no-v-html -->
-          <p class="text-slate-400 max-w-xl text-left font-sans">
-            The cost of Premier Care Homes is generally lower than nursing homes
-            and assisted living facilities. It is based on several factors
-            depending on the care needs and services required for the resident
-            in order to provide good quality care. We do a complete assessment
-            of each individual’s needs. This allows us to quote a fair and
-            accurate monthly rate. You can call for our base rate. We accept
-            private pay and some long-term care insurance. We are licensed and
-            monitored by the State of Oregon.
-          </p>
-        </div>
+        <simple-description
+          :header="descriptionHeader"
+          :text="descriptionText"
+        />
       </div>
     </div>
   </section>
@@ -47,8 +33,20 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
+
 export default defineComponent({
   name: "OurCostSection",
-  setup() {},
+  components: {
+    SimpleDescription,
+  },
+  setup() {
+    const descriptionText =
+      "The cost of Premier Care Homes is generally lower than nursing homes and assisted living facilities. It is based on several factors depending on the care needs and services required for the resident in order to provide good quality care. We do a complete assessment of each individual’s needs. This allows us to quote a fair and accurate monthly rate. You can call for our base rate. We accept private pay and some long-term care insurance. We are licensed and monitored by the State of Oregon.";
+
+    const descriptionHeader = "Our Cost";
+
+    return { descriptionText, descriptionHeader };
+  },
 });
 </script>
