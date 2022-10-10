@@ -3,7 +3,7 @@
     <Transition>
       <div v-if="show && curFacility" class="row-start-2 row-span-4">
         <section class="w-full h-1/2">
-          <img :src="curFacility.images[0]" class="w-full h-full" />
+          <img :src="curImage.src" class="w-full h-full" />
         </section>
         <section class="row-start-4 row-span-3 grid grid-rows-4">
           <section
@@ -33,6 +33,7 @@ import {
   onBeforeMount,
   computed,
   ref,
+  Ref,
 } from "vue";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
@@ -56,11 +57,11 @@ export default defineComponent({
   },
   setup() {
     const filteredFacilities = useFilteredFacilities();
+
     const curIndex = ref(0);
     const curFacility = computed(
       () => filteredFacilities.value[curIndex.value]
     );
-
     const show = ref(true);
     let interval: any = null;
     const changeFacility = () => {
@@ -70,16 +71,26 @@ export default defineComponent({
         setTimeout(() => (show.value = !show.value), 1000);
       }, 6000);
     };
-
     const clearFacilityInterval = () => {
       clearInterval(interval);
     };
+
+    // Preload images for slideshow to reduce swiping effect
+    const images: Ref<HTMLImageElement[]> = ref([]);
+    const curImage = computed(() => images.value[curIndex.value]);
+    onBeforeMount(async () => {
+      filteredFacilities.value.forEach((link) => {
+        let image = new Image();
+        image.src = link.images[0];
+        images.value.push(image);
+      });
+    });
 
     onMounted(useFetchFacilitiesDispatch);
     onBeforeMount(changeFacility);
     onBeforeUnmount(clearFacilityInterval);
 
-    return { curFacility, show };
+    return { curFacility, show, curImage };
   },
 });
 </script>
