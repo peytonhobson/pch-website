@@ -1,6 +1,6 @@
 <template>
   <section
-    class="bg-cover h-[85vh] flex items-center justify-center"
+    class="bg-cover h-[85vh] flex items-center justify-center animate-fadeIn duration-1000"
     :style="backgroundImageStyle"
   >
     <div class="flex flex-wrap justify-center">
