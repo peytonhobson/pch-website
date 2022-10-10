@@ -41,7 +41,7 @@ button {
 }
 
 .primary {
-  @apply rounded-full text-white bg-brand-green-gray py-3 font-questrial text-base md:text-xl font-medium;
+  @apply rounded-full text-white bg-brand-green-gray py-3 font-questrial text-base md:text-xl font-medium transition duration-300 hover:scale-110;
 }
 
 .card {
