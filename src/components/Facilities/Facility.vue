@@ -20,7 +20,7 @@
           :header="facility.name"
           :text="facility.description"
         />
-        <div class="w-full">
+        <div class="w-full prose">
           <google-maps-embed :location-link="facility.location" />
 
           <div class="my-4">
