@@ -1,7 +1,11 @@
 <template>
-  <dual-item-display class="md:my-44">
+  <dual-item-display class="my-20 md:my-44" :reverse-column="true">
     <template #leftColumn>
-      <display-card class="w-full py-10 px-7" rows="1" :lift="false">
+      <display-card
+        class="w-5/6 mt-10 md:mt-0 md:w-full py-10 px-7"
+        rows="1"
+        :lift="false"
+      >
         <share-with-friend-form />
       </display-card>
     </template>

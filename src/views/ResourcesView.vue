@@ -70,7 +70,7 @@
     </display-card>
     <display-card
       header="PDF Downloads"
-      class="w-5/6 md:w-2/5 h-full my-10"
+      class="w-5/6 md:w-2/5 h-full mt-10"
       :bottom-border="true"
       :lift="false"
     >

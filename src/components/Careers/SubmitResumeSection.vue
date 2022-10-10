@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="md:my-44">
+  <dual-item-display class="my-10 md:my-44" :reverse-column="true">
     <template #leftColumn>
       <display-card
-        class="w-full py-10 px-7 place-items-start"
+        class="w-5/6 md:w-full py-10 px-7 place-items-start mt-5"
         rows="1"
         :lift="false"
       >
@@ -11,26 +11,30 @@
     </template>
 
     <template #rightColumn>
-      <simple-description
-        :header="firstDescriptionHeader"
-        :text="firstDescriptionText"
-        class="mb-5"
-      />
-      <div class="prose flex grow flex-wrap justify-start">
-        <h4
-          class="w-full mb-3 md:text-3xl text-2xl font-semibold text-left font-sen"
+      <div class="flex flex-wrap justify-center">
+        <simple-description
+          :header="firstDescriptionHeader"
+          :text="firstDescriptionText"
+          class="mb-5"
+        />
+        <div
+          class="prose flex md:grow w-5/6 mt-5 md:w-full flex-wrap justify-center md:justify-start"
         >
-          Requirements
-        </h4>
-        <ul class="list-disc w-full">
-          <li
-            v-for="item in requirements"
-            :key="item"
-            class="text-left font-sans text-slate-400"
+          <h4
+            class="w-full mb-3 md:text-3xl text-2xl font-semibold text-left font-sen"
           >
-            {{ item }}
-          </li>
-        </ul>
+            Requirements
+          </h4>
+          <ul class="list-disc w-full">
+            <li
+              v-for="item in requirements"
+              :key="item"
+              class="text-left font-sans text-slate-400"
+            >
+              {{ item }}
+            </li>
+          </ul>
+        </div>
       </div>
     </template>
   </dual-item-display>
