@@ -49,14 +49,14 @@
     <div
       class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
     >
-      <img :src="images[0]" class="w-full h-full rounded-2xl" />
+      <img :src="images[0]" class="w-5/6 h-full rounded-2xl" />
     </div>
     <testimonial-card :testimonial="testimonials[1]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[2]" class="my-5 w-5/6" />
     <div
       class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
     >
-      <img :src="images[1]" class="w-full h-full rounded-2xl" />
+      <img :src="images[1]" class="w-5/6 h-full rounded-2xl" />
     </div>
     <testimonial-card :testimonial="testimonials[3]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[4]" class="my-5 w-5/6" />
@@ -64,7 +64,7 @@
     <div
       class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
     >
-      <img :src="images[2]" class="w-full h-full rounded-2xl" />
+      <img :src="images[2]" class="w-5/6 h-full rounded-2xl" />
     </div>
   </section>
 </template>
