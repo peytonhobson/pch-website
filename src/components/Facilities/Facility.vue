@@ -1,12 +1,9 @@
 <template>
-  <div
-    v-if="facility"
-    class="mt-5 md:mt-10 h-full md:px-20 motion-safe:animate-fadeIn"
-  >
+  <div v-if="facility" class="mt-5 md:mt-10 h-full motion-safe:animate-fadeIn">
     <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly">
       <!-- Potential Component -->
       <div
-        class="md:col-span-5 h-40 md:h-full flex items-center justify-center"
+        class="md:col-span-4 md:col-start-2 h-40 md:h-full flex items-center justify-center"
       >
         <!-- Fix later for dynamic image and production link -->
         <Transition>
@@ -20,7 +17,7 @@
       <!--end col-->
 
       <div
-        class="md:col-span-6 md:col-start-7 flex flex-wrap md:items-spread md:justify-center my-7 md:my-0 px-10 md:px-0"
+        class="md:col-span-5 md:col-start-7 flex flex-wrap md:items-spread md:justify-center my-7 md:my-0 px-10 md:px-0"
       >
         <simple-description
           :header="facility.name"
