@@ -1,5 +1,5 @@
 <template>
-  <dual-item-display class="h-144">
+  <dual-item-display class="h-144 my-44 flex items-stretch">
     <template #leftColumn>
       <div
         class="md:relative h-2/3 md:h-full rounded-xl shadow-md bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"

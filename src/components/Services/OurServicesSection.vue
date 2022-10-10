@@ -1,15 +1,15 @@
 <template>
-  <dual-item-display class="mb-20">
+  <dual-item-display class="my-44">
     <template #leftColumn>
       <display-card class="w-full py-5 px-5 md:px-10 xl:py-10" rows="1">
-        <ul class="font-sans">
+        <ul class="font-sans prose">
           <li
             v-for="item in serviceItems"
             :key="item"
             class="text-left my-2 flex"
           >
             <font-awesome-icon
-              class="fill-current text-green-500 flex-col pt-1"
+              class="fill-current text-green-500 flex-col pt-2"
               :icon="['fas', 'check']"
             />
             <div class="flex-col ml-2">{{ item }}</div>
