@@ -1,17 +1,16 @@
 <template>
-  <section class="bg-white flex items-center justify-evenly mt-16 md:my-20">
+  <section class="bg-white">
     <div
-      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 justify-evenly w-full md:place-items-center"
+      class="grid md:grid-cols-12 grid-cols-1 grid-rows-2 md:grid-rows-1 w-full"
     >
       <div
-        class="md:col-span-5 row-start-2 md:row-auto flex items-start md:items-center mt-7 justify-center md:justify-end w-full h-full"
+        class="md:col-span-4 md:col-start-2 row-start-2 md:row-auto flex items-start md:items-center justify-center w-full h-full"
       >
         <slot name="leftColumn">Left Column</slot>
       </div>
-      <!--end col-->
 
       <div
-        class="md:col-span-5 md:col-start-7 row-span-1 row-start-1 flex md:row-auto md:items-center md:justify-center md:my-7 px-10 md:px-0"
+        class="row-span-1 row-start-1 flex md:flex-wrap md:row-auto md:items-center md:justify-center md:col-span-5 md:col-start-7"
       >
         <slot name="rightColumn">Right Column</slot>
       </div>

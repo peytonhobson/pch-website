@@ -1,11 +1,10 @@
 <template>
-  <div v-if="facility" class="mt-5 md:mt-10 h-full motion-safe:animate-fadeIn">
-    <div class="grid md:grid-cols-12 grid-cols-1 h-full justify-evenly">
-      <!-- Potential Component -->
-      <div
-        class="md:col-span-4 md:col-start-2 h-40 md:h-full flex items-center justify-center"
-      >
-        <!-- Fix later for dynamic image and production link -->
+  <div
+    v-if="facility"
+    class="h-[85vh] motion-safe:animate-fadeIn flex justify-center items-center"
+  >
+    <dual-column-display>
+      <template #leftColumn>
         <Transition>
           <img
             v-if="show"
@@ -13,12 +12,10 @@
             class="w-full h-128 md:rounded-xl shadow-md"
           />
         </Transition>
-      </div>
+      </template>
       <!--end col-->
 
-      <div
-        class="md:col-span-5 md:col-start-7 flex flex-wrap md:items-spread md:justify-center my-7 md:my-0 px-10 md:px-0"
-      >
+      <template #rightColumn class="flex flex-wrap">
         <simple-description
           :header="facility.name"
           :text="facility.description"
@@ -34,8 +31,8 @@
             />
           </div>
         </div>
-      </div>
-    </div>
+      </template>
+    </dual-column-display>
   </div>
 </template>
 
@@ -54,6 +51,7 @@ import { Facility } from "@/api/types";
 import ActionButton from "../Shared/ActionButton.vue";
 import GoogleMapsEmbed from "@/components/Facilities/GoogleMapsEmbed.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
+import DualColumnDisplay from "@/components/Shared/DualColumnDisplay.vue";
 // import preloadImages from "@/helpers/preloadImages";
 
 export default defineComponent({
@@ -62,6 +60,7 @@ export default defineComponent({
     ActionButton,
     GoogleMapsEmbed,
     SimpleDescription,
+    DualColumnDisplay,
   },
   props: {
     facility: {
