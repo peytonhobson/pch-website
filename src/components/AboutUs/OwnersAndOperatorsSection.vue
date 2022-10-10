@@ -1,68 +1,56 @@
 <template>
-  <section class="bg-white flex items-center justify-evenly md:my-20">
-    <div
-      class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-12 grid-cols-1 h-full justify-evenly w-full md:place-items-center py-10"
-    >
-      <div
-        class="md:col-span-5 md:col-start-1 flex items-center row-span-1 justify-center md:justify-end w-full h-full"
-      >
-        <display-card
-          class="w-5/6 py-5 px-10 h-full grid mt-4 md:mt-0"
-          rows="2"
+  <dual-item-display class="mt-44">
+    <template #leftColumn>
+      <display-card class="w-full py-5 px-10 h-full grid mt-4 md:mt-0" rows="2">
+        <div
+          class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
         >
-          <div
-            class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
-          >
-            <img
-              class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-              src="@/assets/Headshot.jpg"
-            />
-            <div class="text-3xl font-sen">Janelle Leavell</div>
-          </div>
-          <div
-            class="w-full h-full row-span-1 row-start-2 flex items-center justify-evenly"
-          >
-            <img
-              class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-              src="@/assets/Headshot.jpg"
-            />
-            <div class="text-3xl font-sen">Margie Hibner</div>
-          </div>
-        </display-card>
-      </div>
-      <!--end col-->
-
-      <div
-        class="md:col-span-7 md:col-start-6 row-span-1 row-start-1 md:row-auto flex md:items-center md:justify-center my-7 md:my-0 px-10 md:px-0 h-3/4"
-      >
-        <div class="lg:ml-4">
-          <h4
-            class="mb-5 md:text-3xl text-2xl lg:leading-normal leading-normal font-sen font-semibold text-left"
-          >
-            Owners and Operators
-          </h4>
-          <!-- eslint-disable vue/no-v-html -->
-          <p class="text-slate-400 max-w-xl text-left font-sans">
-            Janelle LeFore P.T. and Margie Hibner P.T. have a total of 25 years
-            experience as licensed physical therapists, and 21 years of home
-            care experience working as a physical therapist with seniors in
-            nursing homes, assisted living facilities and adult foster homes.
-          </p>
+          <img
+            class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
+            src="@/assets/Headshot.jpg"
+          />
+          <div class="text-3xl font-sen">Janelle Leavell</div>
         </div>
-      </div>
-    </div>
-  </section>
+        <div
+          class="w-full h-full row-span-1 row-start-2 flex items-center justify-evenly"
+        >
+          <img
+            class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
+            src="@/assets/Headshot.jpg"
+          />
+          <div class="text-3xl font-sen">Margie Hibner</div>
+        </div>
+      </display-card>
+    </template>
+    <!--end col-->
+
+    <template #rightColumn>
+      <simple-description :header="descriptionHeader" :text="descriptionText" />
+    </template>
+  </dual-item-display>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
+import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
+import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 
 export default defineComponent({
   name: "OwnersAndOperatorsSection",
   components: {
     DisplayCard,
+    DualItemDisplay,
+    SimpleDescription,
   },
-  setup() {},
+  setup() {
+    const descriptionHeader = "Owners and Operators";
+
+    const descriptionText =
+      "Janelle LeFore P.T. and Margie Hibner P.T. have a total of 25 years experience as licensed physical therapists, and 21 years of home care experience working as a physical therapist with seniors in nursing homes, assisted living facilities and adult foster homes.";
+
+    return { descriptionHeader, descriptionText };
+  },
 });
 </script>
