@@ -1,5 +1,11 @@
 <template>
-  <display-card header="Facilities" :route="route" class="slideshow">
+  <display-card
+    header="Facilities"
+    :route="route"
+    class="slideshow"
+    @mouseenter="clearFacilityInterval"
+    @mouseleave="changeFacility"
+  >
     <Transition>
       <div
         v-if="show && curFacility && curImage"
@@ -76,6 +82,7 @@ export default defineComponent({
       }, 5000);
     };
     const clearFacilityInterval = () => {
+      console.log("cleared");
       clearInterval(interval);
     };
 
@@ -95,7 +102,13 @@ export default defineComponent({
     );
     onBeforeUnmount(clearFacilityInterval);
 
-    return { curFacility, show, curImage };
+    return {
+      curFacility,
+      show,
+      curImage,
+      clearFacilityInterval,
+      changeFacility,
+    };
   },
 });
 </script>
