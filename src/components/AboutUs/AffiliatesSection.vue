@@ -9,8 +9,8 @@
           class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
         >
           <img
+            v-lazy="getImgURL('Headshot.jpg')"
             class="rounded-full h-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-            src="@/assets/Headshot.jpg"
           />
           <div class="text-3xl font-sen">Scott Leavell</div>
         </div>
@@ -30,6 +30,7 @@ import { defineComponent } from "vue";
 import DisplayCard from "../Shared/DisplayCard.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "AffiliatesSection",
@@ -44,7 +45,7 @@ export default defineComponent({
     const descriptionText =
       "Quality Care Homes is a Premier Care Homes affiliated Adult Foster Care Home owned and operated by Scott Leavell. Scott is a paramedic/firefighter with 16 years of experience in the field.";
 
-    return { descriptionHeader, descriptionText };
+    return { descriptionHeader, descriptionText, getImgURL };
   },
 });
 </script>

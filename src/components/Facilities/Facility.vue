@@ -8,7 +8,7 @@
         <Transition>
           <img
             v-if="show"
-            :src="curImg"
+            v-lazy="curImg"
             class="w-full h-92 md:h-144 md:rounded-xl shadow-md"
           />
         </Transition>

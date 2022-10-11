@@ -13,6 +13,7 @@ import App from "./App.vue";
 import router from "./router";
 import "@/assets/tailwind.css";
 import store, { key } from "./store";
+import VueLazyload from "vue-lazyload";
 
 library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
@@ -22,7 +23,10 @@ library.add(faCheck);
 
 createApp(App)
   .use(store, key)
-
+  .use(VueLazyload, {
+    preLoad: 1.3,
+    attempt: 1,
+  })
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");

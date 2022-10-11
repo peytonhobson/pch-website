@@ -3,7 +3,7 @@
     <div class="flex flex-nowrap justify-between items-center w-full">
       <router-link to="/" class="flex items-center">
         <img
-          src="https://pch-development-data.s3.amazonaws.com/pch_photos/other/premier-care-homes-logo1.png"
+          :src="getImgURL('other/premier-care-homes-logo1.png')"
           class="mr-3 h-16"
           alt="Premier Care Homes Logo"
         />
@@ -30,7 +30,7 @@
       </div>
     </div>
   </nav>
-  <div class="">
+  <div>
     <ul
       v-if="isOpen"
       class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white animate-dropDown"
@@ -50,6 +50,8 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "MainNav",
@@ -76,7 +78,7 @@ export default defineComponent({
         navigator.userAgent
       );
 
-    return { listItems, isMobile, handleDropdown, isOpen };
+    return { listItems, isMobile, handleDropdown, isOpen, getImgURL };
   },
 });
 </script>

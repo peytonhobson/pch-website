@@ -9,8 +9,8 @@
           class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
         >
           <img
+            v-lazy="getImgURL('Headshot.jpg')"
             class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-            src="@/assets/Headshot.jpg"
           />
           <div class="text-3xl font-sen">Janelle Leavell</div>
         </div>
@@ -18,8 +18,8 @@
           class="w-full h-full row-span-1 row-start-2 flex items-center justify-evenly"
         >
           <img
+            v-lazy="getImgURL('Headshot.jpg')"
             class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-            src="@/assets/Headshot.jpg"
           />
           <div class="text-3xl font-sen">Margie Hibner</div>
         </div>
@@ -39,6 +39,7 @@ import { defineComponent } from "vue";
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "OwnersAndOperatorsSection",
@@ -53,7 +54,7 @@ export default defineComponent({
     const descriptionText =
       "Janelle LeFore P.T. and Margie Hibner P.T. have a total of 25 years experience as licensed physical therapists, and 21 years of home care experience working as a physical therapist with seniors in nursing homes, assisted living facilities and adult foster homes.";
 
-    return { descriptionHeader, descriptionText };
+    return { descriptionHeader, descriptionText, getImgURL };
   },
 });
 </script>

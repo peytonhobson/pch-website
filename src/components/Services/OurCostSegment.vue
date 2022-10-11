@@ -8,7 +8,7 @@
         class="h-2/3 w-5/6 md:w-full md:h-full rounded-xl shadow-md bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
-          :src="getImgURL('madrona/madrona-5.jpg')"
+          v-lazy="getImgURL('madrona/madrona-5.jpg')"
           class="w-full h-full rounded-xl shadow-md"
         />
       </div>

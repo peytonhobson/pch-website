@@ -1,6 +1,6 @@
 <template>
   <div v-if="curImage" class="w-full h-1/2">
-    <img :src="curImage" class="w-full h-full" />
+    <img v-lazy="curImage" class="w-full h-full" />
   </div>
 </template>
 

@@ -5,13 +5,11 @@
         class="w-5/6 h-60 md:h-128 md:w-full md:rounded-2xl duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
-          :src="getImgURL('other/resident-red-and-patriotic-sweaters.png')"
+          v-lazy="getImgURL('other/resident-red-and-patriotic-sweaters.png')"
           class="w-full h-full rounded-2xl"
         />
       </div>
     </template>
-
-    <!--end col-->
 
     <template #rightColumn>
       <simple-description :header="descriptionHeader" :text="descriptionText" />

@@ -49,6 +49,7 @@
     "vee-validate": "^4.6.10",
     "vue-check-view": "^0.3.0",
     "vue-cli-plugin-tailwind": "~3.0.0",
+    "vue-lazyload": "^3.0.0-rc.2",
     "yup": "^0.32.11"
   },
   "eslintConfig": {
