@@ -8,7 +8,7 @@
 import { defineComponent, toRefs, computed, ComputedRef } from "vue";
 
 import { Facility } from "@/api/types";
-import preloadImages from "@/helpers/preloadImages";
+// import preloadImage from "@/helpers/preloadImage";
 
 export default defineComponent({
   name: "DisplayCardFacilitiesCarousel",
@@ -25,12 +25,13 @@ export default defineComponent({
   setup(props) {
     const { facilities, curIndex } = toRefs(props);
 
-    const imageLinks = computed(() => {
-      return facilities.value.map((facility) => facility.images[0]);
+    const images: ComputedRef<HTMLImageElement[]> = computed(() => {
+      return facilities.value.map((link) => {
+        let image = new Image();
+        image.src = link.images[0];
+        return image;
+      });
     });
-    const images: ComputedRef<HTMLImageElement[]> = preloadImages(
-      imageLinks.value
-    );
     const curImage = computed(() => images.value[curIndex.value]);
 
     return { curImage };

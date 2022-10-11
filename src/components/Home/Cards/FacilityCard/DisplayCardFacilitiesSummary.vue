@@ -33,7 +33,9 @@ export default defineComponent({
   setup(props) {
     const { facilities, curIndex } = toRefs(props);
 
-    const curFacility = computed(() => facilities.value[curIndex.value]);
+    const curFacility = computed(() => {
+      return facilities.value[curIndex.value];
+    });
 
     return { curFacility };
   },
