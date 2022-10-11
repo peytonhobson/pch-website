@@ -8,7 +8,7 @@
         <Transition>
           <img
             v-if="show"
-            :src="currentImage.src"
+            :src="curImg"
             class="w-full h-92 md:h-128 md:rounded-xl shadow-md"
           />
         </Transition>
@@ -46,7 +46,6 @@ import {
   ref,
   onBeforeMount,
   onBeforeUnmount,
-  Ref,
 } from "vue";
 
 import { Facility } from "@/api/types";
@@ -54,6 +53,7 @@ import ActionButton from "../Shared/ActionButton.vue";
 import GoogleMapsEmbed from "@/components/Facilities/GoogleMapsEmbed.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "Facility",
@@ -70,33 +70,24 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const images: Ref<HTMLImageElement[]> = ref([]);
-
     const { facility } = toRefs(props);
 
     const routeUser = () => {
       window.open(facility.value.location.replace("&output=embed", ""));
     };
 
+    const curImg = computed(() =>
+      getImgURL(facility.value.images[curIndex.value])
+    );
+
     // Put in own function
     const curIndex = ref(0);
-    onBeforeMount(async () => {
-      facility.value.images.forEach((link) => {
-        let image = new Image();
-        image.src = link;
-        images.value.push(image);
-      });
-    });
-
-    const currentImage = computed(() => images.value[curIndex.value]);
-
-    // Put in own function
     const show = ref(true);
     let interval: any = null;
     const changeFacility = () => {
       interval = setInterval(() => {
         show.value = !show.value;
-        curIndex.value = (curIndex.value + 1) % images.value.length;
+        curIndex.value = (curIndex.value + 1) % facility.value.images.length;
         setTimeout(() => (show.value = !show.value), 1000);
       }, 5000);
     };
@@ -108,7 +99,7 @@ export default defineComponent({
     onBeforeMount(changeFacility);
     onBeforeUnmount(clearFacilityInterval);
 
-    return { routeUser, show, currentImage };
+    return { routeUser, show, curImg };
   },
 });
 </script>

@@ -2,7 +2,7 @@
   <display-card :header="facility.name" :route="route">
     <div class="w-full row-start-2 row-span-2 h-full">
       <!-- Fix for dynamic images -->
-      <img :src="facility.images[0]" class="w-full h-full" />
+      <img :src="getImgURL(facility.images[0])" class="w-full h-full" />
     </div>
     <div class="row-start-4 row-span-2 grid grid-rows-4">
       <div class="px-7 row-start-2 row-span-3 flex items-start justify-center">
@@ -19,6 +19,7 @@ import { defineComponent } from "vue";
 
 import { Facility } from "@/api/types";
 import DisplayCard from "../Shared/DisplayCard.vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "FacilityCard",
@@ -35,6 +36,8 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {},
+  setup() {
+    return { getImgURL };
+  },
 });
 </script>
