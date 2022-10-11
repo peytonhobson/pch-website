@@ -1,10 +1,10 @@
 <template>
   <div :class="containerClass" @click="routeUser">
-    <section v-if="header" :class="headerClass">
+    <div v-if="header" :class="headerClass">
       <div class="self-center font-sen">
         {{ header }}
       </div>
-    </section>
+    </div>
     <slot></slot>
   </div>
 </template>

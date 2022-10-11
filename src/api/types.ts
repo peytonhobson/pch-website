@@ -24,7 +24,7 @@ export interface Facility {
   location: string;
 }
 
-interface ResourceType {
+export interface ResourceType {
   id: number;
   text: string;
   link: string;
