@@ -8,7 +8,6 @@
 import { defineComponent, toRefs, computed, ComputedRef } from "vue";
 
 import { Facility } from "@/api/types";
-// import preloadImage from "@/helpers/preloadImage";
 
 export default defineComponent({
   name: "DisplayCardFacilitiesCarousel",
