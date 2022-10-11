@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <router-link :to="blogPostLink" class="hover:text-green-200">
+      <router-link :to="blogPostLink" class="hover:text-brand-green-gray">
         <h2 class="text-2xl text-left font-semibold mb-1">
           {{ blogContent.title }}
         </h2>
@@ -39,12 +39,11 @@
       </p>
 
       <div class="mb-2 flex items-start justify-start">
-        <router-link
+        <span
           v-for="category in blogContent.categories"
           :key="category"
-          to="/"
-          class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-green-200 text-green-800 hover:bg-blue-200 hover:text-blue-800 transition duration-300 ease-in-out"
-          >{{ category }}</router-link
+          class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-brand-green-gray text-white border border-brand-green-gray"
+          >{{ category }}</span
         >
       </div>
     </div>
