@@ -3,9 +3,9 @@
     <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
       <a class="bg-gray-100" href="/blog/2018-12-29-writing-with-markdown/">
         <img
-          class="rounded mb-3 hover:opacity-70 transition duration-300 ease-in-out w-full h-full"
+          class="rounded mb-3 hover:opacity-70 transition duration-300 ease-in-out w-full h-56"
           alt="Writing With Markdown"
-          :src="blogContent.mainImage"
+          :src="getImgURL(blogContent.mainImage)"
       /></a>
     </div>
 
@@ -55,6 +55,7 @@
 import { defineComponent, computed } from "vue";
 
 import { Post } from "@/api/types";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "BlogPostSummary",
@@ -69,7 +70,7 @@ export default defineComponent({
       () => `/blog/posts/${props.blogContent.title.replaceAll(" ", "_")}`
     );
 
-    return { blogPostLink };
+    return { blogPostLink, getImgURL };
   },
 });
 </script>

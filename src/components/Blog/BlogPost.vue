@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <img src="https://source.unsplash.com/CTivHyiTbFw/1600x900" class="w-full" />
+  <img :src="getImgURL(filteredPost.mainImage)" class="w-full h-144" />
 
   <div class="flex flex-col md:flex-row py-6 md:py-12">
     <div class="w-full md:w-3/12 pr-3">
@@ -67,6 +67,7 @@
 import { defineComponent } from "vue";
 
 import { Post } from "@/api/types";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "BlogPost",
@@ -75,6 +76,9 @@ export default defineComponent({
       type: Object as () => Post,
       required: true,
     },
+  },
+  setup() {
+    return { getImgURL };
   },
 });
 </script>

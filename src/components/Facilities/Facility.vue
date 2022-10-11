@@ -1,9 +1,9 @@
 <template>
   <div
     v-if="facility"
-    class="motion-safe:animate-fadeIn flex justify-center items-center md:mt-20"
+    class="motion-safe:animate-fadeIn flex justify-center items-center md:mt-10"
   >
-    <dual-item-display :reverse-column="false">
+    <dual-item-display :reverse-column="false" :items-start="true">
       <template #leftColumn>
         <Transition>
           <img
