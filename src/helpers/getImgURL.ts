@@ -1,5 +1,9 @@
 const getImgURL = (imgURL: string) => {
-  return require("@/assets/" + imgURL);
+  if (imgURL) {
+    return require("@/assets/" + imgURL);
+  } else {
+    return undefined;
+  }
 };
 
 export default getImgURL;

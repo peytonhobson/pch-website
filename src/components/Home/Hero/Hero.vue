@@ -18,7 +18,7 @@
           <div
             v-if="show && curImg"
             class="h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover"
-            :style="`background-image: url(${curImg.src})`"
+            :style="`background-image: url(${curImg})`"
           >
             <div class="container mx-auto my-10 md:my-auto">
               <div
@@ -74,7 +74,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, ComputedRef } from "vue";
+import { defineComponent, ref, computed } from "vue";
 
 import HeroSlogan from "./HeroSlogan.vue";
 import getImgURL from "@/helpers/getImgURL";
@@ -108,15 +108,7 @@ export default defineComponent({
       setTimeout(() => (show.value = !show.value), 500);
     };
 
-    const images: ComputedRef<HTMLImageElement[]> = computed(() => {
-      return imageLinks.map((link) => {
-        let image = new Image();
-        image.src = getImgURL(link);
-        return image;
-      });
-    });
-
-    const curImg = computed(() => images.value[curIndex.value]);
+    const curImg = computed(() => getImgURL(imageLinks[curIndex.value]));
 
     const showLabels = ref(false);
 
