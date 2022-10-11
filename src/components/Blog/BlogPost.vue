@@ -27,7 +27,7 @@
   <div class="flex flex-col md:flex-row py-6 md:py-12">
     <div class="w-full md:w-3/12 pr-3">
       <div class="flex-col hidden md:flex mb-3 md:mb-6">
-        <div class="flex items-center mb-3 last:mb-0">
+        <div class="flex items-center mb-3 justify-center last:mb-0">
           <img
             class="rounded-full border-white border-2"
             src="@/assets/Headshot.jpg"
@@ -49,7 +49,7 @@
           v-for="category in filteredPost.categories"
           :key="category"
           to="/"
-          class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-green-200 text-green-800 hover:bg-blue-200 hover:text-blue-800 transition duration-300 ease-in-out"
+          class="p-1 px-3 mr-1 mb-1 inline-block text-xs font-mono rounded bg-brand-green-gray text-white"
           >{{ category }}</router-link
         >
       </div>

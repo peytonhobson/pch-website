@@ -63,7 +63,7 @@ export default defineComponent({
 
 <style scoped>
 .column-container {
-  @apply md:grid md:grid-cols-12 md:grid-rows-1 flex justify-center w-full;
+  @apply md:grid md:grid-cols-12 md:grid-rows-1 flex justify-center w-full h-full;
 }
 
 .first-column {
