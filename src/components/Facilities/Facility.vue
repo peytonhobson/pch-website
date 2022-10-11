@@ -9,7 +9,7 @@
           <img
             v-if="show"
             :src="curImg"
-            class="w-full h-92 md:h-128 md:rounded-xl shadow-md"
+            class="w-full h-92 md:h-144 md:rounded-xl shadow-md"
           />
         </Transition>
       </template>
@@ -22,6 +22,7 @@
             :text="facility.description"
           />
           <div class="w-5/6 md:w-full prose my-10">
+            <!-- Include action button in google maps component -->
             <google-maps-embed :location-link="facility.location" />
 
             <div class="my-4">
