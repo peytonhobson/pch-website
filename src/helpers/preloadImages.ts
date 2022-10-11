@@ -1,16 +1,13 @@
-const preloadImages = async (imageToPreload: string) => {
-  const imagePromise = new Promise((resolve, reject) => {
-    const img = new Image();
-    img.onload = function () {
-      resolve(img);
-    };
-    img.onerror = img.onabort = function () {
-      reject(imageToPreload);
-    };
-    img.src = imageToPreload;
-  });
+import { computed } from "vue";
 
-  return await Promise.all([imagePromise]);
+const preloadImages = (imagesToPreload: string[]) => {
+  return computed(() => {
+    return imagesToPreload.map((link) => {
+      let image = new Image();
+      image.src = link;
+      return image;
+    });
+  });
 };
 
 export default preloadImages;
