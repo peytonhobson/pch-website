@@ -76,11 +76,15 @@ export default defineComponent({
       },
     ];
 
+    const imageLinks = [
+      "other/resident-edith-and-red.jpg",
+      "other/resident-blue-tag-dog.png",
+      "madrona/madrona-2.jpg",
+    ];
+
     onMounted(setScrollObserver);
 
-    return { descriptionBoxContents };
+    return { descriptionBoxContents, imageLinks };
   },
 });
 </script>
-
-<style scoped></style>
