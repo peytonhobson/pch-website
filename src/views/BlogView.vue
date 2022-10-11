@@ -3,17 +3,22 @@
     Blog
   </section>
   <blog-post-summaries :displayed-posts="displayedPosts" />
-  <blog-pagination />
+  <blog-pagination :pages="{ previousPage, nextPage }" />
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted } from "vue";
+import { computed, defineComponent, onMounted, ComputedRef } from "vue";
 
 import BlogPostSummaries from "@/components/Blog/BlogPostSummaries.vue";
 import BlogPagination from "@/components/Blog/BlogPagination.vue";
 import useCurrentPage from "@/composables/useCurrentPage";
 import usePreviousAndNextPages from "@/composables/usePreviousAndNextPages";
 import { useFetchPostsDispatch, useFilteredPosts } from "@/store/composables";
+
+interface Pages {
+  previousPage: ComputedRef<number | undefined>;
+  nextPage: ComputedRef<number | undefined>;
+}
 
 export default defineComponent({
   name: "BlogView",
@@ -29,7 +34,7 @@ export default defineComponent({
     const currentPage = useCurrentPage();
 
     const maxPage = computed(() => Math.ceil(filteredPosts.value.length / 5));
-    const { previousPage, nextPage } = usePreviousAndNextPages(
+    const { previousPage, nextPage }: Pages = usePreviousAndNextPages(
       currentPage,
       maxPage
     );
