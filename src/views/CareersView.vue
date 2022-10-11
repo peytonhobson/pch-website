@@ -2,7 +2,7 @@
   <static-hero
     :first-row-text="heroProps.firstRowText"
     :second-row-text="heroProps.secondRowText"
-    :background-image-style="heroProps.backgroundImageStyle"
+    :background-image="heroProps.backgroundImage"
   />
   <submit-resume-section />
   <share-with-friend-section />
@@ -27,8 +27,7 @@ export default defineComponent({
       firstRowText: "EMPLOYMENT",
       secondRowText:
         "Premier Care Homes is always accepting applications and looking to hire exceptional staff members to complement our highly qualified family of personnel. If you or someone you know meet the following requirements and are looking to join our team, please contact us.",
-      backgroundImageStyle:
-        "background-image: url('https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-blue-tag-dog.jpeg')",
+      backgroundImage: "other/resident-blue-tag-dog.png",
     };
 
     return { heroProps };
