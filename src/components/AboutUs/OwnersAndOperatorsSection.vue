@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="mt-20 md:mt-44" :reverse-column="true">
+  <dual-item-display class="mt-20 md:mt-44 h-92" :reverse-column="true">
     <template #leftColumn>
       <display-card
-        class="w-5/6 md:w-full py-5 px-10 h-60 md:h-full grid mt-10 md:mt-0"
+        class="w-5/6 md:w-full py-5 px-10 h-60 md:h-full grid md:mt-0"
         rows="2"
       >
         <div
