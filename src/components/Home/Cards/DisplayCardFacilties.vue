@@ -43,7 +43,6 @@ import {
   ComputedRef,
   onBeforeUnmount,
 } from "vue";
-// import { useStore } from "vuex";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
@@ -52,6 +51,7 @@ import {
   useFilteredFacilities,
 } from "@/store/composables";
 import setScrollObserverSlideshow from "@/helpers/setScrollObserverSlideshow";
+import preloadImages from "@/helpers/preloadImages";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
@@ -82,18 +82,16 @@ export default defineComponent({
       }, 5000);
     };
     const clearFacilityInterval = () => {
-      console.log("cleared");
       clearInterval(interval);
     };
 
     // Preload images for slideshow to reduce swiping effect
-    const images: ComputedRef<HTMLImageElement[]> = computed(() => {
-      return filteredFacilities.value.map((link) => {
-        let image = new Image();
-        image.src = link.images[0];
-        return image;
-      });
-    });
+    const imageLinks = computed(() =>
+      filteredFacilities.value.map((facility) => facility.images[0])
+    );
+    const images: ComputedRef<HTMLImageElement[]> = preloadImages(
+      imageLinks.value
+    );
     const curImage = computed(() => images.value[curIndex.value]);
 
     onMounted(useFetchFacilitiesDispatch);
