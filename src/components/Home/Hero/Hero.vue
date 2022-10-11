@@ -75,7 +75,9 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed, ComputedRef } from "vue";
+
 import HeroSlogan from "./HeroSlogan.vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "Hero",
@@ -86,9 +88,9 @@ export default defineComponent({
     const curIndex = ref(0);
 
     const imageLinks = [
-      "https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-edith-and-red-1024x998%402x+2.jpg",
-      "https://pch-development-data.s3.amazonaws.com/pch_photos/other/resident-blue-tag-dog.jpeg",
-      "https://pch-development-data.s3.amazonaws.com/pch_photos/madrona/madrona-2.jpg",
+      "other/resident-edith-and-red.jpg",
+      "other/resident-blue-tag-dog.png",
+      "madrona/madrona-2.jpg",
     ];
 
     const show = ref(true);
@@ -103,14 +105,13 @@ export default defineComponent({
       show.value = !show.value;
       curIndex.value =
         (curIndex.value + imageLinks.length - 1) % imageLinks.length;
-      console.log(curIndex.value);
       setTimeout(() => (show.value = !show.value), 500);
     };
 
     const images: ComputedRef<HTMLImageElement[]> = computed(() => {
       return imageLinks.map((link) => {
         let image = new Image();
-        image.src = link;
+        image.src = getImgURL(link);
         return image;
       });
     });
