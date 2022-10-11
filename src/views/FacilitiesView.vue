@@ -2,20 +2,11 @@
   <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
     Facilities
   </section>
-  <section v-if="!isMobile" class="flex flex-wrap justify-evenly my-10">
+  <section class="flex flex-wrap justify-evenly py-10">
     <facility-card
       v-for="facility in filteredFacilities"
       :key="facility.id"
-      class="md:w-1/5 show-on-scroll h-128"
-      :facility="facility"
-      :route="`/facilities/${facility.name.toLowerCase()}`"
-    />
-  </section>
-  <section v-else class="flex flex-wrap justify-evenly py-10">
-    <facility-card
-      v-for="facility in filteredFacilities"
-      :key="facility.id"
-      class="w-5/6 show-on-scroll h-128 my-10"
+      class="w-5/6 md:w-1/5 show-on-scroll h-128 my-10 md:my-0"
       :facility="facility"
       :route="`/facilities/${facility.name.toLowerCase()}`"
     />
@@ -43,12 +34,7 @@ export default defineComponent({
 
     const filteredFacilities = useFilteredFacilities();
 
-    const isMobile =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-
-    return { isMobile, filteredFacilities };
+    return { filteredFacilities };
   },
 });
 </script>

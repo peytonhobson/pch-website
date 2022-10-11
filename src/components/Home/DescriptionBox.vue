@@ -76,6 +76,6 @@ export default defineComponent({
 }
 
 .container-class {
-  @apply w-full h-full md:border-y-2 border-brand-green-gray flex flex-wrap items-start;
+  @apply w-full md:w-1/3 h-80 md:border-y-2 border-brand-green-gray flex flex-wrap items-start;
 }
 </style>
