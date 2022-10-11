@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="flex flex-wrap justify-evenly pt-10 py-0 pb-10">
-    <display-card-facilties
+    <display-card-facilities
       class="md:max-w-md md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
       route="facilities"
     />
@@ -43,7 +43,7 @@ import { defineComponent, onMounted } from "vue";
 
 import Hero from "@/components/Home/Hero/Hero.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
-import DisplayCardFacilties from "@/components/Home/Cards/DisplayCardFacilties.vue";
+import DisplayCardFacilities from "@/components/Home/Cards/FacilityCard/DisplayCardFacilities.vue";
 import DisplayCardLocations from "@/components/Home/Cards/DisplayCardLocations.vue";
 import DisplayCardContact from "@/components/Home/Cards/ContactCard/DisplayCardContact.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
@@ -60,7 +60,7 @@ export default defineComponent({
   components: {
     Hero,
     DescriptionBox,
-    DisplayCardFacilties,
+    DisplayCardFacilities,
     DisplayCardLocations,
     DisplayCardContact,
   },
