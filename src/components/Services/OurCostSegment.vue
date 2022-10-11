@@ -8,7 +8,7 @@
         class="h-2/3 w-5/6 md:w-full md:h-full rounded-xl shadow-md bg-cover duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
-          src="https://pch-development-data.s3.amazonaws.com/pch_photos/madrona/madrona-5.jpg"
+          :src="getImgURL('madrona/madrona-5.jpg')"
           class="w-full h-full rounded-xl shadow-md"
         />
       </div>
@@ -25,6 +25,7 @@ import { defineComponent } from "vue";
 
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "OurCostSection",
@@ -38,7 +39,7 @@ export default defineComponent({
 
     const descriptionHeader = "Our Cost";
 
-    return { descriptionText, descriptionHeader };
+    return { descriptionText, descriptionHeader, getImgURL };
   },
 });
 </script>

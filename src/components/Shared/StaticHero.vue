@@ -1,7 +1,7 @@
 <template>
   <section
     class="bg-cover h-[85vh] flex items-center justify-center animate-fadeIn duration-1000"
-    :style="backgroundImageStyle"
+    :style="`background-image: url(${backgroundImageString})`"
   >
     <div class="flex flex-wrap justify-center">
       <div
@@ -20,7 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, toRefs, computed } from "vue";
+import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
   name: "StaticHero",
@@ -34,11 +35,19 @@ export default defineComponent({
       required: false,
       default: undefined,
     },
-    backgroundImageStyle: {
+    backgroundImage: {
       type: String,
       required: true,
     },
   },
-  setup() {},
+  setup(props) {
+    const { backgroundImage } = toRefs(props);
+
+    const backgroundImageString = computed(() =>
+      getImgURL(backgroundImage.value)
+    );
+
+    return { backgroundImageString };
+  },
 });
 </script>
