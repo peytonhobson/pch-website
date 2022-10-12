@@ -21,18 +21,7 @@
             :header="facility.name"
             :text="facility.description"
           />
-          <div class="w-5/6 md:w-full prose my-10">
-            <!-- Include action button in google maps component -->
-            <google-maps-embed :location-link="facility.location" />
-
-            <div class="my-4">
-              <action-button
-                text="Get Directions"
-                type="primary"
-                @click="routeUser"
-              />
-            </div>
-          </div>
+          <map-directions :location-link="facility.location" />
         </div>
       </template>
     </dual-item-display>
@@ -50,8 +39,7 @@ import {
 } from "vue";
 
 import { Facility } from "@/api/types";
-import ActionButton from "../Shared/ActionButton.vue";
-import GoogleMapsEmbed from "@/components/Facilities/GoogleMapsEmbed.vue";
+import MapDirections from "@/components/Facilities/MapDirections.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import getImgURL from "@/helpers/getImgURL";
@@ -59,8 +47,7 @@ import getImgURL from "@/helpers/getImgURL";
 export default defineComponent({
   name: "Facility",
   components: {
-    ActionButton,
-    GoogleMapsEmbed,
+    MapDirections,
     SimpleDescription,
     DualItemDisplay,
   },
@@ -72,10 +59,6 @@ export default defineComponent({
   },
   setup(props) {
     const { facility } = toRefs(props);
-
-    const routeUser = () => {
-      window.open(facility.value.location.replace("&output=embed", ""));
-    };
 
     const curImg = computed(() =>
       getImgURL(facility.value.images[curIndex.value])
@@ -100,7 +83,7 @@ export default defineComponent({
     onBeforeMount(changeFacility);
     onBeforeUnmount(clearFacilityInterval);
 
-    return { routeUser, show, curImg };
+    return { show, curImg };
   },
 });
 </script>
