@@ -5,13 +5,7 @@
   >
     <dual-item-display :reverse-column="false" :items-start="true">
       <template #leftColumn>
-        <Transition>
-          <img
-            v-if="show"
-            v-lazy="curImg"
-            class="w-full h-92 md:h-144 md:rounded-xl shadow-md"
-          />
-        </Transition>
+        <facility-carousel :facility="facility" />
       </template>
       <!--end col-->
 
@@ -29,20 +23,13 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  toRefs,
-  computed,
-  ref,
-  onBeforeMount,
-  onBeforeUnmount,
-} from "vue";
+import { defineComponent } from "vue";
 
 import { Facility } from "@/api/types";
 import MapDirections from "@/components/Facilities/MapDirections.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
-import getImgURL from "@/helpers/getImgURL";
+import FacilityCarousel from "@/components/Facilities/FacilityCarousel.vue";
 
 export default defineComponent({
   name: "Facility",
@@ -50,6 +37,7 @@ export default defineComponent({
     MapDirections,
     SimpleDescription,
     DualItemDisplay,
+    FacilityCarousel,
   },
   props: {
     facility: {
@@ -57,34 +45,7 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
-    const { facility } = toRefs(props);
-
-    const curImg = computed(() =>
-      getImgURL(facility.value.images[curIndex.value])
-    );
-
-    // Put in own function
-    const curIndex = ref(0);
-    const show = ref(true);
-    let interval: any = null;
-    const changeFacility = () => {
-      interval = setInterval(() => {
-        show.value = !show.value;
-        curIndex.value = (curIndex.value + 1) % facility.value.images.length;
-        setTimeout(() => (show.value = !show.value), 1000);
-      }, 5000);
-    };
-
-    const clearFacilityInterval = () => {
-      clearInterval(interval);
-    };
-
-    onBeforeMount(changeFacility);
-    onBeforeUnmount(clearFacilityInterval);
-
-    return { show, curImg };
-  },
+  setup() {},
 });
 </script>
 
