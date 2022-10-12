@@ -6,7 +6,7 @@
     <facility-card
       v-for="facility in filteredFacilities"
       :key="facility.id"
-      class="w-5/6 md:w-1/5 show-on-scroll h-128 my-10 md:my-0"
+      class="w-5/6 md:w-2/5 xl:w-1/5 show-on-scroll h-128 my-10 xl:my-0"
       :facility="facility"
       :route="`/Facilities/${facility.name.toLowerCase()}`"
     />

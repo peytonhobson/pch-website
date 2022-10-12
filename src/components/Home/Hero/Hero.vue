@@ -22,7 +22,7 @@
           >
             <div class="container mx-auto my-10 md:my-auto">
               <div
-                class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide"
+                class="flex flex-col w-full lg:w-1/2 xl:ml-16 items-center xl:items-start px-6 tracking-wide"
               >
                 <hero-slogan
                   main-text-row1="WHEN ONLY THE"
@@ -35,12 +35,12 @@
         </Transition>
       </div>
       <label
-        class="control-left w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+        class="md:control-left w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
         @click="prevImg"
         >‹</label
       >
       <label
-        class="control-right w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+        class="md:control-right w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
         @click="nextImg"
         >›</label
       >

@@ -77,7 +77,7 @@ export default defineComponent({
 
 <style scoped>
 .header {
-  @apply w-full text-5xl md:text-6xl row-span-1 row-start-1 rounded-t-2xl flex items-center justify-center py-3 md:py-0;
+  @apply w-full text-5xl xl:text-6xl row-span-1 row-start-1 rounded-t-2xl flex items-center justify-center py-3 md:py-0;
 }
 
 .bottom-border {

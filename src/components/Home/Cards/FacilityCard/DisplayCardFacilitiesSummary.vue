@@ -6,7 +6,7 @@
       <div class="text-lg font-bold text-left mb-3 font-sen">
         {{ curFacility.name }}
       </div>
-      <div class="text-base md:text-lg text-left font-sans">
+      <div class="text-base xl:text-lg text-left font-sans">
         {{ curFacility.summary }}
       </div>
     </div>
