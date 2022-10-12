@@ -1,11 +1,11 @@
 <template>
   <dual-item-display
-    class="h-144 mt-28 md:my-44 flex flex-col items-stretch"
+    class="h-144 mt-24 md:my-44 flex flex-col items-stretch"
     :reverse-column="true"
   >
     <template #leftColumn>
       <div
-        class="h-2/3 w-5/6 md:w-full md:h-full rounded-xl shadow-md bg-cover duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="mt-10 md:mt-0 h-2/3 w-5/6 md:w-full md:h-full rounded-xl shadow-md bg-cover duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
           v-lazy="getImgURL('madrona/madrona-5.jpg')"

@@ -2,7 +2,7 @@
   <dual-item-display class="my-10 md:my-44" :reverse-column="true">
     <template #leftColumn class="h-full items-center">
       <display-card
-        class="w-5/6 md:w-full py-10 px-7 h-full"
+        class="w-5/6 md:w-full py-10 px-7 h-full mt-10 md:mt-0"
         rows="1"
         :lift="false"
       >
