@@ -14,11 +14,11 @@
   <div class="flex flex-wrap justify-evenly pt-10 py-0 pb-10">
     <display-card-facilities
       class="md:max-w-md md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
-      route="facilities"
+      route="Facilities"
     />
     <display-card-locations
       class="md:max-w-md md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"
-      route="facilities"
+      route="Facilities"
     />
     <display-card-contact
       class="md:max-w-md md:w-2/7 my-10 md:my-0 w-5/6 show-on-scroll h-144"

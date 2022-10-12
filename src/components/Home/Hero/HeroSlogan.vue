@@ -14,10 +14,10 @@
         </div>
       </div>
       <div class="row-span-2 row-start-8 mt-8 flex justify-evenly">
-        <router-link to="/services">
+        <router-link to="/Services">
           <action-button text="Get Started" type="primary" />
         </router-link>
-        <router-link to="/about_us">
+        <router-link to="/About-Us">
           <action-button text="About Us" type="primary" />
         </router-link>
       </div>

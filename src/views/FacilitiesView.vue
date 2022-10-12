@@ -8,7 +8,7 @@
       :key="facility.id"
       class="w-5/6 md:w-1/5 show-on-scroll h-128 my-10 md:my-0"
       :facility="facility"
-      :route="`/facilities/${facility.name.toLowerCase()}`"
+      :route="`/Facilities/${facility.name.toLowerCase()}`"
     />
   </section>
 </template>

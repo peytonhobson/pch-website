@@ -2,7 +2,7 @@
   <div class="flex w-full items-center justify-center space-x-1 py-5">
     <router-link
       v-if="previousPage"
-      :to="{ name: 'blog', query: { page: previousPage } }"
+      :to="{ name: 'Blog', query: { page: previousPage } }"
       class="px-4 py-2 font-bold text-gray-7 00 bg-gray-300 rounded-md hover:bg-brand-green-gray hover:text-white"
     >
       Previous
@@ -14,14 +14,14 @@
     <router-link
       v-for="page in maxPage"
       :key="page"
-      :to="{ name: 'blog', query: { page: page } }"
+      :to="{ name: 'Blog', query: { page: page } }"
       class="px-4 py-2 text-gray-700 bg-gray-300 rounded-md hover:bg-brand-green-gray hover:text-white"
     >
       {{ page }}
     </router-link>
     <router-link
       v-if="nextPage"
-      :to="{ name: 'blog', query: { page: nextPage } }"
+      :to="{ name: 'Blog', query: { page: nextPage } }"
       class="px-4 py-2 font-bold text-gray-7 00 bg-gray-300 rounded-md hover:bg-brand-green-gray hover:text-white"
     >
       Next

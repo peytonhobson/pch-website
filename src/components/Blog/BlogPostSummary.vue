@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-col md:flex-row w-full lg:w-10/12">
     <div class="md:mr-4 mb-2 md:mb-0 md:w-4/12">
-      <a class="bg-gray-100" href="/blog/2018-12-29-writing-with-markdown/">
+      <router-link :to="blogPostLink">
         <img
           v-lazy="getImgURL(blogContent.mainImage)"
           class="rounded mb-3 hover:opacity-70 transition duration-300 ease-in-out w-full h-56"
           alt="Writing With Markdown"
-      /></a>
+      /></router-link>
     </div>
 
     <div class="flex-1">
@@ -66,7 +66,7 @@ export default defineComponent({
   },
   setup(props) {
     const blogPostLink = computed(
-      () => `/blog/posts/${props.blogContent.title.replaceAll(" ", "_")}`
+      () => `/Blog/Posts/${props.blogContent.title.replaceAll(" ", "_")}`
     );
 
     return { blogPostLink, getImgURL };
