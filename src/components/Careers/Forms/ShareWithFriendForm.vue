@@ -92,6 +92,7 @@ import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
+import { notify } from "@kyvg/vue3-notification";
 
 export default defineComponent({
   name: "ShareWithFriendForm",
@@ -118,11 +119,19 @@ export default defineComponent({
           "SaV6yXcrzMc0lIWqN"
         )
         .then(
-          (result: any) => {
-            console.log(result);
+          () => {
+            notify({
+              type: "success",
+              text: "Referral submitted successfully!",
+              group: "friend",
+            });
           },
-          (error: any) => {
-            console.log(error.text);
+          () => {
+            notify({
+              type: "error",
+              text: "Something went wrong. Please try again",
+              group: "friend",
+            });
           }
         );
 

@@ -92,6 +92,7 @@ import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage, RuleExpression } from "vee-validate";
 import * as yup from "yup";
 import emailjs from "@emailjs/browser";
+import { notify } from "@kyvg/vue3-notification";
 
 export default defineComponent({
   name: "ResumeForm",
@@ -134,11 +135,19 @@ export default defineComponent({
           "SaV6yXcrzMc0lIWqN"
         )
         .then(
-          (result: any) => {
-            console.log(result.text);
+          () => {
+            notify({
+              type: "success",
+              text: "Application submitted successfully!",
+              group: "resume",
+            });
           },
-          (error: any) => {
-            console.log(error.text);
+          () => {
+            notify({
+              type: "error",
+              text: "Something went wrong. Please try again",
+              group: "resume",
+            });
           }
         );
 

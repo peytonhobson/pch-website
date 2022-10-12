@@ -8,6 +8,7 @@ import {
   faBars,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import Notifications from "@kyvg/vue3-notification";
 
 import App from "./App.vue";
 import router from "./router";
@@ -23,6 +24,7 @@ library.add(faCheck);
 
 createApp(App)
   .use(store, key)
+  .use(Notifications)
   .use(VueLazyload, {
     preLoad: 1.3,
     attempt: 1,

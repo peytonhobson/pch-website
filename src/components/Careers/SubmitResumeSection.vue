@@ -6,6 +6,9 @@
         rows="1"
         :lift="false"
       >
+        <span class="flex justify-center md:justify-end w-full">
+          <notifications group="resume" class="static w-full" />
+        </span>
         <resume-form />
       </display-card>
     </template>

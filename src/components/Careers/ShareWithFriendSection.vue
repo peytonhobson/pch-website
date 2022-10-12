@@ -6,6 +6,9 @@
         rows="1"
         :lift="false"
       >
+        <span class="flex justify-center md:justify-end w-full">
+          <notifications group="friend" class="static w-full" />
+        </span>
         <share-with-friend-form />
       </display-card>
     </template>
