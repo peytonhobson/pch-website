@@ -2,7 +2,7 @@
   <dual-item-display class="my-32 md:my-44" :reverse-column="true">
     <template #leftColumn>
       <div
-        class="w-5/6 h-60 md:h-128 md:w-full md:rounded-2xl duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="w-5/6 h-60 md:h-128 md:w-full md:rounded-2xl duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
           v-lazy="getImgURL('other/resident-red-and-patriotic-sweaters.png')"

@@ -89,6 +89,6 @@ export default defineComponent({
 }
 
 .lift {
-  @apply ease-out duration-500 hover:-translate-y-5 transition-all hover:cursor-pointer;
+  @apply ease-out duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer;
 }
 </style>
