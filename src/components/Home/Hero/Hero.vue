@@ -117,7 +117,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 .carousel-indicators {
   list-style: none;
   margin: 0;
