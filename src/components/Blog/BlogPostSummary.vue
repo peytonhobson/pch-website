@@ -4,7 +4,7 @@
       <router-link :to="blogPostLink">
         <img
           v-lazy="getImgURL(blogContent.mainImage)"
-          class="rounded mb-3 hover:opacity-70 transition duration-300 ease-in-out w-full h-56"
+          class="rounded hover:opacity-70 transition duration-300 ease-in-out w-full h-56"
           alt="Writing With Markdown"
       /></router-link>
     </div>
@@ -38,7 +38,7 @@
         {{ blogContent.description }}
       </p>
 
-      <div class="mb-2 flex items-start justify-start">
+      <div class="flex items-start justify-start">
         <span
           v-for="category in blogContent.categories"
           :key="category"

@@ -1,16 +1,14 @@
 <template>
-  <div class="container mx-auto px-4">
-    <main class="pt-6">
-      <div class="mb-12 last:mb-0 flex items-center justify-center flex-wrap">
-        <blog-post-summary
-          v-for="blogContent in displayedPosts"
-          :key="blogContent.id"
-          :blog-content="blogContent"
-          class="py-5 border-b-2"
-        />
-      </div>
-    </main>
-  </div>
+  <main class="container mx-auto px-4">
+    <div class="mb-12 last:mb-0 flex items-center justify-center flex-wrap">
+      <blog-post-summary
+        v-for="blogContent in displayedPosts"
+        :key="blogContent.id"
+        :blog-content="blogContent"
+        class="py-10 border-b-2"
+      />
+    </div>
+  </main>
 </template>
 
 <script lang="ts">
