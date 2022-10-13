@@ -7,13 +7,19 @@
   >
     <display-card-facilities-transition ref="transition" />
     <section class="w-full row-start-6 row-span-1 items-end flex">
-      <action-button text="Learn More" type="card" class="w-full h-1/2" />
+      <action-button
+        text="Learn More"
+        type="card"
+        class="w-full h-1/2"
+        @click="routeUser"
+      />
     </section>
   </display-card>
 </template>
 
 <script lang="ts">
 import { Component, defineComponent, ref } from "vue";
+import { useRouter } from "vue-router";
 
 import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
@@ -37,7 +43,13 @@ export default defineComponent({
       transition.value.clearFacilityInterval();
     };
 
-    return { transition, changeFacility, clearFacilityInterval };
+    const router = useRouter();
+
+    const routeUser = () => {
+      router.push("Facilities");
+    };
+
+    return { transition, changeFacility, clearFacilityInterval, routeUser };
   },
 });
 </script>

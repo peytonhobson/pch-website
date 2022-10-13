@@ -51,7 +51,6 @@ export default defineComponent({
     };
 
     const nextFacility = () => {
-      console.log("here");
       show.value = !show.value;
       curIndex.value = (curIndex.value + 1) % facilities.value.length;
       setTimeout(() => (show.value = !show.value), 1000);

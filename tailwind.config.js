@@ -40,6 +40,7 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
       "brand-green-gray": "#779D7F",
+      "brand-light-green": "#99c9a3",
     }),
     columns: {
       auto: "auto",
