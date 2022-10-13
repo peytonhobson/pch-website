@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="my-32 md:my-44" :reverse-column="true">
+  <dual-item-display class="my-32 md:my-60 xl:my-44" :reverse-column="true">
     <template #leftColumn>
       <div
-        class="w-5/6 h-60 mt-10 md:mt-0 md:h-128 md:w-full md:rounded-2xl duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="w-5/6 md:w-3/4 xl:w-full h-60 mt-10 xl:mt-0 md:h-128 md:rounded-2xl duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
           v-lazy="getImgURL('other/resident-red-and-patriotic-sweaters.png')"
