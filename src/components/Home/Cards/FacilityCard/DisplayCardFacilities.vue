@@ -6,7 +6,7 @@
   >
     <template #image>
       <Transition>
-        <display-card-facilities-carousel
+        <facilities-card-carousel
           v-if="show"
           :facilities="facilities"
           :cur-index="curIndex"
@@ -55,13 +55,13 @@ import {
   useFilteredFacilities,
 } from "@/store/composables";
 import setScrollObserverCarousel from "@/helpers/setScrollObserverCarousel";
-import DisplayCardFacilitiesCarousel from "@/components/Home/Cards/FacilityCard/DisplayCardFacilitiesCarousel.vue";
+import FacilitiesCardCarousel from "@/components/Home/Cards/FacilityCard/FacilitiesCardCarousel.vue";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
   components: {
     Card,
-    DisplayCardFacilitiesCarousel,
+    FacilitiesCardCarousel,
   },
   setup() {
     const facilities = useFilteredFacilities();

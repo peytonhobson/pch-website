@@ -12,7 +12,7 @@ import getImgURL from "@/helpers/getImgURL";
 import ControlLabels from "@/components/Shared/ControlLabels.vue";
 
 export default defineComponent({
-  name: "DisplayCardFacilitiesCarousel",
+  name: "FacilityCardCarousel",
   components: {
     ControlLabels,
   },
