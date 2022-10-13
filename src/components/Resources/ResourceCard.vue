@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-5/6 md:w-2/5 md:h-128 rounded-2xl bg-gray-200 grid grid-cols-1 shadow-2xl my-5"
+    class="w-5/6 xl:w-2/5 xl:h-128 rounded-2xl bg-gray-200 grid grid-cols-1 shadow-2xl my-5"
   >
     <div
       v-if="header"

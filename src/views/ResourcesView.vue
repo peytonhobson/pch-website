@@ -3,13 +3,13 @@
     Resources
   </section>
   <section
-    class="w-screen flex flex-wrap md:flex-nowrap items-start justify-evenly md:h-128 py-5 md:py-0"
+    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly xl:h-128 py-5 xl:py-0"
   >
     <resource-card header="Web Links" :resources="resources.webLinks" />
     <resource-card
       header="PDF Downloads"
       :resources="resources.pdfDownloads"
-      class="h-128 md:h-full"
+      class="h-128 xl:h-full"
     />
   </section>
 </template>
