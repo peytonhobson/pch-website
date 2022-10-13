@@ -14,10 +14,8 @@
   <div
     class="flex flex-wrap justify-evenly pt-10 py-0 pb-10 show-on-scroll carousel-tag"
   >
-    <display-card-facilities
-      class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144"
-    />
-    <display-card-locations
+    <facilities-card class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144" />
+    <locations-card
       class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144"
       route="Facilities"
     />
@@ -33,8 +31,8 @@ import { defineComponent, onMounted } from "vue";
 import Hero from "@/components/Home/Hero/Hero.vue";
 import HeroCaption from "@/components/Home/HeroCaption.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
-import DisplayCardFacilities from "@/components/Home/Cards/FacilityCard/DisplayCardFacilities.vue";
-import DisplayCardLocations from "@/components/Home/Cards/DisplayCardLocations.vue";
+import FacilitiesCard from "@/components/Home/Cards/FacilityCard/FacilitiesCard.vue";
+import LocationsCard from "@/components/Home/Cards/LocationsCard.vue";
 import DisplayCardContact from "@/components/Home/Cards/ContactCard/DisplayCardContact.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
 
@@ -51,8 +49,8 @@ export default defineComponent({
     Hero,
     HeroCaption,
     DescriptionBox,
-    DisplayCardFacilities,
-    DisplayCardLocations,
+    FacilitiesCard,
+    LocationCard,
     DisplayCardContact,
   },
   setup() {

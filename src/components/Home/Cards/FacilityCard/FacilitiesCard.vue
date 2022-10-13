@@ -58,7 +58,7 @@ import setScrollObserverCarousel from "@/helpers/setScrollObserverCarousel";
 import FacilitiesCardCarousel from "@/components/Home/Cards/FacilityCard/FacilitiesCardCarousel.vue";
 
 export default defineComponent({
-  name: "DisplayCardFacilities",
+  name: "FacilitiesCard",
   components: {
     Card,
     FacilitiesCardCarousel,
