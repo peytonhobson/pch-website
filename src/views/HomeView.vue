@@ -50,7 +50,7 @@ export default defineComponent({
     HeroCaption,
     DescriptionBox,
     FacilitiesCard,
-    LocationCard,
+    LocationsCard,
     DisplayCardContact,
   },
   setup() {

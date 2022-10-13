@@ -18,7 +18,7 @@
     </template>
     <template #button>
       <button
-        class="btn btn-block btn-lg bg-brand-green-gray border border-brand-green-gray flex items-center"
+        class="btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-light-green flex items-center"
       >
         Learn More
       </button>
