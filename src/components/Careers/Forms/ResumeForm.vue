@@ -135,17 +135,19 @@ export default defineComponent({
           "SaV6yXcrzMc0lIWqN"
         )
         .then(
-          () => {
+          (result) => {
+            console.log(result);
             notify({
               type: "success",
               text: "Application submitted successfully!",
               group: "resume",
             });
           },
-          () => {
+          (error) => {
+            console.log(error);
             notify({
               type: "error",
-              text: "Something went wrong. Please try again",
+              text: error.text,
               group: "resume",
             });
           }

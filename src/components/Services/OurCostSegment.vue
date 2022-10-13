@@ -5,7 +5,7 @@
   >
     <template #leftColumn>
       <div
-        class="mt-10 md:mt-0 h-2/3 w-5/6 md:w-full md:h-full rounded-xl shadow-md bg-cover duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="mt-10 md:mt-10 xl:mt-0 h-2/3 w-5/6 md:w-3/4 xl:w-full xl:h-full flex items-center rounded-xl shadow-md bg-cover duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
       >
         <img
           v-lazy="getImgURL('madrona/madrona-5.jpg')"
