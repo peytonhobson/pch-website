@@ -1,12 +1,12 @@
 <template>
   <display-card header="Contact Us" :bottom-border="true">
-    <section class="row-start-2 row-span-1 flex items-center">
+    <div class="row-start-2 row-span-1 flex items-center">
       <div class="text-md xl:text-lg text-left p-5 md:py-5 md:px-7 font-sans">
         We would like to hear from you, talk to you, and/or give you a tour of
         one of our wonderful homes.
       </div>
-    </section>
-    <section class="row-start-3 row-span-4 grid grid-rows-6 place-items-center">
+    </div>
+    <div class="row-start-3 row-span-4 grid grid-rows-6 place-items-center">
       <contact-info
         v-for="contact in contacts"
         :key="contact.number"
@@ -14,7 +14,7 @@
         :contact-info="contact"
         :number="contact.number"
       />
-    </section>
+    </div>
   </display-card>
 </template>
 
