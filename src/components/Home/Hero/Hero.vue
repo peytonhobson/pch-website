@@ -35,12 +35,12 @@
         </Transition>
       </div>
       <label
-        class="md:control-left w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
+        class="control-left w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
         @click="prevImg"
         >‹</label
       >
       <label
-        class="md:control-right w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
+        class="control-right w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
         @click="nextImg"
         >›</label
       >
@@ -140,35 +140,37 @@ export default defineComponent({
   opacity: 0;
 }
 
-.carousel-item {
-  transition: opacity 1s ease;
-}
+@screen xl {
+  .carousel-item {
+    transition: opacity 1s ease;
+  }
 
-.control-left {
-  left: -100px;
-}
+  .control-left {
+    left: -100px;
+  }
 
-.carousel-inner:hover > .control-left {
-  transform: translateX(100px);
-  transition: all 0.3s linear;
-}
+  .carousel-inner:hover > .control-left {
+    transform: translateX(100px);
+    transition: all 0.3s linear;
+  }
 
-.carousel-inner > .control-left {
-  transform: translateX(-100px);
-  transition: all 0.3s linear;
-}
+  .carousel-inner > .control-left {
+    transform: translateX(-100px);
+    transition: all 0.3s linear;
+  }
 
-.control-right {
-  right: -100px;
-}
+  .control-right {
+    right: -100px;
+  }
 
-.carousel-inner:hover > .control-right {
-  transform: translateX(-100px);
-  transition: all 0.3s linear;
-}
+  .carousel-inner:hover > .control-right {
+    transform: translateX(-100px);
+    transition: all 0.3s linear;
+  }
 
-.carousel-inner > .control-right {
-  transform: translateX(100px);
-  transition: all 0.3s linear;
+  .carousel-inner > .control-right {
+    transform: translateX(100px);
+    transition: all 0.3s linear;
+  }
 }
 </style>
