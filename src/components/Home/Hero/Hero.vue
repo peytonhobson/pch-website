@@ -34,16 +34,7 @@
           </div>
         </Transition>
       </div>
-      <label
-        class="control-left w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto"
-        @click="prevImg"
-        >‹</label
-      >
-      <label
-        class="control-right w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto"
-        @click="nextImg"
-        >›</label
-      >
+      <control-labels :animate="true" @next="nextImg" @prev="prevImg" />
 
       <!-- Add additional indicators for each slide-->
       <ol class="carousel-indicators">
@@ -78,11 +69,13 @@ import { defineComponent, ref, computed } from "vue";
 
 import HeroSlogan from "./HeroSlogan.vue";
 import getImgURL from "@/helpers/getImgURL";
+import ControlLabels from "@/components/Shared/ControlLabels.vue";
 
 export default defineComponent({
   name: "Hero",
   components: {
     HeroSlogan,
+    ControlLabels,
   },
   setup() {
     const curIndex = ref(0);
@@ -117,7 +110,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style>
 .carousel-indicators {
   list-style: none;
   margin: 0;
@@ -138,39 +131,5 @@ export default defineComponent({
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-}
-
-@screen xl {
-  .carousel-item {
-    transition: opacity 1s ease;
-  }
-
-  .control-left {
-    left: -100px;
-  }
-
-  .carousel-inner:hover > .control-left {
-    transform: translateX(100px);
-    transition: all 0.3s linear;
-  }
-
-  .carousel-inner > .control-left {
-    transform: translateX(-100px);
-    transition: all 0.3s linear;
-  }
-
-  .control-right {
-    right: -100px;
-  }
-
-  .carousel-inner:hover > .control-right {
-    transform: translateX(-100px);
-    transition: all 0.3s linear;
-  }
-
-  .carousel-inner > .control-right {
-    transform: translateX(100px);
-    transition: all 0.3s linear;
-  }
 }
 </style>

@@ -1,17 +1,7 @@
 <template>
-  <div v-if="curImage" class="relative w-full h-1/2 container">
-    <img v-lazy="curImage" class="w-full h-full" />
-    <label
-      class="control-left control w-10 h-10 ml-2 md:ml-5 xl:hidden absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 left-0 inset-y-0 my-auto"
-      @click="prevImg"
-      >‹</label
-    >
-    <label
-      class="control-right control w-10 h-10 mr-2 md:mr-5 xl:hidden absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 right-0 inset-y-0 my-auto"
-      @click="nextImg"
-      >›</label
-    >
-  </div>
+  <control-labels class="h-1/2" @next="nextImg" @prev="prevImg">
+    <img v-if="curImage" v-lazy="curImage" class="w-full h-full" />
+  </control-labels>
 </template>
 
 <script lang="ts">
@@ -19,9 +9,13 @@ import { defineComponent, toRefs, computed } from "vue";
 
 import { Facility } from "@/api/types";
 import getImgURL from "@/helpers/getImgURL";
+import ControlLabels from "@/components/Shared/ControlLabels.vue";
 
 export default defineComponent({
   name: "DisplayCardFacilitiesCarousel",
+  components: {
+    ControlLabels,
+  },
   props: {
     facilities: {
       type: Object as () => Facility[],
