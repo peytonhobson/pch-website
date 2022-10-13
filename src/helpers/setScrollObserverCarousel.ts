@@ -1,8 +1,10 @@
-const setScrollObserver = (entryFunction: Function, exitFunction: Function) => {
+const setScrollObserverCarousel = (
+  entryFunction: Function,
+  exitFunction: Function,
+  selector: string
+) => {
   // Get all the elements you want to show on scroll
-  const targets = document.querySelectorAll(".slideshow");
-
-  console.log(targets);
+  const targets = document.querySelectorAll(selector);
 
   // Callback for IntersectionObserver
   const callback = function (entries: any[]) {
@@ -12,6 +14,7 @@ const setScrollObserver = (entryFunction: Function, exitFunction: Function) => {
         // Add the fadeIn class:
         entryFunction();
       } else {
+        console.log("exit");
         // Otherwise remove the fadein class
         exitFunction();
       }
@@ -24,9 +27,10 @@ const setScrollObserver = (entryFunction: Function, exitFunction: Function) => {
   // Loop through each of the target
   targets.forEach(function (target) {
     // Add the element to the watcher
+
     console.log("observe");
     observer.observe(target);
   });
 };
 
-export default setScrollObserver;
+export default setScrollObserverCarousel;

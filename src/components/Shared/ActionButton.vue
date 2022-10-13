@@ -43,8 +43,4 @@ button {
 .primary {
   @apply rounded-full text-white bg-brand-green-gray hover:bg-brand-light-green py-3 font-questrial text-base md:text-xl font-medium;
 }
-
-.card {
-  @apply w-full flex text-white bg-brand-green-gray hover:bg-brand-light-green font-questrial font-medium text-3xl items-center justify-center h-3/4 rounded-b-2xl;
-}
 </style>

@@ -24,7 +24,7 @@ import {
   useFetchFacilitiesDispatch,
   useFilteredFacilities,
 } from "@/store/composables";
-import setScrollObserverSlideshow from "@/helpers/setScrollObserverSlideshow";
+// import setScrollObserverSlideshow from "@/helpers/setScrollObserverCarousel";
 
 export default defineComponent({
   name: "DisplayCardFacilitiesTransition",
@@ -65,7 +65,7 @@ export default defineComponent({
     };
 
     onMounted(() =>
-      setScrollObserverSlideshow(changeFacility, clearFacilityInterval)
+      // setScrollObserverSlideshow(changeFacility, clearFacilityInterval)
     );
     onBeforeUnmount(clearFacilityInterval);
 

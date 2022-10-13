@@ -1,55 +1,124 @@
 <template>
-  <display-card
-    header="Facilities"
-    class="slideshow"
-    @mouseenter="clearFacilityInterval"
-    @mouseleave="changeFacility"
+  <card
+    v-if="curFacility"
+    :image="true"
+    :title="`Facility - ${curFacility.name}`"
   >
-    <display-card-facilities-transition ref="transition" />
-    <section class="w-full row-start-6 row-span-1 items-end flex">
-      <action-button
-        text="Learn More"
-        type="card"
-        class="w-full h-1/2"
-        @click="routeUser"
-      />
-    </section>
-  </display-card>
+    <template #image>
+      <Transition>
+        <display-card-facilities-carousel
+          v-if="show"
+          :facilities="facilities"
+          :cur-index="curIndex"
+          @next="nextFacility"
+          @prev="prevFacility"
+        />
+      </Transition>
+    </template>
+    <template #body>
+      <Transition>
+        <p v-if="show" class="text-left">
+          {{ curFacility.summary }}
+        </p>
+      </Transition>
+    </template>
+    <template #button>
+      <button
+        class="btn btn-block btn-lg bg-brand-green-gray border border-brand-green-gray flex items-center"
+      >
+        Learn More
+      </button>
+    </template>
+  </card>
 </template>
 
 <script lang="ts">
-import { Component, defineComponent, ref } from "vue";
-import { useRouter } from "vue-router";
+import {
+  defineComponent,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+  computed,
+} from "vue";
 
-import DisplayCard from "@/components/Shared/DisplayCard.vue";
-import ActionButton from "@/components/Shared/ActionButton.vue";
-import DisplayCardFacilitiesTransition from "@/components/Home/Cards/FacilityCard/DisplayCardFacilitiesTransition.vue";
+import Card from "@/components/Shared/Card.vue";
+import {
+  useFetchFacilitiesDispatch,
+  useFilteredFacilities,
+} from "@/store/composables";
+import setScrollObserverCarousel from "@/helpers/setScrollObserverCarousel";
+import DisplayCardFacilitiesCarousel from "@/components/Home/Cards/FacilityCard/DisplayCardFacilitiesCarousel.vue";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
   components: {
-    DisplayCard,
-    ActionButton,
-    DisplayCardFacilitiesTransition,
+    Card,
+    DisplayCardFacilitiesCarousel,
   },
   setup() {
-    const transition: Component = ref("transition");
+    const facilities = useFilteredFacilities();
+    onMounted(useFetchFacilitiesDispatch);
 
+    const curFacility = computed(() => facilities.value[curIndex.value]);
+
+    const curIndex = ref(0);
+    const show = ref(true);
+    let interval: any = null;
     const changeFacility = () => {
-      transition.value.changeFacility();
+      interval = setInterval(() => {
+        console.log("interval");
+        show.value = !show.value;
+        curIndex.value = (curIndex.value + 1) % facilities.value.length;
+        setTimeout(() => (show.value = !show.value), 1000);
+      }, 6000);
     };
-
     const clearFacilityInterval = () => {
-      transition.value.clearFacilityInterval();
+      clearInterval(interval);
     };
 
-    const router = useRouter();
-
-    const routeUser = () => {
-      router.push("Facilities");
+    const nextFacility = () => {
+      show.value = !show.value;
+      curIndex.value = (curIndex.value + 1) % facilities.value.length;
+      setTimeout(() => (show.value = !show.value), 1000);
     };
 
-    return { transition, changeFacility, clearFacilityInterval, routeUser };
+    const prevFacility = () => {
+      show.value = !show.value;
+      curIndex.value =
+        (curIndex.value + facilities.value.length - 1) %
+        facilities.value.length;
+      setTimeout(() => (show.value = !show.value), 1000);
+    };
+
+    onMounted(() =>
+      setScrollObserverCarousel(
+        changeFacility,
+        clearFacilityInterval,
+        ".carousel-tag"
+      )
+    );
+    onBeforeUnmount(clearFacilityInterval);
+
+    return {
+      curIndex,
+      show,
+      facilities,
+      prevFacility,
+      nextFacility,
+      curFacility,
+    };
   },
 });
 </script>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>

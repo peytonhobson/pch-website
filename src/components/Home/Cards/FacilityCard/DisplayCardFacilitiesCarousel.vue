@@ -1,5 +1,5 @@
 <template>
-  <control-labels class="h-1/2" @next="nextImg" @prev="prevImg">
+  <control-labels class="h-full" @next="nextImg" @prev="prevImg">
     <img v-if="curImage" v-lazy="curImage" class="w-full h-full" />
   </control-labels>
 </template>

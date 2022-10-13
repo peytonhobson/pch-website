@@ -1,5 +1,27 @@
 <template>
-  <display-card header="Locations">
+  <card :image="true" title="Locations">
+    <template #image>
+      <img
+        class="w-full h-full"
+        :src="getImgURL('locations-teaser.png')"
+        alt="Shoes"
+      />
+    </template>
+    <template #body>
+      <p class="text-left">
+        See where our homes are located throughout Salem, Oregon. Contact us for
+        a personal tour or more information.
+      </p>
+    </template>
+    <template #button>
+      <button
+        class="btn btn-block btn-lg bg-brand-green-gray border border-brand-green-gray flex items-center"
+      >
+        Learn More
+      </button>
+    </template>
+  </card>
+  <!-- <display-card header="Locations">
     <div class="row-start-2 row-span-4">
       <div class="w-full h-1/2">
         <img v-lazy="getImgURL('locations-teaser.png')" class="w-full h-full" />
@@ -22,22 +44,26 @@
         @click="routeUser"
       />
     </div>
-  </display-card>
+  </display-card> -->
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
-import DisplayCard from "@/components/Shared/DisplayCard.vue";
-import ActionButton from "@/components/Shared/ActionButton.vue";
+// import DisplayCard from "@/components/Shared/DisplayCard.vue";
+// import ActionButton from "@/components/Shared/ActionButton.vue";
 import getImgURL from "@/helpers/getImgURL";
+import Card from "@/components/Shared/Card.vue";
+// import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
   components: {
-    DisplayCard,
-    ActionButton,
+    // DisplayCard,
+    // ActionButton,
+    Card,
+    // ActionButton,
   },
   props: {
     route: {
