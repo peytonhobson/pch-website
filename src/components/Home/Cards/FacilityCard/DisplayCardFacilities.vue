@@ -15,6 +15,14 @@
         />
       </Transition>
     </template>
+    <template #title>
+      <h2 class="card-title">
+        Facilities -
+        <Transition
+          ><span v-if="show">{{ curFacility.name }}</span></Transition
+        >
+      </h2>
+    </template>
     <template #body>
       <Transition>
         <p v-if="show" class="text-left">
@@ -66,7 +74,6 @@ export default defineComponent({
     let interval: any = null;
     const changeFacility = () => {
       interval = setInterval(() => {
-        console.log("interval");
         show.value = !show.value;
         curIndex.value = (curIndex.value + 1) % facilities.value.length;
         setTimeout(() => (show.value = !show.value), 1000);

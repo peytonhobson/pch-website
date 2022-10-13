@@ -7,6 +7,9 @@
         alt="Shoes"
       />
     </template>
+    <template #title>
+      <h2 class="card-title">Locations</h2>
+    </template>
     <template #body>
       <p class="text-left">
         See where our homes are located throughout Salem, Oregon. Contact us for

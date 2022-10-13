@@ -4,7 +4,7 @@
       <slot name="image"></slot>
     </figure>
     <div class="card-body prose">
-      <h2 v-if="title" class="card-title">{{ title }}</h2>
+      <slot name="title"></slot>
       <slot name="body"></slot>
       <div class="card-actions justify-end">
         <slot name="button"></slot>
@@ -28,6 +28,11 @@ export default defineComponent({
       type: Boolean,
       required: false,
       default: false,
+    },
+    facility: {
+      type: String,
+      required: false,
+      default: undefined,
     },
   },
   setup() {},
