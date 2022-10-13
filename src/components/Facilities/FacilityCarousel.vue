@@ -12,12 +12,12 @@
       />
     </Transition>
     <label
-      class="control-left control w-10 h-10 ml-2 md:ml-5 md:hidden absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 left-0 inset-y-0 my-auto"
+      class="control-left control w-10 h-10 ml-2 md:ml-5 xl:hidden absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 left-0 inset-y-0 my-auto"
       @click="prevImg"
       >‹</label
     >
     <label
-      class="control-right control w-10 h-10 mr-2 md:mr-5 md:hidden absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 right-0 inset-y-0 my-auto"
+      class="control-right control w-10 h-10 mr-2 md:mr-5 xl:hidden absolute cursor-pointer text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 right-0 inset-y-0 my-auto"
       @click="nextImg"
       >›</label
     >

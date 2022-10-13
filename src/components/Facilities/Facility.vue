@@ -10,7 +10,7 @@
       <!--end col-->
 
       <template #rightColumn>
-        <div class="flex flex-wrap justify-center mt-10 md:my-0">
+        <div class="flex flex-wrap justify-center mt-10 md:my-10 xl:my-0">
           <simple-description
             :header="facility.name"
             :text="facility.description"
