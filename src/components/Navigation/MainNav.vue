@@ -38,7 +38,7 @@
       <li v-for="listItem in listItems" :key="listItem.text">
         <router-link
           :to="listItem.to"
-          class="block py-2 pr-4 pl-3 text-gray-400 hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
+          class="block py-2 pr-4 pl-3 md:px-0 md:py-5 text-gray-400 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline"
           aria-current="page"
           @click="handleDropdown"
           >{{ listItem.text }}</router-link
