@@ -1,4 +1,10 @@
 <template>
+  <hero
+    :image-url="heroProps.backgroundImage"
+    :title="heroProps.title"
+    :text="heroProps.text"
+    class="h-[85vh]"
+  />
   <blog-post-summaries :displayed-posts="displayedPosts" />
   <blog-pagination
     :previous-page="previousPage"
@@ -15,12 +21,14 @@ import BlogPagination from "@/components/Blog/BlogPagination.vue";
 import useCurrentPage from "@/composables/useCurrentPage";
 import usePreviousAndNextPages from "@/composables/usePreviousAndNextPages";
 import { useFetchPostsDispatch, useFilteredPosts } from "@/store/composables";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
   name: "BlogView",
   components: {
     BlogPostSummaries,
     BlogPagination,
+    Hero,
   },
   setup() {
     onMounted(useFetchPostsDispatch);
@@ -45,7 +53,13 @@ export default defineComponent({
       return filteredPosts.value.slice(firstJobIndex, lastJobIndex);
     });
 
-    return { previousPage, nextPage, displayedPosts, maxPage };
+    const heroProps = {
+      backgroundImage: "other/resident-wheelchair-balloon-girl.png",
+      title: "Blog",
+      text: "Keep up to date with the latest at Premier Care Homes",
+    };
+
+    return { previousPage, nextPage, displayedPosts, maxPage, heroProps };
   },
 });
 </script>

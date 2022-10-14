@@ -1,8 +1,10 @@
 <template>
   <main class="mb-20">
-    <static-hero
-      first-row-text="About Us"
-      :background-image="backgroundImage"
+    <hero
+      :image-url="heroProps.backgroundImage"
+      :title="heroProps.title"
+      :text="heroProps.text"
+      class="h-[85vh]"
     />
     <owners-and-operators-section />
     <affiliates-section />
@@ -13,7 +15,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import StaticHero from "@/components/Shared/StaticHero.vue";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 import OwnersAndOperatorsSection from "@/components/AboutUs/OwnersAndOperators/OwnersAndOperatorsSection.vue";
 import AffiliatesSection from "@/components/AboutUs/Affiliates/AffiliatesSection.vue";
 import HomeCareTeamSection from "@/components/AboutUs/HomeCareTeamSection.vue";
@@ -21,15 +23,19 @@ import HomeCareTeamSection from "@/components/AboutUs/HomeCareTeamSection.vue";
 export default defineComponent({
   name: "AboutUsView",
   components: {
-    StaticHero,
     OwnersAndOperatorsSection,
     AffiliatesSection,
     HomeCareTeamSection,
+    Hero,
   },
   setup() {
-    const backgroundImage = "other/resident-blue-tag-dog.png";
+    const heroProps = {
+      backgroundImage: "other/resident-wheelchair-balloon-girl.png",
+      title: "About Us",
+      text: "So you can know who we are",
+    };
 
-    return { backgroundImage };
+    return { heroProps };
   },
 });
 </script>

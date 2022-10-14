@@ -1,6 +1,12 @@
 <template>
+  <hero
+    :image-url="heroProps.backgroundImage"
+    :title="heroProps.title"
+    :text="heroProps.text"
+    class="h-[85vh]"
+  />
   <section
-    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly xl:h-128 py-5 xl:py-0"
+    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly py-5 xl:py-20"
   >
     <resource-card
       title="Web Links"
@@ -21,11 +27,13 @@ import { defineComponent, onMounted, ComputedRef } from "vue";
 import ResourceCard from "@/components/Resources/ResourceCard.vue";
 import { useFetchResourcesDispatch, useResources } from "@/store/composables";
 import { Resource } from "@/api/types";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
   name: "BlogPostView",
   components: {
     ResourceCard,
+    Hero,
   },
   setup() {
     onMounted(useFetchResourcesDispatch);
@@ -39,7 +47,13 @@ export default defineComponent({
 
     const windowWidth = window.innerWidth;
 
-    return { resources, isMobile, windowWidth };
+    const heroProps = {
+      backgroundImage: "other/resident-wheelchair-balloon-girl.png",
+      title: "Resources",
+      text: "For those of you who don't know anything",
+    };
+
+    return { resources, isMobile, windowWidth, heroProps };
   },
 });
 </script>

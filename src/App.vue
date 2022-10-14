@@ -1,6 +1,6 @@
 <template>
   <main-nav />
-  <router-view />
+  <router-view class="animate-fadeIn" />
 </template>
 
 <script lang="ts">

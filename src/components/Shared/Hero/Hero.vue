@@ -1,5 +1,8 @@
 <template>
-  <div class="hero" :style="`background-image: url(${getImgURL(imageUrl)})`">
+  <div
+    class="hero animate-fadeIn"
+    :style="`background-image: url(${getImgURL(imageUrl)})`"
+  >
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <hero-slogan

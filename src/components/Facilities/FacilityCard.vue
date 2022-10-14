@@ -12,24 +12,6 @@
       <p class="text-left">{{ facility.summary }}</p>
     </div>
   </div>
-  <!-- <div class=""
-    <template #image>
-      <img :src="getImgURL(facility.images[0])" class="w-full h-full" />
-    </template>
-    <template #title>
-      <h2 class="card-title">
-        {{ facility.name }}
-      </h2>
-    </template>
-    <template #body>
-      <p class="text-left">
-        {{ facility.summary }}
-      </p>
-    </template>
-    <template #button>
-      <action-button text="Learn More" type="card" />
-    </template>
-  </card> -->
 </template>
 
 <script lang="ts">

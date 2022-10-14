@@ -1,4 +1,10 @@
 <template>
+  <hero
+    :image-url="heroProps.backgroundImage"
+    :title="heroProps.title"
+    :text="heroProps.text"
+    class="h-[85vh]"
+  />
   <section
     v-if="testimonials.length > 0 && !isMobile"
     class="py-5 grid grid-cols-3"
@@ -53,12 +59,14 @@ import TestimonialCard from "@/components/Testimonials/TestimonialCard.vue";
 import { Testimonial } from "@/api/types";
 import getImgURL from "@/helpers/getImgURL";
 import ImageCard from "@/components/Shared/ImageCard.vue";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
   name: "BlogPostView",
   components: {
     TestimonialCard,
     ImageCard,
+    Hero,
   },
   setup() {
     onMounted(useFetchTestimonialsDispatch);
@@ -74,9 +82,15 @@ export default defineComponent({
         navigator.userAgent
       );
 
+    const heroProps = {
+      backgroundImage: "other/resident-wheelchair-balloon-girl.png",
+      title: "Testimonials",
+      text: "Hear the best about us",
+    };
+
     const testimonials: ComputedRef<Testimonial[]> = useTestimonials();
 
-    return { testimonials, isMobile, images, getImgURL };
+    return { testimonials, isMobile, images, getImgURL, heroProps };
   },
 });
 </script>
