@@ -1,10 +1,10 @@
 <template>
   <div class="prose w-5/6 md:w-full">
-    <h4 class="mb-5 md:text-3xl text-2xl font-semibold text-left font-sen">
+    <h2 class="mb-5 text-left">
       {{ header }}
-    </h4>
+    </h2>
     <!-- eslint-disable vue/no-v-html -->
-    <p class="text-slate-400 text-left font-sans" v-html="text"></p>
+    <p class="text-slate-400 text-left" v-html="text"></p>
   </div>
 </template>
 

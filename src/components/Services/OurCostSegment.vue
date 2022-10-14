@@ -4,14 +4,10 @@
     :reverse-column="true"
   >
     <template #leftColumn>
-      <div
-        class="mt-10 md:mt-10 xl:mt-0 h-2/3 w-5/6 md:w-3/4 xl:w-full xl:h-full flex items-center rounded-xl shadow-md bg-cover duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
-      >
-        <img
-          v-lazy="getImgURL('madrona/madrona-5.jpg')"
-          class="w-full h-full rounded-xl shadow-md"
-        />
-      </div>
+      <image-card
+        class="mt-10 md:mt-10 xl:mt-0 h-2/3 w-5/6 md:w-3/4 xl:w-full xl:h-full duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
+        image-link="madrona/madrona-5.jpg"
+      />
     </template>
     <!--end col-->
     <template #rightColumn>
@@ -25,6 +21,7 @@ import { defineComponent } from "vue";
 
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
+import ImageCard from "@/components/Shared/ImageCard.vue";
 import getImgURL from "@/helpers/getImgURL";
 
 export default defineComponent({
@@ -32,6 +29,7 @@ export default defineComponent({
   components: {
     SimpleDescription,
     DualItemDisplay,
+    ImageCard,
   },
   setup() {
     const descriptionText =
