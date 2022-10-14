@@ -1,7 +1,4 @@
 <template>
-  <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
-    Resources
-  </section>
   <section
     class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly xl:h-128 py-5 xl:py-0"
   >

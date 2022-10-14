@@ -31,7 +31,9 @@
       </Transition>
     </template>
     <template #button>
-      <action-button text="Learn More" type="card" />
+      <router-link to="/Facilities" class="w-full">
+        <action-button text="Learn More" type="card" />
+      </router-link>
     </template>
   </card>
 </template>

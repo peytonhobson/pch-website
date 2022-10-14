@@ -17,11 +17,9 @@
       </p>
     </template>
     <template #button>
-      <button
-        class="btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-light-green flex items-center"
-      >
-        Learn More
-      </button>
+      <router-link to="/Facilities" class="w-full">
+        <action-button text="Learn More" type="card" />
+      </router-link>
     </template>
   </card>
 </template>
@@ -30,19 +28,15 @@
 import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
-// import DisplayCard from "@/components/Shared/DisplayCard.vue";
-// import ActionButton from "@/components/Shared/ActionButton.vue";
 import getImgURL from "@/helpers/getImgURL";
 import Card from "@/components/Shared/Card.vue";
-// import ActionButton from "@/components/Shared/ActionButton.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "DisplayCardFacilities",
   components: {
-    // DisplayCard,
-    // ActionButton,
     Card,
-    // ActionButton,
+    ActionButton,
   },
   props: {
     route: {
