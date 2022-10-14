@@ -14,7 +14,7 @@
           name="submitterName"
           type="text"
           :rules="schema.submitterName"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="submitterName" class="text-red-500" as="div" />
       </div>
@@ -33,7 +33,7 @@
           name="submitterEmail"
           type="email"
           :rules="schema.submitterEmail"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="submitterEmail" class="text-red-500" as="div" />
       </div>
@@ -52,7 +52,7 @@
           name="friendName"
           type="text"
           :rules="schema.friendName"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="friendName" class="text-red-500" as="div" />
       </div>
@@ -71,7 +71,7 @@
           name="friendEmail"
           type="email"
           :rules="schema.friendEmail"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="friendEmail" class="text-red-500" as="div" />
       </div>
@@ -79,7 +79,7 @@
     <div class="md:flex md:items-center">
       <div class="md:w-1/3"></div>
       <div class="md:w-2/3">
-        <action-button text="Submit" type="primary" class="w-1/2" />
+        <action-button text="Submit" type="primary" />
       </div>
     </div>
   </Form>

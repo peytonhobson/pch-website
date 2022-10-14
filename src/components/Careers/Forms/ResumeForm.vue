@@ -14,7 +14,7 @@
           name="name"
           type="text"
           :rules="schema.name"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="name" class="text-red-500" as="div" />
       </div>
@@ -33,7 +33,7 @@
           name="email"
           type="email"
           :rules="schema.email"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="email" class="text-red-500" as="div" />
       </div>
@@ -52,7 +52,7 @@
           name="phone-number"
           type="text"
           :rules="schema.phoneNumber"
-          class="bg-white appearance-none border border-solid border-gray-300 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-brand-green-gray"
+          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="phone-number" class="text-red-500" as="div" />
       </div>
@@ -79,7 +79,7 @@
     <div class="md:flex md:items-center">
       <div class="md:w-1/3"></div>
       <div class="md:w-2/3">
-        <action-button text="Submit" type="primary" class="w-1/2" />
+        <action-button text="Submit" type="primary" />
       </div>
     </div>
   </Form>
