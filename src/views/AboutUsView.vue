@@ -14,7 +14,7 @@
 import { defineComponent } from "vue";
 
 import StaticHero from "@/components/Shared/StaticHero.vue";
-import OwnersAndOperatorsSection from "@/components/AboutUs/OwnersAndOperatorsSection.vue";
+import OwnersAndOperatorsSection from "@/components/AboutUs/OwnersAndOperators/OwnersAndOperatorsSection.vue";
 import AffiliatesSection from "@/components/AboutUs/AffiliatesSection.vue";
 import HomeCareTeamSection from "@/components/AboutUs/HomeCareTeamSection.vue";
 

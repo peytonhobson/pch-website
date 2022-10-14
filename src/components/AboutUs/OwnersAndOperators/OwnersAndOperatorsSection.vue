@@ -4,29 +4,7 @@
     :reverse-column="true"
   >
     <template #leftColumn>
-      <display-card
-        class="w-5/6 md:w-3/4 xl:w-full py-5 px-10 h-60 md:h-128 xl:h-full grid mt-10 xl:mt-0"
-        rows="2"
-      >
-        <div
-          class="w-full h-full flex row-span-1 row-start-1 items-center justify-evenly"
-        >
-          <img
-            v-lazy="getImgURL('Headshot.jpg')"
-            class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-          />
-          <div class="text-3xl font-sen">Janelle Leavell</div>
-        </div>
-        <div
-          class="w-full h-full row-span-1 row-start-2 flex items-center justify-evenly"
-        >
-          <img
-            v-lazy="getImgURL('Headshot.jpg')"
-            class="rounded-full md:h-5/6 w-1/3 col-start-1 col-span-1 row-start-1 row-span-1"
-          />
-          <div class="text-3xl font-sen">Margie Hibner</div>
-        </div>
-      </display-card>
+      <owners-and-operators-card />
     </template>
     <!--end col-->
 
@@ -39,17 +17,17 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import DisplayCard from "@/components/Shared/DisplayCard.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import getImgURL from "@/helpers/getImgURL";
+import OwnersAndOperatorsCard from "./OwnersAndOperatorsCard.vue";
 
 export default defineComponent({
   name: "OwnersAndOperatorsSection",
   components: {
-    DisplayCard,
     DualItemDisplay,
     SimpleDescription,
+    OwnersAndOperatorsCard,
   },
   setup() {
     const descriptionHeader = "Owners and Operators";
