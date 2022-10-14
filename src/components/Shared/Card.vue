@@ -3,13 +3,14 @@
     <figure v-if="image" class="m-0 h-2/5">
       <slot name="image"></slot>
     </figure>
-    <div class="card-body prose">
+    <div v-if="body" class="card-body prose">
       <slot name="title"></slot>
       <slot name="body"></slot>
       <div class="card-actions justify-end">
         <slot name="button"></slot>
       </div>
     </div>
+    <slot name="other"></slot>
   </div>
 </template>
 
@@ -23,6 +24,11 @@ export default defineComponent({
       type: Boolean,
       required: false,
       default: false,
+    },
+    body: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
   setup() {},
