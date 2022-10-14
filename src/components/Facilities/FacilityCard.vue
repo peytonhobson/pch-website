@@ -36,10 +36,6 @@ export default defineComponent({
       type: Object as () => Facility,
       required: true,
     },
-    route: {
-      type: String,
-      required: true,
-    },
   },
   setup() {
     return { getImgURL };

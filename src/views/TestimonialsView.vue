@@ -1,7 +1,4 @@
 <template>
-  <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
-    Testimonials
-  </section>
   <section
     v-if="testimonials.length > 0 && !isMobile"
     class="py-5 grid grid-cols-3"

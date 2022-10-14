@@ -1,7 +1,4 @@
 <template>
-  <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
-    Blog
-  </section>
   <blog-post-summaries :displayed-posts="displayedPosts" />
   <blog-pagination
     :previous-page="previousPage"
