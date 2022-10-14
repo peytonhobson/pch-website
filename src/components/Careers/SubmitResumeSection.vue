@@ -23,16 +23,12 @@
         <div
           class="prose flex md:grow w-5/6 mt-5 md:w-full flex-wrap justify-center md:justify-start"
         >
-          <h4
-            class="w-full mb-3 md:text-3xl text-2xl font-semibold text-left font-sen"
-          >
-            Requirements
-          </h4>
+          <h2 class="w-full mb-3 text-left">Requirements</h2>
           <ul class="list-disc w-full">
             <li
               v-for="item in requirements"
               :key="item"
-              class="text-left font-sans text-slate-400"
+              class="text-left text-slate-400"
             >
               {{ item }}
             </li>
