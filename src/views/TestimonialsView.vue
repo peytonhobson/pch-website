@@ -7,11 +7,7 @@
     class="py-5 grid grid-cols-3"
   >
     <div class="flex flex-wrap col-span-1 col-start-1 justify-center">
-      <div
-        class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
-      >
-        <img v-lazy="getImgURL(images[0])" class="w-full h-full rounded-2xl" />
-      </div>
+      <image-card class="h-80 my-5 md:w-5/6" :image-link="images[0]" />
       <testimonial-card :testimonial="testimonials[3]" class="my-5 md:w-5/6" />
       <testimonial-card
         :testimonial="testimonials[1]"
@@ -22,11 +18,7 @@
       class="flex flex-wrap col-span-1 col-start-2 items-stretch justify-center"
     >
       <testimonial-card :testimonial="testimonials[2]" class="my-5 md:w-5/6" />
-      <div
-        class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
-      >
-        <img v-lazy="getImgURL(images[1])" class="w-full h-full rounded-2xl" />
-      </div>
+      <image-card class="h-80 my-5 md:w-5/6" :image-link="images[1]" />
       <testimonial-card :testimonial="testimonials[5]" class="my-5 md:w-5/6" />
     </div>
     <div
@@ -34,11 +26,7 @@
     >
       <testimonial-card :testimonial="testimonials[4]" class="my-5 md:w-5/6" />
       <testimonial-card :testimonial="testimonials[0]" class="my-5 md:w-5/6" />
-      <div
-        class="h-90 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
-      >
-        <img v-lazy="getImgURL(images[2])" class="w-full h-full rounded-2xl" />
-      </div>
+      <image-card class="h-80 my-5 md:w-5/6" :image-link="images[2]" />
     </div>
   </section>
   <section
@@ -46,26 +34,14 @@
     class="py-5 flex flex-wrap justify-center"
   >
     <testimonial-card :testimonial="testimonials[0]" class="my-5 w-5/6" />
-    <div
-      class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
-    >
-      <img v-lazy="getImgURL(images[0])" class="w-5/6 h-full rounded-2xl" />
-    </div>
+    <image-card class="h-80 my-5 md:w-5/6" :image-link="images[1]" />
     <testimonial-card :testimonial="testimonials[1]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[2]" class="my-5 w-5/6" />
-    <div
-      class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
-    >
-      <img v-lazy="getImgURL(images[1])" class="w-5/6 h-full rounded-2xl" />
-    </div>
+    <image-card class="h-80 my-5 md:w-5/6" :image-link="images[2]" />
     <testimonial-card :testimonial="testimonials[3]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[4]" class="my-5 w-5/6" />
     <testimonial-card :testimonial="testimonials[5]" class="my-5 w-5/6" />
-    <div
-      class="h-80 my-5 md:w-5/6 rounded-2xl flex items-center justify-center"
-    >
-      <img v-lazy="getImgURL(images[2])" class="w-5/6 h-full rounded-2xl" />
-    </div>
+    <image-card class="h-80 my-5 md:w-5/6" :image-link="images[3]" />
   </section>
 </template>
 
@@ -79,11 +55,13 @@ import {
 import TestimonialCard from "@/components/Testimonials/TestimonialCard.vue";
 import { Testimonial } from "@/api/types";
 import getImgURL from "@/helpers/getImgURL";
+import ImageCard from "@/components/Shared/ImageCard.vue";
 
 export default defineComponent({
   name: "BlogPostView",
   components: {
     TestimonialCard,
+    ImageCard,
   },
   setup() {
     onMounted(useFetchTestimonialsDispatch);
