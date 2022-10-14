@@ -2,11 +2,15 @@
   <section
     class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly xl:h-128 py-5 xl:py-0"
   >
-    <resource-card header="Web Links" :resources="resources.webLinks" />
     <resource-card
-      header="PDF Downloads"
+      title="Web Links"
+      :resources="resources.webLinks"
+      class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
+    />
+    <resource-card
+      title="PDF Downloads"
       :resources="resources.pdfDownloads"
-      class="h-128 xl:h-full"
+      class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
     />
   </section>
 </template>
