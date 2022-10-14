@@ -1,13 +1,20 @@
 <template>
-  <!--  add hero here -->
-  <section class="flex flex-wrap justify-evenly py-10">
+  <hero
+    :image-url="heroProps.backgroundImage"
+    :title="heroProps.title"
+    class="h-[85vh]"
+  />
+  <section class="flex flex-wrap justify-evenly py-10 show-on-scroll">
     <router-link
       v-for="facility in filteredFacilities"
       :key="facility.id"
       :to="`/Facilities/${facility.name.toLowerCase()}`"
-      class="w-5/6 md:w-2/5 xl:w-1/5 show-on-scroll my-10 xl:my-0 duration-500 xl:hover:-translate-y-5 transition-all hover:cursor-pointer"
+      class="w-5/6 md:w-2/5 xl:h-60 my-10 hover:cursor-pointer"
     >
-      <facility-card :facility="facility" class="h-full" />
+      <facility-card
+        :facility="facility"
+        class="h-full duration-500 xl:hover:-translate-y-5 transition-all"
+      />
     </router-link>
   </section>
 </template>
@@ -21,11 +28,13 @@ import {
   useFilteredFacilities,
   useFetchFacilitiesDispatch,
 } from "@/store/composables";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
   name: "FacilitiesView",
   components: {
     FacilityCard,
+    Hero,
   },
   setup() {
     onMounted(setScrollObserver);
@@ -33,7 +42,12 @@ export default defineComponent({
 
     const filteredFacilities = useFilteredFacilities();
 
-    return { filteredFacilities };
+    const heroProps = {
+      title: "Facilities",
+      backgroundImage: "hallet/hallet-7.jpg",
+    };
+
+    return { filteredFacilities, heroProps };
   },
 });
 </script>
