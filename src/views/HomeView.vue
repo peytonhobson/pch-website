@@ -4,7 +4,7 @@
     image-url="other/resident-edith-and-red.jpg"
   />
   <hero-caption />
-  <div class="flex flex-wrap w-full">
+  <div class="flex flex-wrap w-full justify-evenly show-on-scroll">
     <description-box
       v-for="descriptionBoxContent in descriptionBoxContents"
       :key="descriptionBoxContent.title"
@@ -12,17 +12,22 @@
       :title="descriptionBoxContent.title"
       :body="descriptionBoxContent.body"
       :icon-class="descriptionBoxContent.iconClass"
+      class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 w-5/6 h-72"
     />
   </div>
   <div
-    class="flex flex-wrap justify-evenly pt-10 py-0 pb-10 show-on-scroll carousel-tag"
+    class="flex flex-wrap justify-evenly md:py-10 pb-10 show-on-scroll carousel-tag"
   >
-    <facilities-card class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144" />
+    <facilities-card
+      class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 md:my-10 w-5/6 h-144"
+    />
     <locations-card
-      class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144"
+      class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 md:my-10 w-5/6 h-144"
       route="Facilities"
     />
-    <contact-card class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144" />
+    <contact-card
+      class="md:max-w-md md:w-2/5 mt-10 xl:w-2/7 md:my-10 w-5/6 h-144"
+    />
   </div>
 </template>
 

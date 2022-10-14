@@ -1,22 +1,4 @@
 <template>
-  <!-- <display-card header="Contact Us" :bottom-border="true">
-    <div class="row-start-2 row-span-1 flex items-center">
-      <div class="text-md xl:text-lg text-left p-5 md:py-5 md:px-7 font-sans">
-        We would like to hear from you, talk to you, and/or give you a tour of
-        one of our wonderful homes.
-      </div>
-    </div>
-    <div class="row-start-3 row-span-4 grid grid-rows-6 place-items-center">
-      <contact-info
-        v-for="contact in contacts"
-        :key="contact.number"
-        image="@/assets/Headshot.jpg"
-        :contact-info="contact"
-        :number="contact.number"
-      />
-    </div>
-  </display-card> -->
-
   <card>
     <template #title>
       <h2 class="card-title">Contact Us</h2>
