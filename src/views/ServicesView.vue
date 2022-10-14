@@ -1,8 +1,9 @@
 <template>
-  <static-hero
-    :first-row-text="heroProps.firstRowText"
-    :second-row-text="heroProps.secondRowText"
-    :background-image="heroProps.backgroundImage"
+  <hero
+    :image-url="heroProps.backgroundImage"
+    :title="heroProps.title"
+    :text="heroProps.text"
+    class="h-[85vh]"
   />
   <our-cost-segment />
   <our-services-section />
@@ -13,20 +14,19 @@ import { defineComponent } from "vue";
 
 import OurCostSegment from "@/components/Services/OurCostSegment.vue";
 import OurServicesSection from "@/components/Services/OurServicesSection.vue";
-import StaticHero from "@/components/Shared/StaticHero.vue";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
   name: "ServicesView",
   components: {
     OurCostSegment,
     OurServicesSection,
-    StaticHero,
+    Hero,
   },
   setup() {
     const heroProps = {
-      firstRowText: "SERVICES & COST",
-      secondRowText:
-        "Exceptional, professional care for your loved one in a compassionate, home environment.",
+      title: "SERVICES & COST",
+      text: "Exceptional, professional care for your loved one in a compassionate, home environment.",
       backgroundImage: "other/resident-blue-tag-dog.png",
     };
 

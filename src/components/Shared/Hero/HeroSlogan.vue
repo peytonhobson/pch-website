@@ -1,7 +1,9 @@
 <template>
-  <div class="max-w-xl">
-    <h1 class="mb-5 text-6xl font-bold">{{ title }}</h1>
-    <p v-if="text" class="mb-5">{{ text }}</p>
+  <div class="flex flex-wrap items-center justify-center">
+    <h1 class="w-full mb-5 text-6xl font-bold text-white max-w-xl">
+      {{ title }}
+    </h1>
+    <h2 v-if="text" class="w-full mb-5 text-3xl text-white">{{ text }}</h2>
     <slot></slot>
   </div>
 </template>

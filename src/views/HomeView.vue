@@ -1,8 +1,15 @@
 <template>
   <hero
     class="h-[85vh] md:h-[85vh] w-full"
+    title="WHEN ONLY THE BEST WILL DO"
     image-url="other/resident-edith-and-red.jpg"
-  />
+    ><div class="flex justify-evenly w-1/2">
+      <router-link to="/Services"
+        ><action-button type="primary" text="Get Started" /> </router-link
+      ><router-link to="/About-Us"
+        ><action-button type="primary" text="About Us"
+      /></router-link></div
+  ></hero>
   <hero-caption />
   <div class="flex flex-wrap w-full justify-evenly show-on-scroll">
     <description-box
@@ -34,13 +41,14 @@
 <script lang="ts">
 import { defineComponent, onMounted } from "vue";
 
-import Hero from "@/components/Home/Hero/Hero.vue";
+import Hero from "@/components/Shared/Hero/Hero.vue";
 import HeroCaption from "@/components/Home/HeroCaption.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
 import FacilitiesCard from "@/components/Home/Cards/FacilityCard/FacilitiesCard.vue";
 import LocationsCard from "@/components/Home/Cards/LocationsCard.vue";
 import ContactCard from "@/components/Home/Cards/ContactCard/ContactCard.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 
 interface DescriptionBoxContent {
   icon: string[];
@@ -58,6 +66,7 @@ export default defineComponent({
     FacilitiesCard,
     LocationsCard,
     ContactCard,
+    ActionButton,
   },
   setup() {
     const descriptionBoxContents: DescriptionBoxContent[] = [

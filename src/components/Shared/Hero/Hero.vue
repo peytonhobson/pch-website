@@ -3,16 +3,11 @@
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <hero-slogan
-        title="WHEN ONLY THE BEST WILL DO"
+        :title="title"
+        :text="text"
         class="items-center justify-center"
       >
-        <div class="flex justify-evenly">
-          <router-link to="/Services"
-            ><action-button type="primary" text="Get Started" /> </router-link
-          ><router-link to="/About-Us"
-            ><action-button type="primary" text="About Us"
-          /></router-link>
-        </div>
+        <slot></slot>
       </hero-slogan>
     </div>
   </div>
@@ -23,18 +18,25 @@ import { defineComponent } from "vue";
 
 import HeroSlogan from "./HeroSlogan.vue";
 import getImgURL from "@/helpers/getImgURL";
-import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "Hero",
   components: {
     HeroSlogan,
-    ActionButton,
   },
   props: {
     imageUrl: {
       type: String,
       required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: false,
+      default: undefined,
     },
   },
   setup() {
