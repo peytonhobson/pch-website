@@ -31,11 +31,7 @@
       </Transition>
     </template>
     <template #button>
-      <button
-        class="btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-light-green flex items-center"
-      >
-        Learn More
-      </button>
+      <action-button text="Learn More" type="card" />
     </template>
   </card>
 </template>
@@ -56,12 +52,14 @@ import {
 } from "@/store/composables";
 import setScrollObserverCarousel from "@/helpers/setScrollObserverCarousel";
 import FacilitiesCardCarousel from "@/components/Home/Cards/FacilityCard/FacilitiesCardCarousel.vue";
+import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "FacilitiesCard",
   components: {
     Card,
     FacilitiesCardCarousel,
+    ActionButton,
   },
   setup() {
     const facilities = useFilteredFacilities();

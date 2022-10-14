@@ -1,5 +1,7 @@
 <template>
-  <button :class="buttonClass">
+  <button
+    class="btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-light-green flex items-center"
+  >
     {{ text }}
   </button>
 </template>
@@ -42,5 +44,9 @@ button {
 
 .primary {
   @apply rounded-full text-white bg-brand-green-gray hover:bg-brand-light-green py-3 font-questrial text-base md:text-xl font-medium;
+}
+
+.card {
+  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-light-green flex items-center;
 }
 </style>
