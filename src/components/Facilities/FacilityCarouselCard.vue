@@ -3,7 +3,7 @@
     <card
       v-if="show"
       :body="false"
-      class="h-full"
+      class="h-80 w-full xl:h-144 rounded-none xl:rounded-2xl"
       @mouseenter="clearImageInterval"
       @mouseleave="changeImage"
     >

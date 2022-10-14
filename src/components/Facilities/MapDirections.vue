@@ -1,6 +1,6 @@
 <template>
-  <div class="w-5/6 md:w-full prose my-10">
-    <div class="mapouter flex-1 w-full mt-10 md:mt-10">
+  <div class="w-5/6 md:w-full prose flex flex-wrap items-stretch">
+    <div class="mapouter w-full mt-10 md:mt-10">
       <div class="gmap_canvas flex w-full h-full">
         <iframe
           id="gmap_canvas"
@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="my-4">
+    <div class="w-full my-10 md:mt-10 md:mb-0">
       <action-button text="Get Directions" type="primary" @click="routeUser" />
     </div>
   </div>
