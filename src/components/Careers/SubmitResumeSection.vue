@@ -1,16 +1,17 @@
 <template>
   <dual-item-display class="my-10 xl:my-44" :reverse-column="true">
     <template #leftColumn class="h-full items-center">
-      <display-card
+      <card
         class="w-5/6 md:w-3/4 xl:w-full py-10 px-7 h-full mt-10 xl:mt-0"
-        rows="1"
-        :lift="false"
+        :body="false"
       >
-        <span class="flex justify-center md:justify-end w-full">
-          <notifications group="resume" class="static w-full" />
-        </span>
-        <resume-form />
-      </display-card>
+        <template #other>
+          <span class="flex justify-center md:justify-end w-full">
+            <notifications group="resume" class="static w-full" />
+          </span>
+          <resume-form />
+        </template>
+      </card>
     </template>
 
     <template #rightColumn>
@@ -42,7 +43,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import DisplayCard from "../Shared/DisplayCard.vue";
+import Card from "@/components/Shared/Card.vue";
 import ResumeForm from "./Forms/ResumeForm.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
@@ -50,7 +51,7 @@ import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 export default defineComponent({
   name: "SubmitResumeSection",
   components: {
-    DisplayCard,
+    Card,
     ResumeForm,
     DualItemDisplay,
     SimpleDescription,

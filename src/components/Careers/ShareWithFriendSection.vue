@@ -1,16 +1,17 @@
 <template>
   <dual-item-display class="my-28 xl:my-44" :reverse-column="true">
     <template #leftColumn>
-      <display-card
+      <card
         class="w-5/6 md:w-3/4 xl:w-full mt-10 xl:mt-0 py-10 px-7"
-        rows="1"
-        :lift="false"
+        :body="false"
       >
-        <span class="flex justify-center md:justify-end w-full">
-          <notifications group="friend" class="static w-full" />
-        </span>
-        <share-with-friend-form />
-      </display-card>
+        <template #other>
+          <span class="flex justify-center md:justify-end w-full">
+            <notifications group="friend" class="static w-full" />
+          </span>
+          <share-with-friend-form />
+        </template>
+      </card>
     </template>
 
     <template #rightColumn>
@@ -22,7 +23,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import DisplayCard from "@/components/Shared/DisplayCard.vue";
+import Card from "@/components/Shared/Card.vue";
 import ShareWithFriendForm from "@/components/Careers/Forms/ShareWithFriendForm.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
@@ -30,7 +31,7 @@ import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 export default defineComponent({
   name: "SubmitFriendSection",
   components: {
-    DisplayCard,
+    Card,
     ShareWithFriendForm,
     DualItemDisplay,
     SimpleDescription,
