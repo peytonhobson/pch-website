@@ -6,9 +6,9 @@
   >
     <template #image>
       <Transition>
-        <facilities-card-carousel
+        <carousel
           v-if="show"
-          :facilities="facilities"
+          :image-links="imageLinks"
           :cur-index="curIndex"
           @next="nextFacility"
           @prev="prevFacility"
@@ -53,19 +53,23 @@ import {
   useFilteredFacilities,
 } from "@/store/composables";
 import setScrollObserverCarousel from "@/helpers/setScrollObserverCarousel";
-import FacilitiesCardCarousel from "@/components/Home/Cards/FacilityCard/FacilitiesCardCarousel.vue";
+import Carousel from "@/components/Shared/Carousel.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({
   name: "FacilitiesCard",
   components: {
     Card,
-    FacilitiesCardCarousel,
+    Carousel,
     ActionButton,
   },
   setup() {
     const facilities = useFilteredFacilities();
     onMounted(useFetchFacilitiesDispatch);
+
+    const imageLinks = computed(() =>
+      facilities.value.map((facility) => facility.images[0])
+    );
 
     const curFacility = computed(() => facilities.value[curIndex.value]);
 
@@ -113,6 +117,7 @@ export default defineComponent({
       prevFacility,
       nextFacility,
       curFacility,
+      imageLinks,
     };
   },
 });
