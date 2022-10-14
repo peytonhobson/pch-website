@@ -19,20 +19,10 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Card",
   props: {
-    title: {
-      type: String,
-      required: false,
-      default: undefined,
-    },
     image: {
       type: Boolean,
       required: false,
       default: false,
-    },
-    facility: {
-      type: String,
-      required: false,
-      default: undefined,
     },
   },
   setup() {},

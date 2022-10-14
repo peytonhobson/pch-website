@@ -1,7 +1,7 @@
 <template>
   <div :class="outerClass">
     <div class="col-start-1 col-span-1 p-2 flex items-center justify-center">
-      <img src="@/assets/Headshot.jpg" class="max-h-28 rounded-full" />
+      <img src="@/assets/Headshot.jpg" class="h-20 rounded-full my-0" />
     </div>
     <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
       <span
@@ -69,7 +69,7 @@ export default defineComponent({
 
 <style scoped>
 .outer-div {
-  @apply p-7 row-span-2 grid grid-cols-4 place-items-center;
+  @apply px-2 row-span-2 grid grid-cols-4 place-items-center;
 }
 
 .row-1 {

@@ -19,9 +19,7 @@
       class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144"
       route="Facilities"
     />
-    <display-card-contact
-      class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144"
-    />
+    <contact-card class="md:max-w-md md:w-2/5 xl:w-2/7 my-10 w-5/6 h-144" />
   </div>
 </template>
 
@@ -33,7 +31,7 @@ import HeroCaption from "@/components/Home/HeroCaption.vue";
 import DescriptionBox from "@/components/Home/DescriptionBox.vue";
 import FacilitiesCard from "@/components/Home/Cards/FacilityCard/FacilitiesCard.vue";
 import LocationsCard from "@/components/Home/Cards/LocationsCard.vue";
-import DisplayCardContact from "@/components/Home/Cards/ContactCard/DisplayCardContact.vue";
+import ContactCard from "@/components/Home/Cards/ContactCard/ContactCard.vue";
 import setScrollObserver from "@/helpers/setScrollObserver";
 
 interface DescriptionBoxContent {
@@ -51,7 +49,7 @@ export default defineComponent({
     DescriptionBox,
     FacilitiesCard,
     LocationsCard,
-    DisplayCardContact,
+    ContactCard,
   },
   setup() {
     const descriptionBoxContents: DescriptionBoxContent[] = [
