@@ -3,6 +3,8 @@
     v-if="curFacility"
     :image="true"
     :title="`Facility - ${curFacility.name}`"
+    @mouseenter="clearFacilityInterval"
+    @mouseleave="changeFacility"
   >
     <template #image>
       <Transition>
@@ -118,6 +120,8 @@ export default defineComponent({
       nextFacility,
       curFacility,
       imageLinks,
+      clearFacilityInterval,
+      changeFacility,
     };
   },
 });
