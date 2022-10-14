@@ -1,5 +1,8 @@
 <template>
-  <hero class="h-[85vh] md:h-[85vh] w-full" />
+  <hero
+    class="h-[85vh] md:h-[85vh] w-full"
+    image-url="other/resident-edith-and-red.jpg"
+  />
   <hero-caption />
   <div class="flex flex-wrap w-full">
     <description-box
