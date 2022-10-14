@@ -5,7 +5,7 @@
   >
     <dual-item-display :reverse-column="false" :items-start="true">
       <template #leftColumn>
-        <facility-carousel :facility="facility" />
+        <facility-carousel-card :facility="facility" />
       </template>
       <!--end col-->
 
@@ -29,7 +29,7 @@ import { Facility } from "@/api/types";
 import MapDirections from "@/components/Facilities/MapDirections.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
-import FacilityCarousel from "@/components/Facilities/FacilityCarousel.vue";
+import FacilityCarouselCard from "@/components/Facilities/FacilityCarouselCard.vue";
 
 export default defineComponent({
   name: "Facility",
@@ -37,7 +37,7 @@ export default defineComponent({
     MapDirections,
     SimpleDescription,
     DualItemDisplay,
-    FacilityCarousel,
+    FacilityCarouselCard,
   },
   props: {
     facility: {
