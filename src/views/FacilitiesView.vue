@@ -1,12 +1,10 @@
 <template>
-  <section class="text-6xl border-y-2 border-y-brand-green-gray py-4">
-    Facilities
-  </section>
+  <!--  add hero here -->
   <section class="flex flex-wrap justify-evenly py-10">
     <facility-card
       v-for="facility in filteredFacilities"
       :key="facility.id"
-      class="w-5/6 md:w-2/5 xl:w-1/5 show-on-scroll h-128 my-10 xl:my-0"
+      class="w-5/6 md:w-2/5 xl:w-1/5 show-on-scroll my-10 xl:my-0"
       :facility="facility"
       :route="`/Facilities/${facility.name.toLowerCase()}`"
     />

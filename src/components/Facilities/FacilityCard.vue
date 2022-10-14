@@ -1,30 +1,35 @@
 <template>
-  <display-card :header="facility.name" :route="route">
-    <div class="w-full row-start-2 row-span-2 h-full">
-      <!-- Fix for dynamic images -->
+  <card :image="true">
+    <template #image>
       <img :src="getImgURL(facility.images[0])" class="w-full h-full" />
-    </div>
-    <div class="row-start-4 row-span-2 grid grid-rows-4">
-      <div class="px-7 row-start-2 row-span-3 flex items-start justify-center">
-        <div class="text-lg text-left">
-          {{ facility.summary }}
-        </div>
-      </div>
-    </div>
-  </display-card>
+    </template>
+    <template #title>
+      <h2 class="card-title">
+        {{ facility.name }}
+      </h2>
+    </template>
+    <template #body>
+      <p class="text-left">
+        {{ facility.summary }}
+      </p>
+    </template>
+    <template #button>
+      <action-button text="Learn More" type="card" />
+    </template>
+  </card>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 import { Facility } from "@/api/types";
-import DisplayCard from "../Shared/DisplayCard.vue";
 import getImgURL from "@/helpers/getImgURL";
+import Card from "@/components/Shared/Card.vue";
 
 export default defineComponent({
   name: "FacilityCard",
   components: {
-    DisplayCard,
+    Card,
   },
   props: {
     facility: {
