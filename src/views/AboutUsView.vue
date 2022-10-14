@@ -31,7 +31,7 @@ export default defineComponent({
   setup() {
     const heroProps = {
       backgroundImage: "other/resident-wheelchair-balloon-girl.png",
-      title: "About Us",
+      title: "ABOUT US",
       text: "So you can know who we are",
     };
 

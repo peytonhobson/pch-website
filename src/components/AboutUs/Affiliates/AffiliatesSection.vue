@@ -5,7 +5,7 @@
     :items-start="false"
   >
     <template #leftColumn>
-      <affiliates-card />
+      <affiliates-card class="my-10 md:my-0" />
     </template>
     <!--end col-->
 

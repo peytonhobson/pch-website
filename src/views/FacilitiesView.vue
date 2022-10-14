@@ -2,6 +2,7 @@
   <hero
     :image-url="heroProps.backgroundImage"
     :title="heroProps.title"
+    :text="heroProps.text"
     class="h-[85vh]"
   />
   <section class="flex flex-wrap justify-evenly py-10 show-on-scroll">
@@ -43,7 +44,8 @@ export default defineComponent({
     const filteredFacilities = useFilteredFacilities();
 
     const heroProps = {
-      title: "Facilities",
+      title: "FACILITIES",
+      text: "Check out our dope homes",
       backgroundImage: "hallet/hallet-7.jpg",
     };
 

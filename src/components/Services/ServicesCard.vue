@@ -10,7 +10,7 @@
         <li
           v-for="item in serviceItems"
           :key="item"
-          class="text-left my-2 flex"
+          class="text-left my-3 xl:y-2 flex"
         >
           <font-awesome-icon
             class="fill-current text-green-500 flex-col pt-2"

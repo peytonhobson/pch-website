@@ -3,10 +3,10 @@
     class="h-[85vh] md:h-[85vh] w-full"
     title="WHEN ONLY THE BEST WILL DO"
     image-url="other/resident-edith-and-red.jpg"
-    ><div class="flex justify-evenly w-1/2">
-      <router-link to="/Services"
+    ><div class="flex justify-evenly xl:w-1/2">
+      <router-link to="/Services" class="mx-2"
         ><action-button type="primary" text="Get Started" /> </router-link
-      ><router-link to="/About-Us"
+      ><router-link to="/About-Us" class="mx-2"
         ><action-button type="primary" text="About Us"
       /></router-link></div
   ></hero>

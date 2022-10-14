@@ -1,7 +1,7 @@
 <template>
   <dual-item-display class="my-36 xl:my-44" :reverse-column="true">
     <template #leftColumn>
-      <services-card />
+      <services-card class="my-10 w-5/6 xl:w-full" />
     </template>
     <!--end col-->
 

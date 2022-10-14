@@ -34,17 +34,17 @@
   </section>
   <section
     v-if="testimonials.length > 0 && isMobile"
-    class="py-5 flex flex-wrap justify-center"
+    class="py-5 flex flex-wrap justify-center px-10"
   >
-    <testimonial-card :testimonial="testimonials[0]" class="my-5 w-5/6" />
-    <image-card class="h-80 my-5 md:w-5/6" :image-link="images[1]" />
-    <testimonial-card :testimonial="testimonials[1]" class="my-5 w-5/6" />
-    <testimonial-card :testimonial="testimonials[2]" class="my-5 w-5/6" />
-    <image-card class="h-80 my-5 md:w-5/6" :image-link="images[2]" />
-    <testimonial-card :testimonial="testimonials[3]" class="my-5 w-5/6" />
-    <testimonial-card :testimonial="testimonials[4]" class="my-5 w-5/6" />
-    <testimonial-card :testimonial="testimonials[5]" class="my-5 w-5/6" />
-    <image-card class="h-80 my-5 md:w-5/6" :image-link="images[3]" />
+    <testimonial-card :testimonial="testimonials[0]" class="my-5" />
+    <image-card class="h-80 my-5" :image-link="images[0]" />
+    <testimonial-card :testimonial="testimonials[1]" class="my-5" />
+    <testimonial-card :testimonial="testimonials[2]" class="my-5" />
+    <image-card class="h-80 my-5" :image-link="images[1]" />
+    <testimonial-card :testimonial="testimonials[3]" class="my-5" />
+    <testimonial-card :testimonial="testimonials[4]" class="my-5" />
+    <testimonial-card :testimonial="testimonials[5]" class="my-5" />
+    <image-card class="h-80 my-5" :image-link="images[2]" />
   </section>
 </template>
 
@@ -84,7 +84,7 @@ export default defineComponent({
 
     const heroProps = {
       backgroundImage: "other/resident-wheelchair-balloon-girl.png",
-      title: "Testimonials",
+      title: "TESTIMONIALS",
       text: "Hear the best about us",
     };
 

@@ -55,7 +55,7 @@ export default defineComponent({
 
     const heroProps = {
       backgroundImage: "other/resident-wheelchair-balloon-girl.png",
-      title: "Blog",
+      title: "BLOG",
       text: "Keep up to date with the latest at Premier Care Homes",
     };
 
