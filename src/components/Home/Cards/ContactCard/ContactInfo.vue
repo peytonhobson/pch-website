@@ -3,7 +3,11 @@
     <div
       class="col-start-1 col-span-1 pr-2 py-2 md:p-2 flex items-center justify-center"
     >
-      <img src="@/assets/Headshot.jpg" class="h-20 rounded-full my-0" />
+      <div class="avatar">
+        <div class="w-20 rounded-full">
+          <img :src="getImgURL('Headshot.jpg')" class="mt-0" />
+        </div>
+      </div>
     </div>
     <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
       <span
@@ -29,8 +33,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, toRefs } from "vue";
-
-//here for commit
+import getImgURL from "@/helpers/getImgURL";
 
 interface Contact {
   name: string;
@@ -64,7 +67,7 @@ export default defineComponent({
       return { [rowString.concat(number.value)]: true, ["outer-div"]: true };
     });
 
-    return { outerClass };
+    return { outerClass, getImgURL };
   },
 });
 </script>
