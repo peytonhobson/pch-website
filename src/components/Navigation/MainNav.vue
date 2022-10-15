@@ -10,12 +10,12 @@
       </router-link>
       <ul
         v-if="!isMobile"
-        class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
+        class="flex flex-col p-4 mr-5 mt-4 w-full justify-end md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
       >
         <li v-for="listItem in listItems" :key="listItem.text">
           <router-link
             :to="listItem.to"
-            class="block py-2 pr-4 pl-3 text-white hover:text-brand-green-gray md:p-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline"
+            :class="navItemClass"
             aria-current="page"
             >{{ listItem.text }}</router-link
           >
@@ -55,7 +55,10 @@ import {
   onBeforeMount,
   computed,
   onBeforeUnmount,
+  watch,
 } from "vue";
+
+import { useRoute } from "vue-router";
 
 import getImgURL from "@/helpers/getImgURL";
 
@@ -66,10 +69,7 @@ export default defineComponent({
       { text: "Home", to: "/" },
       { text: "Services", to: "/Services" },
       { text: "Facilities", to: "/Facilities" },
-      { text: "Blog", to: "/Blog" },
       { text: "Testimonials", to: "/Testimonials" },
-      { text: "Resources", to: "/Resources" },
-      { text: "Careers", to: "/Careers" },
       { text: "About Us", to: "/About-Us" },
     ];
 
@@ -89,8 +89,23 @@ export default defineComponent({
     const navClass = computed(() => {
       return {
         ["navbar-main"]: true,
-        ["background-transparent"]: transparentBackground.value,
-        ["background-white"]: !transparentBackground.value,
+        ["bg-transparent"]: transparentBackground.value,
+        ["bg-white"]: !transparentBackground.value,
+      };
+    });
+
+    const route = useRoute();
+
+    watch(
+      () => route.path,
+      () => console.log(route.path)
+    );
+
+    const navItemClass = computed(() => {
+      return {
+        ["nav-list-item"]: true,
+        ["text-white"]:
+          transparentBackground.value && !route.path.match("/Facilities/"),
       };
     });
 
@@ -99,7 +114,6 @@ export default defineComponent({
         window.pageYOffset ||
         (document.documentElement || document.body.parentNode || document.body)
           .scrollTop;
-      console.log(scrollTop);
       if (scrollTop > 10) {
         transparentBackground.value = false;
       } else {
@@ -110,22 +124,26 @@ export default defineComponent({
     onBeforeMount(() => window.addEventListener("scroll", handleScroll));
     onBeforeUnmount(() => window.removeEventListener("scroll", handleScroll));
 
-    return { listItems, isMobile, handleDropdown, isOpen, getImgURL, navClass };
+    return {
+      listItems,
+      isMobile,
+      handleDropdown,
+      isOpen,
+      getImgURL,
+      navClass,
+      navItemClass,
+    };
   },
 });
 </script>
 
 <style scoped>
 .navbar-main {
-  @apply w-full p-2 md:p-6 h-[15vh] items-center flex fixed top-0 z-50;
+  @apply w-full p-2 md:p-6 h-[12vh] items-center flex fixed top-0 z-50;
   transition: background-color 1s ease 0s;
 }
 
-.background-transparent {
-  @apply bg-transparent;
-}
-
-.background-white {
-  @apply bg-white;
+.nav-list-item {
+  @apply block py-2 px-7 hover:text-brand-green-gray md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline;
 }
 </style>
