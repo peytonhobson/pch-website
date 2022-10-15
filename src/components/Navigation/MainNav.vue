@@ -4,7 +4,7 @@
       <router-link to="/" class="flex items-center">
         <img
           :src="getImgURL('other/premier-care-homes-logo1.png')"
-          class="mr-3 h-16"
+          class="mr-3 h-20"
           alt="Premier Care Homes Logo"
         />
       </router-link>
