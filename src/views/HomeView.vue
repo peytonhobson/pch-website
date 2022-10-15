@@ -1,6 +1,6 @@
 <template>
   <hero
-    class="h-[85vh] md:h-[85vh] w-full"
+    class="w-full"
     title="WHEN ONLY THE BEST WILL DO"
     image-url="other/resident-edith-and-red.jpg"
     ><div class="flex justify-evenly xl:w-1/2">
