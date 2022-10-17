@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hero animate-fadeIn h-screen"
+    class="hero h-screen"
     :style="`background-image: url(${getImgURL(imageUrl)})`"
   >
     <div class="hero-overlay bg-opacity-60"></div>

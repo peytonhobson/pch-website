@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full xl:h-[20vh] flex items-center pt-5 px-10 xl:px-20">
+  <div class="w-full flex items-center py-20 px-10 xl:px-20">
     <span class="justify-center text-xl xl:text-3xl flex-auto"
       >We know it’s a difficult decision when you or your loved one can no
       longer live independently at home. It is our goal to provide a

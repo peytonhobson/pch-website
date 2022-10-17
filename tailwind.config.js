@@ -118,7 +118,7 @@ module.exports = {
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
       fadeIn: "fadeIn 1.3s ease-in forwards",
-      dropDown: "fadeIn 1s ease-in forwards",
+      "fadeIn-short": "fadeIn 1s ease-in forwards",
     },
     aspectRatio: {
       auto: "auto",
