@@ -78,7 +78,7 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior() {
-    return { top: 0, left: 0, behavior: "smooth" };
+    document.getElementById("app")!.scrollIntoView({ behavior: "smooth" });
   },
 });
 

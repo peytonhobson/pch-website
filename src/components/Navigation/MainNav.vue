@@ -55,12 +55,12 @@ import {
   onBeforeMount,
   computed,
   onBeforeUnmount,
-  watch,
 } from "vue";
 
 import { useRoute } from "vue-router";
 
 import getImgURL from "@/helpers/getImgURL";
+import handleNavScroll from "@/composables/handleNavScroll";
 
 export default defineComponent({
   name: "MainNav",
@@ -96,29 +96,16 @@ export default defineComponent({
 
     const route = useRoute();
 
-    watch(
-      () => route.path,
-      () => console.log(route.path)
-    );
-
     const navItemClass = computed(() => {
       return {
         ["nav-list-item"]: true,
         ["text-white"]:
-          transparentBackground.value && !route.path.match("/Facilities/"),
+          transparentBackground.value && !route.path.match(/\/(Facilities\/)/g),
       };
     });
 
     const handleScroll = () => {
-      let scrollTop =
-        window.pageYOffset ||
-        (document.documentElement || document.body.parentNode || document.body)
-          .scrollTop;
-      if (scrollTop > 10) {
-        transparentBackground.value = false;
-      } else {
-        transparentBackground.value = true;
-      }
+      transparentBackground.value = handleNavScroll();
     };
 
     onBeforeMount(() => window.addEventListener("scroll", handleScroll));
