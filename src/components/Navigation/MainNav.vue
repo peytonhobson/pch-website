@@ -1,13 +1,15 @@
 <template>
   <nav :class="navClass">
-    <div class="flex flex-nowrap justify-between items-center w-full">
+    <div class="flex-1 mx-2 items-center">
       <router-link to="/" class="flex items-center">
         <img
           :src="getImgURL('other/premier-care-homes-logo1.png')"
-          class="mr-3 h-20"
+          class="mr-3 h-16 md:h-20"
           alt="Premier Care Homes Logo"
         />
       </router-link>
+    </div>
+    <div v-if="!isMobile" class="flex-none">
       <ul
         v-if="!isMobile"
         class="flex flex-col p-4 mr-5 mt-4 w-full justify-end md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
@@ -21,31 +23,39 @@
           >
         </li>
       </ul>
-      <div v-else class="mr-2 border border-black px-2 py-1">
+    </div>
+    <div v-else class="flex-none mx-2">
+      <button class="btn btn-square btn-ghost">
         <font-awesome-icon
           :icon="['fas', 'bars']"
           size="2x"
+          :class="mobileIconClass"
           @click="handleDropdown"
         />
-      </div>
+      </button>
     </div>
-  </nav>
-  <div>
-    <ul
-      v-if="isOpen"
-      class="flex flex-col p-4 mt-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-white animate-dropDown"
-    >
-      <li v-for="listItem in listItems" :key="listItem.text">
-        <router-link
-          :to="listItem.to"
-          class="block py-2 pr-4 pl-3 md:px-0 md:py-5 text-gray-400 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline"
-          aria-current="page"
-          @click="handleDropdown"
-          >{{ listItem.text }}</router-link
+    <Transition>
+      <div v-if="isOpen" class="w-full bg-transparent">
+        <ul
+          class="flex flex-col p-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-transparent"
         >
-      </li>
-    </ul>
-  </div>
+          <li
+            v-for="listItem in listItems"
+            :key="listItem.text"
+            class="bg-transparent"
+          >
+            <router-link
+              :to="listItem.to"
+              class="block py-2 pr-4 pl-3 md:px-0 md:py-5 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline bg-transparent"
+              aria-current="page"
+              @click="handleDropdown"
+              >{{ listItem.text }}</router-link
+            >
+          </li>
+        </ul>
+      </div>
+    </Transition>
+  </nav>
 </template>
 
 <script lang="ts">
@@ -89,8 +99,8 @@ export default defineComponent({
     const navClass = computed(() => {
       return {
         ["navbar-main"]: true,
-        ["bg-transparent"]: transparentBackground.value,
-        ["bg-white"]: !transparentBackground.value,
+        ["bg-transparent"]: transparentBackground.value && !isOpen.value,
+        ["bg-white"]: !transparentBackground.value || isOpen.value,
       };
     });
 
@@ -101,6 +111,16 @@ export default defineComponent({
         ["nav-list-item"]: true,
         ["text-white"]:
           transparentBackground.value && !route.path.match(/\/(Facilities\/)/g),
+      };
+    });
+
+    const mobileIconClass = computed(() => {
+      return {
+        ["fill-current"]: true,
+        ["text-white"]:
+          transparentBackground.value &&
+          !isOpen.value &&
+          !route.path.match(/\/(Facilities\/)/g),
       };
     });
 
@@ -119,6 +139,7 @@ export default defineComponent({
       getImgURL,
       navClass,
       navItemClass,
+      mobileIconClass,
     };
   },
 });
@@ -126,11 +147,21 @@ export default defineComponent({
 
 <style scoped>
 .navbar-main {
-  @apply w-full p-2 md:p-6 h-[12vh] items-center flex fixed top-0 z-50;
+  @apply navbar w-full py-2 xl:h-[12vh] fixed flex flex-wrap items-center top-0 z-50 px-0;
   transition: background-color 1s ease 0s;
 }
 
 .nav-list-item {
   @apply block py-2 px-7 hover:text-brand-green-gray md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 1s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
