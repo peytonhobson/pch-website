@@ -1,16 +1,19 @@
 <template>
   <main-nav />
   <router-view />
+  <Footer />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import MainNav from "./components/Navigation/MainNav.vue";
+import Footer from "./components/Shared/Footer.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     MainNav,
+    Footer,
   },
   setup() {},
 });
