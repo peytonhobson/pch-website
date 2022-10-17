@@ -10,51 +10,26 @@
       </router-link>
     </div>
     <div v-if="!isMobile" class="flex-none">
-      <ul
-        v-if="!isMobile"
-        class="flex flex-col p-4 mr-5 mt-4 w-full justify-end md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
-      >
-        <li v-for="listItem in listItems" :key="listItem.text">
-          <router-link
-            :to="listItem.to"
-            :class="navItemClass"
-            aria-current="page"
-            >{{ listItem.text }}</router-link
-          >
-        </li>
-      </ul>
+      <main-nav-desktop-list
+        :transparent-background="transparentBackground"
+        :list-items="listItems"
+      />
     </div>
     <div v-else class="flex-none mx-2">
-      <button class="btn btn-square btn-ghost">
-        <font-awesome-icon
-          :icon="['fas', 'bars']"
-          size="2x"
-          :class="mobileIconClass"
-          @click="handleDropdown"
-        />
-      </button>
+      <main-nav-mobile-button
+        :white-text="
+          transparentBackground &&
+          !isOpen &&
+          !route.path.match(/\/(Facilities\/)/g)
+        "
+        @click="isOpen = !isOpen"
+      />
     </div>
-    <Transition>
-      <div v-if="isOpen" class="w-full bg-transparent">
-        <ul
-          class="flex flex-col p-4 w-full justify-evenly md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 bg-transparent"
-        >
-          <li
-            v-for="listItem in listItems"
-            :key="listItem.text"
-            class="bg-transparent"
-          >
-            <router-link
-              :to="listItem.to"
-              class="block py-2 pr-4 pl-3 md:px-0 md:py-5 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline bg-transparent"
-              aria-current="page"
-              @click="handleDropdown"
-              >{{ listItem.text }}</router-link
-            >
-          </li>
-        </ul>
-      </div>
-    </Transition>
+    <main-nav-mobile-list
+      :is-open="isOpen"
+      :list-items="listItems"
+      @handle-open="isOpen = !isOpen"
+    />
   </nav>
 </template>
 
@@ -71,9 +46,17 @@ import { useRoute } from "vue-router";
 
 import getImgURL from "@/helpers/getImgURL";
 import handleNavScroll from "@/composables/handleNavScroll";
+import MainNavDesktopList from "@/components/Navigation/MainNavDesktopList.vue";
+import MainNavMobileButton from "@/components/Navigation/MainNavMobileButton.vue";
+import MainNavMobileList from "./MainNavMobileList.vue";
 
 export default defineComponent({
   name: "MainNav",
+  components: {
+    MainNavDesktopList,
+    MainNavMobileButton,
+    MainNavMobileList,
+  },
   setup() {
     const listItems = [
       { text: "Home", to: "/" },
@@ -84,10 +67,6 @@ export default defineComponent({
     ];
 
     const isOpen = ref(false);
-
-    const handleDropdown = () => {
-      isOpen.value = !isOpen.value;
-    };
 
     const isMobile =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -106,24 +85,6 @@ export default defineComponent({
 
     const route = useRoute();
 
-    const navItemClass = computed(() => {
-      return {
-        ["nav-list-item"]: true,
-        ["text-white"]:
-          transparentBackground.value && !route.path.match(/\/(Facilities\/)/g),
-      };
-    });
-
-    const mobileIconClass = computed(() => {
-      return {
-        ["fill-current"]: true,
-        ["text-white"]:
-          transparentBackground.value &&
-          !isOpen.value &&
-          !route.path.match(/\/(Facilities\/)/g),
-      };
-    });
-
     const handleScroll = () => {
       transparentBackground.value = handleNavScroll();
     };
@@ -134,12 +95,11 @@ export default defineComponent({
     return {
       listItems,
       isMobile,
-      handleDropdown,
       isOpen,
       getImgURL,
       navClass,
-      navItemClass,
-      mobileIconClass,
+      transparentBackground,
+      route,
     };
   },
 });
@@ -149,10 +109,6 @@ export default defineComponent({
 .navbar-main {
   @apply navbar w-full py-2 xl:h-[12vh] fixed flex flex-wrap items-center top-0 z-50 px-0;
   transition: background-color 1s ease 0s;
-}
-
-.nav-list-item {
-  @apply block py-2 px-7 hover:text-brand-green-gray md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline;
 }
 
 .v-enter-active,
