@@ -35,8 +35,8 @@
       >
         <li v-for="link in facilityLinks" :key="link.text">
           <router-link
-            :to="link.to || ''"
-            class="flex justify-center hover:bg-brand-green-gray"
+            :to="link.to"
+            class="flex justify-center hover:bg-brand-green-gray hover:text-white"
           >
             {{ link.text }}</router-link
           >
@@ -88,7 +88,6 @@ export default defineComponent({
 
     const listItemsReturned = computed(() => listItems.value);
 
-    console.log(listItems);
     const facilityLinks: Route[] = [
       { text: "Baxter", to: "/Facilities/Baxter" },
       { text: "Hallet", to: "/Facilities/Hallet" },
