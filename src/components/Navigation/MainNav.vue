@@ -50,6 +50,11 @@ import MainNavDesktopList from "@/components/Navigation/MainNavDesktopList.vue";
 import MainNavMobileButton from "@/components/Navigation/MainNavMobileButton.vue";
 import MainNavMobileList from "./MainNavMobileList.vue";
 
+interface Route {
+  text: string;
+  to: string;
+}
+
 export default defineComponent({
   name: "MainNav",
   components: {
@@ -58,13 +63,18 @@ export default defineComponent({
     MainNavMobileList,
   },
   setup() {
-    const listItems = [
-      { text: "Home", to: "/" },
-      { text: "Services", to: "/Services" },
-      { text: "Facilities", to: "/Facilities" },
-      { text: "Testimonials", to: "/Testimonials" },
-      { text: "About Us", to: "/About-Us" },
-    ];
+    const listItems = ref([] as Route[]);
+
+    onBeforeMount(
+      () =>
+        (listItems.value = [
+          { text: "Home", to: "/" },
+          { text: "Services", to: "/Services" },
+          { text: "Facilities", to: "/Facilities" },
+          { text: "Testimonials", to: "/Testimonials" },
+          { text: "About Us", to: "/About-Us" },
+        ])
+    );
 
     const isOpen = ref(false);
 

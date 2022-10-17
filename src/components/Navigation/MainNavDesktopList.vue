@@ -2,19 +2,68 @@
   <ul
     class="flex flex-col p-4 mr-5 mt-4 w-full justify-end md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
   >
-    <li v-for="listItem in listItems" :key="listItem.text">
+    <li>
       <router-link
-        :to="listItem.to"
+        :to="listItemsReturned[0].to"
         :class="navItemClass"
         aria-current="page"
-        >{{ listItem.text }}</router-link
+        >{{ listItemsReturned[0].text }}</router-link
+      >
+    </li>
+    <li>
+      <router-link
+        :to="listItemsReturned[1].to"
+        :class="navItemClass"
+        aria-current="page"
+        >{{ listItemsReturned[1].text }}</router-link
+      >
+    </li>
+    <li
+      class="relative flex justify-center"
+      @mouseenter="showSubMenu = true"
+      @mouseleave="showSubMenu = false"
+    >
+      <router-link
+        :to="listItemsReturned[2].to"
+        :class="navItemClass"
+        aria-current="page"
+        >{{ listItemsReturned[2].text }}</router-link
+      >
+      <ul
+        v-if="showSubMenu"
+        class="menu bg-base-100 border absolute top-9 w-40 p-2 rounded-box"
+      >
+        <li v-for="link in facilityLinks" :key="link.text">
+          <router-link
+            :to="link.to || ''"
+            class="flex justify-center hover:bg-brand-green-gray"
+          >
+            {{ link.text }}</router-link
+          >
+        </li>
+      </ul>
+    </li>
+    <li>
+      <router-link
+        :to="listItemsReturned[3].to"
+        :class="navItemClass"
+        aria-current="page"
+        >{{ listItemsReturned[3].text }}</router-link
+      >
+    </li>
+    <li>
+      <router-link
+        :to="listItemsReturned[4].to"
+        :class="navItemClass"
+        aria-current="page"
+        >{{ listItemsReturned[4].text }}</router-link
       >
     </li>
   </ul>
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, computed } from "vue";
+import { defineComponent, toRefs, computed, ref } from "vue";
 import { useRoute } from "vue-router";
 
 interface Route {
@@ -35,7 +84,17 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { transparentBackground } = toRefs(props);
+    const { transparentBackground, listItems } = toRefs(props);
+
+    const listItemsReturned = computed(() => listItems.value);
+
+    console.log(listItems);
+    const facilityLinks: Route[] = [
+      { text: "Baxter", to: "/Facilities/Baxter" },
+      { text: "Hallet", to: "/Facilities/Hallet" },
+      { text: "Madrona", to: "/Facilities/Madrona" },
+      { text: "Trapper", to: "/Facilities/Trapper" },
+    ];
 
     const route = useRoute();
 
@@ -47,13 +106,15 @@ export default defineComponent({
       };
     });
 
-    return { navItemClass };
+    const showSubMenu = ref(false);
+
+    return { navItemClass, showSubMenu, facilityLinks, listItemsReturned };
   },
 });
 </script>
 
 <style scoped>
 .nav-list-item {
-  @apply block py-2 px-7 hover:text-brand-green-gray md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline;
+  @apply block py-2 px-7 mb-2 hover:text-brand-green-gray md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline;
 }
 </style>

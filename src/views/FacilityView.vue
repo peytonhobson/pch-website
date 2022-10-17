@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, computed, onUnmounted } from "vue";
+import { defineComponent, onMounted, computed, watch, onUnmounted } from "vue";
 
 import Facility from "@/components/Facilities/Facility.vue";
 
@@ -23,21 +23,30 @@ export default defineComponent({
     Facility,
   },
   setup() {
+    const store = useStore(key);
+
     const parseFacilityName = () => {
       const route = useRoute();
       const name = (route.params.name as String) || "";
-      const store = useStore(key);
       store.commit(UPDATE_SELECTED_FACILITY_NAME, name);
     };
     const removeFacilityName = () => {
-      const store = useStore(key);
       store.commit(UPDATE_SELECTED_FACILITY_NAME, "");
     };
     onMounted(useFetchFacilitiesDispatch);
     onMounted(parseFacilityName);
     onUnmounted(removeFacilityName);
+    let filteredFacility = computed(() => useFilteredFacilities().value[0]);
 
-    const filteredFacility = computed(() => useFilteredFacilities().value[0]);
+    const route = useRoute();
+
+    watch(
+      () => route.params.name,
+      async (name) => {
+        store.commit(UPDATE_SELECTED_FACILITY_NAME, name || "");
+      },
+      { immediate: true, deep: true }
+    );
 
     return { filteredFacility };
   },
