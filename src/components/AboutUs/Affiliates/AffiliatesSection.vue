@@ -1,6 +1,6 @@
 <template>
   <dual-item-display
-    class="mt-48 md:mt-128 xl:mt-44 h-92"
+    class="mt-80 md:mt-128 xl:mt-44 h-92"
     :reverse-column="true"
     :items-start="false"
   >
