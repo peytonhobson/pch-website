@@ -69,6 +69,8 @@
 import { defineComponent, toRefs, computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
+import setSelectedButton from "@/composables/setSelectedButton";
+
 interface Route {
   text: string;
   to: string;
@@ -111,23 +113,7 @@ export default defineComponent({
     watch(
       () => route.path,
       (path) => {
-        listItemsReturned.value.forEach((item) => {
-          let btn: HTMLButtonElement;
-
-          if (path === "/") {
-            btn = document.querySelector("#Home") as HTMLButtonElement;
-            btn.classList.add("selected");
-          }
-
-          btn = document.querySelector(
-            `#${item.text.replace(" ", "-")}`
-          ) as HTMLButtonElement;
-
-          btn.classList.remove("selected");
-          if (path.match(item.text.replace(" ", "-"))) {
-            btn.classList.add("selected");
-          }
-        });
+        setSelectedButton(listItemsReturned.value, path);
       }
     );
 
