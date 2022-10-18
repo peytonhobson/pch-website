@@ -24,7 +24,7 @@ import { defineComponent, toRefs, ref, onMounted, onBeforeUnmount } from "vue";
 
 import { Facility } from "@/api/types";
 import Card from "@/components/Shared/Card.vue";
-import Carousel from "@/components/Shared/Carousel.vue";
+import Carousel from "@/components/Shared/Carousel/Carousel.vue";
 
 export default defineComponent({
   name: "FacilityCarouselCard",

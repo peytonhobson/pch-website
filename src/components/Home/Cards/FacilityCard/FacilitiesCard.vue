@@ -55,7 +55,7 @@ import {
   useFilteredFacilities,
 } from "@/store/composables";
 import setScrollObserverCarousel from "@/composables/setScrollObserverCarousel";
-import Carousel from "@/components/Shared/Carousel.vue";
+import Carousel from "@/components/Shared/Carousel/Carousel.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 
 export default defineComponent({

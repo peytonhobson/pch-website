@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, toRefs, computed, ref } from "vue";
 
-import ControlLabels from "@/components/Shared/ControlLabels.vue";
+import ControlLabels from "@/components/Shared/Carousel/ControlLabels.vue";
 import preloadImages from "@/composables/preloadImages";
 
 export default defineComponent({
