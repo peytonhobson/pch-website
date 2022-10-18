@@ -1,14 +1,14 @@
 <template>
   <control-labels class="h-full" @next="nextImg" @prev="prevImg">
-    <img v-if="curImage" :src="curImage" class="w-full h-full" />
+    <img v-if="curImage" :src="curImage.src" class="w-full h-full" />
   </control-labels>
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, computed } from "vue";
+import { defineComponent, toRefs, computed, ref } from "vue";
 
-import getImgURL from "@/helpers/getImgURL";
 import ControlLabels from "@/components/Shared/ControlLabels.vue";
+import preloadImages from "@/helpers/preloadImages";
 
 export default defineComponent({
   name: "FacilityCardCarousel",
@@ -29,9 +29,9 @@ export default defineComponent({
   setup(props, { emit }) {
     const { imageLinks, curIndex } = toRefs(props);
 
-    const curImage = computed(() =>
-      getImgURL(imageLinks.value[curIndex.value])
-    );
+    const images = ref(preloadImages(imageLinks.value));
+
+    const curImage = computed(() => images.value[curIndex.value]);
 
     const nextImg = () => {
       emit("next");
