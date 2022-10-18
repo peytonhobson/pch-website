@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-2xl bg-white flex flex-wrap content-center shadow-2xl p-10 prose duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
+    class="rounded-2xl bg-white flex-none flex-wrap content-center shadow-2xl p-10 prose duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
   >
     <div class="flex flex-row mt-2">
       <div class="text-left italic">"{{ testimonial.quote }}"</div>
