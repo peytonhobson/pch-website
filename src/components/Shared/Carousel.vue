@@ -8,7 +8,7 @@
 import { defineComponent, toRefs, computed, ref } from "vue";
 
 import ControlLabels from "@/components/Shared/ControlLabels.vue";
-import preloadImages from "@/helpers/preloadImages";
+import preloadImages from "@/composables/preloadImages";
 
 export default defineComponent({
   name: "FacilityCardCarousel",

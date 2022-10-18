@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, toRefs } from "vue";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 
 interface Contact {
   name: string;

@@ -21,7 +21,7 @@ import { defineComponent } from "vue";
 import AffiliatesCard from "@/components/AboutUs/Affiliates/AffiliatesCard.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "AffiliatesSection",

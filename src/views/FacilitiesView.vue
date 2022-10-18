@@ -24,7 +24,7 @@
 import { defineComponent, onMounted } from "vue";
 
 import FacilityCard from "@/components/Facilities/FacilityCard.vue";
-import setScrollObserver from "@/helpers/setScrollObserver";
+import setScrollObserver from "@/composables/setScrollObserver";
 import {
   useFilteredFacilities,
   useFetchFacilitiesDispatch,

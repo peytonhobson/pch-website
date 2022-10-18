@@ -54,7 +54,7 @@
 import { defineComponent, computed } from "vue";
 
 import { Post } from "@/api/types";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "BlogPostSummary",

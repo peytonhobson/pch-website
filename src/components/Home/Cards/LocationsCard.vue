@@ -28,7 +28,7 @@
 import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 import Card from "@/components/Shared/Card.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 

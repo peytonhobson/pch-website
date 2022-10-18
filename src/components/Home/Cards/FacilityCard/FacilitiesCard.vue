@@ -54,7 +54,7 @@ import {
   useFetchFacilitiesDispatch,
   useFilteredFacilities,
 } from "@/store/composables";
-import setScrollObserverCarousel from "@/helpers/setScrollObserverCarousel";
+import setScrollObserverCarousel from "@/composables/setScrollObserverCarousel";
 import Carousel from "@/components/Shared/Carousel.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 

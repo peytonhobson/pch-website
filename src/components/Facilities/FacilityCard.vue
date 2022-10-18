@@ -18,7 +18,7 @@
 import { defineComponent } from "vue";
 
 import { Facility } from "@/api/types";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "FacilityCard",

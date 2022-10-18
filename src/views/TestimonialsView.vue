@@ -57,7 +57,7 @@ import {
 } from "@/store/composables";
 import TestimonialCard from "@/components/Testimonials/TestimonialCard.vue";
 import { Testimonial } from "@/api/types";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 import ImageCard from "@/components/Shared/ImageCard.vue";
 import Hero from "@/components/Shared/Hero/Hero.vue";
 

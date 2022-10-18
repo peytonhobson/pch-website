@@ -17,7 +17,7 @@
 import { defineComponent } from "vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 import ImageCard from "@/components/Shared/ImageCard.vue";
 
 export default defineComponent({

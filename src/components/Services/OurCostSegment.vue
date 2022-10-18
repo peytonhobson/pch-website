@@ -22,7 +22,7 @@ import { defineComponent } from "vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import ImageCard from "@/components/Shared/ImageCard.vue";
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "OurCostSection",

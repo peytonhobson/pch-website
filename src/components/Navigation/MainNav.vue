@@ -44,7 +44,7 @@ import {
 
 import { useRoute } from "vue-router";
 
-import getImgURL from "@/helpers/getImgURL";
+import getImgURL from "@/composables/getImgURL";
 import handleNavScroll from "@/composables/handleNavScroll";
 import MainNavDesktopList from "@/components/Navigation/MainNavDesktopList.vue";
 import MainNavMobileButton from "@/components/Navigation/MainNavMobileButton.vue";
