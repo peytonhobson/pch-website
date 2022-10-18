@@ -1,8 +1,9 @@
 <template>
   <ul
     class="flex flex-col p-4 mr-5 mt-4 w-full justify-end md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
+    role="group"
   >
-    <li>
+    <li id="Home">
       <router-link
         :to="listItemsReturned[0].to"
         :class="navItemClass"
@@ -10,15 +11,17 @@
         >{{ listItemsReturned[0].text }}</router-link
       >
     </li>
-    <li>
+    <li id="Services">
       <router-link
         :to="listItemsReturned[1].to"
-        :class="navItemClass"
         aria-current="page"
-        >{{ listItemsReturned[1].text }}</router-link
+        :class="navItemClass"
       >
+        {{ listItemsReturned[1].text }}
+      </router-link>
     </li>
     <li
+      id="Facilities"
       class="relative flex justify-center"
       @mouseenter="showSubMenu = true"
       @mouseleave="showSubMenu = false"
@@ -43,7 +46,7 @@
         </li>
       </ul>
     </li>
-    <li>
+    <li id="Testimonials">
       <router-link
         :to="listItemsReturned[3].to"
         :class="navItemClass"
@@ -51,7 +54,7 @@
         >{{ listItemsReturned[3].text }}</router-link
       >
     </li>
-    <li>
+    <li id="About-Us">
       <router-link
         :to="listItemsReturned[4].to"
         :class="navItemClass"
@@ -63,7 +66,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, computed, ref } from "vue";
+import { defineComponent, toRefs, computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
 interface Route {
@@ -105,6 +108,29 @@ export default defineComponent({
       };
     });
 
+    watch(
+      () => route.path,
+      (path) => {
+        listItemsReturned.value.forEach((item) => {
+          let btn: HTMLButtonElement;
+
+          if (path === "/") {
+            btn = document.querySelector("#Home") as HTMLButtonElement;
+            btn.classList.add("selected");
+          }
+
+          btn = document.querySelector(
+            `#${item.text.replace(" ", "-")}`
+          ) as HTMLButtonElement;
+
+          btn.classList.remove("selected");
+          if (path.match(item.text.replace(" ", "-"))) {
+            btn.classList.add("selected");
+          }
+        });
+      }
+    );
+
     const showSubMenu = ref(false);
 
     return { navItemClass, showSubMenu, facilityLinks, listItemsReturned };
@@ -114,6 +140,10 @@ export default defineComponent({
 
 <style scoped>
 .nav-list-item {
-  @apply block py-2 px-7 mb-2 hover:text-brand-green-gray md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline;
+  @apply block py-2 px-7 mb-2 md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline hover:text-brand-green-gray;
+}
+
+.selected {
+  @apply underline-offset-8 underline text-brand-green-gray;
 }
 </style>

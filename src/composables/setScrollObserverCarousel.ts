@@ -14,7 +14,6 @@ const setScrollObserverCarousel = (
         // Add the fadeIn class:
         entryFunction();
       } else {
-        console.log("exit");
         // Otherwise remove the fadein class
         exitFunction();
       }
@@ -27,8 +26,6 @@ const setScrollObserverCarousel = (
   // Loop through each of the target
   targets.forEach(function (target) {
     // Add the element to the watcher
-
-    console.log("observe");
     observer.observe(target);
   });
 };
