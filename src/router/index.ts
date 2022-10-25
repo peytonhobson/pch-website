@@ -15,6 +15,7 @@ const ServicesView = () => import("@/views/ServicesView.vue");
 const AboutUsView = () => import("@/views/AboutUsView.vue");
 const CareersView = () => import("@/views/CareersView.vue");
 const LocationsView = () => import("@/views/LocationsView.vue");
+const PageNotFoundView = () => import("@/views/PageNotFoundView.vue");
 
 const routes = [
   {
@@ -71,6 +72,11 @@ const routes = [
     path: "/Locations",
     name: "Locations",
     component: LocationsView,
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "PageNotFound",
+    component: PageNotFoundView,
   },
 ];
 
