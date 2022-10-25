@@ -38,7 +38,7 @@ export default defineComponent({
   setup() {
     const contacts = [
       {
-        name: "Janelle Lefore",
+        name: "Janelle Leavell",
         title: "Co-Owner/Physical Therapist",
         phoneNumber: "503-798-5610",
         email: "janelle@premiercarehomes.net",
