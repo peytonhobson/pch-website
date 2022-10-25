@@ -5,7 +5,9 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <section class="flex flex-wrap justify-evenly py-10 show-on-scroll">
+  <section
+    class="flex flex-wrap justify-evenly py-10 show-on-scroll md:h-screen"
+  >
     <router-link
       v-for="facility in filteredFacilities"
       :key="facility.id"
