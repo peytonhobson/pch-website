@@ -1,8 +1,5 @@
 <template>
-  <dual-item-display
-    class="mt-32 md:mt-32 xl:mt-44 h-92"
-    :reverse-column="true"
-  >
+  <dual-item-display class="h-92" :reverse-column="true">
     <template #leftColumn>
       <owners-and-operators-card class="my-10 md:my-0" />
     </template>

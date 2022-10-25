@@ -85,15 +85,21 @@ export default defineComponent({
 
     const transparentBackground = ref(true);
 
+    const route = useRoute();
+
     const navClass = computed(() => {
       return {
         ["navbar-main"]: true,
-        ["bg-transparent"]: transparentBackground.value && !isOpen.value,
-        ["bg-white"]: !transparentBackground.value || isOpen.value,
+        ["bg-transparent"]:
+          transparentBackground.value &&
+          !isOpen.value &&
+          !route.path.match(/\/(Facilities\/)/g),
+        ["bg-white shadow-md"]:
+          !transparentBackground.value ||
+          isOpen.value ||
+          route.path.match(/\/(Facilities\/)/g),
       };
     });
-
-    const route = useRoute();
 
     const handleScroll = () => {
       transparentBackground.value = handleNavScroll();

@@ -5,7 +5,7 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <testimonial-cards />
+  <testimonial-cards class="bg-brand-green-gray bg-opacity-50" />
 </template>
 
 <script lang="ts">
