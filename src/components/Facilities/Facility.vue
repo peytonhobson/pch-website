@@ -1,8 +1,7 @@
 <template>
-  <div class="h-[12vh]"></div>
   <div
     v-if="facility"
-    class="motion-safe:animate-fadeIn flex md:h-[85vh] justify-center items-center"
+    class="motion-safe:animate-fadeIn flex md:h-screen justify-center items-center mt-5"
   >
     <dual-item-display :reverse-column="false" :items-start="true">
       <template #leftColumn>
