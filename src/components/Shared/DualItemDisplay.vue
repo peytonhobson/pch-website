@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white flex items-center justify-center">
+  <section class="flex items-center justify-center">
     <div :class="columnContainerClass">
       <div :class="firstColumnClass">
         <slot name="leftColumn">Left Column</slot>

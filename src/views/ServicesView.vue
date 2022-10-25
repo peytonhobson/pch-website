@@ -5,8 +5,10 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <our-cost-segment />
-  <our-services-section />
+  <main class="bg-brand-green-gray bg-opacity-50">
+    <our-cost-segment />
+    <our-services-section />
+  </main>
 </template>
 
 <script lang="ts">

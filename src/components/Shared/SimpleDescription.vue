@@ -4,7 +4,7 @@
       {{ header }}
     </h2>
     <!-- eslint-disable vue/no-v-html -->
-    <p class="text-slate-400 text-left" v-html="text"></p>
+    <p class="text-white text-left" v-html="text"></p>
   </div>
 </template>
 

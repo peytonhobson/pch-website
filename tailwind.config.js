@@ -41,6 +41,7 @@ module.exports = {
       rose: colors.rose,
       "brand-green-gray": "#779D7F",
       "brand-light-green": "#99c9a3",
+      whitesmoke: "#f5f5f5",
     }),
     columns: {
       auto: "auto",
