@@ -45,6 +45,6 @@ button {
 }
 
 .card {
-  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-light-green;
+  @apply btn btn-block btn-lg bg-brand-green-gray bg-opacity-50 border-none hover:bg-brand-green-gray hover:bg-opacity-100;
 }
 </style>

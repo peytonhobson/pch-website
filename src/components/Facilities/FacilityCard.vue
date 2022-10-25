@@ -1,5 +1,5 @@
 <template>
-  <div class="card lg:card-side bg-base-300 shadow-xl">
+  <div class="card lg:card-side bg-white shadow-xl">
     <figure class="xl:w-full">
       <img
         class="w-full h-full"
