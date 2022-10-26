@@ -1,6 +1,8 @@
 <template>
   <hero :title="heroProps.title" :image-url="heroProps.backgroundImage"></hero>
-  <main class="flex flex-wrap w-screen items-center justify-center">
+  <main
+    class="flex flex-wrap w-screen items-center justify-center bg-brand-light-gray h-screen"
+  >
     <div class="flex items-center justify-center w-full h-full p-10">
       <locations-map class="h-144 w-full" />
     </div>

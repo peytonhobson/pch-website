@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer p-10 bg-base-300 text-base-content">
+  <footer class="footer p-10 bg-white text-base-content">
     <div class="flex flex-wrap justify-center">
       <router-link to="/" class="flex items-center justify-center w-full">
         <img

@@ -1,5 +1,5 @@
 <template>
-  <card :body="false" class="w-5/6 md:w-full h-full max-w-lg">
+  <card :body="false" class="w-5/6 md:w-full h-full max-w-lgs">
     <template #other>
       <div class="w-full h-full py-5 flex items-center justify-evenly prose">
         <div class="avatar">

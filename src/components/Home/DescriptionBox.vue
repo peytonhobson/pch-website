@@ -1,5 +1,5 @@
 <template>
-  <card>
+  <card class="bg-white">
     <template #title>
       <h2 class="card-title">
         <font-awesome-icon :icon="icon" :class="iconColor" size="2x" />{{

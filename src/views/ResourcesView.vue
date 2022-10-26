@@ -5,8 +5,8 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <section
-    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly py-5 xl:py-20"
+  <main
+    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly py-5 xl:py-20 bg-brand-light-gray"
   >
     <resource-card
       title="Web Links"
@@ -18,7 +18,7 @@
       :resources="resources.pdfDownloads"
       class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
     />
-  </section>
+  </main>
 </template>
 
 <script lang="ts">

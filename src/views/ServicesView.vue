@@ -5,7 +5,7 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <main class="bg-brand-green-gray bg-opacity-50">
+  <main class="bg-brand-light-gray">
     <our-cost-segment />
     <our-services-section />
   </main>

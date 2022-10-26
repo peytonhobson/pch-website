@@ -1,7 +1,7 @@
 <template>
   <card
     :body="false"
-    class="duration-500 xl:hover:-translate-y-5 transition-all"
+    class="duration-500 xl:hover:-translate-y-5 transition-all bg-white"
   >
     <template #other>
       <ul

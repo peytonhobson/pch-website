@@ -1,11 +1,11 @@
 <template>
-  <div class="prose w-5/6 md:w-full h-full flex flex-wrap items-center">
-    <div>
+  <div class="flex flex-wrap items-center h-full">
+    <div class="prose w-5/6 md:w-full">
       <h2 class="mb-5 text-left">
         {{ header }}
       </h2>
       <!-- eslint-disable vue/no-v-html -->
-      <p class="text-white text-left" v-html="text"></p>
+      <p class="text-left" v-html="text"></p>
     </div>
   </div>
 </template>

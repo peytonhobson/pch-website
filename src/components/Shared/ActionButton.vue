@@ -41,10 +41,14 @@ button {
 }
 
 .primary {
-  @apply btn btn-block btn-md md:btn-lg rounded-full bg-brand-green-gray border-none hover:bg-brand-light-green;
+  @apply btn btn-block btn-md md:btn-lg rounded-full bg-brand-green-gray border-none hover:bg-mint;
 }
 
 .card {
-  @apply btn btn-block btn-lg bg-brand-green-gray bg-opacity-50 border-none hover:bg-brand-green-gray hover:bg-opacity-100;
+  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-mint;
+}
+
+.facility {
+  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-mint;
 }
 </style>

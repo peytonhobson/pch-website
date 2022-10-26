@@ -15,7 +15,7 @@
     </div>
 
     <div class="w-full my-10 md:mt-10 md:mb-0">
-      <action-button text="Get Directions" type="primary" @click="routeUser" />
+      <action-button text="Get Directions" type="facility" @click="routeUser" />
     </div>
   </div>
 </template>
