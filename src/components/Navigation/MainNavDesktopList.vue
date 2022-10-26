@@ -39,7 +39,7 @@
         <li v-for="link in facilityLinks" :key="link.text">
           <router-link
             :to="link.to"
-            class="flex justify-center hover:bg-brand-green-gray hover:text-white prose"
+            class="flex justify-center text-black hover:bg-brand-green-gray hover:text-white prose"
           >
             {{ link.text }}</router-link
           >
