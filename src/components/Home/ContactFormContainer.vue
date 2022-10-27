@@ -8,6 +8,7 @@
         <h2 class="text-white font-bold text-3xl">Contact Us</h2>
       </div>
     </figure>
+    <notifications group="contact" />
     <div class="card-body items-center">
       <contact-form />
     </div>
