@@ -5,8 +5,10 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <submit-resume-section />
-  <share-with-friend-section />
+  <main class="bg-mint">
+    <submit-resume-section />
+    <share-with-friend-section />
+  </main>
 </template>
 
 <script>

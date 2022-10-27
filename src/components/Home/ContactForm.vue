@@ -13,7 +13,7 @@
         <Field
           name="name"
           type="text"
-          placeholder="Enter Full Name"
+          placeholder="John Smith"
           :rules="schema.name"
           class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
@@ -33,14 +33,14 @@
         <Field
           name="email"
           type="text"
-          placeholder="Enter Email Address"
+          placeholder="john.smith@example.com"
           :rules="schema.email"
           class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="email" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:grid grid-cols-10 md:items-center mb-8">
+    <div class="md:grid grid-cols-10 mb-8">
       <div class="mr-3 col-span-3 flex items-start justify-start">
         <label
           class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4"

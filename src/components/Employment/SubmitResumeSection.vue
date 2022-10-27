@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="my-10 xl:my-44" :reverse-column="true">
+  <dual-item-display class="py-10 xl:py-44" :reverse-column="true">
     <template #leftColumn class="h-full items-center">
       <card
-        class="w-5/6 md:w-3/4 xl:w-full py-10 px-7 h-full mt-10 xl:mt-0"
+        class="w-5/6 md:w-3/4 xl:w-full py-10 h-full mt-10 xl:mt-0 flex items-center"
         :body="false"
       >
         <template #other>
@@ -26,11 +26,7 @@
         >
           <h2 class="w-full mb-3 text-left">Requirements</h2>
           <ul class="list-disc w-full">
-            <li
-              v-for="item in requirements"
-              :key="item"
-              class="text-left text-slate-400"
-            >
+            <li v-for="item in requirements" :key="item" class="text-left">
               {{ item }}
             </li>
           </ul>

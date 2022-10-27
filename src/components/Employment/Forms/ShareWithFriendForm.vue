@@ -1,84 +1,87 @@
 <template>
-  <Form id="friend-form" class="w-full max-w-md" @submit="onSubmit">
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+  <Form id="friend-form" class="w-3/4 form" @submit="onSubmit">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-full-name"
         >
-          Your Name<span class="text-red-500"> *</span>
+          Your Name<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="submitterName"
           type="text"
           :rules="schema.submitterName"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="John Smith"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="submitterName" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-email"
         >
-          Your Email<span class="text-red-500"> *</span>
+          Your Email<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="submitterEmail"
           type="email"
           :rules="schema.submitterEmail"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="john.smith@example.com"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="submitterEmail" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Friend's Name<span class="text-red-500"> *</span>
+          Friend's Name<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="friendName"
           type="text"
           :rules="schema.friendName"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="Jane Smith"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="friendName" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Friend's Email<span class="text-red-500"> *</span>
+          Friend's Email<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="friendEmail"
           type="email"
           :rules="schema.friendEmail"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="jane.smith@example.com"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="friendEmail" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center">
-      <div class="md:w-1/3"></div>
-      <div class="md:w-2/3">
+    <div class="grid grid-cols-10">
+      <div class="col-start-5 col-span-6">
         <action-button text="Submit" type="primary" />
       </div>
     </div>

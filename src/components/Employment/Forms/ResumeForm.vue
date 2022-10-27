@@ -1,72 +1,75 @@
 <template>
-  <Form id="resume-form" class="w-full max-w-md form" @submit="onSubmit">
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+  <Form id="resume-form" class="w-3/4 form" @submit="onSubmit">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-full-name"
         >
-          Full Name<span class="text-red-500"> *</span>
+          Full Name<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="name"
           type="text"
           :rules="schema.name"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="John Smith"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="name" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-email"
         >
-          Email<span class="text-red-500"> *</span>
+          Email<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="email"
           type="email"
           :rules="schema.email"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="john.smith@example.com"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="email" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Phone
+          Phone :
         </label>
       </div>
-      <div class="md:w-2/3">
+      <div class="flex-1 col-span-6">
         <Field
           name="phone-number"
           type="text"
           :rules="schema.phoneNumber"
-          class="input bg-white input-bordered w-full focus:outline-none focus:border-brand-green-gray"
+          placeholder="555-555-5555"
+          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="phone-number" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="md:flex md:items-center mb-10">
-      <div class="md:w-1/3">
+    <div class="md:grid grid-cols-10 mb-10">
+      <div class="col-span-4 flex items-center justify-start">
         <label
           class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Resumé PDF<span class="text-red-500"> *</span>
+          Resumé PDF<span class="text-red-500">*</span> :
         </label>
       </div>
-      <div class="md:w-2/3 flex flex-wrap justify-center">
+      <div class="flex-1 col-span-6">
         <Field
           name="file"
           type="file"
