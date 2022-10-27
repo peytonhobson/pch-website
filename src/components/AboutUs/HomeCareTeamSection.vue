@@ -3,7 +3,7 @@
     <template #leftColumn>
       <image-card
         image-link="other/resident-red-and-patriotic-sweaters.png"
-        class="w-5/6 md:w-3/4 xl:w-full mt-10 xl:mt-0 md:h-128 duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
+        class="w-5/6 md:w-3/4 xl:w-full max-w-lg mt-10 xl:mt-0 md:h-128 duration-500 md:hover:-translate-y-5 transition-all hover:cursor-pointer"
       />
     </template>
 
