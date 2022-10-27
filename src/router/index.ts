@@ -13,7 +13,7 @@ const TestimonialsView = () => import("@/views/TestimonialsView.vue");
 const ResourcesView = () => import("@/views/ResourcesView.vue");
 const ServicesView = () => import("@/views/ServicesView.vue");
 const AboutUsView = () => import("@/views/AboutUsView.vue");
-const CareersView = () => import("@/views/CareersView.vue");
+const EmploymentView = () => import("@/views/EmploymentView.vue");
 const LocationsView = () => import("@/views/LocationsView.vue");
 const PageNotFoundView = () => import("@/views/PageNotFoundView.vue");
 
@@ -64,9 +64,9 @@ const routes = [
     component: AboutUsView,
   },
   {
-    path: "/Careers",
-    name: "Careers",
-    component: CareersView,
+    path: "/Employment",
+    name: "Employment",
+    component: EmploymentView,
   },
   {
     path: "/Locations",

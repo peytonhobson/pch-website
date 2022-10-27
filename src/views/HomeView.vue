@@ -11,7 +11,7 @@
       /></router-link></div
   ></hero>
   <hero-caption />
-  <section class="bg-brand-light-gray">
+  <section class="bg-mint">
     <div class="flex flex-wrap w-full justify-evenly show-on-scroll">
       <description-box
         v-for="descriptionBoxContent in descriptionBoxContents"

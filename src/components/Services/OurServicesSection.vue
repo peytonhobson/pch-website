@@ -1,9 +1,5 @@
 <template>
-  <dual-item-display
-    class="py-36 xl:py-44"
-    :reverse-column="true"
-    :items-start="false"
-  >
+  <dual-item-display class="py-36 xl:py-44" :items-start="false">
     <template #leftColumn>
       <simple-description :header="descriptionHeader" :text="descriptionText" />
     </template>

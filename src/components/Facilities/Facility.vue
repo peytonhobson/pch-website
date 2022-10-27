@@ -2,7 +2,7 @@
   <div class="h-[12vh]"></div>
   <div
     v-if="facility"
-    class="motion-safe:animate-fadeIn flex md:h-[88vh] justify-center items-center bg-brand-light-gray"
+    class="motion-safe:animate-fadeIn flex md:h-[88vh] justify-center items-center bg-mint"
   >
     <dual-item-display :reverse-column="false" :items-start="true">
       <template #leftColumn>
