@@ -5,7 +5,7 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <main class="pb-20 pt-32 md:pt-32 xl:pt-44 bg-brand-light-gray">
+  <main class="pb-20 pt-32 md:pt-32 xl:pt-44 bg-mint">
     <owners-and-operators-section />
     <affiliates-section />
     <home-care-team-section />

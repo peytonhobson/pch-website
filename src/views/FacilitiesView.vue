@@ -6,7 +6,7 @@
     class="h-[85vh]"
   />
   <section
-    class="flex flex-wrap justify-evenly py-10 show-on-scroll md:h-screen bg-brand-light-gray"
+    class="flex flex-wrap justify-evenly py-10 show-on-scroll md:h-screen bg-mint"
   >
     <router-link
       v-for="facility in filteredFacilities"

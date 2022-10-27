@@ -12,8 +12,8 @@
 <script>
 import { defineComponent } from "vue";
 
-import SubmitResumeSection from "@/components/Careers/SubmitResumeSection.vue";
-import ShareWithFriendSection from "@/components/Careers/ShareWithFriendSection.vue";
+import SubmitResumeSection from "@/components/Employment/SubmitResumeSection.vue";
+import ShareWithFriendSection from "@/components/Employment/ShareWithFriendSection.vue";
 import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({

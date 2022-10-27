@@ -37,6 +37,9 @@
         class="md:max-w-md md:w-2/5 mt-10 xl:w-2/7 md:my-10 w-5/6 h-144"
       />
     </div>
+    <div class="flex justify-center items-center">
+      <contact-form-container />
+    </div>
   </section>
 </template>
 
@@ -51,6 +54,7 @@ import LocationsCard from "@/components/Home/Cards/LocationsCard.vue";
 import ContactCard from "@/components/Home/Cards/ContactCard/ContactCard.vue";
 import setScrollObserver from "@/composables/setScrollObserver";
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import ContactFormContainer from "@/components/Home/ContactFormContainer.vue";
 
 import getImgURL from "@/composables/getImgURL";
 
@@ -71,6 +75,7 @@ export default defineComponent({
     LocationsCard,
     ContactCard,
     ActionButton,
+    ContactFormContainer,
   },
   setup() {
     const descriptionBoxContents: DescriptionBoxContent[] = [

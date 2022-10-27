@@ -23,9 +23,10 @@
         class="text-xs xl:text-sm w-full text-left row-start-3 row-span-1 font-sans"
         >{{ contactInfo.phoneNumber }}</span
       >
-      <span
+      <a
+        :href="`mailto:${contactInfo.email}`"
         class="text-xs xl:text-sm w-full text-left row-start-4 row-span-1 font-sans"
-        >{{ contactInfo.email }}</span
+        >{{ contactInfo.email }}</a
       >
     </div>
   </div>

@@ -24,7 +24,7 @@
 import { defineComponent } from "vue";
 
 import Card from "@/components/Shared/Card.vue";
-import ShareWithFriendForm from "@/components/Careers/Forms/ShareWithFriendForm.vue";
+import ShareWithFriendForm from "@/components/Employment/Forms/ShareWithFriendForm.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 

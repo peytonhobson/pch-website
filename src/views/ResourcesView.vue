@@ -6,7 +6,7 @@
     class="h-[85vh]"
   />
   <main
-    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly py-5 xl:py-20 bg-brand-light-gray"
+    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly py-5 xl:py-20 bg-mint"
   >
     <resource-card
       title="Web Links"
