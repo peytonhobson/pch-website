@@ -33,7 +33,10 @@ export default defineComponent({
   },
   setup() {
     const descriptionText =
-      "The cost of Premier Care Homes is generally lower than nursing homes and assisted living facilities. It is based on several factors depending on the care needs and services required for the resident in order to provide good quality care. We do a complete assessment of each individual’s needs. This allows us to quote a fair and accurate monthly rate. You can call for our base rate. We accept private pay and some long-term care insurance. We are licensed and monitored by the State of Oregon.";
+      "Adult Foster Care Homes generally have lower rates than larger, institutionalized" +
+      "settings. Premier Care Homes is a private pay facility and we accept long term care" +
+      "insurance and Veteran’s funding. Please call or email for rates." +
+      "*****We do not accept medicaid payment*****";
 
     const descriptionHeader = "Our Cost";
 

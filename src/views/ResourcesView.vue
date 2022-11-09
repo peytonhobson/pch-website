@@ -10,23 +10,22 @@
   >
     <resource-card
       title="Web Links"
-      :resources="resources.webLinks"
+      :resources="webLinks"
       class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
     />
     <resource-card
       title="PDF Downloads"
-      :resources="resources.pdfDownloads"
+      :resources="pdfDownloads"
       class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
     />
   </main>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ComputedRef } from "vue";
+import { defineComponent } from "vue";
 
 import ResourceCard from "@/components/Resources/ResourceCard.vue";
-import { useFetchResourcesDispatch, useResources } from "@/store/composables";
-import { Resource } from "@/api/types";
+
 import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
@@ -36,14 +35,40 @@ export default defineComponent({
     Hero,
   },
   setup() {
-    onMounted(useFetchResourcesDispatch);
-
     const isMobile =
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       );
 
-    const resources: ComputedRef<Resource> = useResources();
+    const webLinks = [
+      {
+        link: "https://dailycaring.com/what-is-a-residential-care-home/",
+        text: "What is a Residental Care Home?",
+      },
+      {
+        link: "https://www.veteranaid.org/",
+        text: "Veterans financial assistance for Adult Foster Care Homes",
+      },
+      {
+        link: "https://www.va.gov/geriatrics/pages/Adult_Family_Homes.asp",
+        text: "The US Dept of Veterans Affairs Educated about Geriatrics and Extended Care",
+      },
+      {
+        link: "https://www.assistedliving.org/care-homes/",
+        text: "A Comprehensive Guide to Residential Care Homes",
+      },
+    ];
+
+    const pdfDownloads = [
+      {
+        link: "https://apps.state.or.us/Forms/Served/de9033.pdf",
+        text: "A Guide to Adult Foster Homes Here in Oregon for Potential Residents",
+      },
+      {
+        link: "http://assets.aarp.org/rgcenter/ppi/liv-com/fs174-afc.pdf",
+        text: "The AARP Puts Out a Fact Sheet about Adult Foster Care",
+      },
+    ];
 
     const windowWidth = window.innerWidth;
 
@@ -53,7 +78,7 @@ export default defineComponent({
       text: "For those of you who don't know anything",
     };
 
-    return { resources, isMobile, windowWidth, heroProps };
+    return { webLinks, pdfDownloads, isMobile, windowWidth, heroProps };
   },
 });
 </script>

@@ -43,8 +43,8 @@ export default defineComponent({
       "Bath aide to complete personalized care",
       "Modified diets (diabetic diet, lactose free, gluten free)",
       "Dysphagia diet — pureed/soft foods and thickened liquids",
-      "On-site dental hygienist services",
-      "On-site professional beauty services",
+      "Visiting Beautician (hair and nail services)",
+      "Visiting Nurse Practitioner (optional)",
       "Hospice care",
     ];
     return { serviceItems };

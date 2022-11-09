@@ -9,7 +9,7 @@
       >
         <li
           v-for="resource in resources"
-          :key="resource.id"
+          :key="resource.text"
           class="hover:underline text-left my-1.5"
         >
           <a :href="resource.link" target="_blank" title="">{{
