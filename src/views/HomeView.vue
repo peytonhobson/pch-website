@@ -20,7 +20,7 @@
         :title="descriptionBoxContent.title"
         :body="descriptionBoxContent.body"
         :icon-class="descriptionBoxContent.iconClass"
-        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 w-5/6 h-72"
+        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 w-5/6 h-72 md:mt-0 md:last-of-type:mt-20"
       />
     </div>
     <div
@@ -34,10 +34,10 @@
         route="Facilities"
       />
       <contact-card
-        class="md:max-w-md md:w-2/5 mt-10 xl:w-2/7 md:my-10 w-5/6 h-144"
+        class="md:max-w-md md:w-4/5 mt-10 xl:w-2/7 md:my-10 w-5/6 h-144"
       />
     </div>
-    <div class="flex justify-center items-center">
+    <div class="flex justify-center items-center show-on-scroll">
       <contact-form-container />
     </div>
   </section>

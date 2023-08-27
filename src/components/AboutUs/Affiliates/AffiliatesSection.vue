@@ -1,16 +1,16 @@
 <template>
   <dual-item-display
-    class="mt-80 md:mt-128 xl:mt-44 h-92"
+    class="mt-80 xl:mt-44 h-92 lg:max-w-none flex justify-center"
     :reverse-column="true"
     :items-start="false"
   >
     <template #leftColumn>
-      <affiliates-card class="my-10 md:my-0" />
+      <affiliates-card class="my-10 lg:my-0" />
     </template>
     <!--end col-->
 
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" />
+      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none" />
     </template>
   </dual-item-display>
 </template>

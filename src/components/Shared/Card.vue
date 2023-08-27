@@ -1,5 +1,5 @@
 <template>
-  <div class="card shadow-2xl bg-white">
+  <div class="card shadow-2xl bg-white {classes}">
     <figure v-if="image" class="m-0 h-2/5">
       <slot name="image"></slot>
     </figure>
@@ -16,6 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { toRefs } from "vue";
 
 export default defineComponent({
   name: "Card",
@@ -30,7 +31,16 @@ export default defineComponent({
       required: false,
       default: true,
     },
+    additionalClasses: {
+      type: String,
+      required: false,
+      default: "",
+    },
   },
-  setup() {},
+  setup(props) {
+    const { additionalClasses } = toRefs(props);
+
+    return { classes: additionalClasses };
+  },
 });
 </script>

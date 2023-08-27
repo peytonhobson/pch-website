@@ -17,7 +17,7 @@
       </p>
     </template>
     <template #button>
-      <router-link to="/Locations" class="w-full">
+      <router-link to="/Locations" class="w-full no-underline">
         <action-button text="Learn More" type="card" />
       </router-link>
     </template>

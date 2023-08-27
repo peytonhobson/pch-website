@@ -9,10 +9,7 @@ const setScrollObserver = () => {
       if (entry.isIntersecting) {
         // Add the fadeIn class:
         entry.target.classList.add("motion-safe:animate-fadeIn");
-      } else {
-        // Otherwise remove the fadein class
-        entry.target.classList.remove("motion-safe:animate-fadeIn");
-      }
+      } 
     });
   };
 

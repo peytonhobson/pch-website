@@ -1,15 +1,15 @@
 <template>
   <nav :class="navClass">
-    <div class="flex-1 mx-2 items-center">
+    <div class="flex-1 mx-2 items-center justify-start">
       <router-link to="/" class="flex items-center">
         <img
           :src="getImgURL('other/premier-care-homes-logo1.png')"
-          class="mr-3 h-16 md:h-20"
+          class="mr-3 h-16 md:h-20 min-w-[15rem]"
           alt="Premier Care Homes Logo"
         />
       </router-link>
     </div>
-    <div v-if="!isMobile" class="flex-none">
+    <div v-if="!isMobile" class="flex-none md:mx-auto lg:mx-0" >
       <main-nav-desktop-list
         :transparent-background="transparentBackground"
         :list-items="listItems"

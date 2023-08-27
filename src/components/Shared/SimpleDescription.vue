@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-wrap items-center h-full">
-    <div class="prose w-5/6 md:w-full">
+  <div class="flex flex-wrap items-center justify-center md:h-full">
+    <div class="prose w-5/6 md:w-full md:max-w-lg lg:max-w-auto">
       <h2 class="mb-5 text-left">
         {{ header }}
       </h2>

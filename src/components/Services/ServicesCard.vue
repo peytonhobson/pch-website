@@ -1,11 +1,11 @@
 <template>
   <card
     :body="false"
-    class="duration-500 xl:hover:-translate-y-5 transition-all bg-white"
+    class="duration-500 xl:hover:-translate-y-5 transition-all bg-white w-5/6 md:w-full mt-10 lg:mt-0"
   >
     <template #other>
       <ul
-        class="font-sans prose w-5/6 md:w-3/4 xl:w-full py-5 px-5 md:px-10 xl:py-10"
+        class="font-sans prose w-5/6 xl:w-full py-5 px-5 lg:px-10 xl:py-10 mx-auto"
       >
         <li
           v-for="item in serviceItems"

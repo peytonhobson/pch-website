@@ -80,8 +80,8 @@
         <ErrorMessage name="friendEmail" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="grid grid-cols-10">
-      <div class="col-start-5 col-span-6">
+    <div class="md:grid md:grid-cols-10">
+      <div class="md:col-start-5 md:col-span-6">
         <action-button text="Submit" type="primary" />
       </div>
     </div>

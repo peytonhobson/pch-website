@@ -1,11 +1,11 @@
 <template>
-  <dual-item-display class="py-36 xl:py-44" :items-start="false">
+  <dual-item-display class="pt-32 pb-20 lg:py-36 xl:py-44" :items-start="false">
     <template #leftColumn>
       <simple-description :header="descriptionHeader" :text="descriptionText" />
     </template>
 
     <template #rightColumn>
-      <services-card />
+      <services-card class="md:max-w-lg lg:max-w-none"/>
     </template>
   </dual-item-display>
 </template>

@@ -51,7 +51,7 @@
       </div>
       <div class="flex-1 col-span-6">
         <Field
-          name="phone-number"
+          name="phoneNumber"
           type="text"
           :rules="schema.phoneNumber"
           placeholder="555-555-5555"

@@ -1,17 +1,17 @@
 <template>
   <dual-item-display
-    class="h-full md:py-44 flex flex-col items-stretch"
+    class="h-full pt-16 lg:py-44 flex flex-col items-stretch"
     :reverse-column="true"
   >
     <template #leftColumn>
       <image-card
-        class="mt-10 md:mt-10 xl:mt-0 h-2/3 md:h-144 w-5/6 md:w-3/4 xl:w-full duration-500 xl:hover:-translate-y-5 transition-all"
+        class="mt-10 md:mt-10 xl:mt-0 h-2/3 md:h-144 w-5/6 md:w-3/4 xl:w-full duration-500 xl:hover:-translate-y-5 transition-all md:max-w-lg lg:max-w-none"
         image-link="madrona/madrona-5.jpg"
       />
     </template>
     <!--end col-->
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" />
+      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none" />
     </template>
   </dual-item-display>
 </template>
@@ -36,7 +36,7 @@ export default defineComponent({
       "Adult Foster Care Homes generally have lower rates than larger, institutionalized" +
       "settings. Premier Care Homes is a private pay facility and we accept long term care" +
       "insurance and Veteran’s funding. Please call or email for rates." +
-      "*****We do not accept medicaid payment*****";
+      "<br></br>*****We do not accept medicaid payment*****";
 
     const descriptionHeader = "Our Cost";
 

@@ -1,4 +1,5 @@
 <template>
+  <div :style="{height: navHeight + 'px'}"></div>
   <facility v-if="filteredFacility" :facility="filteredFacility"></facility>
 </template>
 
@@ -48,7 +49,12 @@ export default defineComponent({
       { immediate: true, deep: true }
     );
 
-    return { filteredFacility };
+    const navHeight = computed(() => {
+      const nav = document.querySelector("nav");
+      return nav ? nav.clientHeight : 0;
+    });
+
+    return { filteredFacility, navHeight };
   },
 });
 </script>

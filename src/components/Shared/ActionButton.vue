@@ -41,14 +41,14 @@ button {
 }
 
 .primary {
-  @apply btn btn-block btn-md md:btn-lg rounded-full bg-brand-green-gray border-none hover:bg-mint;
+  @apply btn btn-block btn-md md:btn-lg rounded-full bg-brand-green-gray border-none hover:bg-mint no-underline;
 }
 
 .card {
-  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-mint;
+  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-mint no-underline;
 }
 
 .facility {
-  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-mint;
+  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-mint no-underline;
 }
 </style>

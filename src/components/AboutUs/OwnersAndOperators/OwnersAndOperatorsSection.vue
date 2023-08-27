@@ -1,12 +1,12 @@
 <template>
   <dual-item-display class="h-92" :reverse-column="true">
     <template #leftColumn>
-      <owners-and-operators-card class="my-10 md:my-0" />
+      <owners-and-operators-card class="my-10 lg:my-0" />
     </template>
     <!--end col-->
 
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" />
+      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none" />
     </template>
   </dual-item-display>
 </template>

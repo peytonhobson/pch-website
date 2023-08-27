@@ -1,5 +1,5 @@
 <template>
-  <dual-item-display class="mt-60 xl:my-44" :reverse-column="true">
+  <dual-item-display class="mt-60 xl:mt-44 xl:mb-28" :reverse-column="true">
     <template #leftColumn>
       <image-card
         image-link="other/resident-red-and-patriotic-sweaters.png"
@@ -8,7 +8,7 @@
     </template>
 
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" />
+      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none"  />
     </template>
   </dual-item-display>
 </template>

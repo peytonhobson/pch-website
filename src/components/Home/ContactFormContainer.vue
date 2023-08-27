@@ -1,15 +1,15 @@
 <template>
-  <div class="card shadow-2xl bg-white w-1/2 mb-20" :body="false">
+  <div class="card shadow-2xl bg-white w-5/6 md:max-w-md md:w-4/5 lg:max-w-none lg:w-1/2 mb-20" :body="false">
     <figure class="m-0 w-full h-60">
       <div
         :style="` background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${imageLink});`"
         class="flex items-center justify-center w-full h-full"
       >
-        <h2 class="text-white font-bold text-3xl">Contact Us</h2>
+        <h2 class="text-white font-bold text-3xl">Questions?</h2>
       </div>
     </figure>
     <notifications group="contact" />
-    <div class="card-body items-center">
+    <div class="card-body items-center px-0 py-8">
       <contact-form />
     </div>
   </div>

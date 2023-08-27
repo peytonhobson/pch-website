@@ -1,22 +1,24 @@
 <template>
-  <Transition>
-    <card
-      v-if="show"
-      :body="false"
-      class="h-80 w-full xl:h-144 rounded-none xl:rounded-2xl"
-      @mouseenter="clearImageInterval"
-      @mouseleave="changeImage"
-    >
-      <template #other>
-        <carousel
-          :image-links="facility.images"
-          :cur-index="curIndex"
-          @next="nextImage"
-          @prev="prevImage"
-        />
-      </template>
-    </card>
-  </Transition>
+  <div class="h-80 w-full xl:h-144">
+    <Transition>
+      <card
+        v-if="show"
+        :body="false"
+        class="h-80 w-full xl:h-144 rounded-none xl:rounded-2xl"
+        @mouseenter="clearImageInterval"
+        @mouseleave="changeImage"
+      >
+        <template #other>
+          <carousel
+            :image-links="facility.images"
+            :cur-index="curIndex"
+            @next="nextImage"
+            @prev="prevImage"
+          />
+        </template>
+      </card>
+    </Transition>
+  </div>
 </template>
 
 <script lang="ts">
@@ -49,7 +51,7 @@ export default defineComponent({
         show.value = !show.value;
         curIndex.value = (curIndex.value + 1) % facility.value.images.length;
         setTimeout(() => (show.value = !show.value), 1000);
-      }, 6000);
+      }, 100000000);
     };
     const clearImageInterval = () => {
       clearInterval(interval);

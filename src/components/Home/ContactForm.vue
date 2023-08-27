@@ -3,7 +3,7 @@
     <div class="md:grid grid-cols-10 mb-8 w-full">
       <div class="mr-3 col-span-3 flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold md:text-left lg:text-right mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
           Full Name<span class="text-red-500">*</span> :
@@ -53,15 +53,15 @@
         <Field
           name="subject"
           as="textarea"
-          placeholder="Your Comment..."
+          placeholder="Your Question..."
           :rules="schema.subject"
           class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="subject" class="text-red-500" as="div" />
       </div>
     </div>
-    <div class="grid grid-cols-10">
-      <div class="col-start-5 col-span-5 flex">
+    <div class="md:grid md:grid-cols-10">
+      <div class="md:col-start-5 md:col-span-5 flex">
         <action-button class="w-full" text="Submit" type="primary" />
       </div>
     </div>
