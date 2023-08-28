@@ -3,7 +3,7 @@
     <template #image>
       <img
         class="w-full h-full"
-        :src="getImgURL('locations-teaser.png')"
+        :src="getImgURL('other/locations-teaser.jpg')"
         alt="Shoes"
       />
     </template>

@@ -2,7 +2,7 @@
   <div class="card shadow-2xl bg-white" :body="false">
     <figure class="m-0 w-full h-60">
       <div
-        :style="` background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${imageLink});`"
+        :style="`background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(${imageLink}); background-size: cover; background-position: center 100%;`"
         class="flex items-center justify-center w-full h-full"
       >
         <h2 class="text-white font-bold text-3xl">Questions?</h2>
@@ -27,8 +27,7 @@ export default defineComponent({
     ContactForm,
   },
   setup() {
-    const imageLink =
-      "https://media.istockphoto.com/photos/-picture-id1311934969?k=20&m=1311934969&s=612x612&w=0&h=ftaxrSpkUB_ftSu-Zcxp44C1pBpxntMzNFjf5rcXPkw=";
+    const imageLink = getImgURL("other/questions-background.jpg");
 
     return { imageLink, getImgURL };
   },

@@ -30,7 +30,7 @@ export default defineComponent({
   },
   setup() {
     const heroProps = {
-      backgroundImage: "other/resident-wheelchair-balloon-girl.png",
+      backgroundImage: "other/aboutus-hero.jpg",
       title: "ABOUT US",
       text: "So you can know who we are",
     };

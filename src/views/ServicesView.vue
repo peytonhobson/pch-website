@@ -29,7 +29,7 @@ export default defineComponent({
     const heroProps = {
       title: "SERVICES & COST",
       text: "Exceptional, professional care for your loved one in a compassionate, home environment.",
-      backgroundImage: "other/resident-blue-tag-dog.png",
+      backgroundImage: "other/services-hero.jpg",
     };
 
     return { heroProps };

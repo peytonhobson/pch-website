@@ -47,8 +47,8 @@ export default defineComponent({
 
     const heroProps = {
       title: "FACILITIES",
-      text: "Check out our dope homes",
-      backgroundImage: "hallet/hallet-7.jpg",
+      text: "Elegant Living Spaces Tailored for Exceptional Care",
+      backgroundImage: "other/facilities-hero.jpg",
     };
 
     return { filteredFacilities, heroProps };
