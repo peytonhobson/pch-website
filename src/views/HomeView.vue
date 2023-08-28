@@ -2,7 +2,7 @@
   <hero
     class="w-full"
     title="WHEN ONLY THE BEST WILL DO"
-    image-url="other/resident-edith-and-red.jpg"
+    image-url="other/home-hero.jpg"
     ><div class="flex justify-evenly w-full">
       <router-link to="/Services" class="w-32 md:w-44"
         ><action-button type="primary" text="Get Started" class="md:whitespace-nowrap"/> </router-link
