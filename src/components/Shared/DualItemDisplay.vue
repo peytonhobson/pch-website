@@ -63,14 +63,14 @@ export default defineComponent({
 
 <style scoped>
 .column-container {
-  @apply xl:grid xl:grid-cols-12 xl:grid-rows-1 flex justify-center md:items-center w-full h-full;
+  @apply lg:grid lg:grid-cols-12 lg:grid-rows-1 flex justify-center md:items-center w-full h-full;
 }
 
 .first-column {
-  @apply xl:col-span-4 xl:col-start-2 flex items-start justify-center w-full h-full;
+  @apply lg:col-span-4 lg:col-start-2 flex items-start justify-center w-full h-full;
 }
 
 .second-column {
-  @apply flex justify-center xl:flex-wrap xl:col-span-5 xl:col-start-7;
+  @apply flex justify-center lg:flex-wrap lg:col-span-5 lg:col-start-7;
 }
 </style>

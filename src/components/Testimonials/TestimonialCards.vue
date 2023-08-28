@@ -1,9 +1,9 @@
 <template>
   <section
     v-if="testimonials.length > 0"
-    class="py-10 grid grid-cols-1 md:grid-cols-3"
+    class="py-10 grid grid-cols-1 lg:grid-cols-3"
   >
-    <div class="flex flex-wrap col-span-1 md:col-start-1 justify-center">
+    <div class="flex flex-col col-span-1 lg:col-start-1 md:justify-center lg:justify-between items-center md:max-w-xl mx-auto">
       <image-card class="h-80 my-5 w-5/6" :image-link="images[0]" />
       <testimonial-card :testimonial="testimonials[3]" class="my-5 w-5/6" />
       <testimonial-card
@@ -12,14 +12,14 @@
       />
     </div>
     <div
-      class="flex flex-wrap col-span-1 md:col-start-2 items-stretch justify-center"
+      class="flex flex-col col-span-1 lg:col-start-2 justify-center md:justify-center lg:justify-between items-center md:max-w-xl mx-auto"
     >
       <testimonial-card :testimonial="testimonials[2]" class="my-5 w-5/6" />
       <image-card class="h-80 my-5 w-5/6" :image-link="images[1]" />
       <testimonial-card :testimonial="testimonials[5]" class="my-5 w-5/6" />
     </div>
     <div
-      class="flex flex-wrap col-span-1 md:col-start-3 items-stretch justify-center"
+      class="flex flex-col col-span-1 lg:col-start-3 justify-center md:justify-center lg:justify-between items-center md:max-w-xl mx-auto"
     >
       <testimonial-card :testimonial="testimonials[4]" class="my-5 w-5/6" />
       <testimonial-card :testimonial="testimonials[0]" class="my-5 w-5/6" />

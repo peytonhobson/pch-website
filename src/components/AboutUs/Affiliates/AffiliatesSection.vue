@@ -1,11 +1,11 @@
 <template>
   <dual-item-display
-    class="mt-80 xl:mt-44 h-92 lg:max-w-none flex justify-center"
+    class="mt-32 lg:mt-44 lg:max-w-none flex justify-center"
     :reverse-column="true"
     :items-start="false"
   >
     <template #leftColumn>
-      <affiliates-card class="my-10 lg:my-0" />
+      <affiliates-card class="mt-10 lg:mt-0" />
     </template>
     <!--end col-->
 

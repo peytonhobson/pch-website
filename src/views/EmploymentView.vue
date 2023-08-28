@@ -5,7 +5,7 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <main class="bg-mint">
+  <main class=" pt-16 pb-32 lg:py-44 bg-mint">
     <submit-resume-section />
     <share-with-friend-section />
   </main>

@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="py-10 xl:py-44" :reverse-column="true">
+  <dual-item-display :reverse-column="true">
     <template #leftColumn class="h-full items-center">
       <card
-        class="w-5/6 md:w-3/4 xl:w-full py-10 h-full mt-10 xl:mt-0 flex items-center"
+        class="w-5/6 md:w-3/4 lg:w-full py-10 h-full mt-10 lg:mt-0 flex items-center md:max-w-lg lg:max-w-none"
         :body="false"
       >
         <template #other>
@@ -15,21 +15,23 @@
     </template>
 
     <template #rightColumn>
-      <div class="flex flex-wrap justify-center items-center h-full">
-        <simple-description
-          :header="firstDescriptionHeader"
-          :text="firstDescriptionText"
-          class="mb-5"
-        />
-        <div
-          class="prose flex md:grow w-5/6 mt-5 md:w-full flex-wrap justify-center md:justify-start"
-        >
-          <h2 class="w-full mb-3 text-left">Requirements</h2>
-          <ul class="list-disc w-full">
-            <li v-for="item in requirements" :key="item" class="text-left">
-              {{ item }}
-            </li>
-          </ul>
+      <div class="flex flex-wrap items-center h-full">
+        <div class="flex flex-col items-center">
+          <simple-description
+            :header="firstDescriptionHeader"
+            :text="firstDescriptionText"
+            class="mb-5 !justify-start md:justify-center w-5/6 md:w-full"
+          />
+          <div
+            class="prose flex md:grow w-5/6 mt-5 md:w-full flex-wrap justify-center md:justify-start items-center"
+          >
+            <h2 class="w-full mb-3 text-left">Requirements</h2>
+            <ul class="list-disc w-full">
+              <li v-for="item in requirements" :key="item" class="text-left">
+                {{ item }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </template>

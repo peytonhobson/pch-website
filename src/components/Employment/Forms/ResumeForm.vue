@@ -3,10 +3,10 @@
     <div class="md:grid grid-cols-10 mb-10">
       <div class="col-span-4 flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
           for="inline-full-name"
         >
-          Full Name<span class="text-red-500">*</span> :
+          Full <span class="whitespace-nowrap">Name<span class="text-red-500">*</span> :</span>
         </label>
       </div>
       <div class="flex-1 col-span-6">
@@ -23,7 +23,7 @@
     <div class="md:grid grid-cols-10 mb-10">
       <div class="col-span-4 flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
           for="inline-email"
         >
           Email<span class="text-red-500">*</span> :
@@ -43,7 +43,7 @@
     <div class="md:grid grid-cols-10 mb-10">
       <div class="col-span-4 flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
           Phone :
@@ -63,10 +63,10 @@
     <div class="md:grid grid-cols-10 mb-10">
       <div class="col-span-4 flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Resumé PDF<span class="text-red-500">*</span> :
+          Resumé <span class="whitespace-nowrap">PDF<span class="text-red-500">*</span> :</span>
         </label>
       </div>
       <div class="flex-1 col-span-6">

@@ -6,17 +6,17 @@
     class="h-[85vh]"
   />
   <main
-    class="w-screen flex flex-wrap xl:flex-nowrap items-start justify-evenly py-5 xl:py-20 bg-mint"
+    class="w-screen flex flex-col lg:flex-row items-center lg:items-start justify-evenly py-5 lg:py-20 bg-mint"
   >
     <resource-card
       title="Web Links"
       :resources="webLinks"
-      class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
+      class="h-max lg:h-144 my-5 w-5/6 md:w-auto lg:mx-8"
     />
     <resource-card
       title="PDF Downloads"
       :resources="pdfDownloads"
-      class="h-max xl:h-144 my-5 w-5/6 md:w-auto"
+      class="h-max lg:h-144 my-5 w-5/6 md:w-auto lg:mx-8"
     />
   </main>
 </template>

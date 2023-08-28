@@ -1,6 +1,6 @@
 <template>
   <div class="card lg:card-side bg-white shadow-xl">
-    <figure class="xl:w-full">
+    <figure class="lg:w-full">
       <img
         class="w-full h-full"
         :src="getImgURL(facility.images[0])"

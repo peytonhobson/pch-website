@@ -1,7 +1,7 @@
 <template>
-  <dual-item-display class="h-92" :reverse-column="true">
+  <dual-item-display :reverse-column="true">
     <template #leftColumn>
-      <owners-and-operators-card class="my-10 lg:my-0" />
+      <owners-and-operators-card class="mt-10 lg:my-0" />
     </template>
     <!--end col-->
 

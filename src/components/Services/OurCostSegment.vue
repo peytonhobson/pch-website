@@ -1,11 +1,11 @@
 <template>
   <dual-item-display
-    class="h-full pt-16 lg:py-44 flex flex-col items-stretch"
+    class="h-full flex flex-col items-stretch"
     :reverse-column="true"
   >
     <template #leftColumn>
       <image-card
-        class="mt-10 md:mt-10 xl:mt-0 h-2/3 md:h-144 w-5/6 md:w-3/4 xl:w-full duration-500 xl:hover:-translate-y-5 transition-all md:max-w-lg lg:max-w-none"
+        class="mt-10 md:mt-10 lg:mt-0 h-2/3 md:h-144 w-5/6 md:w-3/4 lg:w-full duration-500 lg:hover:-translate-y-5 transition-all md:max-w-lg lg:max-w-none"
         image-link="madrona/madrona-5.jpg"
       />
     </template>

@@ -3,7 +3,7 @@
   <main
     class="flex flex-wrap w-screen items-center justify-center bg-mint lg:h-screen"
   >
-    <div class="flex items-center justify-center w-full h-full py-20 px-10 md:p-10">
+    <div class="flex items-center justify-center w-full h-full py-20 px-10">
       <locations-map class="h-144 w-full card" />
     </div>
   </main>

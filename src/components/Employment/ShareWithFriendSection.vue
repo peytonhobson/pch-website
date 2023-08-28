@@ -1,8 +1,8 @@
 <template>
-  <dual-item-display class="py-28 xl:py-44" :reverse-column="true">
+  <dual-item-display class="mt-32 lg:mt-44" :reverse-column="true">
     <template #leftColumn>
       <card
-        class="w-5/6 md:w-3/4 xl:w-full py-10 h-full mt-10 xl:mt-0 flex items-center"
+        class="w-5/6 md:w-3/4 lg:w-full py-10 h-full mt-10 lg:mt-0 flex items-center md:max-w-lg lg:max-w-none"
         :body="false"
       >
         <template #other>

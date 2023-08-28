@@ -20,25 +20,25 @@
         :title="descriptionBoxContent.title"
         :body="descriptionBoxContent.body"
         :icon-class="descriptionBoxContent.iconClass"
-        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 w-5/6 h-72 md:mt-0 md:last-of-type:mt-20 lg:last-of-type:mt-0"
+        class="md:max-w-md md:w-2/5 lg:w-2/7 mb-10 w-5/6 h-72 md:mb-20 md:mx-4 lg:min-w-[23rem]"
       />
     </div>
     <div
-      class="flex flex-wrap justify-evenly md:py-10 pb-10 show-on-scroll carousel-tag"
+      class="flex flex-wrap justify-evenly show-on-scroll carousel-tag"
     >
       <facilities-card
-        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 md:my-10 w-5/6 h-144"
+        class="md:max-w-md md:w-2/5 lg:w-2/7 mb-10 md:mb-20 w-5/6 h-144 md:mx-4 lg:min-w-[23rem]"
       />
       <locations-card
-        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 md:my-10 w-5/6 h-144"
+        class="md:max-w-md md:w-2/5 lg:w-2/7 mb-10 md:mb-20 w-5/6 h-144 md:mx-4 lg:min-w-[23rem]"
         route="Facilities"
       />
       <contact-card
-        class="md:max-w-md md:w-4/5 mt-10 xl:w-2/7 md:my-10 w-5/6 h-144"
+        class="md:max-w-md md:w-4/5 lg:w-2/7 mb-10 md:mb-20 w-5/6 h-144 md:mx-4 lg:min-w-[23rem]"
       />
     </div>
     <div class="flex justify-center items-center show-on-scroll">
-      <contact-form-container />
+      <contact-form-container class="mb-20" />
     </div>
   </section>
 </template>

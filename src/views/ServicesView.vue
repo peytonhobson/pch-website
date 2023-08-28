@@ -5,7 +5,7 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <main class="bg-mint">
+  <main class="bg-mint pt-16 pb-32 lg:py-44">
     <our-cost-segment />
     <our-services-section />
   </main>

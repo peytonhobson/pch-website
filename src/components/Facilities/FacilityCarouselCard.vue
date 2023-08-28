@@ -1,10 +1,10 @@
 <template>
-  <div class="h-80 w-full xl:h-144">
+  <div class="h-80 w-full lg:h-144 lg:my-auto">
     <Transition>
       <card
         v-if="show"
         :body="false"
-        class="h-80 w-full xl:h-144 rounded-none xl:rounded-2xl"
+        class="h-80 w-full lg:h-144 rounded-none lg:rounded-2xl"
         @mouseenter="clearImageInterval"
         @mouseleave="changeImage"
       >
