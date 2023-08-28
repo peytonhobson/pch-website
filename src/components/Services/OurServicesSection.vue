@@ -1,5 +1,5 @@
 <template>
-  <dual-item-display class="pt-32 pb-20 lg:py-36 xl:py-44" :items-start="false">
+  <dual-item-display class="pt-32 pb-20 lg:pt-0 lg:pb-36 xl:pb-44" :items-start="false">
     <template #leftColumn>
       <simple-description :header="descriptionHeader" :text="descriptionText" />
     </template>

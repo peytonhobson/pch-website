@@ -3,11 +3,11 @@
     class="w-full"
     title="WHEN ONLY THE BEST WILL DO"
     image-url="other/resident-edith-and-red.jpg"
-    ><div class="flex justify-evenly xl:w-1/2">
-      <router-link to="/Services" class="mx-2 w-32 xl:w-44"
-        ><action-button type="primary" text="Get Started" /> </router-link
-      ><router-link to="/About-Us" class="mx-2 w-32 xl:w-44"
-        ><action-button type="primary" text="About Us"
+    ><div class="flex justify-evenly w-full">
+      <router-link to="/Services" class="w-32 md:w-44"
+        ><action-button type="primary" text="Get Started" class="md:whitespace-nowrap"/> </router-link
+      ><router-link to="/About-Us" class="w-32 md:w-44"
+        ><action-button type="primary" text="About Us" class="md:whitespace-nowrap"
       /></router-link></div
   ></hero>
   <hero-caption />
@@ -20,7 +20,7 @@
         :title="descriptionBoxContent.title"
         :body="descriptionBoxContent.body"
         :icon-class="descriptionBoxContent.iconClass"
-        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 w-5/6 h-72 md:mt-0 md:last-of-type:mt-20"
+        class="md:max-w-md md:w-2/5 xl:w-2/7 mt-10 w-5/6 h-72 md:mt-0 md:last-of-type:mt-20 lg:last-of-type:mt-0"
       />
     </div>
     <div

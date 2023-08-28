@@ -78,10 +78,7 @@ export default defineComponent({
 
     const isOpen = ref(false);
 
-    const isMobile =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
+    const isMobile = computed(() => window && window.innerWidth < 1024)
 
     const transparentBackground = ref(true);
 

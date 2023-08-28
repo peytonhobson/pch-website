@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap items-center justify-center">
+  <div class="flex flex-col items-center justify-center">
     <h1 class="w-full mb-5 leading-[3.25rem] md:!leading-[5rem] text-4xl md:text-6xl font-bold text-white max-w-xl">
       {{ title }}
     </h1>
