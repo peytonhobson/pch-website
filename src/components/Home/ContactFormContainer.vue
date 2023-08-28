@@ -1,5 +1,5 @@
 <template>
-  <div class="card shadow-2xl bg-white w-5/6 md:max-w-md md:w-4/5 lg:max-w-none lg:w-1/2" :body="false">
+  <div class="card shadow-2xl bg-white" :body="false">
     <figure class="m-0 w-full h-60">
       <div
         :style="` background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${imageLink});`"

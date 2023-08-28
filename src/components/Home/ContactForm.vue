@@ -3,10 +3,10 @@
     <div class="md:grid grid-cols-10 mb-8 w-full">
       <div class="mr-3 col-span-3 flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-left lg:text-right mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
           for="inline-password"
         >
-          Full Name<span class="text-red-500">*</span> :
+          Full <span class="whitespace-nowrap">Name<span class="text-red-500">*</span> :</span>
         </label>
       </div>
       <div class="flex-1 col-span-7">
@@ -23,10 +23,10 @@
     <div class="md:grid grid-cols-10 mb-8 w-full">
       <div class="mr-3 col-span-3 h-full flex items-center justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 text-left"
           for="inline-password"
         >
-          Email<span class="text-red-500">*</span> :
+          <span class="whitespace-nowrap">Email<span class="text-red-500">*</span> :</span>
         </label>
       </div>
       <div class="flex-1 col-span-7">
@@ -43,10 +43,10 @@
     <div class="md:grid grid-cols-10 mb-8">
       <div class="mr-3 col-span-3 flex items-start justify-start">
         <label
-          class="block text-gray-500 font-bold md:text-left mb-1 md:mb-0 pr-4"
+          class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 text-left"
           for="inline-password"
         >
-          Subject<span class="text-red-500">*</span> :
+          <span class="whitespace-nowrap">Subject<span class="text-red-500">*</span> :</span>
         </label>
       </div>
       <div class="flex-1 col-span-7">
