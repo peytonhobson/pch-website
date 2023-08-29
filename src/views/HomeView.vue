@@ -38,7 +38,7 @@
       <contact-card
         class="md:max-w-md mb-10 md:mb-20 w-5/6 md:w-2/7 h-144 md:min-w-[23rem]"
       />
-      <contact-form-container class="md:max-w-md lg:max-w-none mb-10 md:mb-20 w-5/6 md:w-2/7 lg:w-2/5 h-144 md:min-w-[23rem]" />
+      <contact-form-container class="md:max-w-md lg:max-w-none mb-10 md:mb-20 w-5/6 md:w-2/7 lg:w-2/5 md:h-144 md:min-w-[23rem]" />
     </div>
   </section>
 </template>
