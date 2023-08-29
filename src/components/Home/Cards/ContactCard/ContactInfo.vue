@@ -4,7 +4,7 @@
       class="col-start-1 col-span-1 pr-2 py-2 md:p-2 flex items-center justify-center"
     >
       <div class="avatar">
-        <div class="w-20 rounded-full">
+        <div class="w-[17vw] md:w-20 rounded-full">
           <img :src="getImgURL('Headshot.jpg')" class="mt-0" />
         </div>
       </div>
