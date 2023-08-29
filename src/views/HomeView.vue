@@ -4,14 +4,16 @@
     title="WHEN ONLY THE BEST WILL DO"
     image-url="other/home-hero.jpg"
     ><div class="flex justify-evenly w-full">
-      <router-link to="/Services" class="w-32 md:w-44"
-        ><action-button type="primary" text="Get Started" class="md:whitespace-nowrap"/> </router-link
-      ><router-link to="/About-Us" class="w-32 md:w-44"
+    <div class="w-32 md:w-44">
+      <action-button type="primary" text="Learn More" class="md:whitespace-nowrap" @click="handleLearnMoreClick"/>
+      </div>
+      <router-link to="/About-Us" class="w-32 md:w-44"
         ><action-button type="primary" text="About Us" class="md:whitespace-nowrap"
       /></router-link></div
   ></hero>
+  <div ref="learnMoreRef"></div>
   <hero-caption />
-  <section class="bg-mint">
+  <section class="bg-mint" >
     <div class="flex flex-wrap w-full justify-evenly show-on-scroll">
       <description-box
         v-for="descriptionBoxContent in descriptionBoxContents"
@@ -42,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 
 import Hero from "@/components/Shared/Hero/Hero.vue";
 import HeroCaption from "@/components/Home/HeroCaption.vue";
@@ -97,9 +99,22 @@ export default defineComponent({
       },
     ];
 
+    const learnMoreRef = ref<HTMLElement | null>(null);
+
+    const handleLearnMoreClick = () => {
+      const navBarHeight = document.querySelector("nav")?.clientHeight;
+
+      if(learnMoreRef?.value) {
+        window.scrollTo({
+          top: learnMoreRef.value.offsetTop - navBarHeight!,
+          behavior: "smooth",
+        });
+      }
+    };
+
     onMounted(setScrollObserver);
 
-    return { descriptionBoxContents, getImgURL };
+    return { descriptionBoxContents, getImgURL, learnMoreRef, handleLearnMoreClick };
   },
 });
 </script>

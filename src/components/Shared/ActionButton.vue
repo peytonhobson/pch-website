@@ -1,5 +1,5 @@
 <template>
-  <button :class="buttonClass">
+  <button :class="buttonClass" @click="$emit('click')">
     {{ text }}
   </button>
 </template>
@@ -23,6 +23,7 @@ export default {
       },
     },
   },
+  emits: ['click'],
   setup(props) {
     const { type } = toRefs(props);
 
