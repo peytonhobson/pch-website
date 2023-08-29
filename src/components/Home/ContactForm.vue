@@ -55,7 +55,7 @@
           as="textarea"
           placeholder="Your Question..."
           :rules="schema.subject"
-          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
+          class="pb-6 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
         />
         <ErrorMessage name="subject" class="text-red-500" as="div" />
       </div>
