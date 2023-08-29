@@ -73,7 +73,7 @@ export default defineComponent({
     const windowWidth = window.innerWidth;
 
     const heroProps = {
-      backgroundImage: "other/resident-wheelchair-balloon-girl.png",
+      backgroundImage: "other/resources-hero.jpg",
       title: "RESOURCES",
     };
 

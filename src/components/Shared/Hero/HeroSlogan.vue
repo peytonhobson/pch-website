@@ -3,7 +3,7 @@
     <h1 class="w-full mb-5 leading-[3.25rem] md:!leading-[5rem] text-4xl md:text-6xl font-bold text-white max-w-xl">
       {{ title }}
     </h1>
-    <h2 v-if="text" class="w-full mb-5 text-xl text-white">{{ text }}</h2>
+    <h2 v-if="text" class="w-full lg:w-[50vw] mb-5 text-xl text-white">{{ text }}</h2>
     <slot></slot>
   </div>
 </template>

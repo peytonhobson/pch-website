@@ -58,7 +58,7 @@ export default defineComponent({
     const requirements = [
       "Two years of caregiving experience",
       "Clean criminal background check",
-      "Detail oriented",
+      "Detail-oriented",
       "Team player",
       "Caring, compassionate, and patient",
     ];
