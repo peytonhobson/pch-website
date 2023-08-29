@@ -25,7 +25,7 @@ export default defineComponent({
     const heroProps = {
       backgroundImage: "other/testimonials-hero.jpg",
       title: "TESTIMONIALS",
-      text: "Hear the best about us",
+      text: "From Our Home to Your Hearts: Real Stories of Care",
     };
 
     return { getImgURL, heroProps };

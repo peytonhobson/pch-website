@@ -75,7 +75,6 @@ export default defineComponent({
     const heroProps = {
       backgroundImage: "other/resident-wheelchair-balloon-girl.png",
       title: "RESOURCES",
-      text: "For those of you who don't know anything",
     };
 
     return { webLinks, pdfDownloads, isMobile, windowWidth, heroProps };

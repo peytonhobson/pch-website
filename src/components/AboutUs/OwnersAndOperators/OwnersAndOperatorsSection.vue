@@ -30,9 +30,9 @@ export default defineComponent({
     const descriptionHeader = "Owners and Operators";
 
     const descriptionText =
-      "Janelle LeFore P.T. and Margie Hibner P.T. have a total of 25+ years experience as" +
-      "licensed physical therapists, and 20+ years of experience working as a physical" +
-      "therapist with Seniors in various settings. We have owned and operated Adult Foster" +
+      "Janelle LeFore P.T. and Margie Hibner P.T. have a total of 25+ years experience as " +
+      "licensed physical therapists, and 20+ years of experience working as a physical " +
+      "therapist with Seniors in various settings. We have owned and operated Adult Foster " +
       "Care Homes since 2008.";
 
     return { descriptionHeader, descriptionText, getImgURL };

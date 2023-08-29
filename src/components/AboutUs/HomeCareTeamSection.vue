@@ -31,13 +31,13 @@ export default defineComponent({
     const descriptionHeader = "The Home Care Team";
 
     const descriptionText =
-      "Our Senior Care Home team at Premier Care Homes consists of staff members that are" +
-      "carefully selected in order to meet our own, and your high standards, ensuring each" +
-      "resident is in a secure, comfortable, and respected environment. All staff have attended" +
-      "and passed a stated required caregiver, dementia, and medication administration" +
-      "course. They are required to complete yearly continuing education and maintain current" +
-      "Red Cross CPR certifications. Everyone is required to have a clean criminal record." +
-      "Our homes are overseen by medical professionals, including physical therapists, a" +
+      "Our Senior Care Home team at Premier Care Homes consists of staff members that are " +
+      "carefully selected in order to meet our own, and your high standards, ensuring each " +
+      "resident is in a secure, comfortable, and respected environment. All staff have attended " +
+      "and passed a stated required caregiver, dementia, and medication administration " +
+      "course. They are required to complete yearly continuing education and maintain current " +
+      "Red Cross CPR certifications. Everyone is required to have a clean criminal record. " +
+      "Our homes are overseen by medical professionals, including physical therapists, a " +
       "nurse, and paramedic.";
 
     return { descriptionHeader, descriptionText, getImgURL };
