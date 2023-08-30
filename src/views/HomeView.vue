@@ -2,7 +2,7 @@
   <hero
     class="w-full"
     title="WHEN ONLY THE BEST WILL DO"
-    image-url="other/home-hero.jpg"
+    image-url="other/landing-hero.jpg"
     ><div class="flex justify-evenly w-full">
     <div class="w-32 md:w-44">
       <action-button type="primary" text="Learn More" class="md:whitespace-nowrap" @click="handleLearnMoreClick"/>
