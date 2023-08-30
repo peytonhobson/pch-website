@@ -1,4 +1,4 @@
-<template>
+<template >
   <hero
     :image-url="heroProps.backgroundImage"
     :title="heroProps.title"
@@ -6,7 +6,7 @@
     class="h-[85vh]"
   />
   <main
-    class="w-screen flex flex-col lg:flex-row items-center lg:items-start justify-evenly py-5 lg:py-20 bg-mint"
+    class="w-full flex flex-col lg:flex-row items-center lg:items-start justify-evenly py-5 lg:py-20 bg-mint overflow-x-hidden"
   >
     <resource-card
       title="Web Links"

@@ -33,9 +33,9 @@ export default defineComponent({
   },
   setup() {
     const descriptionText =
-      "Adult Foster Care Homes generally have lower rates than larger, institutionalized" +
-      "settings. Premier Care Homes is a private pay facility and we accept long term care" +
-      "insurance and Veteran’s funding. Please call or email for rates." +
+      "Adult Foster Care Homes generally have lower rates than larger, institutionalized " +
+      "settings. Premier Care Homes is a private pay facility and we accept long term care " +
+      "insurance and Veteran’s funding. Please call or email for rates. " +
       "<br></br>*****We do not accept medicaid payment*****";
 
     const descriptionHeader = "Our Cost";

@@ -51,7 +51,7 @@ export default defineComponent({
         show.value = !show.value;
         curIndex.value = (curIndex.value + 1) % facility.value.images.length;
         setTimeout(() => (show.value = !show.value), 1000);
-      }, 100000000);
+      }, 5000);
     };
     const clearImageInterval = () => {
       clearInterval(interval);

@@ -121,16 +121,16 @@ export default defineComponent({
 <style scoped>
 .navbar-main {
   @apply navbar w-full py-2 xl:h-[12vh] fixed flex flex-wrap items-center top-0 z-50 px-0;
-  transition: background-color 1s ease 0s;
+  transition: background-color 0.5s ease 0s;
 }
 
 .v-enter-active,
-.v-leave-active {
-  transition: opacity 1s ease;
+v-leave-active {
+  transition: opacity 0.5s ease;
 }
 
 .v-enter-from,
 .v-leave-to {
-  opacity: 0;
+  transition: none
 }
 </style>

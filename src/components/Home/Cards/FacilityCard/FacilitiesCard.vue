@@ -7,15 +7,19 @@
     @mouseleave="changeFacility"
   >
     <template #image>
+    <div class="h-full w-full">
       <Transition>
         <carousel
           v-if="show"
+          class="rounded-t-2xl"
           :image-links="imageLinks"
           :cur-index="curIndex"
           @next="nextFacility"
           @prev="prevFacility"
+          
         />
       </Transition>
+      </div>
     </template>
     <template #title>
       <h2 class="card-title">
@@ -33,7 +37,7 @@
       </Transition>
     </template>
     <template #button>
-      <router-link :to="{ name: 'Facilities' }" class="w-full">
+      <router-link :to="{ name: 'Facilities' }" class="w-full no-underline">
         <action-button text="Learn More" type="card" />
       </router-link>
     </template>
@@ -83,7 +87,7 @@ export default defineComponent({
         show.value = !show.value;
         curIndex.value = (curIndex.value + 1) % facilities.value.length;
         setTimeout(() => (show.value = !show.value), 1000);
-      }, 6000);
+      }, 5000);
     };
     const clearFacilityInterval = () => {
       clearInterval(interval);
