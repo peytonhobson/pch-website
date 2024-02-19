@@ -1,10 +1,14 @@
+const WorkboxPlugin = require("workbox-webpack-plugin");
+
 module.exports = {
   transpileDependencies: true,
   publicPath: "",
   configureWebpack: {
-    output: {
-      // Cache assets for 1 hour
-      maxAge: 3600000,
-    },
+    plugins: [
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
+      }),
+    ],
   },
 };
