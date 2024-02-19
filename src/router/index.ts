@@ -2,6 +2,12 @@ import { createRouter, createWebHistory } from "vue-router";
 import { loadImage } from "./loadImage";
 
 import HomeImage from "@/assets/other/landing-hero.jpg";
+import FacilitiesImage from "@/assets/other/facilities-hero.jpg";
+import TestimonialsImage from "@/assets/other/testimonials-hero.jpg";
+import ResourcesImage from "@/assets/other/resources-hero.jpg";
+import ServicesImage from "@/assets/other/services-hero.jpg";
+import AboutUsImage from "@/assets/other/aboutus-hero.jpg";
+import EmploymentImage from "@/assets/other/employment-hero.jpg";
 
 const HomeView = () => import("@/views/HomeView.vue");
 const FacilitiesView = () =>
@@ -40,6 +46,9 @@ const routes = [
     path: "/Facilities",
     name: "Facilities",
     component: FacilitiesView,
+    beforeEnter() {
+      loadImage(FacilitiesImage);
+    },
   },
   {
     path: "/Facilities/:name",
@@ -60,26 +69,41 @@ const routes = [
     path: "/Testimonials",
     name: "Testimonials",
     component: TestimonialsView,
+    beforeEnter() {
+      loadImage(TestimonialsImage);
+    },
   },
   {
     path: "/Resources",
     name: "Resources",
     component: ResourcesView,
+    beforeEnter() {
+      loadImage(ResourcesImage);
+    },
   },
   {
     path: "/Services",
     name: "Services",
     component: ServicesView,
+    beforeEnter() {
+      loadImage(ServicesImage);
+    },
   },
   {
     path: "/About-Us",
     name: "AboutUs",
     component: AboutUsView,
+    beforeEnter() {
+      loadImage(AboutUsImage);
+    },
   },
   {
     path: "/Employment",
     name: "Employment",
     component: EmploymentView,
+    beforeEnter() {
+      loadImage(EmploymentImage);
+    },
   },
   {
     path: "/Locations",

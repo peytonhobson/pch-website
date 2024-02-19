@@ -4,16 +4,24 @@
     title="WHEN ONLY THE BEST WILL DO"
     image-url="other/landing-hero.jpg"
     ><div class="flex justify-evenly w-full">
-    <div class="w-32 md:w-44">
-      <action-button type="primary" text="Learn More" class="md:whitespace-nowrap" @click="handleLearnMoreClick"/>
+      <div class="w-32 md:w-44">
+        <action-button
+          type="primary"
+          text="Learn More"
+          class="md:whitespace-nowrap"
+          @click="handleLearnMoreClick"
+        />
       </div>
       <router-link to="/About-Us" class="w-32 md:w-44"
-        ><action-button type="primary" text="About Us" class="md:whitespace-nowrap"
+        ><action-button
+          type="primary"
+          text="About Us"
+          class="md:whitespace-nowrap"
       /></router-link></div
   ></hero>
   <div ref="learnMoreRef"></div>
   <hero-caption />
-  <section class="bg-mint" >
+  <section class="bg-mint">
     <div class="flex flex-wrap w-full justify-evenly show-on-scroll">
       <description-box
         v-for="descriptionBoxContent in descriptionBoxContents"
@@ -25,20 +33,20 @@
         class="md:max-w-md md:w-2/5 lg:w-2/7 mb-10 w-5/6 h-72 md:mb-20 md:mx-4 lg:min-w-[23rem]"
       />
     </div>
-    <div
-      class="flex flex-wrap justify-evenly show-on-scroll carousel-tag"
-    >
+    <div class="flex flex-wrap justify-evenly show-on-scroll carousel-tag">
       <facilities-card
         class="md:max-w-md mb-10 md:mb-20 w-5/6 md:w-2/7 h-144 md:min-w-[23rem]"
       />
       <locations-card
-        class="md:max-w-md  mb-10 md:mb-20 w-5/6 md:w-2/7 h-144 md:min-w-[23rem]"
+        class="md:max-w-md mb-10 md:mb-20 w-5/6 md:w-2/7 h-144 md:min-w-[23rem]"
         route="Facilities"
       />
       <contact-card
         class="md:max-w-md mb-10 md:mb-20 w-5/6 md:w-2/7 h-144 md:min-w-[23rem]"
       />
-      <contact-form-container class="md:max-w-md lg:max-w-none mb-10 md:mb-20 w-5/6 md:w-2/7 lg:w-2/5 md:h-144 md:min-w-[23rem]" />
+      <contact-form-container
+        class="md:max-w-md lg:max-w-none mb-10 md:mb-20 w-5/6 md:w-2/7 lg:w-2/5 md:h-144 md:min-w-[23rem]"
+      />
     </div>
   </section>
 </template>
@@ -104,7 +112,7 @@ export default defineComponent({
     const handleLearnMoreClick = () => {
       const navBarHeight = document.querySelector("nav")?.clientHeight;
 
-      if(learnMoreRef?.value) {
+      if (learnMoreRef?.value) {
         window.scrollTo({
           top: learnMoreRef.value.offsetTop - navBarHeight!,
           behavior: "smooth",
@@ -114,7 +122,12 @@ export default defineComponent({
 
     onMounted(setScrollObserver);
 
-    return { descriptionBoxContents, getImgURL, learnMoreRef, handleLearnMoreClick };
+    return {
+      descriptionBoxContents,
+      getImgURL,
+      learnMoreRef,
+      handleLearnMoreClick,
+    };
   },
 });
 </script>
