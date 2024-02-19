@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import { loadImage } from "./loadImage";
 
 import HomeImage from "@/assets/other/landing-hero.jpg";
@@ -94,7 +94,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior() {
     document.getElementById("app")!.scrollIntoView({ behavior: "smooth" });
