@@ -1,8 +1,5 @@
 <template>
-  <hero
-    class="w-full"
-    title="WHEN ONLY THE BEST WILL DO"
-    image-url="other/landing-hero.jpg"
+  <hero class="w-full" title="WHEN ONLY THE BEST WILL DO" :image-url="heroImage"
     ><div class="flex justify-evenly w-full">
       <div class="w-32 md:w-44">
         <action-button
@@ -63,7 +60,7 @@ import ContactCard from "@/components/Home/Cards/ContactCard/ContactCard.vue";
 import setScrollObserver from "@/composables/setScrollObserver";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import ContactFormContainer from "@/components/Home/ContactFormContainer.vue";
-
+import HomeHero from "@/assets/other/landing-hero.jpg";
 import getImgURL from "@/composables/getImgURL";
 
 interface DescriptionBoxContent {
@@ -127,6 +124,7 @@ export default defineComponent({
       getImgURL,
       learnMoreRef,
       handleLearnMoreClick,
+      heroImage: HomeHero,
     };
   },
 });

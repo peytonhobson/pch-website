@@ -1,7 +1,7 @@
 <template>
   <div class="hero h-screen relative hero-overlay overflow-hidden">
     <img
-      :src="getImgURL(imageUrl)"
+      :src="imageUrl"
       alt="Hero"
       class="object-cover w-full h-full filter brightness-75"
       rel="preload"
