@@ -25,11 +25,7 @@
         @click="isOpen = !isOpen"
       />
     </div>
-    <main-nav-mobile-list
-      :is-open="isOpen"
-      :list-items="listItems"
-      @handle-open="isOpen = !isOpen"
-    />
+    <main-nav-mobile-list :is-open="isOpen" :list-items="listItems" />
   </nav>
 </template>
 
@@ -42,6 +38,7 @@ import {
   onBeforeUnmount,
   onMounted,
   onUnmounted,
+  watch,
 } from "vue";
 
 import { useRoute } from "vue-router";
@@ -100,6 +97,12 @@ export default defineComponent({
     const transparentBackground = ref(true);
 
     const route = useRoute();
+
+    // Write watcher for route that sets isOpen to false
+    watch(
+      () => route.path,
+      () => (isOpen.value = false)
+    );
 
     const navClass = computed(() => {
       return {

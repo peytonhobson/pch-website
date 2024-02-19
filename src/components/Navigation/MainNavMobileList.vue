@@ -13,7 +13,6 @@
             :to="listItem.to"
             class="block py-2 pr-4 pl-3 md:px-0 md:py-5 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline bg-transparent"
             aria-current="page"
-            @click="handleRouteClick"
             >{{ listItem.text }}</router-link
           >
         </li>
@@ -42,13 +41,6 @@ export default defineComponent({
       required: true,
     },
   },
-  emits: ["handle-open"],
-  setup(props, { emit }) {
-    const handleRouteClick = () => {
-      emit("handle-open");
-    };
-
-    return { handleRouteClick };
-  },
+  setup() {},
 });
 </script>
