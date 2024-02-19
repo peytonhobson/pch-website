@@ -1,8 +1,7 @@
-<template >
+<template>
   <hero
     :image-url="heroProps.backgroundImage"
     :title="heroProps.title"
-    :text="heroProps.text"
     class="h-[85vh]"
   />
   <main
@@ -27,6 +26,7 @@ import { defineComponent } from "vue";
 import ResourceCard from "@/components/Resources/ResourceCard.vue";
 
 import Hero from "@/components/Shared/Hero/Hero.vue";
+import ResourcesHero from "@/assets/other/resources-hero.jpg";
 
 export default defineComponent({
   name: "BlogPostView",
@@ -73,7 +73,7 @@ export default defineComponent({
     const windowWidth = window.innerWidth;
 
     const heroProps = {
-      backgroundImage: "other/resources-hero.jpg",
+      backgroundImage: ResourcesHero,
       title: "RESOURCES",
     };
 

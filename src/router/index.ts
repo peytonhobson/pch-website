@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { loadImage } from "./loadImage";
 
 import HomeImage from "@/assets/other/landing-hero.jpg";
 import FacilitiesImage from "@/assets/other/facilities-hero.jpg";
@@ -8,6 +7,7 @@ import ResourcesImage from "@/assets/other/resources-hero.jpg";
 import ServicesImage from "@/assets/other/services-hero.jpg";
 import AboutUsImage from "@/assets/other/aboutus-hero.jpg";
 import EmploymentImage from "@/assets/other/employment-hero.jpg";
+import { preloadImage } from "@/composables/preloadImage";
 
 const HomeView = () => import("@/views/HomeView.vue");
 const FacilitiesView = () =>
@@ -38,16 +38,21 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    beforeEnter() {
-      loadImage(HomeImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      console.log(HomeImage);
+      preloadImage(HomeImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
     path: "/Facilities",
     name: "Facilities",
     component: FacilitiesView,
-    beforeEnter() {
-      loadImage(FacilitiesImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      preloadImage(FacilitiesImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
@@ -69,40 +74,50 @@ const routes = [
     path: "/Testimonials",
     name: "Testimonials",
     component: TestimonialsView,
-    beforeEnter() {
-      loadImage(TestimonialsImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      preloadImage(TestimonialsImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
     path: "/Resources",
     name: "Resources",
     component: ResourcesView,
-    beforeEnter() {
-      loadImage(ResourcesImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      preloadImage(ResourcesImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
     path: "/Services",
     name: "Services",
     component: ServicesView,
-    beforeEnter() {
-      loadImage(ServicesImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      preloadImage(ServicesImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
     path: "/About-Us",
     name: "AboutUs",
     component: AboutUsView,
-    beforeEnter() {
-      loadImage(AboutUsImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      preloadImage(AboutUsImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
     path: "/Employment",
     name: "Employment",
     component: EmploymentView,
-    beforeEnter() {
-      loadImage(EmploymentImage);
+    beforeEnter: (to: any, from: any, next: () => void) => {
+      preloadImage(EmploymentImage).then(() => {
+        next(); // Proceed with the route navigation once the image is loaded
+      });
     },
   },
   {
