@@ -1,4 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
+import { loadImage } from "./loadImage";
+
+import HomeImage from "@/assets/other/landing-hero.jpg";
 
 const HomeView = () => import("@/views/HomeView.vue");
 const FacilitiesView = () =>
@@ -29,6 +32,9 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
+    beforeEnter() {
+      loadImage(HomeImage);
+    },
   },
   {
     path: "/Facilities",
