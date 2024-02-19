@@ -5,7 +5,11 @@
     >
       <div class="avatar">
         <div class="w-[17vw] md:w-20 rounded-full">
-          <img :src="getImgURL('Headshot.jpg')" class="mt-0" />
+          <font-awesome-icon
+            :icon="['fas', 'user-circle']"
+            class="h-full w-full text-brand-green-gray"
+          />
+          <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
         </div>
       </div>
     </div>
