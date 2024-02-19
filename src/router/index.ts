@@ -9,13 +9,20 @@ const BlogView = () =>
   import(/* webpackChunkName: "posts" */ "@/views/BlogView.vue");
 const BlogPostView = () =>
   import(/* webpackChunkName: "posts" */ "@/views/BlogPostView.vue");
-const TestimonialsView = () => import("@/views/TestimonialsView.vue");
-const ResourcesView = () => import("@/views/ResourcesView.vue");
-const ServicesView = () => import("@/views/ServicesView.vue");
-const AboutUsView = () => import("@/views/AboutUsView.vue");
-const EmploymentView = () => import("@/views/EmploymentView.vue");
-const LocationsView = () => import("@/views/LocationsView.vue");
-const PageNotFoundView = () => import("@/views/PageNotFoundView.vue");
+const TestimonialsView = () =>
+  import(/* webpackChunkName: "testimonials" */ "@/views/TestimonialsView.vue");
+const ResourcesView = () =>
+  import(/* webpackChunkName: "resources" */ "@/views/ResourcesView.vue");
+const ServicesView = () =>
+  import(/* webpackChunkName: "services" */ "@/views/ServicesView.vue");
+const AboutUsView = () =>
+  import(/* webpackChunkName: "about-us" */ "@/views/AboutUsView.vue");
+const EmploymentView = () =>
+  import(/* webpackChunkName: "employment" */ "@/views/EmploymentView.vue");
+const LocationsView = () =>
+  import(/* webpackChunkName: "locations" */ "@/views/LocationsView.vue");
+const PageNotFoundView = () =>
+  import(/* webpackChunkName: "404" */ "@/views/PageNotFoundView.vue");
 
 const routes = [
   {

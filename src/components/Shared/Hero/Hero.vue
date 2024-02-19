@@ -1,10 +1,14 @@
 <template>
-  <div
-    class="hero h-screen"
-    :style="`background-image: url(${getImgURL(imageUrl)})`"
-  >
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
+  <div class="hero h-screen relative">
+    <img
+      :src="getImgURL(imageUrl)"
+      alt="Hero"
+      class="object-cover w-full h-full hero-overlay bg-opacity-60"
+      rel="preload"
+    />
+    <div
+      class="hero-content text-center text-neutral-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
       <hero-slogan
         :title="title"
         :text="text"
