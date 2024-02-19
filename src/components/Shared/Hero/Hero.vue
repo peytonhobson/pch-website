@@ -1,5 +1,5 @@
 <template>
-  <div class="hero h-screen relative hero-overlay">
+  <div class="hero h-screen relative hero-overlay overflow-hidden">
     <img
       :src="getImgURL(imageUrl)"
       alt="Hero"

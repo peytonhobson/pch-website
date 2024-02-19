@@ -14,6 +14,7 @@ import App from "./App.vue";
 import router from "./router";
 import "@/assets/tailwind.css";
 import VueLazyload from "vue-lazyload";
+import useLoadingState from "@/composables/useLoadingState";
 
 library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
@@ -21,7 +22,19 @@ library.add(faPeopleGroup);
 library.add(faBars);
 library.add(faCheck);
 
-createApp(App)
+const app = createApp(App);
+const { setLoading } = useLoadingState();
+
+router.beforeEach((to, from, next) => {
+  setLoading(true);
+  next();
+});
+
+router.afterEach(() => {
+  setLoading(false);
+});
+
+app
   .use(Notifications)
   .use(VueLazyload, {
     preLoad: 1.3,

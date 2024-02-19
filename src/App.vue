@@ -1,14 +1,14 @@
 <template>
   <main-nav v-if="!loading" />
-  <router-view @loaded="loading = false" />
+  <router-view />
   <Footer v-if="!loading" />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import MainNav from "./components/Navigation/MainNav.vue";
 import Footer from "./components/Shared/Footer.vue";
-import router from "./router";
+import useLoadingState from "./composables/useLoadingState";
 
 export default defineComponent({
   name: "App",
@@ -17,18 +17,7 @@ export default defineComponent({
     Footer,
   },
   setup() {
-    const loading = ref(true);
-    // In your router configuration or main.js where Vue Router is set up
-    router.beforeEach((to, from, next) => {
-      // Set loading to true before navigation starts
-      loading.value = true;
-      next();
-    });
-
-    router.afterEach(() => {
-      // Set loading to false once navigation is complete
-      loading.value = false;
-    });
+    const { loading } = useLoadingState(); // Access the reactive state
 
     return { loading };
   },
