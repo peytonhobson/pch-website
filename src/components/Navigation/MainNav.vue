@@ -9,7 +9,7 @@
         />
       </router-link>
     </div>
-    <div v-if="!isMobile" class="flex-none md:mx-auto lg:mx-0" >
+    <div v-if="!isMobile" class="flex-none md:mx-auto lg:mx-0">
       <main-nav-desktop-list
         :transparent-background="transparentBackground"
         :list-items="listItems"
@@ -40,6 +40,8 @@ import {
   onBeforeMount,
   computed,
   onBeforeUnmount,
+  onMounted,
+  onUnmounted,
 } from "vue";
 
 import { useRoute } from "vue-router";
@@ -78,7 +80,22 @@ export default defineComponent({
 
     const isOpen = ref(false);
 
-    const isMobile = computed(() => window && window.innerWidth < 1024)
+    const isMobile = ref(window.innerWidth < 1024);
+
+    // Step 2: Define the resize handler function
+    function handleResize() {
+      isMobile.value = window.innerWidth < 1024;
+    }
+
+    // Step 3: Add the event listener when the component mounts
+    onMounted(() => {
+      window.addEventListener("resize", handleResize);
+    });
+
+    // Remove the event listener when the component unmounts
+    onUnmounted(() => {
+      window.removeEventListener("resize", handleResize);
+    });
 
     const transparentBackground = ref(true);
 
@@ -131,6 +148,6 @@ v-leave-active {
 
 .v-enter-from,
 .v-leave-to {
-  transition: none
+  transition: none;
 }
 </style>
