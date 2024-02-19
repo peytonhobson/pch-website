@@ -5,7 +5,7 @@
   >
     <dual-item-display :reverse-column="false" :items-start="true">
       <template #leftColumn>
-        <facility-carousel-card :facility="facility" />
+        <facility-carousel-card :key="facility.name" :facility="facility" />
       </template>
       <!--end col-->
 

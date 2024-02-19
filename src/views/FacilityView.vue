@@ -1,22 +1,18 @@
 <template>
-  <div :style="{height: navHeight + 'px'}"></div>
+  <div :style="{ height: navHeight + 'px' }"></div>
   <facility v-if="filteredFacility" :facility="filteredFacility"></facility>
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, computed, watch, onUnmounted } from "vue";
+import { defineComponent, computed, watch, ref } from "vue";
 
 import Facility from "@/components/Facilities/Facility.vue";
 
-import { UPDATE_SELECTED_FACILITY_NAME } from "@/store/constants";
-import { useStore } from "vuex";
 import { useRoute } from "vue-router";
 
-import { key } from "@/store";
-import {
-  useFilteredFacilities,
-  useFetchFacilitiesDispatch,
-} from "@/store/composables";
+import { facilities } from "@/data";
+import router from "@/router";
+import { Facility as FacilityType } from "@/api/types";
 
 export default defineComponent({
   name: "FacilityView",
@@ -24,27 +20,23 @@ export default defineComponent({
     Facility,
   },
   setup() {
-    const store = useStore(key);
-
-    const parseFacilityName = () => {
-      const route = useRoute();
-      const name = (route.params.name as String) || "";
-      store.commit(UPDATE_SELECTED_FACILITY_NAME, name);
-    };
-    const removeFacilityName = () => {
-      store.commit(UPDATE_SELECTED_FACILITY_NAME, "");
-    };
-    onMounted(useFetchFacilitiesDispatch);
-    onMounted(parseFacilityName);
-    onUnmounted(removeFacilityName);
-    let filteredFacility = computed(() => useFilteredFacilities().value[0]);
+    const filteredFacility = ref<FacilityType | null>(null);
 
     const route = useRoute();
 
     watch(
       () => route.params.name,
-      async (name) => {
-        store.commit(UPDATE_SELECTED_FACILITY_NAME, name || "");
+      (name) => {
+        const newFacility =
+          facilities.find((facility) => {
+            return facility.name.toLowerCase() === String(name).toLowerCase();
+          }) ?? null;
+
+        if (!newFacility) {
+          router.push(`/Facilities/${facilities[0].name}`);
+        }
+
+        filteredFacility.value = newFacility;
       },
       { immediate: true, deep: true }
     );

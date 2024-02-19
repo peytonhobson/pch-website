@@ -1,9 +1,9 @@
 <template>
-  <div class="hero h-screen relative">
+  <div class="hero h-screen relative hero-overlay">
     <img
       :src="getImgURL(imageUrl)"
       alt="Hero"
-      class="object-cover w-full h-full hero-overlay bg-opacity-60"
+      class="object-cover w-full h-full filter brightness-75"
       rel="preload"
     />
     <div
