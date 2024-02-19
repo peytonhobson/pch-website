@@ -6,7 +6,7 @@
     <li id="Home">
       <router-link
         :to="listItemsReturned[0].to"
-        :class="navItemClass"
+        :class="navItemClass[listItemsReturned[0].to]"
         aria-current="page"
         >{{ listItemsReturned[0].text }}</router-link
       >
@@ -15,7 +15,7 @@
       <router-link
         :to="listItemsReturned[1].to"
         aria-current="page"
-        :class="navItemClass"
+        :class="navItemClass[listItemsReturned[1].to]"
       >
         {{ listItemsReturned[1].text }}
       </router-link>
@@ -28,7 +28,7 @@
     >
       <router-link
         :to="listItemsReturned[2].to"
-        :class="navItemClass"
+        :class="navItemClass[listItemsReturned[2].to]"
         aria-current="page"
         >{{ listItemsReturned[2].text }}</router-link
       >
@@ -49,7 +49,7 @@
     <li id="Testimonials">
       <router-link
         :to="listItemsReturned[3].to"
-        :class="navItemClass"
+        :class="navItemClass[listItemsReturned[3].to]"
         aria-current="page"
         >{{ listItemsReturned[3].text }}</router-link
       >
@@ -57,7 +57,7 @@
     <li id="About-Us">
       <router-link
         :to="listItemsReturned[4].to"
-        :class="navItemClass"
+        :class="navItemClass[listItemsReturned[4].to]"
         aria-current="page"
         >{{ listItemsReturned[4].text }}</router-link
       >
@@ -103,11 +103,18 @@ export default defineComponent({
     const route = useRoute();
 
     const navItemClass = computed(() => {
-      return {
-        ["nav-list-item"]: true,
-        ["text-white"]:
-          transparentBackground.value && !route.path.match(/\/(Facilities\/)/g),
-      };
+      return listItemsReturned.value.reduce((acc, item) => {
+        return {
+          ...acc,
+          [item.to]: {
+            ["nav-list-item"]: true,
+            ["text-white"]:
+              transparentBackground.value &&
+              !route.path.match(/\/(Facilities\/)/g),
+            ["selected"]: route.path === item.to,
+          },
+        };
+      }, {} as Record<string, object>);
     });
 
     watch(

@@ -11,7 +11,7 @@
         >
           <router-link
             :to="listItem.to"
-            class="block py-2 pr-4 pl-3 md:px-0 md:py-5 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline bg-transparent"
+            :class="navItemClass[listItem.to]"
             aria-current="page"
             >{{ listItem.text }}</router-link
           >
@@ -22,7 +22,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent } from "vue";
+import { useRoute } from "vue-router";
 
 interface Route {
   text: string;
@@ -41,6 +42,32 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {},
+  setup(props) {
+    const route = useRoute();
+
+    const navItemClass = computed(() => {
+      return props.listItems.reduce((acc, item) => {
+        return {
+          ...acc,
+          [item.to]: {
+            ["nav-list-item"]: true,
+            ["selected"]: route.path === item.to,
+          },
+        };
+      }, {} as Record<string, object>);
+    });
+
+    return { navItemClass };
+  },
 });
 </script>
+
+<style scoped>
+.nav-list-item {
+  @apply block py-2 pr-4 pl-3 md:px-0 md:py-5 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline bg-transparent;
+}
+
+.selected {
+  @apply underline text-brand-green-gray;
+}
+</style>
