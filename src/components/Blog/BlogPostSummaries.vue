@@ -16,7 +16,7 @@ import { defineComponent } from "vue";
 
 import BlogPostSummary from "@/components/Blog/BlogPostSummary.vue";
 
-import { Post } from "@/api/types";
+import { Post } from "@/types/types";
 
 export default defineComponent({
   name: "BlogPostSummaries",

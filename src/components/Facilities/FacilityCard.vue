@@ -17,7 +17,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { Facility } from "@/api/types";
+import { Facility } from "@/types/types";
 import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({

@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { ResourceType } from "@/api/types";
+import { ResourceType } from "@/types/types";
 import Card from "@/components/Shared/Card.vue";
 
 export default defineComponent({

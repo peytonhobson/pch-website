@@ -7,7 +7,7 @@
   />
   <section class="flex flex-wrap justify-evenly py-10 show-on-scroll bg-mint">
     <router-link
-      v-for="facility in filteredFacilities"
+      v-for="facility in facilities"
       :key="facility.id"
       :to="`/Facilities/${facility.name.toLowerCase()}`"
       class="w-5/6 md:w-2/5 xl:h-60 my-10 hover:cursor-pointer"
@@ -25,10 +25,7 @@ import { defineComponent, onMounted } from "vue";
 
 import FacilityCard from "@/components/Facilities/FacilityCard.vue";
 import setScrollObserver from "@/composables/setScrollObserver";
-import {
-  useFilteredFacilities,
-  useFetchFacilitiesDispatch,
-} from "@/store/composables";
+import { facilities } from "@/data/Facilities.en";
 import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
@@ -39,9 +36,6 @@ export default defineComponent({
   },
   setup() {
     onMounted(setScrollObserver);
-    onMounted(useFetchFacilitiesDispatch);
-
-    const filteredFacilities = useFilteredFacilities();
 
     const heroProps = {
       title: "FACILITIES",
@@ -49,7 +43,7 @@ export default defineComponent({
       backgroundImage: "other/facilities-hero.jpg",
     };
 
-    return { filteredFacilities, heroProps };
+    return { facilities, heroProps };
   },
 });
 </script>

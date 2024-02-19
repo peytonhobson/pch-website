@@ -12,7 +12,7 @@ import { useRoute } from "vue-router";
 
 import { facilities } from "@/data";
 import router from "@/router";
-import { Facility as FacilityType } from "@/api/types";
+import { Facility as FacilityType } from "@/types/types";
 
 export default defineComponent({
   name: "FacilityView",
@@ -20,19 +20,26 @@ export default defineComponent({
     Facility,
   },
   setup() {
-    const filteredFacility = ref<FacilityType | null>(null);
+    const findFacility = computed(() => {
+      return (name: string) => {
+        return facilities.find((facility) => {
+          return facility.name.toLowerCase() === name.toLowerCase();
+        });
+      };
+    });
 
     const route = useRoute();
+
+    const filteredFacility = ref<FacilityType | undefined>(
+      findFacility.value(String(route.params.name))
+    );
 
     watch(
       () => route.params.name,
       (name) => {
-        const newFacility =
-          facilities.find((facility) => {
-            return facility.name.toLowerCase() === String(name).toLowerCase();
-          }) ?? null;
+        const newFacility = findFacility.value(String(name));
 
-        if (!newFacility) {
+        if (!newFacility && route.path.includes("Facilities")) {
           router.push(`/Facilities/${facilities[0].name}`);
         }
 

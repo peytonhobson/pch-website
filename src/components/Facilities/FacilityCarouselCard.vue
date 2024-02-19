@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, toRefs, ref, onMounted, onBeforeUnmount } from "vue";
 
-import { Facility } from "@/api/types";
+import { Facility } from "@/types/types";
 import Card from "@/components/Shared/Card.vue";
 import Carousel from "@/components/Shared/Carousel/Carousel.vue";
 

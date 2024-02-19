@@ -25,7 +25,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { Facility } from "@/api/types";
+import { Facility } from "@/types/types";
 import MapDirections from "@/components/Facilities/MapDirections.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";

@@ -53,7 +53,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "vue";
 
-import { Post } from "@/api/types";
+import { Post } from "@/types/types";
 import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({

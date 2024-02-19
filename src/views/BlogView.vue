@@ -14,13 +14,13 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, onMounted, ComputedRef } from "vue";
+import { computed, defineComponent, ComputedRef } from "vue";
 
 import BlogPostSummaries from "@/components/Blog/BlogPostSummaries.vue";
 import BlogPagination from "@/components/Blog/BlogPagination.vue";
 import useCurrentPage from "@/composables/useCurrentPage";
 import usePreviousAndNextPages from "@/composables/usePreviousAndNextPages";
-import { useFetchPostsDispatch, useFilteredPosts } from "@/store/composables";
+import { posts } from "@/data/Blog.en";
 import Hero from "@/components/Shared/Hero/Hero.vue";
 
 export default defineComponent({
@@ -31,13 +31,9 @@ export default defineComponent({
     Hero,
   },
   setup() {
-    onMounted(useFetchPostsDispatch);
-
-    const filteredPosts = useFilteredPosts();
-
     const currentPage = useCurrentPage();
 
-    const maxPage = computed(() => Math.ceil(filteredPosts.value.length / 5));
+    const maxPage = computed(() => Math.ceil(posts.length / 5));
     const {
       previousPage,
       nextPage,
@@ -50,7 +46,7 @@ export default defineComponent({
       const pageNumber = currentPage.value;
       const firstJobIndex = (pageNumber - 1) * 5;
       const lastJobIndex = pageNumber * 5;
-      return filteredPosts.value.slice(firstJobIndex, lastJobIndex);
+      return posts.slice(firstJobIndex, lastJobIndex);
     });
 
     const heroProps = {

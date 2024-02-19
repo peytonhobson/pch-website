@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import { Testimonial } from "@/api/types";
+import { Testimonial } from "@/types/types";
 
 export default defineComponent({
   name: "TestimonialCard",

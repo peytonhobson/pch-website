@@ -13,7 +13,6 @@ import Notifications from "@kyvg/vue3-notification";
 import App from "./App.vue";
 import router from "./router";
 import "@/assets/tailwind.css";
-import store, { key } from "./store";
 import VueLazyload from "vue-lazyload";
 
 library.add(faBriefcaseMedical);
@@ -23,7 +22,6 @@ library.add(faBars);
 library.add(faCheck);
 
 createApp(App)
-  .use(store, key)
   .use(Notifications)
   .use(VueLazyload, {
     preLoad: 1.3,

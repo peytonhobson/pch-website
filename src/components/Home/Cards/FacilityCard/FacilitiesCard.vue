@@ -7,18 +7,17 @@
     @mouseleave="changeFacility"
   >
     <template #image>
-    <div class="h-full w-full">
-      <Transition>
-        <carousel
-          v-if="show"
-          class="rounded-t-2xl"
-          :image-links="imageLinks"
-          :cur-index="curIndex"
-          @next="nextFacility"
-          @prev="prevFacility"
-          
-        />
-      </Transition>
+      <div class="h-full w-full">
+        <Transition>
+          <carousel
+            v-if="show"
+            class="rounded-t-2xl"
+            :image-links="imageLinks"
+            :cur-index="curIndex"
+            @next="nextFacility"
+            @prev="prevFacility"
+          />
+        </Transition>
       </div>
     </template>
     <template #title>
@@ -54,13 +53,11 @@ import {
 } from "vue";
 
 import Card from "@/components/Shared/Card.vue";
-import {
-  useFetchFacilitiesDispatch,
-  useFilteredFacilities,
-} from "@/store/composables";
 import setScrollObserverCarousel from "@/composables/setScrollObserverCarousel";
 import Carousel from "@/components/Shared/Carousel/Carousel.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
+import { Facility } from "@/types/types";
+import { facilities } from "@/data";
 
 export default defineComponent({
   name: "FacilitiesCard",
@@ -70,14 +67,11 @@ export default defineComponent({
     ActionButton,
   },
   setup() {
-    const facilities = useFilteredFacilities();
-    onMounted(useFetchFacilitiesDispatch);
-
     const imageLinks = computed(() =>
-      facilities.value.map((facility) => facility.images[0])
+      facilities.map((facility: Facility) => facility.images[0])
     );
 
-    const curFacility = computed(() => facilities.value[curIndex.value]);
+    const curFacility = computed(() => facilities[curIndex.value]);
 
     const curIndex = ref(0);
     const show = ref(true);
@@ -85,7 +79,7 @@ export default defineComponent({
     const changeFacility = () => {
       interval = setInterval(() => {
         show.value = !show.value;
-        curIndex.value = (curIndex.value + 1) % facilities.value.length;
+        curIndex.value = (curIndex.value + 1) % facilities.length;
         setTimeout(() => (show.value = !show.value), 1000);
       }, 5000);
     };
@@ -95,15 +89,14 @@ export default defineComponent({
 
     const nextFacility = () => {
       show.value = !show.value;
-      curIndex.value = (curIndex.value + 1) % facilities.value.length;
+      curIndex.value = (curIndex.value + 1) % facilities.length;
       setTimeout(() => (show.value = !show.value), 1000);
     };
 
     const prevFacility = () => {
       show.value = !show.value;
       curIndex.value =
-        (curIndex.value + facilities.value.length - 1) %
-        facilities.value.length;
+        (curIndex.value + facilities.length - 1) % facilities.length;
       setTimeout(() => (show.value = !show.value), 1000);
     };
 
