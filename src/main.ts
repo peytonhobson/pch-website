@@ -28,7 +28,10 @@ const app = createApp(App);
 const { setLoading } = useLoadingState();
 
 router.beforeEach((to, from, next) => {
-  setLoading(true);
+  console.log(from);
+  if (!from.name) {
+    setLoading(true);
+  }
   next();
 });
 
