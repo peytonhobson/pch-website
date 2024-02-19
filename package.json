@@ -6,18 +6,13 @@
     "serve": "vue-cli-service serve --host 0.0.0.0",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "backend": "json-server --watch"
+    "backend": "json-server --watch",
+    "unimported": "unimported"
   },
   "dependencies": {
     "@kyvg/vue3-notification": "github:kyvg/vue3-notification",
-    "autoprefixer": "^10",
-    "core-js": "^3.8.3",
-    "node-mailjet": "^5.1.1",
-    "postcss": "^8",
-    "tailwindcss": "^3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
@@ -40,14 +35,15 @@
     "axios": "^0.27.2",
     "daisyui": "^2.31.0",
     "emailjs": "^4.0.1",
-    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^7.0.0-beta.4",
+    "eslint": "^7.32.0",
     "json-server": "^0.4.2",
     "prettier": "^2.7.1",
     "tailwindcss-animate": "^1.0.5",
     "typescript": "~4.5.5",
+    "unimported": "^1.31.1",
     "vee-validate": "^4.6.10",
     "vue-check-view": "^0.3.0",
     "vue-cli-plugin-tailwind": "~3.0.0",
