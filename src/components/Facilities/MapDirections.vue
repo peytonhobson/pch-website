@@ -1,5 +1,5 @@
 <template>
-  <div class="w-5/6 md:w-full prose flex flex-wrap items-stretch">
+  <div class="w-full prose flex flex-wrap items-stretch">
     <div class="mapouter w-full mt-10 md:mt-10">
       <div class="gmap_canvas flex w-full h-full">
         <iframe

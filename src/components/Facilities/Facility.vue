@@ -1,25 +1,21 @@
 <template>
   <div
     v-if="facility"
-    class="flex lg:h-[88vh] justify-center lg:items-center bg-mint"
+    class="flex-col flex md:flex-row lg:min-h-[88vh] md:py-10 md:px-20 gap-10 md:gap-20 md:justify-center items-center bg-mint"
   >
-    <dual-item-display :reverse-column="false" :items-start="true">
-      <template #leftColumn>
-        <facility-carousel-card :key="facility.name" :facility="facility" />
-      </template>
-      <!--end col-->
+    <facility-carousel-card :key="facility.name" :facility="facility" />
+    <!--end col-->
 
-      <template #rightColumn>
-        <div class="flex flex-wrap justify-center mt-10 md:my-10 lg:my-0">
-          <simple-description
-            :header="facility.name"
-            :text="facility.description"
-          />
-          <map-directions :location-link="facility.location" />
-        </div>
-      </template>
-    </dual-item-display>
+    <div class="prose w-5/6 md:w-full md:max-w-lg lg:max-w-xl flex-col">
+      <h2 class="mb-5 text-left">
+        {{ facility.name }}
+      </h2>
+      <!-- eslint-disable vue/no-v-html -->
+      <p class="text-left" v-html="facility.description"></p>
+      <map-directions :location-link="facility.location" />
+    </div>
   </div>
+  <!-- TODO: Add see other facilities -->
 </template>
 
 <script lang="ts">
@@ -27,16 +23,12 @@ import { defineComponent } from "vue";
 
 import { Facility } from "@/types/types";
 import MapDirections from "@/components/Facilities/MapDirections.vue";
-import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import FacilityCarouselCard from "@/components/Facilities/FacilityCarouselCard.vue";
 
 export default defineComponent({
   name: "Facility",
   components: {
     MapDirections,
-    SimpleDescription,
-    DualItemDisplay,
     FacilityCarouselCard,
   },
   props: {

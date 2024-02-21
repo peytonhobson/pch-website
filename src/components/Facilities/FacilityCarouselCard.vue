@@ -1,24 +1,22 @@
 <template>
-  <div class="h-80 w-full lg:h-144 lg:my-auto">
-    <Transition>
-      <card
-        v-if="show"
-        :body="false"
-        class="h-80 w-full lg:h-144 rounded-none lg:rounded-2xl"
-        @mouseenter="clearImageInterval"
-        @mouseleave="changeImage"
-      >
-        <template #other>
-          <carousel
-            :image-links="facility.images"
-            :cur-index="curIndex"
-            @next="nextImage"
-            @prev="prevImage"
-          />
-        </template>
-      </card>
-    </Transition>
-  </div>
+  <Transition>
+    <card
+      v-if="show"
+      :body="false"
+      class="h-80 w-full md:max-w-lg lg:h-full rounded-none md:rounded-2xl"
+      @mouseenter="clearImageInterval"
+      @mouseleave="changeImage"
+    >
+      <template #other>
+        <carousel
+          :image-links="facility.images"
+          :cur-index="curIndex"
+          @next="nextImage"
+          @prev="prevImage"
+        />
+      </template>
+    </card>
+  </Transition>
 </template>
 
 <script lang="ts">

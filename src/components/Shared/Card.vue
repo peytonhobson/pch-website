@@ -1,5 +1,5 @@
 <template>
-  <div class="card shadow-2xl bg-white {classes}">
+  <div :class="`card shadow-2xl bg-white ${classes}`">
     <figure v-if="image" class="m-0 h-2/5">
       <slot name="image"></slot>
     </figure>

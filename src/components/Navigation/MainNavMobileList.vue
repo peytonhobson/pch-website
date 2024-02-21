@@ -61,7 +61,7 @@ export default defineComponent({
   },
 });
 </script>
-
+z
 <style scoped>
 .nav-list-item {
   @apply block py-2 pr-4 pl-3 md:px-0 md:py-5 hover:text-brand-green-gray font-bold text-lg md:text-base underline-offset-8 decoration-4 hover:underline bg-transparent;
