@@ -1,5 +1,5 @@
 <template>
-  <div class="hero h-screen relative hero-overlay overflow-hidden">
+  <div class="hero h-screen lg:min-h-96 relative hero-overlay overflow-hidden">
     <img
       :src="imageUrl"
       alt="Hero"
@@ -7,13 +7,9 @@
       rel="preload"
     />
     <div
-      class="hero-content text-center text-neutral-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+      class="hero-content w-full px-10 text-center text-neutral-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
     >
-      <hero-slogan
-        :title="title"
-        :text="text"
-        class="items-center justify-center"
-      >
+      <hero-slogan :title="title" :text="text">
         <slot></slot>
       </hero-slogan>
     </div>

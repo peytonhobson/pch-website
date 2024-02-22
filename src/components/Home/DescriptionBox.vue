@@ -8,7 +8,7 @@
       </h2>
     </template>
     <template #body>
-      <p class="text-left pb-0 max-h-20">
+      <p class="text-left pb-0 mb-0">
         {{ body }}
       </p>
     </template>

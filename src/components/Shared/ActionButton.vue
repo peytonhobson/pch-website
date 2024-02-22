@@ -22,14 +22,21 @@ export default {
         return ["primary", "card"].includes(value);
       },
     },
+    additionalClasses: {
+      type: String,
+      required: false,
+      default: "",
+    },
   },
-  emits: ['click'],
+  emits: ["click"],
   setup(props) {
-    const { type } = toRefs(props);
+    const { type, additionalClasses } = toRefs(props);
 
     const buttonClass = computed(() => {
-      return { [type.value]: true };
+      return { [additionalClasses.value]: true, [type.value]: true };
     });
+
+    console.log(buttonClass.value);
 
     return { buttonClass };
   },
@@ -42,14 +49,14 @@ button {
 }
 
 .primary {
-  @apply btn btn-block btn-md md:btn-lg rounded-full bg-brand-green-gray border-none hover:bg-brand-dark-green no-underline;
+  @apply btn btn-block btn-md rounded-lg bg-brand-green-gray border-none hover:bg-brand-dark-green no-underline;
 }
 
 .card {
-  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-dark-green no-underline;
+  @apply btn btn-block btn-md bg-brand-green-gray border-none hover:bg-brand-dark-green no-underline;
 }
 
 .facility {
-  @apply btn btn-block btn-lg bg-brand-green-gray border-none hover:bg-brand-dark-green no-underline;
+  @apply btn btn-block btn-md bg-brand-green-gray border-none hover:bg-brand-dark-green no-underline;
 }
 </style>

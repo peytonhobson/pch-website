@@ -4,18 +4,17 @@
       <h2 class="card-title">Contact Us</h2>
     </template>
     <template #body>
-      <p class="text-left pb-0 max-h-20">
+      <p class="text-left pb-0 flex-grow-0">
         We would like to hear from you, talk to you, and/or give you a tour of
         one of our wonderful homes.
       </p>
-      <div class="flex flex-wrap p-0">
+      <div class="flex flex-col gap-8 justify-center flex-grow">
         <contact-info
           v-for="contact in contacts"
           :key="contact.number"
           image="@/assets/Headshot.jpg"
           :contact-info="contact"
           :number="contact.number"
-          class="my-2.5"
         />
       </div>
     </template>

@@ -1,10 +1,9 @@
 <template>
   <div
     v-if="facility"
-    class="flex-col flex md:flex-row lg:min-h-[88vh] md:py-10 md:px-20 gap-10 md:gap-20 md:justify-center items-center bg-mint"
+    class="flex-col flex lg:flex-row lg:min-h-[88vh] md:py-10 md:px-20 gap-10 lg:gap-20 md:justify-center items-center bg-mint"
   >
     <facility-carousel-card :key="facility.name" :facility="facility" />
-    <!--end col-->
 
     <div class="prose w-5/6 md:w-full md:max-w-lg lg:max-w-xl flex-col">
       <h2 class="mb-5 text-left">

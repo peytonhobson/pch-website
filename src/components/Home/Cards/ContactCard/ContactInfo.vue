@@ -1,35 +1,25 @@
 <template>
-  <div :class="outerClass">
-    <div
-      class="col-start-1 col-span-1 pr-2 py-2 md:p-2 flex items-center justify-center"
-    >
-      <div class="avatar">
-        <div class="w-[17vw] md:w-20 rounded-full">
-          <font-awesome-icon
-            :icon="['fas', 'user-circle']"
-            class="h-full w-full text-brand-green-gray"
-          />
-          <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
-        </div>
-      </div>
+  <div class="flex items-center gap-8">
+    <div class="w-20 h-20 rounded-full">
+      <font-awesome-icon
+        :icon="['fas', 'user-circle']"
+        class="h-full w-full text-brand-green-gray"
+      />
+      <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
     </div>
-    <div class="col-start-2 col-span-3 grid grid-rows-4 place-items-center">
-      <span
-        class="text-xs xl:text-sm w-full text-left font-bold row-start-1 row-span-1 font-sans"
-      >
+    <div class="flex-col">
+      <p class="text-xs xl:text-sm text-left font-bold font-sans my-0">
         {{ contactInfo.name }}
-      </span>
-      <span
-        class="text-xs xl:text-sm w-full text-left row-start-2 row-span-1 font-sans"
-        >{{ contactInfo.title }}</span
-      >
-      <span
-        class="text-xs xl:text-sm w-full text-left row-start-3 row-span-1 font-sans"
-        >{{ contactInfo.phoneNumber }}</span
-      >
+      </p>
+      <p class="text-xs xl:text-sm text-left font-sans my-0">
+        {{ contactInfo.title }}
+      </p>
+      <p class="text-xs xl:text-sm text-left font-sans my-0">
+        {{ contactInfo.phoneNumber }}
+      </p>
       <a
         :href="`mailto:${contactInfo.email}`"
-        class="text-xs xl:text-sm w-full text-left row-start-4 row-span-1 font-sans"
+        class="text-xs xl:text-sm text-left font-sans"
         >{{ contactInfo.email }}</a
       >
     </div>
@@ -79,7 +69,7 @@ export default defineComponent({
 
 <style scoped>
 .outer-div {
-  @apply md:px-2 row-span-2 grid grid-cols-4 place-items-center;
+  @apply flex;
 }
 
 .row-1 {

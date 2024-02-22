@@ -1,70 +1,60 @@
 <template>
-  <Form id="contact-form" class="w-3/4 form" @submit="onSubmit">
-    <div class="md:grid grid-cols-10 mb-8 w-full">
-      <div class="mr-3 col-span-3 flex items-center justify-start">
-        <label
-          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
-          for="inline-password"
+  <Form id="contact-form" class="w-3/4 flex flex-col gap-6" @submit="onSubmit">
+    <div>
+      <label
+        class="block text-gray-500 font-bold text-left mb-1 md:mb-0"
+        for="inline-password"
+      >
+        Full Name<span class="text-red-500">*</span> :
+      </label>
+      <Field
+        name="name"
+        type="text"
+        placeholder="John Smith"
+        :rules="schema.name"
+        class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
+      />
+      <ErrorMessage name="name" class="text-red-500 mt-1 text-left" as="div" />
+    </div>
+    <div>
+      <label
+        class="block text-gray-500 font-bold mb-1 md:mb-0 text-left"
+        for="inline-password"
+      >
+        Email<span class="text-red-500">*</span> :
+      </label>
+      <Field
+        name="email"
+        type="text"
+        placeholder="john.smith@example.com"
+        :rules="schema.email"
+        class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
+      />
+      <ErrorMessage name="email" class="text-red-500 mt-1 text-left" as="div" />
+    </div>
+    <div>
+      <label
+        class="block text-gray-500 font-bold mb-2 md:mb-0 text-left"
+        for="inline-password"
+      >
+        <span class="whitespace-nowrap"
+          >Subject<span class="text-red-500">*</span> :</span
         >
-          Full <span class="whitespace-nowrap">Name<span class="text-red-500">*</span> :</span>
-        </label>
-      </div>
-      <div class="flex-1 col-span-7">
-        <Field
-          name="name"
-          type="text"
-          placeholder="John Smith"
-          :rules="schema.name"
-          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
-        />
-        <ErrorMessage name="name" class="text-red-500" as="div" />
-      </div>
+      </label>
+      <Field
+        name="subject"
+        as="textarea"
+        placeholder="Your Question..."
+        :rules="schema.subject"
+        class="pb-6 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray min-h-10"
+      />
+      <ErrorMessage
+        name="subject"
+        class="text-red-500 mt-1 text-left"
+        as="div"
+      />
     </div>
-    <div class="md:grid grid-cols-10 mb-8 w-full">
-      <div class="mr-3 col-span-3 h-full flex items-center justify-start">
-        <label
-          class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 text-left"
-          for="inline-password"
-        >
-          <span class="whitespace-nowrap">Email<span class="text-red-500">*</span> :</span>
-        </label>
-      </div>
-      <div class="flex-1 col-span-7">
-        <Field
-          name="email"
-          type="text"
-          placeholder="john.smith@example.com"
-          :rules="schema.email"
-          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
-        />
-        <ErrorMessage name="email" class="text-red-500" as="div" />
-      </div>
-    </div>
-    <div class="md:grid grid-cols-10 mb-8">
-      <div class="mr-3 col-span-3 flex items-start justify-start">
-        <label
-          class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4 text-left"
-          for="inline-password"
-        >
-          <span class="whitespace-nowrap">Subject<span class="text-red-500">*</span> :</span>
-        </label>
-      </div>
-      <div class="flex-1 col-span-7">
-        <Field
-          name="subject"
-          as="textarea"
-          placeholder="Your Question..."
-          :rules="schema.subject"
-          class="pb-6 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
-        />
-        <ErrorMessage name="subject" class="text-red-500" as="div" />
-      </div>
-    </div>
-    <div class="md:grid md:grid-cols-10">
-      <div class="md:col-start-5 md:col-span-5 flex">
-        <action-button class="w-full" text="Submit" type="primary" />
-      </div>
-    </div>
+    <action-button class="w-full" text="Submit" type="primary" />
   </Form>
 </template>
 
