@@ -1,90 +1,80 @@
 <template>
-  <Form id="resume-form" class="w-3/4 form" @submit="onSubmit">
-    <div class="md:grid grid-cols-10 mb-10">
-      <div class="col-span-4 flex items-center justify-start">
-        <label
-          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
-          for="inline-full-name"
+  <Form id="resume-form" class="w-3/4 flex flex-col gap-8" @submit="onSubmit">
+    <div>
+      <label
+        class="block text-gray-500 font-bold text-left mb-1 md:mb-0"
+        for="inline-full-name"
+      >
+        Full
+        <span class="whitespace-nowrap"
+          >Name<span class="text-red-500">*</span> :</span
         >
-          Full <span class="whitespace-nowrap">Name<span class="text-red-500">*</span> :</span>
-        </label>
-      </div>
-      <div class="flex-1 col-span-6">
-        <Field
-          name="name"
-          type="text"
-          :rules="schema.name"
-          placeholder="John Smith"
-          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
-        />
-        <ErrorMessage name="name" class="text-red-500" as="div" />
-      </div>
+      </label>
+      <Field
+        name="name"
+        type="text"
+        :rules="schema.name"
+        placeholder="John Smith"
+        class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
+      />
+      <ErrorMessage name="name" class="text-red-500 text-left mt-1" as="div" />
     </div>
-    <div class="md:grid grid-cols-10 mb-10">
-      <div class="col-span-4 flex items-center justify-start">
-        <label
-          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
-          for="inline-email"
+    <div>
+      <label
+        class="block text-gray-500 font-bold text-left mb-1 md:mb-0"
+        for="inline-email"
+      >
+        Email<span class="text-red-500">*</span> :
+      </label>
+
+      <Field
+        name="email"
+        type="email"
+        :rules="schema.email"
+        placeholder="john.smith@example.com"
+        class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
+      />
+      <ErrorMessage name="email" class="text-red-500 text-left mt-1" as="div" />
+    </div>
+    <div>
+      <label
+        class="block text-gray-500 font-bold text-left mb-1 md:mb-0"
+        for="inline-password"
+      >
+        Phone :
+      </label>
+      <Field
+        name="phoneNumber"
+        type="text"
+        :rules="schema.phoneNumber"
+        placeholder="555-555-5555"
+        class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
+      />
+      <ErrorMessage
+        name="phone-number"
+        class="text-red-500 text-left mt-1"
+        as="div"
+      />
+    </div>
+    <div>
+      <label
+        class="block text-gray-500 font-bold text-left mb-4"
+        for="inline-password"
+      >
+        Resumé
+        <span class="whitespace-nowrap"
+          >PDF<span class="text-red-500">*</span> :</span
         >
-          Email<span class="text-red-500">*</span> :
-        </label>
-      </div>
-      <div class="flex-1 col-span-6">
-        <Field
-          name="email"
-          type="email"
-          :rules="schema.email"
-          placeholder="john.smith@example.com"
-          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
-        />
-        <ErrorMessage name="email" class="text-red-500" as="div" />
-      </div>
+      </label>
+      <Field
+        name="file"
+        type="file"
+        :rules="validateFile"
+        class="w-5/6 md:w-full"
+      />
+      <ErrorMessage name="file" class="text-red-500 text-left mt-1" as="div" />
     </div>
-    <div class="md:grid grid-cols-10 mb-10">
-      <div class="col-span-4 flex items-center justify-start">
-        <label
-          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
-          for="inline-password"
-        >
-          Phone :
-        </label>
-      </div>
-      <div class="flex-1 col-span-6">
-        <Field
-          name="phoneNumber"
-          type="text"
-          :rules="schema.phoneNumber"
-          placeholder="555-555-5555"
-          class="py-3 bg-transparent border-b border-black w-full focus:outline-none focus:border-brand-green-gray"
-        />
-        <ErrorMessage name="phone-number" class="text-red-500" as="div" />
-      </div>
-    </div>
-    <div class="md:grid grid-cols-10 mb-10">
-      <div class="col-span-4 flex items-center justify-start">
-        <label
-          class="block text-gray-500 font-bold text-left mb-1 md:mb-0 pr-4"
-          for="inline-password"
-        >
-          Resumé <span class="whitespace-nowrap">PDF<span class="text-red-500">*</span> :</span>
-        </label>
-      </div>
-      <div class="flex-1 col-span-6">
-        <Field
-          name="file"
-          type="file"
-          :rules="validateFile"
-          class="w-5/6 md:w-full"
-        />
-        <ErrorMessage name="file" class="text-red-500" as="div" />
-      </div>
-    </div>
-    <div class="md:flex md:items-center">
-      <div class="md:w-1/3"></div>
-      <div class="md:w-2/3">
-        <action-button text="Submit" type="primary" />
-      </div>
-    </div>
+    <action-button text="Submit" type="primary" />
   </Form>
 </template>
 

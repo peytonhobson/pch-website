@@ -65,7 +65,7 @@ export default defineComponent({
 
     const firstDescriptionHeader = "Submit Your Resumé";
     const firstDescriptionText =
-      "You may use this form to submit your PDF resumé for consideration, or you may send it to employment@premiercarehomes.net.";
+      'You may use this form to submit your PDF resumé for consideration, or you may send it to <a href="mailto:employment@premiercarehomes.net">employment@premiercarehomes.net</a>.';
 
     return {
       requirements,

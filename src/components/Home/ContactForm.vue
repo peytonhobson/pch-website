@@ -1,5 +1,5 @@
 <template>
-  <Form id="contact-form" class="w-3/4 flex flex-col gap-6" @submit="onSubmit">
+  <Form id="contact-form" class="w-3/4 flex flex-col gap-8" @submit="onSubmit">
     <div>
       <label
         class="block text-gray-500 font-bold text-left mb-1 md:mb-0"
