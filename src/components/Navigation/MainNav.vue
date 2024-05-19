@@ -1,10 +1,10 @@
 <template>
   <nav :class="navClass">
-    <div class="flex-1 mx-2 items-center justify-start">
+    <div class="flex-1 mx-2 items-center justify-start cursor-pointer">
       <router-link to="/" class="flex items-center">
         <img
           :src="getImgURL('other/premier-care-homes-logo1.png')"
-          class="mr-3 h-16 md:h-20 min-w-[15rem]"
+          class="mr-3 h-16 md:h-20 min-w-[15rem] hover:cursor-pointer"
           alt="Premier Care Homes Logo"
         />
       </router-link>

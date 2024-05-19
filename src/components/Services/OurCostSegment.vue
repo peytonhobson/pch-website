@@ -1,46 +1,49 @@
 <template>
-  <dual-item-display
-    class="h-full flex flex-col items-stretch"
-    :reverse-column="true"
-  >
-    <template #leftColumn>
-      <image-card
-        class="mt-10 md:mt-10 lg:mt-0 h-2/3 md:h-144 w-5/6 md:w-3/4 lg:w-full duration-500 lg:hover:-translate-y-5 transition-all md:max-w-lg lg:max-w-none"
-        image-link="madrona/madrona-5.jpg"
-      />
-    </template>
-    <!--end col-->
-    <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none" />
-    </template>
-  </dual-item-display>
+  <div class="w-full flex justify-center px-10">
+    <div class="prose text-left md:max-w-xl lg:max-w-2xl">
+      <h2 class="text-4xl mb-5 text-center">Our Cost</h2>
+
+      <p>
+        At Premier Care Homes, we understand the importance of providing quality
+        care at an affordable price. Our rates are typically lower than those of
+        larger, institutional settings, making personalized care more
+        accessible.
+      </p>
+
+      <p>
+        <strong>Private Pay Facility:</strong> Premier Care Homes operates on a
+        private pay basis, ensuring personalized attention and services tailored
+        to each resident's needs. We also accept long-term care insurance and
+        Veteran’s funding.
+      </p>
+
+      <p>
+        <strong>Comprehensive Assessment:</strong> To determine the most
+        accurate pricing, we conduct a thorough assessment of each individual's
+        care requirements. This personalized approach ensures that residents
+        receive the specific support they need without unnecessary costs.
+      </p>
+
+      <p>
+        <strong>Rates:</strong> For detailed rate information and to discuss
+        specific care needs, please <a href="tel:503-798-5610">call</a> or
+        <a href="mailto:janelle@premiercarehomes.net">email</a> us. Our team is
+        ready to assist you with any questions and provide the necessary
+        information to make an informed decision.
+      </p>
+      <p>
+        <strong>Important Note:</strong> Please be aware that Medicaid payments
+        are not accepted at this facility. We are dedicated to working with you
+        to find the best financial solution for your loved one's care.
+      </p>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
-import ImageCard from "@/components/Shared/ImageCard.vue";
-import getImgURL from "@/composables/getImgURL";
-
 export default defineComponent({
   name: "OurCostSection",
-  components: {
-    SimpleDescription,
-    DualItemDisplay,
-    ImageCard,
-  },
-  setup() {
-    const descriptionText =
-      "Adult Foster Care Homes generally have lower rates than larger, institutionalized " +
-      "settings. Premier Care Homes is a private pay facility and we accept long term care " +
-      "insurance and Veteran’s funding. Please call or email for rates. " +
-      "<br></br>*****We do not accept medicaid payment*****";
-
-    const descriptionHeader = "Our Cost";
-
-    return { descriptionText, descriptionHeader, getImgURL };
-  },
 });
 </script>

@@ -8,7 +8,11 @@
     </template>
 
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none"  />
+      <simple-description
+        :header="descriptionHeader"
+        :text="descriptionText"
+        class="md:max-w-lg lg:max-w-none"
+      />
     </template>
   </dual-item-display>
 </template>
@@ -30,15 +34,7 @@ export default defineComponent({
   setup() {
     const descriptionHeader = "The Home Care Team";
 
-    const descriptionText =
-      "Our Senior Care Home team at Premier Care Homes consists of staff members that are " +
-      "carefully selected in order to meet our own, and your high standards, ensuring each " +
-      "resident is in a secure, comfortable, and respected environment. All staff have attended " +
-      "and passed a stated required caregiver, dementia, and medication administration " +
-      "course. They are required to complete yearly continuing education and maintain current " +
-      "Red Cross CPR certifications. Everyone is required to have a clean criminal record. " +
-      "Our homes are overseen by medical professionals, including physical therapists, a " +
-      "nurse, and paramedic.";
+    const descriptionText = `The Home Care Team is dedicated to providing a secure, comfortable, and respectful environment for our residents. Each home has a resident manager who has completed the rigorous "Ensuring Quality Care" course through Northwest Senior Disability Services. Our carefully selected staff have passed required courses in caregiving, dementia care, medication administration, and maintain current Red Cross CPR certifications. They also participate in yearly continuing education and are required to have a clean criminal record. Our homes benefit from the oversight of medical professionals, including physical therapists, a nurse, and a paramedic, ensuring comprehensive and attentive care.`;
 
     return { descriptionHeader, descriptionText, getImgURL };
   },

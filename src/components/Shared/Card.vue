@@ -10,6 +10,8 @@
         <slot name="button"></slot>
       </div>
     </div>
+
+    <slot name="otherTitle"></slot>
     <slot name="other"></slot>
   </div>
 </template>

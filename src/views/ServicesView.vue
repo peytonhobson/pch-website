@@ -5,7 +5,7 @@
     :text="heroProps.text"
     class="h-[85vh]"
   />
-  <main class="bg-mint pt-16 pb-32 lg:py-44">
+  <main class="bg-mint pt-20 pb-20 flex flex-col gap-20">
     <our-cost-segment />
     <our-services-section />
   </main>

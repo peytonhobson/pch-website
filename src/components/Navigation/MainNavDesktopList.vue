@@ -133,7 +133,7 @@ export default defineComponent({
 
 <style scoped>
 .nav-list-item {
-  @apply block py-2 px-7 mb-2 md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline hover:text-brand-green-gray;
+  @apply block py-2 px-7 mb-2 md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline hover:text-brand-green-gray cursor-pointer;
 }
 
 .selected {

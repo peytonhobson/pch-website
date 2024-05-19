@@ -1,12 +1,13 @@
 <template>
   <card
     :body="false"
-    class="duration-500 xl:hover:-translate-y-5 transition-all bg-white w-5/6 md:w-full mt-10 lg:mt-0"
+    class="duration-500 xl:hover:-translate-y-5 transition-all bg-white md:max-w-xl md:min-w-[25rem]"
   >
+    <template #otherTitle>
+      <h2 class="text-3xl pt-5 text-center font-bold">What We Provide</h2>
+    </template>
     <template #other>
-      <ul
-        class="font-sans prose w-5/6 xl:w-full py-5 px-5 lg:px-10 xl:py-10 mx-auto"
-      >
+      <ul class="font-sans w-5/6 xl:w-full py-5 px-5 lg:px-10 xl:py-10 mx-auto">
         <li
           v-for="item in serviceItems"
           :key="item"

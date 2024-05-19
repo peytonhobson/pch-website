@@ -80,7 +80,7 @@ export default defineComponent({
       {
         icon: ["fas", "briefcase-medical"],
         title: "Professional Care",
-        body: "Rest assured that your loved ones are being cared for by professional Physical Therapists, an RN, and a paramedic 24 hours a day.",
+        body: "Rest assured our homes are operated and managed by Physical Therapists, an RN, and a paramedic 24 hours a day.",
         iconClass: "primary-icon",
       },
       {
