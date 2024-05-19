@@ -32,9 +32,10 @@
         information to make an informed decision.
       </p>
       <p>
-        <strong>Important Note:</strong> Please be aware that Medicaid payments
-        are not accepted at this facility. We are dedicated to working with you
-        to find the best financial solution for your loved one's care.
+        <strong class="text-red-600">Important Note:</strong> Please be aware
+        that Medicaid payments are not accepted at this facility. We are
+        dedicated to working with you to find the best financial solution for
+        your loved one's care.
       </p>
     </div>
   </div>
