@@ -39,7 +39,6 @@ const routes = [
     name: "home",
     component: HomeView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      console.log(HomeImage);
       preloadImage(HomeImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });

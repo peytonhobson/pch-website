@@ -128,8 +128,7 @@ export default defineComponent({
           "SaV6yXcrzMc0lIWqN"
         )
         .then(
-          (result) => {
-            console.log(result);
+          () => {
             notify({
               type: "success",
               text: "Application submitted successfully!",
@@ -137,7 +136,6 @@ export default defineComponent({
             });
           },
           (error) => {
-            console.log(error);
             notify({
               type: "error",
               text: error.text,

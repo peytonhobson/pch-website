@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="flex flex-col p-4 mr-5 mt-4 w-full justify-end md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0"
+    class="flex flex-grow p-4 mx-5 gap-5 max-w-3xl justify-between"
     role="group"
   >
     <li id="Home">
@@ -133,7 +133,7 @@ export default defineComponent({
 
 <style scoped>
 .nav-list-item {
-  @apply block py-2 px-7 mb-2 md:py-0 font-bold text-lg underline-offset-8 decoration-4 hover:underline hover:text-brand-green-gray cursor-pointer;
+  @apply block py-2 mb-2 md:py-0 font-bold text-base lg:text-lg underline-offset-8 decoration-4 hover:underline hover:text-brand-green-gray cursor-pointer;
 }
 
 .selected {

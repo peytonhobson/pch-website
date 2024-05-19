@@ -36,8 +36,6 @@ export default {
       return { [additionalClasses.value]: true, [type.value]: true };
     });
 
-    console.log(buttonClass.value);
-
     return { buttonClass };
   },
 };

@@ -1,20 +1,19 @@
 <template>
   <nav :class="navClass">
-    <div class="flex-1 mx-2 items-center justify-start cursor-pointer">
+    <div class="mx-2 items-center justify-start cursor-pointer">
       <router-link to="/" class="flex items-center">
         <img
           :src="getImgURL('other/premier-care-homes-logo1.png')"
-          class="mr-3 h-16 md:h-20 min-w-[15rem] hover:cursor-pointer"
+          class="h-16 min-w-[12rem] lg:h-20 lg:min-w-[15rem] hover:cursor-pointer"
           alt="Premier Care Homes Logo"
         />
       </router-link>
     </div>
-    <div v-if="!isMobile" class="flex-none md:mx-auto lg:mx-0">
-      <main-nav-desktop-list
-        :transparent-background="transparentBackground"
-        :list-items="listItems"
-      />
-    </div>
+    <main-nav-desktop-list
+      v-if="!isMobile"
+      :transparent-background="transparentBackground"
+      :list-items="listItems"
+    />
     <div v-else class="flex-none mx-2">
       <main-nav-mobile-button
         :white-text="
@@ -77,11 +76,11 @@ export default defineComponent({
 
     const isOpen = ref(false);
 
-    const isMobile = ref(window.innerWidth < 1024);
+    const isMobile = ref(window.innerWidth < 768);
 
     // Step 2: Define the resize handler function
     function handleResize() {
-      isMobile.value = window.innerWidth < 1024;
+      isMobile.value = window.innerWidth < 768;
     }
 
     // Step 3: Add the event listener when the component mounts
@@ -140,7 +139,7 @@ export default defineComponent({
 
 <style scoped>
 .navbar-main {
-  @apply navbar w-full py-2 xl:h-[12vh] fixed flex flex-wrap items-center top-0 z-50 px-0;
+  @apply navbar w-full py-2 xl:h-[12vh] fixed flex flex-wrap justify-between items-center top-0 z-50 px-0;
   transition: background-color 0.5s ease 0s;
 }
 
