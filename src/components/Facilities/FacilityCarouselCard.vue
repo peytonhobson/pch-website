@@ -48,8 +48,8 @@ export default defineComponent({
       interval = setInterval(() => {
         show.value = !show.value;
         curIndex.value = (curIndex.value + 1) % facility.value.images.length;
-        setTimeout(() => (show.value = !show.value), 1000);
-      }, 5000);
+        setTimeout(() => (show.value = !show.value), 500);
+      }, 3000);
     };
     const clearImageInterval = () => {
       clearInterval(interval);
@@ -58,7 +58,7 @@ export default defineComponent({
     const nextImage = () => {
       show.value = !show.value;
       curIndex.value = (curIndex.value + 1) % facility.value.images.length;
-      setTimeout(() => (show.value = !show.value), 1000);
+      setTimeout(() => (show.value = !show.value), 500);
     };
 
     const prevImage = () => {
@@ -66,7 +66,7 @@ export default defineComponent({
       curIndex.value =
         (curIndex.value + facility.value.images.length - 1) %
         facility.value.images.length;
-      setTimeout(() => (show.value = !show.value), 1000);
+      setTimeout(() => (show.value = !show.value), 500);
     };
 
     onMounted(changeImage);
@@ -87,7 +87,7 @@ export default defineComponent({
 <style scoped>
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 500ms ease;
 }
 
 .v-enter-from,

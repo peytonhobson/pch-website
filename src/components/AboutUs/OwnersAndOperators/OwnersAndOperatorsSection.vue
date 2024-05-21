@@ -6,7 +6,11 @@
     <!--end col-->
 
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none" />
+      <simple-description
+        :header="descriptionHeader"
+        :text="descriptionText"
+        class="md:max-w-lg lg:max-w-none"
+      />
     </template>
   </dual-item-display>
 </template>
@@ -29,11 +33,7 @@ export default defineComponent({
   setup() {
     const descriptionHeader = "Owners and Operators";
 
-    const descriptionText =
-      "Janelle LeFore P.T. and Margie Hibner P.T. have a total of 25+ years experience as " +
-      "licensed physical therapists, and 20+ years of experience working as a physical " +
-      "therapist with Seniors in various settings. We have owned and operated Adult Foster " +
-      "Care Homes since 2008.";
+    const descriptionText = `Janelle LeFore, P.T., and Margie Hibner, P.T., bring over 30 years of combined experience as physical therapists in various senior care settings. Since 2008, they have owned and operated Adult Foster Care Homes, driven by their unwavering passion and dedication to senior care. `;
 
     return { descriptionHeader, descriptionText, getImgURL };
   },

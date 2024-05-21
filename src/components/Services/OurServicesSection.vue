@@ -25,7 +25,8 @@
         the safety and well-being of our residents.
       </p>
       <p>
-        <strong>Professional Oversight:</strong> Each home is supported by a
+        <strong>Professional Oversight:</strong> Physical therapists operate and
+        manage all of our staff and care homes. Each home is also supported by a
         registered nurse (RN) who provides delegation and training for our
         staff, ensuring high standards of care.
       </p>

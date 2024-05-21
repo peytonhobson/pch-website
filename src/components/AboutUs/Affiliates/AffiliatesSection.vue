@@ -10,7 +10,11 @@
     <!--end col-->
 
     <template #rightColumn>
-      <simple-description :header="descriptionHeader" :text="descriptionText" class="md:max-w-lg lg:max-w-none" />
+      <simple-description
+        :header="descriptionHeader"
+        :text="descriptionText"
+        class="md:max-w-lg lg:max-w-none"
+      />
     </template>
   </dual-item-display>
 </template>
@@ -34,7 +38,7 @@ export default defineComponent({
     const descriptionHeader = "Affiliates";
 
     const descriptionText =
-      "Quality Care Homes is a Premier Care Homes affiliated Adult Foster Care Home owned and operated by Scott Leavell. Scott is a paramedic/firefighter with 16 years of experience in the field.";
+      "Quality Care Homes is a Premier Care Homes affiliated Adult Foster Care Home owned and operated by Scott Leavell. Scott is a paramedic/firefighter with 20+ years of experience in the field.";
 
     return { descriptionHeader, descriptionText, getImgURL };
   },
