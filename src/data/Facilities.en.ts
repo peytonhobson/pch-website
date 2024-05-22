@@ -23,7 +23,7 @@ export const facilities = [
     summary:
       "This one-level home provides a small intimate setting with a private bedroom afforded to each of the five residents. ",
     description:
-      "Located in a beautiful West Salem neighborhood, this home is secure and pristine. This one-level home provides a small intimate setting with a private bedroom afforded to each of the five residents.<br><br>For daily living and activities, the communal space is a large light-filled area that has been newly decorated and furnished. The private, well-kept grounds and patio allow residents to enjoy the tranquillity of the outdoors.",
+      "Located in a beautiful West Salem neighborhood, this home is secure and pristine. This one-level home provides a small intimate setting with a private bedroom afforded to each of the five residents.<br><br>For daily living and activities, the communal space is a large light-filled area. The private, well-kept grounds and patio allow residents to enjoy the tranquillity of the outdoors.",
     images: [
       "hallet/hallet-7.jpg",
       "hallet/hallet-1.jpg",
@@ -42,7 +42,7 @@ export const facilities = [
     summary:
       "Our comfortable immaculate home is located in the delightful Laurel Springs neighborhood in South Salem. ",
     description:
-      "Our comfortable immaculate home is located in the delightful Laurel Springs neighborhood in South Salem. This one-level home provides a small intimate setting with a private bedroom afforded to each of the five residents.<br><br>For daily living and activities, the communal space is a large light-filled area that has been newly decorated and furnished. The private, well-kept grounds and patio allow residents to enjoy the tranquillity of the outdoors.",
+      "Our comfortable immaculate home is located in the delightful Laurel Springs neighborhood in South Salem. This one-level home provides a small intimate setting with a private bedroom afforded to each of the five residents.<br><br>For daily living and activities, the communal space is a large light-filled area. The private, well-kept grounds and patio allow residents to enjoy the tranquillity of the outdoors.",
     images: [
       "madrona/madrona-house-3.jpg",
       "madrona/madrona-house-2.jpg",
