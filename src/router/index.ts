@@ -45,7 +45,7 @@ const routes = [
     },
   },
   {
-    path: "/Facilities",
+    path: "/facilities",
     name: "Facilities",
     component: FacilitiesView,
     beforeEnter: (to: any, from: any, next: () => void) => {
@@ -55,22 +55,22 @@ const routes = [
     },
   },
   {
-    path: "/Facilities/:name",
+    path: "/facilities/:name",
     name: "Facility",
     component: FacilityView,
   },
   {
-    path: "/Blog",
+    path: "/blog",
     name: "Blog",
     component: BlogView,
   },
   {
-    path: "/Blog/Posts/:title",
+    path: "/blog/posts/:title",
     name: "BlogPost",
     component: BlogPostView,
   },
   {
-    path: "/Testimonials",
+    path: "/testimonials",
     name: "Testimonials",
     component: TestimonialsView,
     beforeEnter: (to: any, from: any, next: () => void) => {
@@ -80,7 +80,7 @@ const routes = [
     },
   },
   {
-    path: "/Resources",
+    path: "/resources",
     name: "Resources",
     component: ResourcesView,
     beforeEnter: (to: any, from: any, next: () => void) => {
@@ -90,7 +90,7 @@ const routes = [
     },
   },
   {
-    path: "/Services",
+    path: "/services",
     name: "Services",
     component: ServicesView,
     beforeEnter: (to: any, from: any, next: () => void) => {
@@ -100,7 +100,7 @@ const routes = [
     },
   },
   {
-    path: "/About-Us",
+    path: "/about-us",
     name: "AboutUs",
     component: AboutUsView,
     beforeEnter: (to: any, from: any, next: () => void) => {
@@ -110,7 +110,7 @@ const routes = [
     },
   },
   {
-    path: "/Employment",
+    path: "/employment",
     name: "Employment",
     component: EmploymentView,
     beforeEnter: (to: any, from: any, next: () => void) => {
@@ -120,9 +120,13 @@ const routes = [
     },
   },
   {
-    path: "/Locations",
+    path: "/locations",
     name: "Locations",
     component: LocationsView,
+  },
+  {
+    path: "/staff",
+    redirect: { name: "AboutUs" },
   },
   {
     path: "/:pathMatch(.*)*",

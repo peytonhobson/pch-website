@@ -7,7 +7,7 @@
       <router-link
         v-for="facility in otherFacilities"
         :key="facility.id"
-        :to="`/Facilities/${facility.name.toLowerCase()}`"
+        :to="`/facilities/${facility.name.toLowerCase()}`"
         class="w-5/6 md:w-2/5 xl:h-60 my-10 hover:cursor-pointer"
       >
         <facility-card

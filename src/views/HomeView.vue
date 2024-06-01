@@ -7,7 +7,7 @@
         additional-classes="!w-32 md:!w-48"
         @click="handleLearnMoreClick"
       />
-      <router-link to="/About-Us" class="w-32 md:!w-48"
+      <router-link to="/about-us" class="w-32 md:!w-48"
         ><action-button type="primary" text="About Us"
       /></router-link></div
   ></hero>

@@ -94,10 +94,10 @@ export default defineComponent({
     const listItemsReturned = computed(() => listItems.value);
 
     const facilityLinks: Route[] = [
-      { text: "Baxter", to: "/Facilities/Baxter" },
-      { text: "Hallet", to: "/Facilities/Hallet" },
-      { text: "Madrona", to: "/Facilities/Madrona" },
-      { text: "Trapper", to: "/Facilities/Trapper" },
+      { text: "Baxter", to: "/facilities/Baxter" },
+      { text: "Hallet", to: "/facilities/Hallet" },
+      { text: "Madrona", to: "/facilities/Madrona" },
+      { text: "Trapper", to: "/facilities/Trapper" },
     ];
 
     const route = useRoute();

@@ -67,10 +67,10 @@ export default defineComponent({
       () =>
         (listItems.value = [
           { text: "Home", to: "/" },
-          { text: "Services", to: "/Services" },
-          { text: "Facilities", to: "/Facilities" },
-          { text: "Testimonials", to: "/Testimonials" },
-          { text: "About Us", to: "/About-Us" },
+          { text: "Services", to: "/services" },
+          { text: "Facilities", to: "/facilities" },
+          { text: "Testimonials", to: "/testimonials" },
+          { text: "About Us", to: "/about-us" },
         ])
     );
 
