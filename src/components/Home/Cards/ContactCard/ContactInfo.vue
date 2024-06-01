@@ -1,11 +1,11 @@
 <template>
   <div class="flex items-center gap-8">
-    <div class="w-20 h-20 rounded-full">
-      <font-awesome-icon
-        :icon="['fas', 'user-circle']"
-        class="h-full w-full text-brand-green-gray"
+    <div class="w-20 h-20 rounded-full overflow-hidden">
+      <img
+        :src="image"
+        class="mt-0 object-cover h-full w-full"
+        loading="lazy"
       />
-      <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
     </div>
     <div class="flex-col">
       <p class="text-xs xl:text-sm text-left font-bold font-sans my-0">

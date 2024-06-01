@@ -12,7 +12,7 @@
         <contact-info
           v-for="contact in contacts"
           :key="contact.number"
-          image="@/assets/Headshot.jpg"
+          :image="contact.image"
           :contact-info="contact"
           :number="contact.number"
         />
@@ -42,6 +42,8 @@ export default defineComponent({
         phoneNumber: "503-798-5610",
         email: "janelle@premiercarehomes.net",
         number: "1",
+        image:
+          "https://premier-care-homes.s3.amazonaws.com/headshot/janelle_headshot.jpeg",
       },
       {
         name: "Margie Hibner",
@@ -49,6 +51,8 @@ export default defineComponent({
         phoneNumber: "503-302-4750",
         email: "margie@premiercarehomes.net",
         number: "2",
+        image:
+          "https://premier-care-homes.s3.amazonaws.com/headshot/margie_headshot.jpeg",
       },
       {
         name: "Scott Leavell",
@@ -56,6 +60,8 @@ export default defineComponent({
         phoneNumber: "901-326-3521",
         email: "scott@premiercarehomes.net",
         number: "3",
+        image:
+          "https://premier-care-homes.s3.amazonaws.com/headshot/scott_headshot.jpeg",
       },
     ];
 

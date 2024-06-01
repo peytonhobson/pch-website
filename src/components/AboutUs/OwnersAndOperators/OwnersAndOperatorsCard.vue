@@ -4,11 +4,11 @@
       <div class="w-full h-full flex items-center justify-evenly prose">
         <div class="avatar">
           <div class="w-20 h-20 md:w-32 md:h-32 rounded-full">
-            <font-awesome-icon
-              :icon="['fas', 'user-circle']"
-              class="h-full w-full text-brand-green-gray"
+            <img
+              src="https://premier-care-homes.s3.amazonaws.com/headshot/janelle_headshot.jpeg"
+              class="mt-0 object-cover"
+              loading="lazy"
             />
-            <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
           </div>
         </div>
         <h2 class="mt-0">Janelle Leavell</h2>
@@ -16,11 +16,11 @@
       <div class="w-full h-full pt-10 flex items-center justify-evenly prose">
         <div class="avatar">
           <div class="w-20 h-20 md:w-32 md:h-32 rounded-full">
-            <font-awesome-icon
-              :icon="['fas', 'user-circle']"
-              class="h-full w-full text-brand-green-gray"
+            <img
+              src="https://premier-care-homes.s3.amazonaws.com/headshot/margie_headshot.jpeg"
+              class="mt-0 object-cover"
+              loading="lazy"
             />
-            <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
           </div>
         </div>
         <h2 class="mt-0">Margie Hibner</h2>

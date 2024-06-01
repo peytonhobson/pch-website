@@ -6,11 +6,11 @@
       >
         <div class="avatar">
           <div class="w-20 h-20 md:w-32 md:h-32 rounded-full">
-            <font-awesome-icon
-              :icon="['fas', 'user-circle']"
-              class="h-full w-full text-brand-green-gray"
+            <img
+              src="https://premier-care-homes.s3.amazonaws.com/headshot/scott_headshot.jpeg"
+              class="mt-0 object-cover"
+              loading="lazy"
             />
-            <!-- <img :src="getImgURL('Headshot.jpg')" class="mt-0" /> -->
           </div>
         </div>
         <h2 class="mt-0">Scott Leavell</h2>
