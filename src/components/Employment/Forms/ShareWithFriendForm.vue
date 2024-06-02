@@ -85,13 +85,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import emailjs from "@emailjs/browser";
 import { notify } from "@kyvg/vue3-notification";
+import axios from "axios";
 
 export default defineComponent({
   name: "ShareWithFriendForm",
@@ -109,30 +109,31 @@ export default defineComponent({
       friendEmail: yup.string().email().required().label("Friend's Email"),
     };
 
-    const onSubmit = (values: any, actions: any) => {
-      emailjs
-        .sendForm(
-          "service_nwq90ma",
-          "template_1stcgtb",
-          "#friend-form",
-          "SaV6yXcrzMc0lIWqN"
-        )
-        .then(
-          () => {
-            notify({
-              type: "success",
-              text: "Referral submitted successfully!",
-              group: "friend",
-            });
-          },
-          () => {
-            notify({
-              type: "error",
-              text: "Something went wrong. Please try again",
-              group: "friend",
-            });
-          }
+    const isLoading = ref(false);
+
+    const onSubmit = async (values: unknown, actions: any) => {
+      isLoading.value = true;
+
+      try {
+        await axios.post(
+          `${process.env.VUE_APP_SERVER_URL}/friend-email`,
+          values
         );
+      } catch (error) {
+        notify({
+          type: "error",
+          title: "Error",
+          text: "There was an error sending your info.",
+        });
+      }
+
+      notify({
+        type: "success",
+        title: "Success",
+        text: "Your info has been sent.",
+      });
+
+      isLoading.value = false;
 
       actions.resetForm();
     };

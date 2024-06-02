@@ -79,13 +79,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage, RuleExpression } from "vee-validate";
 import * as yup from "yup";
-import emailjs from "@emailjs/browser";
 import { notify } from "@kyvg/vue3-notification";
+import axios from "axios";
 
 export default defineComponent({
   name: "ResumeForm",
@@ -119,32 +119,52 @@ export default defineComponent({
       phoneNumber: yup.string(),
     };
 
-    const onSubmit = (values: any, actions: any) => {
-      emailjs
-        .sendForm(
-          "service_nwq90ma",
-          "template_li8xvdz",
-          "#resume-form",
-          "SaV6yXcrzMc0lIWqN"
-        )
-        .then(
-          () => {
-            notify({
-              type: "success",
-              text: "Application submitted successfully!",
-              group: "resume",
-            });
-          },
-          (error) => {
+    const isLoading = ref(false);
+
+    const onSubmit = async (values: unknown, actions: any) => {
+      isLoading.value = true;
+
+      const { file }: { file: File } = values as { file: File };
+      if (file && typeof values === "object") {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = async () => {
+          const base64String = (reader.result as string)?.split(",")[1];
+
+          try {
+            await axios.post(
+              `${process.env.VUE_APP_SERVER_URL}/employment-email`,
+              {
+                ...values,
+                file: base64String,
+              }
+            );
+          } catch (error) {
             notify({
               type: "error",
-              text: error.text,
-              group: "resume",
+              title: "Error",
+              text: "There was an error submitting your resume.",
             });
           }
-        );
 
-      actions.resetForm();
+          notify({
+            type: "success",
+            title: "Success",
+            text: "Your resume has been submitted successfully.",
+          });
+
+          isLoading.value = false;
+
+          actions.resetForm();
+        };
+        reader.onerror = () => {
+          notify({
+            type: "error",
+            title: "Error",
+            text: "There was an error submitting your resume.",
+          });
+        };
+      }
     };
 
     return { schema, onSubmit, validateFile };

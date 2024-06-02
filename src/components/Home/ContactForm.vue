@@ -59,13 +59,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import emailjs from "@emailjs/browser";
 import { notify } from "@kyvg/vue3-notification";
+import axios from "axios";
 
 export default defineComponent({
   name: "ResumeForm",
@@ -82,30 +82,31 @@ export default defineComponent({
       subject: yup.string().required().label("Subject"),
     };
 
-    const onSubmit = (values: any, actions: any) => {
-      emailjs
-        .sendForm(
-          "service_nwq90ma",
-          "template_adnda1m",
-          "#contact-form",
-          "SaV6yXcrzMc0lIWqN"
-        )
-        .then(
-          () => {
-            notify({
-              type: "success",
-              text: "Message sent successfully!",
-              group: "contact",
-            });
-          },
-          (error) => {
-            notify({
-              type: "error",
-              text: error.text,
-              group: "contact",
-            });
-          }
+    const isLoading = ref(false);
+
+    const onSubmit = async (values: unknown, actions: any) => {
+      isLoading.value = true;
+
+      try {
+        await axios.post(
+          `${process.env.VUE_APP_SERVER_URL}/contact-email`,
+          values
         );
+
+        notify({
+          type: "success",
+          title: "Email Sent",
+          text: "Your email has been sent successfully.",
+        });
+      } catch (error) {
+        notify({
+          type: "error",
+          title: "Email Failed",
+          text: "There was an error sending your email.",
+        });
+      }
+
+      isLoading.value = false;
 
       actions.resetForm();
     };
