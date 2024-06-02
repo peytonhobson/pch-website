@@ -1,4 +1,10 @@
 <template>
+  <Banner
+    v-if="showBanner"
+    :type="showBanner.type"
+    :title="showBanner.title"
+    :text="showBanner.text"
+  />
   <Form id="friend-form" class="w-3/4 flex flex-col gap-8" @submit="onSubmit">
     <div>
       <label
@@ -80,7 +86,7 @@
         as="div"
       />
     </div>
-    <action-button text="Submit" type="primary" />
+    <action-button text="Submit" type="primary" :loading="isLoading" />
   </Form>
 </template>
 
@@ -90,8 +96,8 @@ import { defineComponent, ref } from "vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import { notify } from "@kyvg/vue3-notification";
 import axios from "axios";
+import Banner from "@/components/Banner/Banner.vue";
 
 export default defineComponent({
   name: "ShareWithFriendForm",
@@ -100,6 +106,7 @@ export default defineComponent({
     Field,
     ErrorMessage,
     ActionButton,
+    Banner,
   },
   setup() {
     const schema = {
@@ -111,6 +118,15 @@ export default defineComponent({
 
     const isLoading = ref(false);
 
+    const showBanner = ref<
+      | {
+          type: "success" | "error";
+          title: string;
+          text: string;
+        }
+      | undefined
+    >(undefined);
+
     const onSubmit = async (values: unknown, actions: any) => {
       isLoading.value = true;
 
@@ -119,26 +135,29 @@ export default defineComponent({
           `${process.env.VUE_APP_SERVER_URL}/friend-email`,
           values
         );
+        showBanner.value = {
+          type: "success",
+          title: "Success!",
+          text: "Your referral has been sent.",
+        };
       } catch (error) {
-        notify({
+        showBanner.value = {
           type: "error",
           title: "Error",
-          text: "There was an error sending your info.",
-        });
+          text: "There was an error sending your referral. Please try again.",
+        };
       }
 
-      notify({
-        type: "success",
-        title: "Success",
-        text: "Your info has been sent.",
-      });
+      setTimeout(() => {
+        showBanner.value = undefined;
+      }, 5000);
 
       isLoading.value = false;
 
       actions.resetForm();
     };
 
-    return { schema, onSubmit };
+    return { schema, onSubmit, showBanner, isLoading };
   },
 });
 </script>

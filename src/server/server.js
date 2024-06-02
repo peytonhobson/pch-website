@@ -31,7 +31,7 @@ app.post("/contact-email", async (req, res) => {
     from: "peyton.hobson1@gmail.com",
     personalizations: [
       {
-        to: "peyton.hobson1@gmail.com", // TODO: Change to your recipient,
+        to: "premiercarehomes@comcast.net",
         dynamic_template_data: {
           name: senderName,
           email: email,
@@ -67,7 +67,7 @@ app.post("/employment-email", async (req, res) => {
     ],
     personalizations: [
       {
-        to: "peyton.hobson1@gmail.com", // TODO: Change to your recipient,
+        to: "premiercarehomes@comcast.net",
         dynamic_template_data: {
           name: senderName,
           email: email,
@@ -96,7 +96,7 @@ app.post("/friend-email", async (req, res) => {
     from: "peyton.hobson1@gmail.com",
     personalizations: [
       {
-        to: "peyton.hobson1@gmail.com", // TODO: Change to your recipient,
+        to: "premiercarehomes@comcast.net",
         dynamic_template_data: {
           submitterName,
           submitterEmail,

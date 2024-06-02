@@ -1,4 +1,10 @@
 <template>
+  <Banner
+    v-if="showBanner"
+    :type="showBanner.type"
+    :title="showBanner.title"
+    :text="showBanner.text"
+  />
   <Form id="contact-form" class="w-3/4 flex flex-col gap-8" @submit="onSubmit">
     <div>
       <label
@@ -54,7 +60,12 @@
         as="div"
       />
     </div>
-    <action-button class="w-full" text="Submit" type="primary" />
+    <action-button
+      class="w-full"
+      text="Submit"
+      type="primary"
+      :loading="isLoading"
+    />
   </Form>
 </template>
 
@@ -64,8 +75,8 @@ import { defineComponent, ref } from "vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
-import { notify } from "@kyvg/vue3-notification";
 import axios from "axios";
+import Banner from "@/components/Banner/Banner.vue";
 
 export default defineComponent({
   name: "ResumeForm",
@@ -74,6 +85,7 @@ export default defineComponent({
     Field,
     ErrorMessage,
     ActionButton,
+    Banner,
   },
   setup() {
     const schema = {
@@ -84,6 +96,15 @@ export default defineComponent({
 
     const isLoading = ref(false);
 
+    const showBanner = ref<
+      | {
+          type: "success" | "error";
+          title: string;
+          text: string;
+        }
+      | undefined
+    >(undefined);
+
     const onSubmit = async (values: unknown, actions: any) => {
       isLoading.value = true;
 
@@ -93,25 +114,29 @@ export default defineComponent({
           values
         );
 
-        notify({
+        showBanner.value = {
           type: "success",
-          title: "Email Sent",
-          text: "Your email has been sent successfully.",
-        });
+          title: "Success!",
+          text: "Your submission has been sent. We will get back to you shortly.",
+        };
       } catch (error) {
-        notify({
+        showBanner.value = {
           type: "error",
-          title: "Email Failed",
-          text: "There was an error sending your email.",
-        });
+          title: "Error",
+          text: "An error occurred while sending your submission. Please try again later.",
+        };
       }
+
+      setTimeout(() => {
+        showBanner.value = undefined;
+      }, 5000);
 
       isLoading.value = false;
 
       actions.resetForm();
     };
 
-    return { schema, onSubmit };
+    return { schema, onSubmit, showBanner, isLoading };
   },
 });
 </script>

@@ -1,14 +1,21 @@
 <template>
   <button :class="buttonClass" @click="$emit('click')">
-    {{ text }}
+    <span v-if="loading">
+      <spinner-icon />
+    </span>
+    <span v-else>{{ text }}</span>
   </button>
 </template>
 
 <script>
 import { computed, toRefs } from "vue";
+import SpinnerIcon from "@/components/Shared/SpinnerIcon.vue";
 
 export default {
   name: "ActionButton",
+  components: {
+    SpinnerIcon,
+  },
   props: {
     text: {
       type: String,
@@ -26,6 +33,11 @@ export default {
       type: String,
       required: false,
       default: "",
+    },
+    loading: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
   emits: ["click"],

@@ -8,6 +8,7 @@ import {
   faBars,
   faCheck,
   faUserCircle,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import Notifications from "@kyvg/vue3-notification";
 
@@ -23,6 +24,7 @@ library.add(faPeopleGroup);
 library.add(faBars);
 library.add(faCheck);
 library.add(faUserCircle);
+library.add(faSpinner);
 
 const app = createApp(App);
 const { setLoading } = useLoadingState();
