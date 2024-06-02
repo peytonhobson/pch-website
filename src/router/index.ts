@@ -14,10 +14,6 @@ const FacilitiesView = () =>
   import(/* webpackChunkName: "facilities" */ "@/views/FacilitiesView.vue");
 const FacilityView = () =>
   import(/* webpackChunkName: "facilities" */ "@/views/FacilityView.vue");
-const BlogView = () =>
-  import(/* webpackChunkName: "posts" */ "@/views/BlogView.vue");
-const BlogPostView = () =>
-  import(/* webpackChunkName: "posts" */ "@/views/BlogPostView.vue");
 const TestimonialsView = () =>
   import(/* webpackChunkName: "testimonials" */ "@/views/TestimonialsView.vue");
 const ResourcesView = () =>
@@ -58,16 +54,6 @@ const routes = [
     path: "/facilities/:name",
     name: "Facility",
     component: FacilityView,
-  },
-  {
-    path: "/blog",
-    name: "Blog",
-    component: BlogView,
-  },
-  {
-    path: "/blog/posts/:title",
-    name: "BlogPost",
-    component: BlogPostView,
   },
   {
     path: "/testimonials",
