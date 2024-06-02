@@ -10,7 +10,6 @@ import {
   faUserCircle,
   faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
-import Notifications from "@kyvg/vue3-notification";
 
 import App from "./App.vue";
 import router from "./router";
@@ -41,7 +40,6 @@ router.afterEach(() => {
 });
 
 app
-  .use(Notifications)
   .use(VueLazyload, {
     preLoad: 1.3,
     attempt: 1,
