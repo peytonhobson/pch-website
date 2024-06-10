@@ -17,7 +17,6 @@ import { defineComponent } from "vue";
 import OurCostSegment from "@/components/Services/OurCostSegment.vue";
 import OurServicesSection from "@/components/Services/OurServicesSection.vue";
 import Hero from "@/components/Shared/Hero/Hero.vue";
-import ServicesHero from "@/assets/other/services-hero.jpg";
 
 export default defineComponent({
   name: "ServicesView",
@@ -30,7 +29,8 @@ export default defineComponent({
     const heroProps = {
       title: "SERVICES & COST",
       text: "Exceptional, professional care for your loved one in a compassionate, home environment.",
-      backgroundImage: ServicesHero,
+      backgroundImage:
+        "https://premier-care-homes.s3.amazonaws.com/assets/other/services-hero.jpg",
     };
 
     return { heroProps };

@@ -20,7 +20,6 @@
 import { defineComponent } from "vue";
 
 import HeroSlogan from "./HeroSlogan.vue";
-import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "Hero",
@@ -42,9 +41,7 @@ export default defineComponent({
       default: undefined,
     },
   },
-  setup() {
-    return { getImgURL };
-  },
+  setup() {},
 });
 </script>
 

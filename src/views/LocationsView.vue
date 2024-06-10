@@ -14,7 +14,6 @@ import { defineComponent } from "vue";
 
 import LocationsMap from "@/components/Locations/LocationsMap.vue";
 import Hero from "@/components/Shared/Hero/Hero.vue";
-import LocationsHero from "@/assets/hallet/hallet-7.jpg";
 
 export default defineComponent({
   name: "LocationsView",
@@ -25,7 +24,8 @@ export default defineComponent({
   setup() {
     const heroProps = {
       title: "LOCATIONS",
-      backgroundImage: LocationsHero,
+      backgroundImage:
+        "https://premier-care-homes.s3.amazonaws.com/assets/hallet/hallet-7.jpg",
     };
 
     return { heroProps };

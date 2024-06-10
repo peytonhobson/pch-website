@@ -3,7 +3,7 @@
     <div class="mx-2 items-center justify-start cursor-pointer">
       <router-link to="/" class="flex items-center">
         <img
-          :src="getImgURL('other/premier-care-homes-logo1.png')"
+          src="https://premier-care-homes.s3.amazonaws.com/assets/other/premier-care-homes-logo1.png"
           class="h-16 min-w-[12rem] lg:h-20 lg:min-w-[15rem] hover:cursor-pointer"
           alt="Premier Care Homes Logo"
         />
@@ -19,7 +19,7 @@
         :white-text="
           transparentBackground &&
           !isOpen &&
-          !route.path.match(/\/(Facilities\/)/g)
+          !route.path.match(/\/(facilities\/)/g)
         "
         @click="isOpen = !isOpen"
       />
@@ -42,7 +42,6 @@ import {
 
 import { useRoute } from "vue-router";
 
-import getImgURL from "@/composables/getImgURL";
 import handleNavScroll from "@/composables/handleNavScroll";
 import MainNavDesktopList from "@/components/Navigation/MainNavDesktopList.vue";
 import MainNavMobileButton from "@/components/Navigation/MainNavMobileButton.vue";
@@ -109,11 +108,11 @@ export default defineComponent({
         ["bg-transparent"]:
           transparentBackground.value &&
           !isOpen.value &&
-          !route.path.match(/\/(Facilities\/)/g),
+          !route.path.match(/\/(facilities\/)/g),
         ["bg-white shadow-md"]:
           !transparentBackground.value ||
           isOpen.value ||
-          route.path.match(/\/(Facilities\/)/g),
+          route.path.match(/\/(facilities\/)/g),
       };
     });
 
@@ -128,7 +127,6 @@ export default defineComponent({
       listItems,
       isMobile,
       isOpen,
-      getImgURL,
       navClass,
       transparentBackground,
       route,

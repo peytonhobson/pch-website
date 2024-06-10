@@ -17,7 +17,6 @@ import { defineComponent } from "vue";
 import SubmitResumeSection from "@/components/Employment/SubmitResumeSection.vue";
 import ShareWithFriendSection from "@/components/Employment/ShareWithFriendSection.vue";
 import Hero from "@/components/Shared/Hero/Hero.vue";
-import EmploymentHero from "@/assets/other/employment-hero.jpg";
 
 export default defineComponent({
   name: "EmploymentView",
@@ -30,7 +29,8 @@ export default defineComponent({
     const heroProps = {
       title: "EMPLOYMENT",
       text: "Premier Care Homes is always accepting applications and looking to hire exceptional staff members to complement our highly qualified family of personnel. If you or someone you know meet the following requirements and are looking to join our team, please contact us.",
-      backgroundImage: EmploymentHero,
+      backgroundImage:
+        "https://premier-care-homes.s3.amazonaws.com/assets/other/employment-hero.jpg",
     };
 
     return { heroProps };

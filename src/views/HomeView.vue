@@ -53,8 +53,6 @@ import ContactCard from "@/components/Home/Cards/ContactCard/ContactCard.vue";
 import setScrollObserver from "@/composables/setScrollObserver";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 import ContactFormContainer from "@/components/Home/ContactFormContainer.vue";
-import HomeHero from "@/assets/other/landing-hero.jpg";
-import getImgURL from "@/composables/getImgURL";
 
 interface DescriptionBoxContent {
   icon: string[];
@@ -114,10 +112,10 @@ export default defineComponent({
 
     return {
       descriptionBoxContents,
-      getImgURL,
       learnMoreRef,
       handleLearnMoreClick,
-      heroImage: HomeHero,
+      heroImage:
+        "https://premier-care-homes.s3.amazonaws.com/assets/other/landing-hero.jpg",
     };
   },
 });

@@ -7,7 +7,7 @@
         @click="handleRouteClick"
       >
         <img
-          :src="getImgURL('other/premier-care-homes-logo1.png')"
+          src="https://premier-care-homes.s3.amazonaws.com/assets/other/premier-care-homes-logo1.png"
           class="mr-3 h-16 md:h-20"
           alt="Premier Care Homes Logo"
         />
@@ -70,8 +70,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import getImgURL from "@/composables/getImgURL";
-
 export default defineComponent({
   name: "Footer",
   setup() {
@@ -79,7 +77,7 @@ export default defineComponent({
       window.scrollTo(0, 0);
     };
 
-    return { getImgURL, handleRouteClick };
+    return { handleRouteClick };
   },
 });
 </script>

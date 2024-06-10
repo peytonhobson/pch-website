@@ -23,15 +23,12 @@
 import { defineComponent } from "vue";
 
 import Card from "@/components/Shared/Card.vue";
-import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "AffiliatesCard",
   components: {
     Card,
   },
-  setup() {
-    return { getImgURL };
-  },
+  setup() {},
 });
 </script>

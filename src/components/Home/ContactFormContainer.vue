@@ -16,7 +16,6 @@
 </template>
 
 <script lang="ts">
-import getImgURL from "@/composables/getImgURL";
 import { defineComponent } from "vue";
 
 import ContactForm from "./ContactForm.vue";
@@ -27,9 +26,10 @@ export default defineComponent({
     ContactForm,
   },
   setup() {
-    const imageLink = getImgURL("other/questions-background.jpg");
+    const imageLink =
+      "https://premier-care-homes.s3.amazonaws.com/assets/other/questions-background.jpg";
 
-    return { imageLink, getImgURL };
+    return { imageLink };
   },
 });
 </script>

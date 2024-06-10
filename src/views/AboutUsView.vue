@@ -19,7 +19,6 @@ import Hero from "@/components/Shared/Hero/Hero.vue";
 import OwnersAndOperatorsSection from "@/components/AboutUs/OwnersAndOperators/OwnersAndOperatorsSection.vue";
 import AffiliatesSection from "@/components/AboutUs/Affiliates/AffiliatesSection.vue";
 import HomeCareTeamSection from "@/components/AboutUs/HomeCareTeamSection.vue";
-import AboutUsHero from "@/assets/other/aboutus-hero.jpg";
 
 export default defineComponent({
   name: "AboutUsView",
@@ -31,7 +30,8 @@ export default defineComponent({
   },
   setup() {
     const heroProps = {
-      backgroundImage: AboutUsHero,
+      backgroundImage:
+        "https://premier-care-homes.s3.amazonaws.com/assets/other/aboutus-hero.jpg",
       title: "ABOUT US",
       text: "Meet the Team Behind the Care",
     };

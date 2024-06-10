@@ -46,9 +46,9 @@ export default defineComponent({
   },
   setup() {
     const images = reactive([
-      "other/resident-red-and-patriotic-sweaters.png",
-      "other/resident-out-for-a-treat.png",
-      "other/resident-christmas-guitar-music.png",
+      "https://premier-care-homes.s3.amazonaws.com/assets/other/resident-red-and-patriotic-sweaters.png",
+      "https://premier-care-homes.s3.amazonaws.com/assets/other/resident-out-for-a-treat.png",
+      "https://premier-care-homes.s3.amazonaws.com/assets/other/resident-christmas-guitar-music.png",
     ]);
 
     return { testimonials, images };

@@ -33,15 +33,12 @@
 import { defineComponent } from "vue";
 
 import Card from "@/components/Shared/Card.vue";
-import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "OwnersAndOperatorsCard",
   components: {
     Card,
   },
-  setup() {
-    return { getImgURL };
-  },
+  setup() {},
 });
 </script>

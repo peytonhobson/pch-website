@@ -1,11 +1,7 @@
 <template>
   <div class="card lg:card-side bg-white shadow-xl">
     <figure class="lg:w-full">
-      <img
-        class="w-full h-full"
-        :src="getImgURL(facility.images[0])"
-        alt="Album"
-      />
+      <img class="w-full h-full" :src="facility.images[0]" alt="Album" />
     </figure>
     <div class="card-body prose">
       <h2 class="card-title">{{ facility.name }}</h2>
@@ -18,7 +14,6 @@
 import { defineComponent } from "vue";
 
 import { Facility } from "@/types/types";
-import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "FacilityCard",
@@ -29,8 +24,6 @@ export default defineComponent({
       required: true,
     },
   },
-  setup() {
-    return { getImgURL };
-  },
+  setup() {},
 });
 </script>

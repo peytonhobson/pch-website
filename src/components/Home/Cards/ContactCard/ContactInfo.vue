@@ -28,7 +28,6 @@
 
 <script lang="ts">
 import { defineComponent, computed, toRefs } from "vue";
-import getImgURL from "@/composables/getImgURL";
 
 interface Contact {
   name: string;
@@ -62,7 +61,7 @@ export default defineComponent({
       return { [rowString.concat(number.value)]: true, ["outer-div"]: true };
     });
 
-    return { outerClass, getImgURL };
+    return { outerClass };
   },
 });
 </script>

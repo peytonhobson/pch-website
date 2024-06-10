@@ -20,7 +20,6 @@ import { defineComponent } from "vue";
 
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import getImgURL from "@/composables/getImgURL";
 import OwnersAndOperatorsCard from "./OwnersAndOperatorsCard.vue";
 
 export default defineComponent({
@@ -35,7 +34,7 @@ export default defineComponent({
 
     const descriptionText = `Janelle LeFore, P.T., and Margie Hibner, P.T., bring over 30 years of combined experience as physical therapists in various senior care settings. Since 2008, they have owned and operated Adult Foster Care Homes, driven by their unwavering passion and dedication to senior care. `;
 
-    return { descriptionHeader, descriptionText, getImgURL };
+    return { descriptionHeader, descriptionText };
   },
 });
 </script>

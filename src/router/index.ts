@@ -1,12 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import HomeImage from "@/assets/other/landing-hero.jpg";
-import FacilitiesImage from "@/assets/other/facilities-hero.jpg";
-import TestimonialsImage from "@/assets/other/testimonials-hero.jpg";
-import ResourcesImage from "@/assets/other/resources-hero.jpg";
-import ServicesImage from "@/assets/other/services-hero.jpg";
-import AboutUsImage from "@/assets/other/aboutus-hero.jpg";
-import EmploymentImage from "@/assets/other/employment-hero.jpg";
+const homeImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/landing-hero.jpg";
+const facilitiesImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/facilities-hero.jpg";
+const testimonialsImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/testimonials-hero.jpg";
+const resourcesImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/resources-hero.jpg";
+const servicesImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/services-hero.jpg";
+const aboutUsImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/aboutus-hero.jpg";
+const employmentImage =
+  "https://premier-care-homes.s3.amazonaws.com/assets/other/employment-hero.jpg";
 import { preloadImage } from "@/composables/preloadImage";
 
 const HomeView = () => import("@/views/HomeView.vue");
@@ -35,7 +42,7 @@ const routes = [
     name: "home",
     component: HomeView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(HomeImage).then(() => {
+      preloadImage(homeImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },
@@ -45,7 +52,7 @@ const routes = [
     name: "Facilities",
     component: FacilitiesView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(FacilitiesImage).then(() => {
+      preloadImage(facilitiesImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },
@@ -60,7 +67,7 @@ const routes = [
     name: "Testimonials",
     component: TestimonialsView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(TestimonialsImage).then(() => {
+      preloadImage(testimonialsImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },
@@ -70,7 +77,7 @@ const routes = [
     name: "Resources",
     component: ResourcesView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(ResourcesImage).then(() => {
+      preloadImage(resourcesImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },
@@ -80,7 +87,7 @@ const routes = [
     name: "Services",
     component: ServicesView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(ServicesImage).then(() => {
+      preloadImage(servicesImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },
@@ -90,7 +97,7 @@ const routes = [
     name: "AboutUs",
     component: AboutUsView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(AboutUsImage).then(() => {
+      preloadImage(aboutUsImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },
@@ -100,7 +107,7 @@ const routes = [
     name: "Employment",
     component: EmploymentView,
     beforeEnter: (to: any, from: any, next: () => void) => {
-      preloadImage(EmploymentImage).then(() => {
+      preloadImage(employmentImage).then(() => {
         next(); // Proceed with the route navigation once the image is loaded
       });
     },

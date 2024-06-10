@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="flex flex-grow p-4 mx-5 gap-5 max-w-3xl justify-between"
+    class="flex flex-grow p-4 ml-5 mr-8 gap-5 max-w-3xl justify-between"
     role="group"
   >
     <li id="Home">
@@ -110,7 +110,10 @@ export default defineComponent({
             ["nav-list-item"]: true,
             ["text-white"]:
               transparentBackground.value &&
-              !route.path.match(/\/(Facilities\/)/g),
+              !route.path.match(/\/(facilities\/)/g),
+            ["text-brand-green-gray"]:
+              !transparentBackground.value ||
+              route.path.match(/\/(facilities\/)/g),
             ["selected"]: route.path === item.to,
           },
         };

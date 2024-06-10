@@ -25,7 +25,6 @@ import { defineComponent } from "vue";
 import AffiliatesCard from "@/components/AboutUs/Affiliates/AffiliatesCard.vue";
 import DualItemDisplay from "@/components/Shared/DualItemDisplay.vue";
 import SimpleDescription from "@/components/Shared/SimpleDescription.vue";
-import getImgURL from "@/composables/getImgURL";
 
 export default defineComponent({
   name: "AffiliatesSection",
@@ -40,7 +39,7 @@ export default defineComponent({
     const descriptionText =
       "Quality Care Homes is a Premier Care Homes affiliated Adult Foster Care Home owned and operated by Scott Leavell. Scott is a paramedic/firefighter with 20+ years of experience in the field.";
 
-    return { descriptionHeader, descriptionText, getImgURL };
+    return { descriptionHeader, descriptionText };
   },
 });
 </script>

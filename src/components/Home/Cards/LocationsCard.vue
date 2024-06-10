@@ -3,8 +3,8 @@
     <template #image>
       <img
         class="w-full h-full"
-        :src="getImgURL('other/locations-teaser.jpg')"
-        alt="Shoes"
+        src="https://premier-care-homes.s3.amazonaws.com/assets/other/locations-teaser.jpg"
+        alt="Google Maps image of Salem, Oregon"
       />
     </template>
     <template #title>
@@ -28,7 +28,6 @@
 import { defineComponent } from "vue";
 import { useRouter } from "vue-router";
 
-import getImgURL from "@/composables/getImgURL";
 import Card from "@/components/Shared/Card.vue";
 import ActionButton from "@/components/Shared/ActionButton.vue";
 
@@ -51,7 +50,7 @@ export default defineComponent({
       router.push("Facilities");
     };
 
-    return { getImgURL, routeUser };
+    return { routeUser };
   },
 });
 </script>

@@ -27,7 +27,6 @@ import FacilityCard from "@/components/Facilities/FacilityCard.vue";
 import setScrollObserver from "@/composables/setScrollObserver";
 import { facilities } from "@/data/Facilities.en";
 import Hero from "@/components/Shared/Hero/Hero.vue";
-import FacilitiesHero from "@/assets/other/facilities-hero.jpg";
 
 export default defineComponent({
   name: "FacilitiesView",
@@ -41,7 +40,8 @@ export default defineComponent({
     const heroProps = {
       title: "FACILITIES",
       text: "Elegant Living Spaces Tailored for Exceptional Care",
-      backgroundImage: FacilitiesHero,
+      backgroundImage:
+        "https://premier-care-homes.s3.amazonaws.com/assets/other/facilities-hero.jpg",
     };
 
     return { facilities, heroProps };
