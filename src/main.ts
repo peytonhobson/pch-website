@@ -16,7 +16,7 @@ import router from "./router";
 import "@/assets/tailwind.css";
 import VueLazyload from "vue-lazyload";
 import useLoadingState from "@/composables/useLoadingState";
-import { createGtm } from "@gtm-support/vue-gtm";
+import VueGtag from "vue-gtag";
 
 library.add(faBriefcaseMedical);
 library.add(faPeopleCarry);
@@ -46,11 +46,8 @@ app
     attempt: 1,
   })
   .use(router)
-  .use(
-    createGtm({
-      id: "G-ET3W75J93L",
-      vueRouter: router,
-    })
-  )
+  .use(VueGtag, {
+    config: { id: "G-ET3W75J93L" },
+  })
   .component("font-awesome-icon", FontAwesomeIcon)
   .mount("#app");
